@@ -60,7 +60,7 @@ class GatewayServiceStub(object):
         )
     self.GetQuota = channel.unary_unary(
         '/cs3.gatewayv0alpha.GatewayService/GetQuota',
-        request_serializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.GetQuotaRequest.SerializeToString,
+        request_serializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.GetQuotaRequest.SerializeToString,
         response_deserializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.GetQuotaResponse.FromString,
         )
     self.InitiateFileDownload = channel.unary_unary(
@@ -449,7 +449,7 @@ def add_GatewayServiceServicer_to_server(servicer, server):
       ),
       'GetQuota': grpc.unary_unary_rpc_method_handler(
           servicer.GetQuota,
-          request_deserializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.GetQuotaRequest.FromString,
+          request_deserializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.GetQuotaRequest.FromString,
           response_serializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.GetQuotaResponse.SerializeToString,
       ),
       'InitiateFileDownload': grpc.unary_unary_rpc_method_handler(
