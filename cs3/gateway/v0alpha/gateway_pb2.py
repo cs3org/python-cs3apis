@@ -13,9 +13,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from cs3.rpc import status_pb2 as cs3_dot_rpc_dot_status__pb2
+from cs3.auth.v0alpha import auth_pb2 as cs3_dot_auth_dot_v0alpha_dot_auth__pb2
 from cs3.storageprovider.v0alpha import resources_pb2 as cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2
+from cs3.storageprovider.v0alpha import storageprovider_pb2 as cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2
 from cs3.types import types_pb2 as cs3_dot_types_dot_types__pb2
+from cs3.usershareprovider.v0alpha import usershareprovider_pb2 as cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -23,246 +25,11 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.gatewayv0alpha',
   syntax='proto3',
   serialized_options=_b('\n\026com.cs3.gatewayv0alphaB\014GatewayProtoP\001Z\020gatewayv0alphapb\242\002\006CBOXAB\252\002\022CS3.GatewayV0Alpha\312\002\022CS3\\GatewayV0Alpha'),
-  serialized_pb=_b('\n!cs3/gateway/v0alpha/gateway.proto\x12\x12\x63s3.gatewayv0alpha\x1a\x14\x63s3/rpc/status.proto\x1a+cs3/storageprovider/v0alpha/resources.proto\x1a\x15\x63s3/types/types.proto\"o\n\x16\x43reateContainerRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"]\n\x17\x43reateContainerResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"f\n\rDeleteRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"T\n\x0e\x44\x65leteResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"p\n\x0eGetPathRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12;\n\x0bresource_id\x18\x02 \x01(\x0b\x32&.cs3.storageproviderv0alpha.ResourceId\"c\n\x0fGetPathResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x0c\n\x04path\x18\x03 \x01(\t\"h\n\x0fGetQuotaRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\x7f\n\x10GetQuotaResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x13\n\x0btotal_bytes\x18\x03 \x01(\x04\x12\x12\n\nused_bytes\x18\x04 \x01(\x04\"r\n\x19InitiateFileUploadRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\xcc\x01\n\x1aInitiateFileUploadResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x17\n\x0fupload_endpoint\x18\x03 \x01(\t\x12Q\n\x13\x61vailable_checksums\x18\x04 \x03(\x0b\x32\x34.cs3.storageproviderv0alpha.ResourceChecksumPriority\"t\n\x1bInitiateFileDownloadRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"}\n\x1cInitiateFileDownloadResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x19\n\x11\x64ownload_endpoint\x18\x03 \x01(\t\"\x94\x01\n\x1aListContainerStreamRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"\x99\x01\n\x1bListContainerStreamResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x36\n\x04info\x18\x03 \x01(\x0b\x32(.cs3.storageproviderv0alpha.ResourceInfo\"\x8e\x01\n\x14ListContainerRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"\x94\x01\n\x15ListContainerResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x37\n\x05infos\x18\x03 \x03(\x0b\x32(.cs3.storageproviderv0alpha.ResourceInfo\"p\n\x17ListFileVersionsRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\x99\x01\n\x18ListFileVersionsResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x39\n\x08versions\x18\x03 \x03(\x0b\x32\'.cs3.storageproviderv0alpha.FileVersion\"\xb7\x01\n\x12ListRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12%\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x04 \x01(\x0b\x32\x14.cs3.types.Timestamp\"\x99\x01\n\x13ListRecycleResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12>\n\rrecycle_items\x18\x03 \x03(\x0b\x32\'.cs3.storageproviderv0alpha.RecycleItem\"\xbd\x01\n\x18ListRecycleStreamRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12%\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x04 \x01(\x0b\x32\x14.cs3.types.Timestamp\"\x9e\x01\n\x19ListRecycleStreamResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12=\n\x0crecycle_item\x18\x03 \x01(\x0b\x32\'.cs3.storageproviderv0alpha.RecycleItem\"\xa3\x01\n\x0bMoveRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x35\n\x06source\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12:\n\x0b\x64\x65stination\x18\x03 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"R\n\x0cMoveResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"l\n\x13PurgeRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"Z\n\x14PurgeRecycleResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x7f\n\x19RestoreFileVersionRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x0b\n\x03key\x18\x03 \x01(\t\"`\n\x1aRestoreFileVersionResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x95\x01\n\x19RestoreRecycleItemRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x14\n\x0crestore_path\x18\x04 \x01(\t\"`\n\x1aRestoreRecycleItemResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x85\x01\n\x0bStatRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"\x8a\x01\n\x0cStatResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x36\n\x04info\x18\x03 \x01(\x0b\x32(.cs3.storageproviderv0alpha.ResourceInfo\"\xbf\x01\n\x1bSetArbitraryMetadataRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12I\n\x12\x61rbitrary_metadata\x18\x03 \x01(\x0b\x32-.cs3.storageproviderv0alpha.ArbitraryMetadata\"b\n\x1cSetArbitraryMetadataResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x97\x01\n\x1dUnsetArbitraryMetadataRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"d\n\x1eUnsetArbitraryMetadataResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque2\xee\x0c\n\x0eGatewayService\x12j\n\x0f\x43reateContainer\x12*.cs3.gatewayv0alpha.CreateContainerRequest\x1a+.cs3.gatewayv0alpha.CreateContainerResponse\x12O\n\x06\x44\x65lete\x12!.cs3.gatewayv0alpha.DeleteRequest\x1a\".cs3.gatewayv0alpha.DeleteResponse\x12R\n\x07GetPath\x12\".cs3.gatewayv0alpha.GetPathRequest\x1a#.cs3.gatewayv0alpha.GetPathResponse\x12U\n\x08GetQuota\x12#.cs3.gatewayv0alpha.GetQuotaRequest\x1a$.cs3.gatewayv0alpha.GetQuotaResponse\x12y\n\x14InitiateFileDownload\x12/.cs3.gatewayv0alpha.InitiateFileDownloadRequest\x1a\x30.cs3.gatewayv0alpha.InitiateFileDownloadResponse\x12s\n\x12InitiateFileUpload\x12-.cs3.gatewayv0alpha.InitiateFileUploadRequest\x1a..cs3.gatewayv0alpha.InitiateFileUploadResponse\x12x\n\x13ListContainerStream\x12..cs3.gatewayv0alpha.ListContainerStreamRequest\x1a/.cs3.gatewayv0alpha.ListContainerStreamResponse0\x01\x12\x64\n\rListContainer\x12(.cs3.gatewayv0alpha.ListContainerRequest\x1a).cs3.gatewayv0alpha.ListContainerResponse\x12m\n\x10ListFileVersions\x12+.cs3.gatewayv0alpha.ListFileVersionsRequest\x1a,.cs3.gatewayv0alpha.ListFileVersionsResponse\x12r\n\x11ListRecycleStream\x12,.cs3.gatewayv0alpha.ListRecycleStreamRequest\x1a-.cs3.gatewayv0alpha.ListRecycleStreamResponse0\x01\x12^\n\x0bListRecycle\x12&.cs3.gatewayv0alpha.ListRecycleRequest\x1a\'.cs3.gatewayv0alpha.ListRecycleResponse\x12I\n\x04Move\x12\x1f.cs3.gatewayv0alpha.MoveRequest\x1a .cs3.gatewayv0alpha.MoveResponse\x12\x61\n\x0cPurgeRecycle\x12\'.cs3.gatewayv0alpha.PurgeRecycleRequest\x1a(.cs3.gatewayv0alpha.PurgeRecycleResponse\x12s\n\x12RestoreFileVersion\x12-.cs3.gatewayv0alpha.RestoreFileVersionRequest\x1a..cs3.gatewayv0alpha.RestoreFileVersionResponse\x12s\n\x12RestoreRecycleItem\x12-.cs3.gatewayv0alpha.RestoreRecycleItemRequest\x1a..cs3.gatewayv0alpha.RestoreRecycleItemResponse\x12I\n\x04Stat\x12\x1f.cs3.gatewayv0alpha.StatRequest\x1a .cs3.gatewayv0alpha.StatResponseBm\n\x16\x63om.cs3.gatewayv0alphaB\x0cGatewayProtoP\x01Z\x10gatewayv0alphapb\xa2\x02\x06\x43\x42OXAB\xaa\x02\x12\x43S3.GatewayV0Alpha\xca\x02\x12\x43S3\\GatewayV0Alphab\x06proto3')
+  serialized_pb=_b('\n!cs3/gateway/v0alpha/gateway.proto\x12\x12\x63s3.gatewayv0alpha\x1a\x1b\x63s3/auth/v0alpha/auth.proto\x1a+cs3/storageprovider/v0alpha/resources.proto\x1a\x31\x63s3/storageprovider/v0alpha/storageprovider.proto\x1a\x15\x63s3/types/types.proto\x1a\x35\x63s3/usershareprovider/v0alpha/usershareprovider.proto\"h\n\x0fGetQuotaRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\xb7\x01\n\x12ListRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12%\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x04 \x01(\x0b\x32\x14.cs3.types.Timestamp\"\xbd\x01\n\x18ListRecycleStreamRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12%\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x04 \x01(\x0b\x32\x14.cs3.types.Timestamp\"l\n\x13PurgeRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference2\xeb\x17\n\x0eGatewayService\x12p\n\x13GenerateAccessToken\x12+.cs3.authv0alpha.GenerateAccessTokenRequest\x1a,.cs3.authv0alpha.GenerateAccessTokenResponse\x12I\n\x06WhoAmI\x12\x1e.cs3.authv0alpha.WhoAmIRequest\x1a\x1f.cs3.authv0alpha.WhoAmIResponse\x12z\n\x0f\x43reateContainer\x12\x32.cs3.storageproviderv0alpha.CreateContainerRequest\x1a\x33.cs3.storageproviderv0alpha.CreateContainerResponse\x12_\n\x06\x44\x65lete\x12).cs3.storageproviderv0alpha.DeleteRequest\x1a*.cs3.storageproviderv0alpha.DeleteResponse\x12\x62\n\x07GetPath\x12*.cs3.storageproviderv0alpha.GetPathRequest\x1a+.cs3.storageproviderv0alpha.GetPathResponse\x12\x65\n\x08GetQuota\x12+.cs3.storageproviderv0alpha.GetQuotaRequest\x1a,.cs3.storageproviderv0alpha.GetQuotaResponse\x12\x89\x01\n\x14InitiateFileDownload\x12\x37.cs3.storageproviderv0alpha.InitiateFileDownloadRequest\x1a\x38.cs3.storageproviderv0alpha.InitiateFileDownloadResponse\x12\x83\x01\n\x12InitiateFileUpload\x12\x35.cs3.storageproviderv0alpha.InitiateFileUploadRequest\x1a\x36.cs3.storageproviderv0alpha.InitiateFileUploadResponse\x12\x88\x01\n\x13ListContainerStream\x12\x36.cs3.storageproviderv0alpha.ListContainerStreamRequest\x1a\x37.cs3.storageproviderv0alpha.ListContainerStreamResponse0\x01\x12t\n\rListContainer\x12\x30.cs3.storageproviderv0alpha.ListContainerRequest\x1a\x31.cs3.storageproviderv0alpha.ListContainerResponse\x12}\n\x10ListFileVersions\x12\x33.cs3.storageproviderv0alpha.ListFileVersionsRequest\x1a\x34.cs3.storageproviderv0alpha.ListFileVersionsResponse\x12z\n\x11ListRecycleStream\x12,.cs3.gatewayv0alpha.ListRecycleStreamRequest\x1a\x35.cs3.storageproviderv0alpha.ListRecycleStreamResponse0\x01\x12\x66\n\x0bListRecycle\x12&.cs3.gatewayv0alpha.ListRecycleRequest\x1a/.cs3.storageproviderv0alpha.ListRecycleResponse\x12Y\n\x04Move\x12\'.cs3.storageproviderv0alpha.MoveRequest\x1a(.cs3.storageproviderv0alpha.MoveResponse\x12i\n\x0cPurgeRecycle\x12\'.cs3.gatewayv0alpha.PurgeRecycleRequest\x1a\x30.cs3.storageproviderv0alpha.PurgeRecycleResponse\x12\x83\x01\n\x12RestoreFileVersion\x12\x35.cs3.storageproviderv0alpha.RestoreFileVersionRequest\x1a\x36.cs3.storageproviderv0alpha.RestoreFileVersionResponse\x12\x83\x01\n\x12RestoreRecycleItem\x12\x35.cs3.storageproviderv0alpha.RestoreRecycleItemRequest\x1a\x36.cs3.storageproviderv0alpha.RestoreRecycleItemResponse\x12Y\n\x04Stat\x12\'.cs3.storageproviderv0alpha.StatRequest\x1a(.cs3.storageproviderv0alpha.StatResponse\x12r\n\x0b\x43reateShare\x12\x30.cs3.usershareproviderv0alpha.CreateShareRequest\x1a\x31.cs3.usershareproviderv0alpha.CreateShareResponse\x12r\n\x0bRemoveShare\x12\x30.cs3.usershareproviderv0alpha.RemoveShareRequest\x1a\x31.cs3.usershareproviderv0alpha.RemoveShareResponse\x12i\n\x08GetShare\x12-.cs3.usershareproviderv0alpha.GetShareRequest\x1a..cs3.usershareproviderv0alpha.GetShareResponse\x12o\n\nListShares\x12/.cs3.usershareproviderv0alpha.ListSharesRequest\x1a\x30.cs3.usershareproviderv0alpha.ListSharesResponse\x12r\n\x0bUpdateShare\x12\x30.cs3.usershareproviderv0alpha.UpdateShareRequest\x1a\x31.cs3.usershareproviderv0alpha.UpdateShareResponse\x12\x87\x01\n\x12ListReceivedShares\x12\x37.cs3.usershareproviderv0alpha.ListReceivedSharesRequest\x1a\x38.cs3.usershareproviderv0alpha.ListReceivedSharesResponse\x12\x8a\x01\n\x13UpdateReceivedShare\x12\x38.cs3.usershareproviderv0alpha.UpdateReceivedShareRequest\x1a\x39.cs3.usershareproviderv0alpha.UpdateReceivedShareResponse\x12\x81\x01\n\x10GetReceivedShare\x12\x35.cs3.usershareproviderv0alpha.GetReceivedShareRequest\x1a\x36.cs3.usershareproviderv0alpha.GetReceivedShareResponseBm\n\x16\x63om.cs3.gatewayv0alphaB\x0cGatewayProtoP\x01Z\x10gatewayv0alphapb\xa2\x02\x06\x43\x42OXAB\xaa\x02\x12\x43S3.GatewayV0Alpha\xca\x02\x12\x43S3\\GatewayV0Alphab\x06proto3')
   ,
-  dependencies=[cs3_dot_rpc_dot_status__pb2.DESCRIPTOR,cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_types__pb2.DESCRIPTOR,])
+  dependencies=[cs3_dot_auth_dot_v0alpha_dot_auth__pb2.DESCRIPTOR,cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2.DESCRIPTOR,cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.DESCRIPTOR,cs3_dot_types_dot_types__pb2.DESCRIPTOR,cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2.DESCRIPTOR,])
 
 
-
-
-_CREATECONTAINERREQUEST = _descriptor.Descriptor(
-  name='CreateContainerRequest',
-  full_name='cs3.gatewayv0alpha.CreateContainerRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.CreateContainerRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.CreateContainerRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=147,
-  serialized_end=258,
-)
-
-
-_CREATECONTAINERRESPONSE = _descriptor.Descriptor(
-  name='CreateContainerResponse',
-  full_name='cs3.gatewayv0alpha.CreateContainerResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.CreateContainerResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.CreateContainerResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=260,
-  serialized_end=353,
-)
-
-
-_DELETEREQUEST = _descriptor.Descriptor(
-  name='DeleteRequest',
-  full_name='cs3.gatewayv0alpha.DeleteRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.DeleteRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.DeleteRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=355,
-  serialized_end=457,
-)
-
-
-_DELETERESPONSE = _descriptor.Descriptor(
-  name='DeleteResponse',
-  full_name='cs3.gatewayv0alpha.DeleteResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.DeleteResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.DeleteResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=459,
-  serialized_end=543,
-)
-
-
-_GETPATHREQUEST = _descriptor.Descriptor(
-  name='GetPathRequest',
-  full_name='cs3.gatewayv0alpha.GetPathRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.GetPathRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='resource_id', full_name='cs3.gatewayv0alpha.GetPathRequest.resource_id', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=545,
-  serialized_end=657,
-)
-
-
-_GETPATHRESPONSE = _descriptor.Descriptor(
-  name='GetPathResponse',
-  full_name='cs3.gatewayv0alpha.GetPathResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.GetPathResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.GetPathResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='cs3.gatewayv0alpha.GetPathResponse.path', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=659,
-  serialized_end=758,
-)
 
 
 _GETQUOTAREQUEST = _descriptor.Descriptor(
@@ -298,496 +65,8 @@ _GETQUOTAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=760,
-  serialized_end=864,
-)
-
-
-_GETQUOTARESPONSE = _descriptor.Descriptor(
-  name='GetQuotaResponse',
-  full_name='cs3.gatewayv0alpha.GetQuotaResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.GetQuotaResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.GetQuotaResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='total_bytes', full_name='cs3.gatewayv0alpha.GetQuotaResponse.total_bytes', index=2,
-      number=3, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='used_bytes', full_name='cs3.gatewayv0alpha.GetQuotaResponse.used_bytes', index=3,
-      number=4, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=866,
-  serialized_end=993,
-)
-
-
-_INITIATEFILEUPLOADREQUEST = _descriptor.Descriptor(
-  name='InitiateFileUploadRequest',
-  full_name='cs3.gatewayv0alpha.InitiateFileUploadRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.InitiateFileUploadRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.InitiateFileUploadRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=995,
-  serialized_end=1109,
-)
-
-
-_INITIATEFILEUPLOADRESPONSE = _descriptor.Descriptor(
-  name='InitiateFileUploadResponse',
-  full_name='cs3.gatewayv0alpha.InitiateFileUploadResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.InitiateFileUploadResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.InitiateFileUploadResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='upload_endpoint', full_name='cs3.gatewayv0alpha.InitiateFileUploadResponse.upload_endpoint', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='available_checksums', full_name='cs3.gatewayv0alpha.InitiateFileUploadResponse.available_checksums', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1112,
-  serialized_end=1316,
-)
-
-
-_INITIATEFILEDOWNLOADREQUEST = _descriptor.Descriptor(
-  name='InitiateFileDownloadRequest',
-  full_name='cs3.gatewayv0alpha.InitiateFileDownloadRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.InitiateFileDownloadRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.InitiateFileDownloadRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1318,
-  serialized_end=1434,
-)
-
-
-_INITIATEFILEDOWNLOADRESPONSE = _descriptor.Descriptor(
-  name='InitiateFileDownloadResponse',
-  full_name='cs3.gatewayv0alpha.InitiateFileDownloadResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.InitiateFileDownloadResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.InitiateFileDownloadResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='download_endpoint', full_name='cs3.gatewayv0alpha.InitiateFileDownloadResponse.download_endpoint', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1436,
-  serialized_end=1561,
-)
-
-
-_LISTCONTAINERSTREAMREQUEST = _descriptor.Descriptor(
-  name='ListContainerStreamRequest',
-  full_name='cs3.gatewayv0alpha.ListContainerStreamRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.ListContainerStreamRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.ListContainerStreamRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='arbitrary_metadata_keys', full_name='cs3.gatewayv0alpha.ListContainerStreamRequest.arbitrary_metadata_keys', index=2,
-      number=3, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1564,
-  serialized_end=1712,
-)
-
-
-_LISTCONTAINERSTREAMRESPONSE = _descriptor.Descriptor(
-  name='ListContainerStreamResponse',
-  full_name='cs3.gatewayv0alpha.ListContainerStreamResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.ListContainerStreamResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.ListContainerStreamResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='info', full_name='cs3.gatewayv0alpha.ListContainerStreamResponse.info', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1715,
-  serialized_end=1868,
-)
-
-
-_LISTCONTAINERREQUEST = _descriptor.Descriptor(
-  name='ListContainerRequest',
-  full_name='cs3.gatewayv0alpha.ListContainerRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.ListContainerRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.ListContainerRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='arbitrary_metadata_keys', full_name='cs3.gatewayv0alpha.ListContainerRequest.arbitrary_metadata_keys', index=2,
-      number=3, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1871,
-  serialized_end=2013,
-)
-
-
-_LISTCONTAINERRESPONSE = _descriptor.Descriptor(
-  name='ListContainerResponse',
-  full_name='cs3.gatewayv0alpha.ListContainerResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.ListContainerResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.ListContainerResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='infos', full_name='cs3.gatewayv0alpha.ListContainerResponse.infos', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2016,
-  serialized_end=2164,
-)
-
-
-_LISTFILEVERSIONSREQUEST = _descriptor.Descriptor(
-  name='ListFileVersionsRequest',
-  full_name='cs3.gatewayv0alpha.ListFileVersionsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.ListFileVersionsRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.ListFileVersionsRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2166,
-  serialized_end=2278,
-)
-
-
-_LISTFILEVERSIONSRESPONSE = _descriptor.Descriptor(
-  name='ListFileVersionsResponse',
-  full_name='cs3.gatewayv0alpha.ListFileVersionsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.ListFileVersionsResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.ListFileVersionsResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='versions', full_name='cs3.gatewayv0alpha.ListFileVersionsResponse.versions', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2281,
-  serialized_end=2434,
+  serialized_start=260,
+  serialized_end=364,
 )
 
 
@@ -838,53 +117,8 @@ _LISTRECYCLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2437,
-  serialized_end=2620,
-)
-
-
-_LISTRECYCLERESPONSE = _descriptor.Descriptor(
-  name='ListRecycleResponse',
-  full_name='cs3.gatewayv0alpha.ListRecycleResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.ListRecycleResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.ListRecycleResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='recycle_items', full_name='cs3.gatewayv0alpha.ListRecycleResponse.recycle_items', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2623,
-  serialized_end=2776,
+  serialized_start=367,
+  serialized_end=550,
 )
 
 
@@ -935,136 +169,8 @@ _LISTRECYCLESTREAMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2779,
-  serialized_end=2968,
-)
-
-
-_LISTRECYCLESTREAMRESPONSE = _descriptor.Descriptor(
-  name='ListRecycleStreamResponse',
-  full_name='cs3.gatewayv0alpha.ListRecycleStreamResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.ListRecycleStreamResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.ListRecycleStreamResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='recycle_item', full_name='cs3.gatewayv0alpha.ListRecycleStreamResponse.recycle_item', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2971,
-  serialized_end=3129,
-)
-
-
-_MOVEREQUEST = _descriptor.Descriptor(
-  name='MoveRequest',
-  full_name='cs3.gatewayv0alpha.MoveRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.MoveRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='source', full_name='cs3.gatewayv0alpha.MoveRequest.source', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='destination', full_name='cs3.gatewayv0alpha.MoveRequest.destination', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3132,
-  serialized_end=3295,
-)
-
-
-_MOVERESPONSE = _descriptor.Descriptor(
-  name='MoveResponse',
-  full_name='cs3.gatewayv0alpha.MoveResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.MoveResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.MoveResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3297,
-  serialized_end=3379,
+  serialized_start=553,
+  serialized_end=742,
 )
 
 
@@ -1101,641 +207,27 @@ _PURGERECYCLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3381,
-  serialized_end=3489,
+  serialized_start=744,
+  serialized_end=852,
 )
 
-
-_PURGERECYCLERESPONSE = _descriptor.Descriptor(
-  name='PurgeRecycleResponse',
-  full_name='cs3.gatewayv0alpha.PurgeRecycleResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.PurgeRecycleResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.PurgeRecycleResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3491,
-  serialized_end=3581,
-)
-
-
-_RESTOREFILEVERSIONREQUEST = _descriptor.Descriptor(
-  name='RestoreFileVersionRequest',
-  full_name='cs3.gatewayv0alpha.RestoreFileVersionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.RestoreFileVersionRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.RestoreFileVersionRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='key', full_name='cs3.gatewayv0alpha.RestoreFileVersionRequest.key', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3583,
-  serialized_end=3710,
-)
-
-
-_RESTOREFILEVERSIONRESPONSE = _descriptor.Descriptor(
-  name='RestoreFileVersionResponse',
-  full_name='cs3.gatewayv0alpha.RestoreFileVersionResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.RestoreFileVersionResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.RestoreFileVersionResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3712,
-  serialized_end=3808,
-)
-
-
-_RESTORERECYCLEITEMREQUEST = _descriptor.Descriptor(
-  name='RestoreRecycleItemRequest',
-  full_name='cs3.gatewayv0alpha.RestoreRecycleItemRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.RestoreRecycleItemRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.RestoreRecycleItemRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='key', full_name='cs3.gatewayv0alpha.RestoreRecycleItemRequest.key', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='restore_path', full_name='cs3.gatewayv0alpha.RestoreRecycleItemRequest.restore_path', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3811,
-  serialized_end=3960,
-)
-
-
-_RESTORERECYCLEITEMRESPONSE = _descriptor.Descriptor(
-  name='RestoreRecycleItemResponse',
-  full_name='cs3.gatewayv0alpha.RestoreRecycleItemResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.RestoreRecycleItemResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.RestoreRecycleItemResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3962,
-  serialized_end=4058,
-)
-
-
-_STATREQUEST = _descriptor.Descriptor(
-  name='StatRequest',
-  full_name='cs3.gatewayv0alpha.StatRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.StatRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.StatRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='arbitrary_metadata_keys', full_name='cs3.gatewayv0alpha.StatRequest.arbitrary_metadata_keys', index=2,
-      number=3, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=4061,
-  serialized_end=4194,
-)
-
-
-_STATRESPONSE = _descriptor.Descriptor(
-  name='StatResponse',
-  full_name='cs3.gatewayv0alpha.StatResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.StatResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.StatResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='info', full_name='cs3.gatewayv0alpha.StatResponse.info', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=4197,
-  serialized_end=4335,
-)
-
-
-_SETARBITRARYMETADATAREQUEST = _descriptor.Descriptor(
-  name='SetArbitraryMetadataRequest',
-  full_name='cs3.gatewayv0alpha.SetArbitraryMetadataRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.SetArbitraryMetadataRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.SetArbitraryMetadataRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='arbitrary_metadata', full_name='cs3.gatewayv0alpha.SetArbitraryMetadataRequest.arbitrary_metadata', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=4338,
-  serialized_end=4529,
-)
-
-
-_SETARBITRARYMETADATARESPONSE = _descriptor.Descriptor(
-  name='SetArbitraryMetadataResponse',
-  full_name='cs3.gatewayv0alpha.SetArbitraryMetadataResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.SetArbitraryMetadataResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.SetArbitraryMetadataResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=4531,
-  serialized_end=4629,
-)
-
-
-_UNSETARBITRARYMETADATAREQUEST = _descriptor.Descriptor(
-  name='UnsetArbitraryMetadataRequest',
-  full_name='cs3.gatewayv0alpha.UnsetArbitraryMetadataRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.UnsetArbitraryMetadataRequest.opaque', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.gatewayv0alpha.UnsetArbitraryMetadataRequest.ref', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='arbitrary_metadata_keys', full_name='cs3.gatewayv0alpha.UnsetArbitraryMetadataRequest.arbitrary_metadata_keys', index=2,
-      number=3, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=4632,
-  serialized_end=4783,
-)
-
-
-_UNSETARBITRARYMETADATARESPONSE = _descriptor.Descriptor(
-  name='UnsetArbitraryMetadataResponse',
-  full_name='cs3.gatewayv0alpha.UnsetArbitraryMetadataResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.gatewayv0alpha.UnsetArbitraryMetadataResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.gatewayv0alpha.UnsetArbitraryMetadataResponse.opaque', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=4785,
-  serialized_end=4885,
-)
-
-_CREATECONTAINERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_CREATECONTAINERREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_CREATECONTAINERRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_CREATECONTAINERRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_DELETEREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_DELETEREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_DELETERESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_DELETERESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_GETPATHREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_GETPATHREQUEST.fields_by_name['resource_id'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._RESOURCEID
-_GETPATHRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_GETPATHRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
 _GETQUOTAREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
 _GETQUOTAREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_GETQUOTARESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_GETQUOTARESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_INITIATEFILEUPLOADREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_INITIATEFILEUPLOADREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_INITIATEFILEUPLOADRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_INITIATEFILEUPLOADRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_INITIATEFILEUPLOADRESPONSE.fields_by_name['available_checksums'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._RESOURCECHECKSUMPRIORITY
-_INITIATEFILEDOWNLOADREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_INITIATEFILEDOWNLOADREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_INITIATEFILEDOWNLOADRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_INITIATEFILEDOWNLOADRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_LISTCONTAINERSTREAMREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_LISTCONTAINERSTREAMREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_LISTCONTAINERSTREAMRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_LISTCONTAINERSTREAMRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_LISTCONTAINERSTREAMRESPONSE.fields_by_name['info'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._RESOURCEINFO
-_LISTCONTAINERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_LISTCONTAINERREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_LISTCONTAINERRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_LISTCONTAINERRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_LISTCONTAINERRESPONSE.fields_by_name['infos'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._RESOURCEINFO
-_LISTFILEVERSIONSREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_LISTFILEVERSIONSREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_LISTFILEVERSIONSRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_LISTFILEVERSIONSRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_LISTFILEVERSIONSRESPONSE.fields_by_name['versions'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._FILEVERSION
 _LISTRECYCLEREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
 _LISTRECYCLEREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
 _LISTRECYCLEREQUEST.fields_by_name['from_ts'].message_type = cs3_dot_types_dot_types__pb2._TIMESTAMP
 _LISTRECYCLEREQUEST.fields_by_name['to_ts'].message_type = cs3_dot_types_dot_types__pb2._TIMESTAMP
-_LISTRECYCLERESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_LISTRECYCLERESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_LISTRECYCLERESPONSE.fields_by_name['recycle_items'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._RECYCLEITEM
 _LISTRECYCLESTREAMREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
 _LISTRECYCLESTREAMREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
 _LISTRECYCLESTREAMREQUEST.fields_by_name['from_ts'].message_type = cs3_dot_types_dot_types__pb2._TIMESTAMP
 _LISTRECYCLESTREAMREQUEST.fields_by_name['to_ts'].message_type = cs3_dot_types_dot_types__pb2._TIMESTAMP
-_LISTRECYCLESTREAMRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_LISTRECYCLESTREAMRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_LISTRECYCLESTREAMRESPONSE.fields_by_name['recycle_item'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._RECYCLEITEM
-_MOVEREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_MOVEREQUEST.fields_by_name['source'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_MOVEREQUEST.fields_by_name['destination'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_MOVERESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_MOVERESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
 _PURGERECYCLEREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
 _PURGERECYCLEREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_PURGERECYCLERESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_PURGERECYCLERESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_RESTOREFILEVERSIONREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_RESTOREFILEVERSIONREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_RESTOREFILEVERSIONRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_RESTOREFILEVERSIONRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_RESTORERECYCLEITEMREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_RESTORERECYCLEITEMREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_RESTORERECYCLEITEMRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_RESTORERECYCLEITEMRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_STATREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_STATREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_STATRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_STATRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_STATRESPONSE.fields_by_name['info'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._RESOURCEINFO
-_SETARBITRARYMETADATAREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_SETARBITRARYMETADATAREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_SETARBITRARYMETADATAREQUEST.fields_by_name['arbitrary_metadata'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._ARBITRARYMETADATA
-_SETARBITRARYMETADATARESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_SETARBITRARYMETADATARESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_UNSETARBITRARYMETADATAREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_UNSETARBITRARYMETADATAREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
-_UNSETARBITRARYMETADATARESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
-_UNSETARBITRARYMETADATARESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-DESCRIPTOR.message_types_by_name['CreateContainerRequest'] = _CREATECONTAINERREQUEST
-DESCRIPTOR.message_types_by_name['CreateContainerResponse'] = _CREATECONTAINERRESPONSE
-DESCRIPTOR.message_types_by_name['DeleteRequest'] = _DELETEREQUEST
-DESCRIPTOR.message_types_by_name['DeleteResponse'] = _DELETERESPONSE
-DESCRIPTOR.message_types_by_name['GetPathRequest'] = _GETPATHREQUEST
-DESCRIPTOR.message_types_by_name['GetPathResponse'] = _GETPATHRESPONSE
 DESCRIPTOR.message_types_by_name['GetQuotaRequest'] = _GETQUOTAREQUEST
-DESCRIPTOR.message_types_by_name['GetQuotaResponse'] = _GETQUOTARESPONSE
-DESCRIPTOR.message_types_by_name['InitiateFileUploadRequest'] = _INITIATEFILEUPLOADREQUEST
-DESCRIPTOR.message_types_by_name['InitiateFileUploadResponse'] = _INITIATEFILEUPLOADRESPONSE
-DESCRIPTOR.message_types_by_name['InitiateFileDownloadRequest'] = _INITIATEFILEDOWNLOADREQUEST
-DESCRIPTOR.message_types_by_name['InitiateFileDownloadResponse'] = _INITIATEFILEDOWNLOADRESPONSE
-DESCRIPTOR.message_types_by_name['ListContainerStreamRequest'] = _LISTCONTAINERSTREAMREQUEST
-DESCRIPTOR.message_types_by_name['ListContainerStreamResponse'] = _LISTCONTAINERSTREAMRESPONSE
-DESCRIPTOR.message_types_by_name['ListContainerRequest'] = _LISTCONTAINERREQUEST
-DESCRIPTOR.message_types_by_name['ListContainerResponse'] = _LISTCONTAINERRESPONSE
-DESCRIPTOR.message_types_by_name['ListFileVersionsRequest'] = _LISTFILEVERSIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListFileVersionsResponse'] = _LISTFILEVERSIONSRESPONSE
 DESCRIPTOR.message_types_by_name['ListRecycleRequest'] = _LISTRECYCLEREQUEST
-DESCRIPTOR.message_types_by_name['ListRecycleResponse'] = _LISTRECYCLERESPONSE
 DESCRIPTOR.message_types_by_name['ListRecycleStreamRequest'] = _LISTRECYCLESTREAMREQUEST
-DESCRIPTOR.message_types_by_name['ListRecycleStreamResponse'] = _LISTRECYCLESTREAMRESPONSE
-DESCRIPTOR.message_types_by_name['MoveRequest'] = _MOVEREQUEST
-DESCRIPTOR.message_types_by_name['MoveResponse'] = _MOVERESPONSE
 DESCRIPTOR.message_types_by_name['PurgeRecycleRequest'] = _PURGERECYCLEREQUEST
-DESCRIPTOR.message_types_by_name['PurgeRecycleResponse'] = _PURGERECYCLERESPONSE
-DESCRIPTOR.message_types_by_name['RestoreFileVersionRequest'] = _RESTOREFILEVERSIONREQUEST
-DESCRIPTOR.message_types_by_name['RestoreFileVersionResponse'] = _RESTOREFILEVERSIONRESPONSE
-DESCRIPTOR.message_types_by_name['RestoreRecycleItemRequest'] = _RESTORERECYCLEITEMREQUEST
-DESCRIPTOR.message_types_by_name['RestoreRecycleItemResponse'] = _RESTORERECYCLEITEMRESPONSE
-DESCRIPTOR.message_types_by_name['StatRequest'] = _STATREQUEST
-DESCRIPTOR.message_types_by_name['StatResponse'] = _STATRESPONSE
-DESCRIPTOR.message_types_by_name['SetArbitraryMetadataRequest'] = _SETARBITRARYMETADATAREQUEST
-DESCRIPTOR.message_types_by_name['SetArbitraryMetadataResponse'] = _SETARBITRARYMETADATARESPONSE
-DESCRIPTOR.message_types_by_name['UnsetArbitraryMetadataRequest'] = _UNSETARBITRARYMETADATAREQUEST
-DESCRIPTOR.message_types_by_name['UnsetArbitraryMetadataResponse'] = _UNSETARBITRARYMETADATARESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-CreateContainerRequest = _reflection.GeneratedProtocolMessageType('CreateContainerRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATECONTAINERREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.CreateContainerRequest)
-  })
-_sym_db.RegisterMessage(CreateContainerRequest)
-
-CreateContainerResponse = _reflection.GeneratedProtocolMessageType('CreateContainerResponse', (_message.Message,), {
-  'DESCRIPTOR' : _CREATECONTAINERRESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.CreateContainerResponse)
-  })
-_sym_db.RegisterMessage(CreateContainerResponse)
-
-DeleteRequest = _reflection.GeneratedProtocolMessageType('DeleteRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.DeleteRequest)
-  })
-_sym_db.RegisterMessage(DeleteRequest)
-
-DeleteResponse = _reflection.GeneratedProtocolMessageType('DeleteResponse', (_message.Message,), {
-  'DESCRIPTOR' : _DELETERESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.DeleteResponse)
-  })
-_sym_db.RegisterMessage(DeleteResponse)
-
-GetPathRequest = _reflection.GeneratedProtocolMessageType('GetPathRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETPATHREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.GetPathRequest)
-  })
-_sym_db.RegisterMessage(GetPathRequest)
-
-GetPathResponse = _reflection.GeneratedProtocolMessageType('GetPathResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETPATHRESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.GetPathResponse)
-  })
-_sym_db.RegisterMessage(GetPathResponse)
 
 GetQuotaRequest = _reflection.GeneratedProtocolMessageType('GetQuotaRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETQUOTAREQUEST,
@@ -1744,96 +236,12 @@ GetQuotaRequest = _reflection.GeneratedProtocolMessageType('GetQuotaRequest', (_
   })
 _sym_db.RegisterMessage(GetQuotaRequest)
 
-GetQuotaResponse = _reflection.GeneratedProtocolMessageType('GetQuotaResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETQUOTARESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.GetQuotaResponse)
-  })
-_sym_db.RegisterMessage(GetQuotaResponse)
-
-InitiateFileUploadRequest = _reflection.GeneratedProtocolMessageType('InitiateFileUploadRequest', (_message.Message,), {
-  'DESCRIPTOR' : _INITIATEFILEUPLOADREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.InitiateFileUploadRequest)
-  })
-_sym_db.RegisterMessage(InitiateFileUploadRequest)
-
-InitiateFileUploadResponse = _reflection.GeneratedProtocolMessageType('InitiateFileUploadResponse', (_message.Message,), {
-  'DESCRIPTOR' : _INITIATEFILEUPLOADRESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.InitiateFileUploadResponse)
-  })
-_sym_db.RegisterMessage(InitiateFileUploadResponse)
-
-InitiateFileDownloadRequest = _reflection.GeneratedProtocolMessageType('InitiateFileDownloadRequest', (_message.Message,), {
-  'DESCRIPTOR' : _INITIATEFILEDOWNLOADREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.InitiateFileDownloadRequest)
-  })
-_sym_db.RegisterMessage(InitiateFileDownloadRequest)
-
-InitiateFileDownloadResponse = _reflection.GeneratedProtocolMessageType('InitiateFileDownloadResponse', (_message.Message,), {
-  'DESCRIPTOR' : _INITIATEFILEDOWNLOADRESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.InitiateFileDownloadResponse)
-  })
-_sym_db.RegisterMessage(InitiateFileDownloadResponse)
-
-ListContainerStreamRequest = _reflection.GeneratedProtocolMessageType('ListContainerStreamRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTCONTAINERSTREAMREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.ListContainerStreamRequest)
-  })
-_sym_db.RegisterMessage(ListContainerStreamRequest)
-
-ListContainerStreamResponse = _reflection.GeneratedProtocolMessageType('ListContainerStreamResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTCONTAINERSTREAMRESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.ListContainerStreamResponse)
-  })
-_sym_db.RegisterMessage(ListContainerStreamResponse)
-
-ListContainerRequest = _reflection.GeneratedProtocolMessageType('ListContainerRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTCONTAINERREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.ListContainerRequest)
-  })
-_sym_db.RegisterMessage(ListContainerRequest)
-
-ListContainerResponse = _reflection.GeneratedProtocolMessageType('ListContainerResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTCONTAINERRESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.ListContainerResponse)
-  })
-_sym_db.RegisterMessage(ListContainerResponse)
-
-ListFileVersionsRequest = _reflection.GeneratedProtocolMessageType('ListFileVersionsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTFILEVERSIONSREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.ListFileVersionsRequest)
-  })
-_sym_db.RegisterMessage(ListFileVersionsRequest)
-
-ListFileVersionsResponse = _reflection.GeneratedProtocolMessageType('ListFileVersionsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTFILEVERSIONSRESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.ListFileVersionsResponse)
-  })
-_sym_db.RegisterMessage(ListFileVersionsResponse)
-
 ListRecycleRequest = _reflection.GeneratedProtocolMessageType('ListRecycleRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTRECYCLEREQUEST,
   '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
   # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.ListRecycleRequest)
   })
 _sym_db.RegisterMessage(ListRecycleRequest)
-
-ListRecycleResponse = _reflection.GeneratedProtocolMessageType('ListRecycleResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTRECYCLERESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.ListRecycleResponse)
-  })
-_sym_db.RegisterMessage(ListRecycleResponse)
 
 ListRecycleStreamRequest = _reflection.GeneratedProtocolMessageType('ListRecycleStreamRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTRECYCLESTREAMREQUEST,
@@ -1842,110 +250,12 @@ ListRecycleStreamRequest = _reflection.GeneratedProtocolMessageType('ListRecycle
   })
 _sym_db.RegisterMessage(ListRecycleStreamRequest)
 
-ListRecycleStreamResponse = _reflection.GeneratedProtocolMessageType('ListRecycleStreamResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTRECYCLESTREAMRESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.ListRecycleStreamResponse)
-  })
-_sym_db.RegisterMessage(ListRecycleStreamResponse)
-
-MoveRequest = _reflection.GeneratedProtocolMessageType('MoveRequest', (_message.Message,), {
-  'DESCRIPTOR' : _MOVEREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.MoveRequest)
-  })
-_sym_db.RegisterMessage(MoveRequest)
-
-MoveResponse = _reflection.GeneratedProtocolMessageType('MoveResponse', (_message.Message,), {
-  'DESCRIPTOR' : _MOVERESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.MoveResponse)
-  })
-_sym_db.RegisterMessage(MoveResponse)
-
 PurgeRecycleRequest = _reflection.GeneratedProtocolMessageType('PurgeRecycleRequest', (_message.Message,), {
   'DESCRIPTOR' : _PURGERECYCLEREQUEST,
   '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
   # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.PurgeRecycleRequest)
   })
 _sym_db.RegisterMessage(PurgeRecycleRequest)
-
-PurgeRecycleResponse = _reflection.GeneratedProtocolMessageType('PurgeRecycleResponse', (_message.Message,), {
-  'DESCRIPTOR' : _PURGERECYCLERESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.PurgeRecycleResponse)
-  })
-_sym_db.RegisterMessage(PurgeRecycleResponse)
-
-RestoreFileVersionRequest = _reflection.GeneratedProtocolMessageType('RestoreFileVersionRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RESTOREFILEVERSIONREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.RestoreFileVersionRequest)
-  })
-_sym_db.RegisterMessage(RestoreFileVersionRequest)
-
-RestoreFileVersionResponse = _reflection.GeneratedProtocolMessageType('RestoreFileVersionResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RESTOREFILEVERSIONRESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.RestoreFileVersionResponse)
-  })
-_sym_db.RegisterMessage(RestoreFileVersionResponse)
-
-RestoreRecycleItemRequest = _reflection.GeneratedProtocolMessageType('RestoreRecycleItemRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RESTORERECYCLEITEMREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.RestoreRecycleItemRequest)
-  })
-_sym_db.RegisterMessage(RestoreRecycleItemRequest)
-
-RestoreRecycleItemResponse = _reflection.GeneratedProtocolMessageType('RestoreRecycleItemResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RESTORERECYCLEITEMRESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.RestoreRecycleItemResponse)
-  })
-_sym_db.RegisterMessage(RestoreRecycleItemResponse)
-
-StatRequest = _reflection.GeneratedProtocolMessageType('StatRequest', (_message.Message,), {
-  'DESCRIPTOR' : _STATREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.StatRequest)
-  })
-_sym_db.RegisterMessage(StatRequest)
-
-StatResponse = _reflection.GeneratedProtocolMessageType('StatResponse', (_message.Message,), {
-  'DESCRIPTOR' : _STATRESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.StatResponse)
-  })
-_sym_db.RegisterMessage(StatResponse)
-
-SetArbitraryMetadataRequest = _reflection.GeneratedProtocolMessageType('SetArbitraryMetadataRequest', (_message.Message,), {
-  'DESCRIPTOR' : _SETARBITRARYMETADATAREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.SetArbitraryMetadataRequest)
-  })
-_sym_db.RegisterMessage(SetArbitraryMetadataRequest)
-
-SetArbitraryMetadataResponse = _reflection.GeneratedProtocolMessageType('SetArbitraryMetadataResponse', (_message.Message,), {
-  'DESCRIPTOR' : _SETARBITRARYMETADATARESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.SetArbitraryMetadataResponse)
-  })
-_sym_db.RegisterMessage(SetArbitraryMetadataResponse)
-
-UnsetArbitraryMetadataRequest = _reflection.GeneratedProtocolMessageType('UnsetArbitraryMetadataRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UNSETARBITRARYMETADATAREQUEST,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.UnsetArbitraryMetadataRequest)
-  })
-_sym_db.RegisterMessage(UnsetArbitraryMetadataRequest)
-
-UnsetArbitraryMetadataResponse = _reflection.GeneratedProtocolMessageType('UnsetArbitraryMetadataResponse', (_message.Message,), {
-  'DESCRIPTOR' : _UNSETARBITRARYMETADATARESPONSE,
-  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.UnsetArbitraryMetadataResponse)
-  })
-_sym_db.RegisterMessage(UnsetArbitraryMetadataResponse)
 
 
 DESCRIPTOR._options = None
@@ -1956,151 +266,241 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=4888,
-  serialized_end=6534,
+  serialized_start=855,
+  serialized_end=3906,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='GenerateAccessToken',
+    full_name='cs3.gatewayv0alpha.GatewayService.GenerateAccessToken',
+    index=0,
+    containing_service=None,
+    input_type=cs3_dot_auth_dot_v0alpha_dot_auth__pb2._GENERATEACCESSTOKENREQUEST,
+    output_type=cs3_dot_auth_dot_v0alpha_dot_auth__pb2._GENERATEACCESSTOKENRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='WhoAmI',
+    full_name='cs3.gatewayv0alpha.GatewayService.WhoAmI',
+    index=1,
+    containing_service=None,
+    input_type=cs3_dot_auth_dot_v0alpha_dot_auth__pb2._WHOAMIREQUEST,
+    output_type=cs3_dot_auth_dot_v0alpha_dot_auth__pb2._WHOAMIRESPONSE,
+    serialized_options=None,
+  ),
   _descriptor.MethodDescriptor(
     name='CreateContainer',
     full_name='cs3.gatewayv0alpha.GatewayService.CreateContainer',
-    index=0,
+    index=2,
     containing_service=None,
-    input_type=_CREATECONTAINERREQUEST,
-    output_type=_CREATECONTAINERRESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._CREATECONTAINERREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._CREATECONTAINERRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
     full_name='cs3.gatewayv0alpha.GatewayService.Delete',
-    index=1,
+    index=3,
     containing_service=None,
-    input_type=_DELETEREQUEST,
-    output_type=_DELETERESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._DELETEREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._DELETERESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='GetPath',
     full_name='cs3.gatewayv0alpha.GatewayService.GetPath',
-    index=2,
+    index=4,
     containing_service=None,
-    input_type=_GETPATHREQUEST,
-    output_type=_GETPATHRESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._GETPATHREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._GETPATHRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='GetQuota',
     full_name='cs3.gatewayv0alpha.GatewayService.GetQuota',
-    index=3,
+    index=5,
     containing_service=None,
-    input_type=_GETQUOTAREQUEST,
-    output_type=_GETQUOTARESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._GETQUOTAREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._GETQUOTARESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='InitiateFileDownload',
     full_name='cs3.gatewayv0alpha.GatewayService.InitiateFileDownload',
-    index=4,
+    index=6,
     containing_service=None,
-    input_type=_INITIATEFILEDOWNLOADREQUEST,
-    output_type=_INITIATEFILEDOWNLOADRESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._INITIATEFILEDOWNLOADREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._INITIATEFILEDOWNLOADRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='InitiateFileUpload',
     full_name='cs3.gatewayv0alpha.GatewayService.InitiateFileUpload',
-    index=5,
+    index=7,
     containing_service=None,
-    input_type=_INITIATEFILEUPLOADREQUEST,
-    output_type=_INITIATEFILEUPLOADRESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._INITIATEFILEUPLOADREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._INITIATEFILEUPLOADRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='ListContainerStream',
     full_name='cs3.gatewayv0alpha.GatewayService.ListContainerStream',
-    index=6,
+    index=8,
     containing_service=None,
-    input_type=_LISTCONTAINERSTREAMREQUEST,
-    output_type=_LISTCONTAINERSTREAMRESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._LISTCONTAINERSTREAMREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._LISTCONTAINERSTREAMRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='ListContainer',
     full_name='cs3.gatewayv0alpha.GatewayService.ListContainer',
-    index=7,
+    index=9,
     containing_service=None,
-    input_type=_LISTCONTAINERREQUEST,
-    output_type=_LISTCONTAINERRESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._LISTCONTAINERREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._LISTCONTAINERRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='ListFileVersions',
     full_name='cs3.gatewayv0alpha.GatewayService.ListFileVersions',
-    index=8,
+    index=10,
     containing_service=None,
-    input_type=_LISTFILEVERSIONSREQUEST,
-    output_type=_LISTFILEVERSIONSRESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._LISTFILEVERSIONSREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._LISTFILEVERSIONSRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='ListRecycleStream',
     full_name='cs3.gatewayv0alpha.GatewayService.ListRecycleStream',
-    index=9,
+    index=11,
     containing_service=None,
     input_type=_LISTRECYCLESTREAMREQUEST,
-    output_type=_LISTRECYCLESTREAMRESPONSE,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._LISTRECYCLESTREAMRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='ListRecycle',
     full_name='cs3.gatewayv0alpha.GatewayService.ListRecycle',
-    index=10,
+    index=12,
     containing_service=None,
     input_type=_LISTRECYCLEREQUEST,
-    output_type=_LISTRECYCLERESPONSE,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._LISTRECYCLERESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='Move',
     full_name='cs3.gatewayv0alpha.GatewayService.Move',
-    index=11,
+    index=13,
     containing_service=None,
-    input_type=_MOVEREQUEST,
-    output_type=_MOVERESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._MOVEREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._MOVERESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='PurgeRecycle',
     full_name='cs3.gatewayv0alpha.GatewayService.PurgeRecycle',
-    index=12,
+    index=14,
     containing_service=None,
     input_type=_PURGERECYCLEREQUEST,
-    output_type=_PURGERECYCLERESPONSE,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._PURGERECYCLERESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='RestoreFileVersion',
     full_name='cs3.gatewayv0alpha.GatewayService.RestoreFileVersion',
-    index=13,
+    index=15,
     containing_service=None,
-    input_type=_RESTOREFILEVERSIONREQUEST,
-    output_type=_RESTOREFILEVERSIONRESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._RESTOREFILEVERSIONREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._RESTOREFILEVERSIONRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='RestoreRecycleItem',
     full_name='cs3.gatewayv0alpha.GatewayService.RestoreRecycleItem',
-    index=14,
+    index=16,
     containing_service=None,
-    input_type=_RESTORERECYCLEITEMREQUEST,
-    output_type=_RESTORERECYCLEITEMRESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._RESTORERECYCLEITEMREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._RESTORERECYCLEITEMRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
     name='Stat',
     full_name='cs3.gatewayv0alpha.GatewayService.Stat',
-    index=15,
+    index=17,
     containing_service=None,
-    input_type=_STATREQUEST,
-    output_type=_STATRESPONSE,
+    input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._STATREQUEST,
+    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._STATRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateShare',
+    full_name='cs3.gatewayv0alpha.GatewayService.CreateShare',
+    index=18,
+    containing_service=None,
+    input_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._CREATESHAREREQUEST,
+    output_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._CREATESHARERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RemoveShare',
+    full_name='cs3.gatewayv0alpha.GatewayService.RemoveShare',
+    index=19,
+    containing_service=None,
+    input_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._REMOVESHAREREQUEST,
+    output_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._REMOVESHARERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetShare',
+    full_name='cs3.gatewayv0alpha.GatewayService.GetShare',
+    index=20,
+    containing_service=None,
+    input_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._GETSHAREREQUEST,
+    output_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._GETSHARERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListShares',
+    full_name='cs3.gatewayv0alpha.GatewayService.ListShares',
+    index=21,
+    containing_service=None,
+    input_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._LISTSHARESREQUEST,
+    output_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._LISTSHARESRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateShare',
+    full_name='cs3.gatewayv0alpha.GatewayService.UpdateShare',
+    index=22,
+    containing_service=None,
+    input_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._UPDATESHAREREQUEST,
+    output_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._UPDATESHARERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListReceivedShares',
+    full_name='cs3.gatewayv0alpha.GatewayService.ListReceivedShares',
+    index=23,
+    containing_service=None,
+    input_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._LISTRECEIVEDSHARESREQUEST,
+    output_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._LISTRECEIVEDSHARESRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateReceivedShare',
+    full_name='cs3.gatewayv0alpha.GatewayService.UpdateReceivedShare',
+    index=24,
+    containing_service=None,
+    input_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._UPDATERECEIVEDSHAREREQUEST,
+    output_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._UPDATERECEIVEDSHARERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetReceivedShare',
+    full_name='cs3.gatewayv0alpha.GatewayService.GetReceivedShare',
+    index=25,
+    containing_service=None,
+    input_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._GETRECEIVEDSHAREREQUEST,
+    output_type=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2._GETRECEIVEDSHARERESPONSE,
     serialized_options=None,
   ),
 ])
