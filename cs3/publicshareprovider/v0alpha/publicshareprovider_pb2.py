@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.publicshareproviderv0alpha',
   syntax='proto3',
   serialized_options=_b('\n\"com.cs3.publicshareproviderv0alphaB\030PublicshareproviderProtoP\001Z\034publicshareproviderv0alphapb\242\002\007CBOXPSP\252\002\036CS3.PublicShareProviderV0Alpha\312\002\036CS3\\PublicShareProviderV0Alpha'),
-  serialized_pb=_b('\n9cs3/publicshareprovider/v0alpha/publicshareprovider.proto\x12\x1e\x63s3.publicshareproviderv0alpha\x1a/cs3/publicshareprovider/v0alpha/resources.proto\x1a\x14\x63s3/rpc/status.proto\x1a+cs3/storageprovider/v0alpha/resources.proto\x1a\x15\x63s3/types/types.proto\"\xb0\x01\n\x18\x43reatePublicShareRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12;\n\x0bresource_id\x18\x02 \x01(\x0b\x32&.cs3.storageproviderv0alpha.ResourceId\x12\x34\n\x05grant\x18\x03 \x01(\x0b\x32%.cs3.publicshareproviderv0alpha.Grant\"\x90\x01\n\x05Grant\x12K\n\x0bpermissions\x18\x01 \x01(\x0b\x32\x36.cs3.publicshareproviderv0alpha.PublicSharePermissions\x12\x10\n\x08password\x18\x02 \x01(\t\x12(\n\nexpiration\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\"\x9b\x01\n\x19\x43reatePublicShareResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12:\n\x05share\x18\x03 \x01(\x0b\x32+.cs3.publicshareproviderv0alpha.PublicShare\"\xfa\x03\n\x18UpdatePublicShareRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x41\n\x03ref\x18\x02 \x01(\x0b\x32\x34.cs3.publicshareproviderv0alpha.PublicShareReference\x1a\xf7\x02\n\x06Update\x12R\n\x04type\x18\x03 \x01(\x0e\x32\x44.cs3.publicshareproviderv0alpha.UpdatePublicShareRequest.Update.Type\x12\x34\n\x05grant\x18\x04 \x01(\x0b\x32%.cs3.publicshareproviderv0alpha.Grant\"\xe2\x01\n\x04Type\x12\x33\n/UPDATE_PUBLIC_SHARE_REQUEST_UPDATE_TYPE_INVALID\x10\x00\x12\x37\n3UPDATE_PUBLIC_SHARE_REQUEST_UPDATE_TYPE_PERMISSIONS\x10\x01\x12\x34\n0UPDATE_PUBLIC_SHARE_REQUEST_UPDATE_TYPE_PASSWORD\x10\x02\x12\x36\n2UPDATE_PUBLIC_SHARE_REQUEST_UPDATE_TYPE_EXPIRATION\x10\x03\"\x9b\x01\n\x19UpdatePublicShareResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12:\n\x05share\x18\x03 \x01(\x0b\x32+.cs3.publicshareproviderv0alpha.PublicShare\"\xd7\x04\n\x17ListPublicSharesRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12O\n\x07\x66ilters\x18\x02 \x03(\x0b\x32>.cs3.publicshareproviderv0alpha.ListPublicSharesRequest.Filter\x1a\xc7\x03\n\x06\x46ilter\x12Q\n\x04type\x18\x02 \x01(\x0e\x32\x43.cs3.publicshareproviderv0alpha.ListPublicSharesRequest.Filter.Type\x12=\n\x0bresource_id\x18\x03 \x01(\x0b\x32&.cs3.storageproviderv0alpha.ResourceIdH\x00\x12\"\n\x05owner\x18\x04 \x01(\x0b\x32\x11.cs3.types.UserIdH\x00\x12$\n\x07\x63reator\x18\x05 \x01(\x0b\x32\x11.cs3.types.UserIdH\x00\"\xd8\x01\n\x04Type\x12\x32\n.LIST_PUBLIC_SHARES_REQUEST_FILTER_TYPE_INVALID\x10\x00\x12\x36\n2LIST_PUBLIC_SHARES_REQUEST_FILTER_TYPE_RESOURCE_ID\x10\x01\x12\x30\n,LIST_PUBLIC_SHARES_REQUEST_FILTER_TYPE_OWNER\x10\x02\x12\x32\n.LIST_PUBLIC_SHARES_REQUEST_FILTER_TYPE_CREATOR\x10\x03\x42\x06\n\x04term\"\x9a\x01\n\x18ListPublicSharesResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12:\n\x05share\x18\x03 \x03(\x0b\x32+.cs3.publicshareproviderv0alpha.PublicShare\"\x80\x01\n\x18RemovePublicShareRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x41\n\x03ref\x18\x02 \x01(\x0b\x32\x34.cs3.publicshareproviderv0alpha.PublicShareReference\"_\n\x19RemovePublicShareResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"}\n\x15GetPublicShareRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x41\n\x03ref\x18\x02 \x01(\x0b\x32\x34.cs3.publicshareproviderv0alpha.PublicShareReference\"\x98\x01\n\x16GetPublicShareResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12:\n\x05share\x18\x03 \x01(\x0b\x32+.cs3.publicshareproviderv0alpha.PublicShare\"P\n\x1cGetPublicShareByTokenRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\r\n\x05token\x18\x02 \x01(\t\"\x9f\x01\n\x1dGetPublicShareByTokenResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12:\n\x05share\x18\x03 \x01(\x0b\x32+.cs3.publicshareproviderv0alpha.PublicShare2\xdd\x06\n\x1aPublicShareProviderService\x12\x88\x01\n\x11\x43reatePublicShare\x12\x38.cs3.publicshareproviderv0alpha.CreatePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.CreatePublicShareResponse\x12\x88\x01\n\x11RemovePublicShare\x12\x38.cs3.publicshareproviderv0alpha.RemovePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.RemovePublicShareResponse\x12\x7f\n\x0eGetPublicShare\x12\x35.cs3.publicshareproviderv0alpha.GetPublicShareRequest\x1a\x36.cs3.publicshareproviderv0alpha.GetPublicShareResponse\x12\x94\x01\n\x15GetPublicShareByToken\x12<.cs3.publicshareproviderv0alpha.GetPublicShareByTokenRequest\x1a=.cs3.publicshareproviderv0alpha.GetPublicShareByTokenResponse\x12\x85\x01\n\x10ListPublicShares\x12\x37.cs3.publicshareproviderv0alpha.ListPublicSharesRequest\x1a\x38.cs3.publicshareproviderv0alpha.ListPublicSharesResponse\x12\x88\x01\n\x11UpdatePublicShare\x12\x38.cs3.publicshareproviderv0alpha.UpdatePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.UpdatePublicShareResponseB\xaa\x01\n\"com.cs3.publicshareproviderv0alphaB\x18PublicshareproviderProtoP\x01Z\x1cpublicshareproviderv0alphapb\xa2\x02\x07\x43\x42OXPSP\xaa\x02\x1e\x43S3.PublicShareProviderV0Alpha\xca\x02\x1e\x43S3\\PublicShareProviderV0Alphab\x06proto3')
+  serialized_pb=_b('\n9cs3/publicshareprovider/v0alpha/publicshareprovider.proto\x12\x1e\x63s3.publicshareproviderv0alpha\x1a/cs3/publicshareprovider/v0alpha/resources.proto\x1a\x14\x63s3/rpc/status.proto\x1a+cs3/storageprovider/v0alpha/resources.proto\x1a\x15\x63s3/types/types.proto\"\xb4\x01\n\x18\x43reatePublicShareRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12?\n\rresource_info\x18\x02 \x01(\x0b\x32(.cs3.storageproviderv0alpha.ResourceInfo\x12\x34\n\x05grant\x18\x03 \x01(\x0b\x32%.cs3.publicshareproviderv0alpha.Grant\"\x90\x01\n\x05Grant\x12K\n\x0bpermissions\x18\x01 \x01(\x0b\x32\x36.cs3.publicshareproviderv0alpha.PublicSharePermissions\x12\x10\n\x08password\x18\x02 \x01(\t\x12(\n\nexpiration\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\"\x9b\x01\n\x19\x43reatePublicShareResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12:\n\x05share\x18\x03 \x01(\x0b\x32+.cs3.publicshareproviderv0alpha.PublicShare\"\xfa\x03\n\x18UpdatePublicShareRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x41\n\x03ref\x18\x02 \x01(\x0b\x32\x34.cs3.publicshareproviderv0alpha.PublicShareReference\x1a\xf7\x02\n\x06Update\x12R\n\x04type\x18\x03 \x01(\x0e\x32\x44.cs3.publicshareproviderv0alpha.UpdatePublicShareRequest.Update.Type\x12\x34\n\x05grant\x18\x04 \x01(\x0b\x32%.cs3.publicshareproviderv0alpha.Grant\"\xe2\x01\n\x04Type\x12\x33\n/UPDATE_PUBLIC_SHARE_REQUEST_UPDATE_TYPE_INVALID\x10\x00\x12\x37\n3UPDATE_PUBLIC_SHARE_REQUEST_UPDATE_TYPE_PERMISSIONS\x10\x01\x12\x34\n0UPDATE_PUBLIC_SHARE_REQUEST_UPDATE_TYPE_PASSWORD\x10\x02\x12\x36\n2UPDATE_PUBLIC_SHARE_REQUEST_UPDATE_TYPE_EXPIRATION\x10\x03\"\x9b\x01\n\x19UpdatePublicShareResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12:\n\x05share\x18\x03 \x01(\x0b\x32+.cs3.publicshareproviderv0alpha.PublicShare\"\xd7\x04\n\x17ListPublicSharesRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12O\n\x07\x66ilters\x18\x02 \x03(\x0b\x32>.cs3.publicshareproviderv0alpha.ListPublicSharesRequest.Filter\x1a\xc7\x03\n\x06\x46ilter\x12Q\n\x04type\x18\x02 \x01(\x0e\x32\x43.cs3.publicshareproviderv0alpha.ListPublicSharesRequest.Filter.Type\x12=\n\x0bresource_id\x18\x03 \x01(\x0b\x32&.cs3.storageproviderv0alpha.ResourceIdH\x00\x12\"\n\x05owner\x18\x04 \x01(\x0b\x32\x11.cs3.types.UserIdH\x00\x12$\n\x07\x63reator\x18\x05 \x01(\x0b\x32\x11.cs3.types.UserIdH\x00\"\xd8\x01\n\x04Type\x12\x32\n.LIST_PUBLIC_SHARES_REQUEST_FILTER_TYPE_INVALID\x10\x00\x12\x36\n2LIST_PUBLIC_SHARES_REQUEST_FILTER_TYPE_RESOURCE_ID\x10\x01\x12\x30\n,LIST_PUBLIC_SHARES_REQUEST_FILTER_TYPE_OWNER\x10\x02\x12\x32\n.LIST_PUBLIC_SHARES_REQUEST_FILTER_TYPE_CREATOR\x10\x03\x42\x06\n\x04term\"\x9a\x01\n\x18ListPublicSharesResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12:\n\x05share\x18\x03 \x03(\x0b\x32+.cs3.publicshareproviderv0alpha.PublicShare\"\x80\x01\n\x18RemovePublicShareRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x41\n\x03ref\x18\x02 \x01(\x0b\x32\x34.cs3.publicshareproviderv0alpha.PublicShareReference\"_\n\x19RemovePublicShareResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"}\n\x15GetPublicShareRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x41\n\x03ref\x18\x02 \x01(\x0b\x32\x34.cs3.publicshareproviderv0alpha.PublicShareReference\"\x98\x01\n\x16GetPublicShareResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12:\n\x05share\x18\x03 \x01(\x0b\x32+.cs3.publicshareproviderv0alpha.PublicShare\"P\n\x1cGetPublicShareByTokenRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\r\n\x05token\x18\x02 \x01(\t\"\x9f\x01\n\x1dGetPublicShareByTokenResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12:\n\x05share\x18\x03 \x01(\x0b\x32+.cs3.publicshareproviderv0alpha.PublicShare2\xdd\x06\n\x1aPublicShareProviderService\x12\x88\x01\n\x11\x43reatePublicShare\x12\x38.cs3.publicshareproviderv0alpha.CreatePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.CreatePublicShareResponse\x12\x88\x01\n\x11RemovePublicShare\x12\x38.cs3.publicshareproviderv0alpha.RemovePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.RemovePublicShareResponse\x12\x7f\n\x0eGetPublicShare\x12\x35.cs3.publicshareproviderv0alpha.GetPublicShareRequest\x1a\x36.cs3.publicshareproviderv0alpha.GetPublicShareResponse\x12\x94\x01\n\x15GetPublicShareByToken\x12<.cs3.publicshareproviderv0alpha.GetPublicShareByTokenRequest\x1a=.cs3.publicshareproviderv0alpha.GetPublicShareByTokenResponse\x12\x85\x01\n\x10ListPublicShares\x12\x37.cs3.publicshareproviderv0alpha.ListPublicSharesRequest\x1a\x38.cs3.publicshareproviderv0alpha.ListPublicSharesResponse\x12\x88\x01\n\x11UpdatePublicShare\x12\x38.cs3.publicshareproviderv0alpha.UpdatePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.UpdatePublicShareResponseB\xaa\x01\n\"com.cs3.publicshareproviderv0alphaB\x18PublicshareproviderProtoP\x01Z\x1cpublicshareproviderv0alphapb\xa2\x02\x07\x43\x42OXPSP\xaa\x02\x1e\x43S3.PublicShareProviderV0Alpha\xca\x02\x1e\x43S3\\PublicShareProviderV0Alphab\x06proto3')
   ,
   dependencies=[cs3_dot_publicshareprovider_dot_v0alpha_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_status__pb2.DESCRIPTOR,cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_types__pb2.DESCRIPTOR,])
 
@@ -55,8 +55,8 @@ _UPDATEPUBLICSHAREREQUEST_UPDATE_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=997,
-  serialized_end=1223,
+  serialized_start=1001,
+  serialized_end=1227,
 )
 _sym_db.RegisterEnumDescriptor(_UPDATEPUBLICSHAREREQUEST_UPDATE_TYPE)
 
@@ -85,8 +85,8 @@ _LISTPUBLICSHARESREQUEST_FILTER_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1759,
-  serialized_end=1975,
+  serialized_start=1763,
+  serialized_end=1979,
 )
 _sym_db.RegisterEnumDescriptor(_LISTPUBLICSHARESREQUEST_FILTER_TYPE)
 
@@ -106,7 +106,7 @@ _CREATEPUBLICSHAREREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resource_id', full_name='cs3.publicshareproviderv0alpha.CreatePublicShareRequest.resource_id', index=1,
+      name='resource_info', full_name='cs3.publicshareproviderv0alpha.CreatePublicShareRequest.resource_info', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -132,7 +132,7 @@ _CREATEPUBLICSHAREREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=233,
-  serialized_end=409,
+  serialized_end=413,
 )
 
 
@@ -176,8 +176,8 @@ _GRANT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=412,
-  serialized_end=556,
+  serialized_start=416,
+  serialized_end=560,
 )
 
 
@@ -221,8 +221,8 @@ _CREATEPUBLICSHARERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=559,
-  serialized_end=714,
+  serialized_start=563,
+  serialized_end=718,
 )
 
 
@@ -260,8 +260,8 @@ _UPDATEPUBLICSHAREREQUEST_UPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=848,
-  serialized_end=1223,
+  serialized_start=852,
+  serialized_end=1227,
 )
 
 _UPDATEPUBLICSHAREREQUEST = _descriptor.Descriptor(
@@ -297,8 +297,8 @@ _UPDATEPUBLICSHAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=717,
-  serialized_end=1223,
+  serialized_start=721,
+  serialized_end=1227,
 )
 
 
@@ -342,8 +342,8 @@ _UPDATEPUBLICSHARERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1226,
-  serialized_end=1381,
+  serialized_start=1230,
+  serialized_end=1385,
 )
 
 
@@ -398,8 +398,8 @@ _LISTPUBLICSHARESREQUEST_FILTER = _descriptor.Descriptor(
       name='term', full_name='cs3.publicshareproviderv0alpha.ListPublicSharesRequest.Filter.term',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1528,
-  serialized_end=1983,
+  serialized_start=1532,
+  serialized_end=1987,
 )
 
 _LISTPUBLICSHARESREQUEST = _descriptor.Descriptor(
@@ -435,8 +435,8 @@ _LISTPUBLICSHARESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1384,
-  serialized_end=1983,
+  serialized_start=1388,
+  serialized_end=1987,
 )
 
 
@@ -480,8 +480,8 @@ _LISTPUBLICSHARESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1986,
-  serialized_end=2140,
+  serialized_start=1990,
+  serialized_end=2144,
 )
 
 
@@ -518,8 +518,8 @@ _REMOVEPUBLICSHAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2143,
-  serialized_end=2271,
+  serialized_start=2147,
+  serialized_end=2275,
 )
 
 
@@ -556,8 +556,8 @@ _REMOVEPUBLICSHARERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2273,
-  serialized_end=2368,
+  serialized_start=2277,
+  serialized_end=2372,
 )
 
 
@@ -594,8 +594,8 @@ _GETPUBLICSHAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2370,
-  serialized_end=2495,
+  serialized_start=2374,
+  serialized_end=2499,
 )
 
 
@@ -639,8 +639,8 @@ _GETPUBLICSHARERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2498,
-  serialized_end=2650,
+  serialized_start=2502,
+  serialized_end=2654,
 )
 
 
@@ -677,8 +677,8 @@ _GETPUBLICSHAREBYTOKENREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2652,
-  serialized_end=2732,
+  serialized_start=2656,
+  serialized_end=2736,
 )
 
 
@@ -722,12 +722,12 @@ _GETPUBLICSHAREBYTOKENRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2735,
-  serialized_end=2894,
+  serialized_start=2739,
+  serialized_end=2898,
 )
 
 _CREATEPUBLICSHAREREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
-_CREATEPUBLICSHAREREQUEST.fields_by_name['resource_id'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._RESOURCEID
+_CREATEPUBLICSHAREREQUEST.fields_by_name['resource_info'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._RESOURCEINFO
 _CREATEPUBLICSHAREREQUEST.fields_by_name['grant'].message_type = _GRANT
 _GRANT.fields_by_name['permissions'].message_type = cs3_dot_publicshareprovider_dot_v0alpha_dot_resources__pb2._PUBLICSHAREPERMISSIONS
 _GRANT.fields_by_name['expiration'].message_type = cs3_dot_types_dot_types__pb2._TIMESTAMP
@@ -907,8 +907,8 @@ _PUBLICSHAREPROVIDERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2897,
-  serialized_end=3758,
+  serialized_start=2901,
+  serialized_end=3762,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreatePublicShare',
