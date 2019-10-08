@@ -30,40 +30,40 @@ class OCMShareProviderServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.CreateShare = channel.unary_unary(
-        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/CreateShare',
-        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.CreateShareRequest.SerializeToString,
-        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.CreateShareResponse.FromString,
+    self.CreateOCMShare = channel.unary_unary(
+        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/CreateOCMShare',
+        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.CreateOCMShareRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.CreateOCMShareResponse.FromString,
         )
-    self.RemoveShare = channel.unary_unary(
-        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/RemoveShare',
-        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.RemoveShareRequest.SerializeToString,
-        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.RemoveShareResponse.FromString,
+    self.RemoveOCMShare = channel.unary_unary(
+        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/RemoveOCMShare',
+        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.RemoveOCMShareRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.RemoveOCMShareResponse.FromString,
         )
-    self.GetShare = channel.unary_unary(
-        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/GetShare',
-        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.GetShareRequest.SerializeToString,
-        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.GetShareResponse.FromString,
+    self.GetOCMShare = channel.unary_unary(
+        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/GetOCMShare',
+        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.GetOCMShareRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.GetOCMShareResponse.FromString,
         )
-    self.ListShares = channel.unary_unary(
-        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/ListShares',
-        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListSharesRequest.SerializeToString,
-        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListSharesResponse.FromString,
+    self.ListOCMShares = channel.unary_unary(
+        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/ListOCMShares',
+        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListOCMSharesRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListOCMSharesResponse.FromString,
         )
-    self.UpdateShare = channel.unary_unary(
-        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/UpdateShare',
-        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateShareRequest.SerializeToString,
-        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateShareResponse.FromString,
+    self.UpdateOCMShares = channel.unary_unary(
+        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/UpdateOCMShares',
+        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMSharesRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMSharesResponse.FromString,
         )
-    self.ListReceivedShares = channel.unary_unary(
-        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/ListReceivedShares',
-        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListReceivedSharesRequest.SerializeToString,
-        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListReceivedSharesResponse.FromString,
+    self.ListReceivedOCMShares = channel.unary_unary(
+        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/ListReceivedOCMShares',
+        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListReceivedOCMSharesRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListReceivedOCMSharesResponse.FromString,
         )
-    self.UpdateReceivedShare = channel.unary_unary(
-        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/UpdateReceivedShare',
-        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateReceivedShareRequest.SerializeToString,
-        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateReceivedShareResponse.FromString,
+    self.UpdateReceivedOCMShare = channel.unary_unary(
+        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/UpdateReceivedOCMShare',
+        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateReceivedOCMShareRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateReceivedOCMShareResponse.FromString,
         )
 
 
@@ -87,7 +87,7 @@ class OCMShareProviderServiceServicer(object):
   Any method MAY return UNAUTHENTICATED.
   """
 
-  def CreateShare(self, request, context):
+  def CreateOCMShare(self, request, context):
     """Creates a new share.
     MUST return CODE_NOT_FOUND if the resource reference does not exist.
     MUST return CODE_ALREADY_EXISTS if the share already exists for the 4-tuple consisting of
@@ -98,7 +98,7 @@ class OCMShareProviderServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def RemoveShare(self, request, context):
+  def RemoveOCMShare(self, request, context):
     """Removes a share.
     MUST return CODE_NOT_FOUND if the share reference does not exist.
     """
@@ -106,7 +106,7 @@ class OCMShareProviderServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def GetShare(self, request, context):
+  def GetOCMShare(self, request, context):
     """Gets share information for a single share.
     MUST return CODE_NOT_FOUND if the share reference does not exist.
     """
@@ -114,7 +114,7 @@ class OCMShareProviderServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def ListShares(self, request, context):
+  def ListOCMShares(self, request, context):
     """List the shares the authenticated principal has created,
     both as owner and creator. If a filter is specified, only
     shares satisfying the filter MUST be returned.
@@ -123,7 +123,7 @@ class OCMShareProviderServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def UpdateShare(self, request, context):
+  def UpdateOCMShares(self, request, context):
     """Updates a share.
     MUST return CODE_NOT_FOUND if the share reference does not exist.
     """
@@ -131,14 +131,14 @@ class OCMShareProviderServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def ListReceivedShares(self, request, context):
+  def ListReceivedOCMShares(self, request, context):
     """List all shares the authenticated principal has received.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def UpdateReceivedShare(self, request, context):
+  def UpdateReceivedOCMShare(self, request, context):
     """Update the received share to change the share state or the display name.
     MUST return CODE_NOT_FOUND if the share reference does not exist.
     """
@@ -149,40 +149,40 @@ class OCMShareProviderServiceServicer(object):
 
 def add_OCMShareProviderServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'CreateShare': grpc.unary_unary_rpc_method_handler(
-          servicer.CreateShare,
-          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.CreateShareRequest.FromString,
-          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.CreateShareResponse.SerializeToString,
+      'CreateOCMShare': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateOCMShare,
+          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.CreateOCMShareRequest.FromString,
+          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.CreateOCMShareResponse.SerializeToString,
       ),
-      'RemoveShare': grpc.unary_unary_rpc_method_handler(
-          servicer.RemoveShare,
-          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.RemoveShareRequest.FromString,
-          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.RemoveShareResponse.SerializeToString,
+      'RemoveOCMShare': grpc.unary_unary_rpc_method_handler(
+          servicer.RemoveOCMShare,
+          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.RemoveOCMShareRequest.FromString,
+          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.RemoveOCMShareResponse.SerializeToString,
       ),
-      'GetShare': grpc.unary_unary_rpc_method_handler(
-          servicer.GetShare,
-          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.GetShareRequest.FromString,
-          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.GetShareResponse.SerializeToString,
+      'GetOCMShare': grpc.unary_unary_rpc_method_handler(
+          servicer.GetOCMShare,
+          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.GetOCMShareRequest.FromString,
+          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.GetOCMShareResponse.SerializeToString,
       ),
-      'ListShares': grpc.unary_unary_rpc_method_handler(
-          servicer.ListShares,
-          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListSharesRequest.FromString,
-          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListSharesResponse.SerializeToString,
+      'ListOCMShares': grpc.unary_unary_rpc_method_handler(
+          servicer.ListOCMShares,
+          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListOCMSharesRequest.FromString,
+          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListOCMSharesResponse.SerializeToString,
       ),
-      'UpdateShare': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateShare,
-          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateShareRequest.FromString,
-          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateShareResponse.SerializeToString,
+      'UpdateOCMShares': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateOCMShares,
+          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMSharesRequest.FromString,
+          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMSharesResponse.SerializeToString,
       ),
-      'ListReceivedShares': grpc.unary_unary_rpc_method_handler(
-          servicer.ListReceivedShares,
-          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListReceivedSharesRequest.FromString,
-          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListReceivedSharesResponse.SerializeToString,
+      'ListReceivedOCMShares': grpc.unary_unary_rpc_method_handler(
+          servicer.ListReceivedOCMShares,
+          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListReceivedOCMSharesRequest.FromString,
+          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListReceivedOCMSharesResponse.SerializeToString,
       ),
-      'UpdateReceivedShare': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateReceivedShare,
-          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateReceivedShareRequest.FromString,
-          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateReceivedShareResponse.SerializeToString,
+      'UpdateReceivedOCMShare': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateReceivedOCMShare,
+          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateReceivedOCMShareRequest.FromString,
+          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateReceivedOCMShareResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
