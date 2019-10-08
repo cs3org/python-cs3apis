@@ -50,10 +50,10 @@ class OCMShareProviderServiceStub(object):
         request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListOCMSharesRequest.SerializeToString,
         response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListOCMSharesResponse.FromString,
         )
-    self.UpdateOCMShares = channel.unary_unary(
-        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/UpdateOCMShares',
-        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMSharesRequest.SerializeToString,
-        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMSharesResponse.FromString,
+    self.UpdateOCMShare = channel.unary_unary(
+        '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/UpdateOCMShare',
+        request_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMShareRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMShareResponse.FromString,
         )
     self.ListReceivedOCMShares = channel.unary_unary(
         '/cs3.ocmshareproviderv0alpha.OCMShareProviderService/ListReceivedOCMShares',
@@ -88,7 +88,7 @@ class OCMShareProviderServiceServicer(object):
   """
 
   def CreateOCMShare(self, request, context):
-    """Creates a new share.
+    """Creates a new ocm share.
     MUST return CODE_NOT_FOUND if the resource reference does not exist.
     MUST return CODE_ALREADY_EXISTS if the share already exists for the 4-tuple consisting of
     (owner, shared_resource, grantee).
@@ -123,7 +123,7 @@ class OCMShareProviderServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def UpdateOCMShares(self, request, context):
+  def UpdateOCMShare(self, request, context):
     """Updates a share.
     MUST return CODE_NOT_FOUND if the share reference does not exist.
     """
@@ -169,10 +169,10 @@ def add_OCMShareProviderServiceServicer_to_server(servicer, server):
           request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListOCMSharesRequest.FromString,
           response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.ListOCMSharesResponse.SerializeToString,
       ),
-      'UpdateOCMShares': grpc.unary_unary_rpc_method_handler(
-          servicer.UpdateOCMShares,
-          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMSharesRequest.FromString,
-          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMSharesResponse.SerializeToString,
+      'UpdateOCMShare': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateOCMShare,
+          request_deserializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMShareRequest.FromString,
+          response_serializer=cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.UpdateOCMShareResponse.SerializeToString,
       ),
       'ListReceivedOCMShares': grpc.unary_unary_rpc_method_handler(
           servicer.ListReceivedOCMShares,
