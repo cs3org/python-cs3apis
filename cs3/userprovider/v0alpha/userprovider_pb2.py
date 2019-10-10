@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.userproviderv0alpha',
   syntax='proto3',
   serialized_options=_b('\n\033com.cs3.userproviderv0alphaB\021UserproviderProtoP\001Z\025userproviderv0alphapb\242\002\020CBOXUSERPROVIDER\252\002\027CS3.UserProviderV0Alpha\312\002\027CS3\\UserProviderV0Alpha'),
-  serialized_pb=_b('\n+cs3/userprovider/v0alpha/userprovider.proto\x12\x17\x63s3.userproviderv0alpha\x1a cs3/auth/v0alpha/resources.proto\x1a\x14\x63s3/rpc/status.proto\x1a\x15\x63s3/types/types.proto\"W\n\x0eGetUserRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\"\n\x07user_id\x18\x02 \x01(\x0b\x32\x11.cs3.types.UserId\"z\n\x0fGetUserResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12#\n\x04user\x18\x03 \x01(\x0b\x32\x15.cs3.authv0alpha.User\"]\n\x14GetUserGroupsRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\"\n\x07user_id\x18\x02 \x01(\x0b\x32\x11.cs3.types.UserId\"k\n\x15GetUserGroupsResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x0e\n\x06groups\x18\x03 \x03(\t\"h\n\x10IsInGroupRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\"\n\x07user_id\x18\x02 \x01(\x0b\x32\x11.cs3.types.UserId\x12\r\n\x05group\x18\x03 \x01(\t\"g\n\x11IsInGroupResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x0e\n\x06groups\x18\x03 \x03(\t\"E\n\x10\x46indUsersRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\"}\n\x11\x46indUsersResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12$\n\x05users\x18\x03 \x03(\x0b\x32\x15.cs3.authv0alpha.User2\xab\x03\n\x13UserProviderService\x12\\\n\x07GetUser\x12\'.cs3.userproviderv0alpha.GetUserRequest\x1a(.cs3.userproviderv0alpha.GetUserResponse\x12n\n\rGetUserGroups\x12-.cs3.userproviderv0alpha.GetUserGroupsRequest\x1a..cs3.userproviderv0alpha.GetUserGroupsResponse\x12\x62\n\tIsInGroup\x12).cs3.userproviderv0alpha.IsInGroupRequest\x1a*.cs3.userproviderv0alpha.IsInGroupResponse\x12\x62\n\tFindUsers\x12).cs3.userproviderv0alpha.FindUsersRequest\x1a*.cs3.userproviderv0alpha.FindUsersResponseB\x90\x01\n\x1b\x63om.cs3.userproviderv0alphaB\x11UserproviderProtoP\x01Z\x15userproviderv0alphapb\xa2\x02\x10\x43\x42OXUSERPROVIDER\xaa\x02\x17\x43S3.UserProviderV0Alpha\xca\x02\x17\x43S3\\UserProviderV0Alphab\x06proto3')
+  serialized_pb=_b('\n+cs3/userprovider/v0alpha/userprovider.proto\x12\x17\x63s3.userproviderv0alpha\x1a cs3/auth/v0alpha/resources.proto\x1a\x14\x63s3/rpc/status.proto\x1a\x15\x63s3/types/types.proto\"W\n\x0eGetUserRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\"\n\x07user_id\x18\x02 \x01(\x0b\x32\x11.cs3.types.UserId\"z\n\x0fGetUserResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12#\n\x04user\x18\x03 \x01(\x0b\x32\x15.cs3.authv0alpha.User\"]\n\x14GetUserGroupsRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\"\n\x07user_id\x18\x02 \x01(\x0b\x32\x11.cs3.types.UserId\"k\n\x15GetUserGroupsResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x0e\n\x06groups\x18\x03 \x03(\t\"h\n\x10IsInGroupRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\"\n\x07user_id\x18\x02 \x01(\x0b\x32\x11.cs3.types.UserId\x12\r\n\x05group\x18\x03 \x01(\t\"c\n\x11IsInGroupResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\n\n\x02ok\x18\x03 \x01(\x08\"E\n\x10\x46indUsersRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\"}\n\x11\x46indUsersResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12$\n\x05users\x18\x03 \x03(\x0b\x32\x15.cs3.authv0alpha.User2\xab\x03\n\x13UserProviderService\x12\\\n\x07GetUser\x12\'.cs3.userproviderv0alpha.GetUserRequest\x1a(.cs3.userproviderv0alpha.GetUserResponse\x12n\n\rGetUserGroups\x12-.cs3.userproviderv0alpha.GetUserGroupsRequest\x1a..cs3.userproviderv0alpha.GetUserGroupsResponse\x12\x62\n\tIsInGroup\x12).cs3.userproviderv0alpha.IsInGroupRequest\x1a*.cs3.userproviderv0alpha.IsInGroupResponse\x12\x62\n\tFindUsers\x12).cs3.userproviderv0alpha.FindUsersRequest\x1a*.cs3.userproviderv0alpha.FindUsersResponseB\x90\x01\n\x1b\x63om.cs3.userproviderv0alphaB\x11UserproviderProtoP\x01Z\x15userproviderv0alphapb\xa2\x02\x10\x43\x42OXUSERPROVIDER\xaa\x02\x17\x43S3.UserProviderV0Alpha\xca\x02\x17\x43S3\\UserProviderV0Alphab\x06proto3')
   ,
   dependencies=[cs3_dot_auth_dot_v0alpha_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_status__pb2.DESCRIPTOR,cs3_dot_types_dot_types__pb2.DESCRIPTOR,])
 
@@ -263,9 +263,9 @@ _ISINGROUPRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='groups', full_name='cs3.userproviderv0alpha.IsInGroupResponse.groups', index=2,
-      number=3, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      name='ok', full_name='cs3.userproviderv0alpha.IsInGroupResponse.ok', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -282,7 +282,7 @@ _ISINGROUPRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=674,
-  serialized_end=777,
+  serialized_end=773,
 )
 
 
@@ -319,8 +319,8 @@ _FINDUSERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=779,
-  serialized_end=848,
+  serialized_start=775,
+  serialized_end=844,
 )
 
 
@@ -364,8 +364,8 @@ _FINDUSERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=850,
-  serialized_end=975,
+  serialized_start=846,
+  serialized_end=971,
 )
 
 _GETUSERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
@@ -460,8 +460,8 @@ _USERPROVIDERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=978,
-  serialized_end=1405,
+  serialized_start=974,
+  serialized_end=1401,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetUser',
