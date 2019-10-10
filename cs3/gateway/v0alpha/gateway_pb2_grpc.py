@@ -70,12 +70,12 @@ class GatewayServiceStub(object):
     self.InitiateFileDownload = channel.unary_unary(
         '/cs3.gatewayv0alpha.GatewayService/InitiateFileDownload',
         request_serializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.InitiateFileDownloadRequest.SerializeToString,
-        response_deserializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.InitiateFileDownloadResponse.FromString,
+        response_deserializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.InitiateFileDownloadResponse.FromString,
         )
     self.InitiateFileUpload = channel.unary_unary(
         '/cs3.gatewayv0alpha.GatewayService/InitiateFileUpload',
         request_serializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.InitiateFileUploadRequest.SerializeToString,
-        response_deserializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.InitiateFileUploadResponse.FromString,
+        response_deserializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.InitiateFileUploadResponse.FromString,
         )
     self.ListContainerStream = channel.unary_stream(
         '/cs3.gatewayv0alpha.GatewayService/ListContainerStream',
@@ -723,12 +723,12 @@ def add_GatewayServiceServicer_to_server(servicer, server):
       'InitiateFileDownload': grpc.unary_unary_rpc_method_handler(
           servicer.InitiateFileDownload,
           request_deserializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.InitiateFileDownloadRequest.FromString,
-          response_serializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.InitiateFileDownloadResponse.SerializeToString,
+          response_serializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.InitiateFileDownloadResponse.SerializeToString,
       ),
       'InitiateFileUpload': grpc.unary_unary_rpc_method_handler(
           servicer.InitiateFileUpload,
           request_deserializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.InitiateFileUploadRequest.FromString,
-          response_serializer=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.InitiateFileUploadResponse.SerializeToString,
+          response_serializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.InitiateFileUploadResponse.SerializeToString,
       ),
       'ListContainerStream': grpc.unary_stream_rpc_method_handler(
           servicer.ListContainerStream,

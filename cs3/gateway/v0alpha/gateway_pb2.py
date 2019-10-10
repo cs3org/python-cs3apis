@@ -18,6 +18,7 @@ from cs3.auth.v0alpha import auth_pb2 as cs3_dot_auth_dot_v0alpha_dot_auth__pb2
 from cs3.ocmshareprovider.v0alpha import ocmshareprovider_pb2 as cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2
 from cs3.preferences.v0alpha import preferences_pb2 as cs3_dot_preferences_dot_v0alpha_dot_preferences__pb2
 from cs3.publicshareprovider.v0alpha import publicshareprovider_pb2 as cs3_dot_publicshareprovider_dot_v0alpha_dot_publicshareprovider__pb2
+from cs3.rpc import status_pb2 as cs3_dot_rpc_dot_status__pb2
 from cs3.storageprovider.v0alpha import resources_pb2 as cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2
 from cs3.storageprovider.v0alpha import storageprovider_pb2 as cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2
 from cs3.types import types_pb2 as cs3_dot_types_dot_types__pb2
@@ -29,9 +30,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.gatewayv0alpha',
   syntax='proto3',
   serialized_options=_b('\n\026com.cs3.gatewayv0alphaB\014GatewayProtoP\001Z\020gatewayv0alphapb\242\002\006CBOXAB\252\002\022CS3.GatewayV0Alpha\312\002\022CS3\\GatewayV0Alpha'),
-  serialized_pb=_b('\n!cs3/gateway/v0alpha/gateway.proto\x12\x12\x63s3.gatewayv0alpha\x1a)cs3/appregistry/v0alpha/appregistry.proto\x1a\x1b\x63s3/auth/v0alpha/auth.proto\x1a\x33\x63s3/ocmshareprovider/v0alpha/ocmshareprovider.proto\x1a)cs3/preferences/v0alpha/preferences.proto\x1a\x39\x63s3/publicshareprovider/v0alpha/publicshareprovider.proto\x1a+cs3/storageprovider/v0alpha/resources.proto\x1a\x31\x63s3/storageprovider/v0alpha/storageprovider.proto\x1a\x15\x63s3/types/types.proto\x1a\x35\x63s3/usershareprovider/v0alpha/usershareprovider.proto\"h\n\x0fGetQuotaRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\xb7\x01\n\x12ListRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12%\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x04 \x01(\x0b\x32\x14.cs3.types.Timestamp\"\xbd\x01\n\x18ListRecycleStreamRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12%\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x04 \x01(\x0b\x32\x14.cs3.types.Timestamp\"l\n\x13PurgeRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference2\xdf*\n\x0eGatewayService\x12p\n\x13GenerateAccessToken\x12+.cs3.authv0alpha.GenerateAccessTokenRequest\x1a,.cs3.authv0alpha.GenerateAccessTokenResponse\x12I\n\x06WhoAmI\x12\x1e.cs3.authv0alpha.WhoAmIRequest\x1a\x1f.cs3.authv0alpha.WhoAmIResponse\x12z\n\x0f\x43reateContainer\x12\x32.cs3.storageproviderv0alpha.CreateContainerRequest\x1a\x33.cs3.storageproviderv0alpha.CreateContainerResponse\x12_\n\x06\x44\x65lete\x12).cs3.storageproviderv0alpha.DeleteRequest\x1a*.cs3.storageproviderv0alpha.DeleteResponse\x12\x62\n\x07GetPath\x12*.cs3.storageproviderv0alpha.GetPathRequest\x1a+.cs3.storageproviderv0alpha.GetPathResponse\x12]\n\x08GetQuota\x12#.cs3.gatewayv0alpha.GetQuotaRequest\x1a,.cs3.storageproviderv0alpha.GetQuotaResponse\x12\x89\x01\n\x14InitiateFileDownload\x12\x37.cs3.storageproviderv0alpha.InitiateFileDownloadRequest\x1a\x38.cs3.storageproviderv0alpha.InitiateFileDownloadResponse\x12\x83\x01\n\x12InitiateFileUpload\x12\x35.cs3.storageproviderv0alpha.InitiateFileUploadRequest\x1a\x36.cs3.storageproviderv0alpha.InitiateFileUploadResponse\x12\x88\x01\n\x13ListContainerStream\x12\x36.cs3.storageproviderv0alpha.ListContainerStreamRequest\x1a\x37.cs3.storageproviderv0alpha.ListContainerStreamResponse0\x01\x12t\n\rListContainer\x12\x30.cs3.storageproviderv0alpha.ListContainerRequest\x1a\x31.cs3.storageproviderv0alpha.ListContainerResponse\x12}\n\x10ListFileVersions\x12\x33.cs3.storageproviderv0alpha.ListFileVersionsRequest\x1a\x34.cs3.storageproviderv0alpha.ListFileVersionsResponse\x12z\n\x11ListRecycleStream\x12,.cs3.gatewayv0alpha.ListRecycleStreamRequest\x1a\x35.cs3.storageproviderv0alpha.ListRecycleStreamResponse0\x01\x12\x66\n\x0bListRecycle\x12&.cs3.gatewayv0alpha.ListRecycleRequest\x1a/.cs3.storageproviderv0alpha.ListRecycleResponse\x12Y\n\x04Move\x12\'.cs3.storageproviderv0alpha.MoveRequest\x1a(.cs3.storageproviderv0alpha.MoveResponse\x12i\n\x0cPurgeRecycle\x12\'.cs3.gatewayv0alpha.PurgeRecycleRequest\x1a\x30.cs3.storageproviderv0alpha.PurgeRecycleResponse\x12\x83\x01\n\x12RestoreFileVersion\x12\x35.cs3.storageproviderv0alpha.RestoreFileVersionRequest\x1a\x36.cs3.storageproviderv0alpha.RestoreFileVersionResponse\x12\x83\x01\n\x12RestoreRecycleItem\x12\x35.cs3.storageproviderv0alpha.RestoreRecycleItemRequest\x1a\x36.cs3.storageproviderv0alpha.RestoreRecycleItemResponse\x12Y\n\x04Stat\x12\'.cs3.storageproviderv0alpha.StatRequest\x1a(.cs3.storageproviderv0alpha.StatResponse\x12\x89\x01\n\x14SetArbitraryMetadata\x12\x37.cs3.storageproviderv0alpha.SetArbitraryMetadataRequest\x1a\x38.cs3.storageproviderv0alpha.SetArbitraryMetadataResponse\x12\x8f\x01\n\x16UnsetArbitraryMetadata\x12\x39.cs3.storageproviderv0alpha.UnsetArbitraryMetadataRequest\x1a:.cs3.storageproviderv0alpha.UnsetArbitraryMetadataResponse\x12r\n\x0b\x43reateShare\x12\x30.cs3.usershareproviderv0alpha.CreateShareRequest\x1a\x31.cs3.usershareproviderv0alpha.CreateShareResponse\x12r\n\x0bRemoveShare\x12\x30.cs3.usershareproviderv0alpha.RemoveShareRequest\x1a\x31.cs3.usershareproviderv0alpha.RemoveShareResponse\x12i\n\x08GetShare\x12-.cs3.usershareproviderv0alpha.GetShareRequest\x1a..cs3.usershareproviderv0alpha.GetShareResponse\x12o\n\nListShares\x12/.cs3.usershareproviderv0alpha.ListSharesRequest\x1a\x30.cs3.usershareproviderv0alpha.ListSharesResponse\x12r\n\x0bUpdateShare\x12\x30.cs3.usershareproviderv0alpha.UpdateShareRequest\x1a\x31.cs3.usershareproviderv0alpha.UpdateShareResponse\x12\x87\x01\n\x12ListReceivedShares\x12\x37.cs3.usershareproviderv0alpha.ListReceivedSharesRequest\x1a\x38.cs3.usershareproviderv0alpha.ListReceivedSharesResponse\x12\x8a\x01\n\x13UpdateReceivedShare\x12\x38.cs3.usershareproviderv0alpha.UpdateReceivedShareRequest\x1a\x39.cs3.usershareproviderv0alpha.UpdateReceivedShareResponse\x12\x81\x01\n\x10GetReceivedShare\x12\x35.cs3.usershareproviderv0alpha.GetReceivedShareRequest\x1a\x36.cs3.usershareproviderv0alpha.GetReceivedShareResponse\x12W\n\x06SetKey\x12%.cs3.preferencesv0alpha.SetKeyRequest\x1a&.cs3.preferencesv0alpha.SetKeyResponse\x12W\n\x06GetKey\x12%.cs3.preferencesv0alpha.GetKeyRequest\x1a&.cs3.preferencesv0alpha.GetKeyResponse\x12\x88\x01\n\x11\x43reatePublicShare\x12\x38.cs3.publicshareproviderv0alpha.CreatePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.CreatePublicShareResponse\x12\x88\x01\n\x11RemovePublicShare\x12\x38.cs3.publicshareproviderv0alpha.RemovePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.RemovePublicShareResponse\x12\x7f\n\x0eGetPublicShare\x12\x35.cs3.publicshareproviderv0alpha.GetPublicShareRequest\x1a\x36.cs3.publicshareproviderv0alpha.GetPublicShareResponse\x12\x94\x01\n\x15GetPublicShareByToken\x12<.cs3.publicshareproviderv0alpha.GetPublicShareByTokenRequest\x1a=.cs3.publicshareproviderv0alpha.GetPublicShareByTokenResponse\x12\x85\x01\n\x10ListPublicShares\x12\x37.cs3.publicshareproviderv0alpha.ListPublicSharesRequest\x1a\x38.cs3.publicshareproviderv0alpha.ListPublicSharesResponse\x12\x88\x01\n\x11UpdatePublicShare\x12\x38.cs3.publicshareproviderv0alpha.UpdatePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.UpdatePublicShareResponse\x12y\n\x0e\x43reateOCMShare\x12\x32.cs3.ocmshareproviderv0alpha.CreateOCMShareRequest\x1a\x33.cs3.ocmshareproviderv0alpha.CreateOCMShareResponse\x12y\n\x0eRemoveOCMShare\x12\x32.cs3.ocmshareproviderv0alpha.RemoveOCMShareRequest\x1a\x33.cs3.ocmshareproviderv0alpha.RemoveOCMShareResponse\x12p\n\x0bGetOCMShare\x12/.cs3.ocmshareproviderv0alpha.GetOCMShareRequest\x1a\x30.cs3.ocmshareproviderv0alpha.GetOCMShareResponse\x12v\n\rListOCMShares\x12\x31.cs3.ocmshareproviderv0alpha.ListOCMSharesRequest\x1a\x32.cs3.ocmshareproviderv0alpha.ListOCMSharesResponse\x12y\n\x0eUpdateOCMShare\x12\x32.cs3.ocmshareproviderv0alpha.UpdateOCMShareRequest\x1a\x33.cs3.ocmshareproviderv0alpha.UpdateOCMShareResponse\x12\x8e\x01\n\x15ListReceivedOCMShares\x12\x39.cs3.ocmshareproviderv0alpha.ListReceivedOCMSharesRequest\x1a:.cs3.ocmshareproviderv0alpha.ListReceivedOCMSharesResponse\x12\x91\x01\n\x16UpdateReceivedOCMShare\x12:.cs3.ocmshareproviderv0alpha.UpdateReceivedOCMShareRequest\x1a;.cs3.ocmshareproviderv0alpha.UpdateReceivedOCMShareResponse\x12r\n\x0fGetAppProviders\x12..cs3.appregistryv0alpha.GetAppProvidersRequest\x1a/.cs3.appregistryv0alpha.GetAppProvidersResponse\x12u\n\x10ListAppProviders\x12/.cs3.appregistryv0alpha.ListAppProvidersRequest\x1a\x30.cs3.appregistryv0alpha.ListAppProvidersResponseBm\n\x16\x63om.cs3.gatewayv0alphaB\x0cGatewayProtoP\x01Z\x10gatewayv0alphapb\xa2\x02\x06\x43\x42OXAB\xaa\x02\x12\x43S3.GatewayV0Alpha\xca\x02\x12\x43S3\\GatewayV0Alphab\x06proto3')
+  serialized_pb=_b('\n!cs3/gateway/v0alpha/gateway.proto\x12\x12\x63s3.gatewayv0alpha\x1a)cs3/appregistry/v0alpha/appregistry.proto\x1a\x1b\x63s3/auth/v0alpha/auth.proto\x1a\x33\x63s3/ocmshareprovider/v0alpha/ocmshareprovider.proto\x1a)cs3/preferences/v0alpha/preferences.proto\x1a\x39\x63s3/publicshareprovider/v0alpha/publicshareprovider.proto\x1a\x14\x63s3/rpc/status.proto\x1a+cs3/storageprovider/v0alpha/resources.proto\x1a\x31\x63s3/storageprovider/v0alpha/storageprovider.proto\x1a\x15\x63s3/types/types.proto\x1a\x35\x63s3/usershareprovider/v0alpha/usershareprovider.proto\"h\n\x0fGetQuotaRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\xb7\x01\n\x12ListRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12%\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x04 \x01(\x0b\x32\x14.cs3.types.Timestamp\"\xbd\x01\n\x18ListRecycleStreamRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12%\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x04 \x01(\x0b\x32\x14.cs3.types.Timestamp\"l\n\x13PurgeRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\x9c\x01\n\x1cInitiateFileDownloadResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x19\n\x11\x64ownload_endpoint\x18\x03 \x01(\t\x12\x0e\n\x06\x65xpose\x18\x05 \x01(\x08\x12\r\n\x05token\x18\x06 \x01(\t\"\xdb\x01\n\x1aInitiateFileUploadResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x17\n\x0fupload_endpoint\x18\x03 \x01(\t\x12Q\n\x13\x61vailable_checksums\x18\x04 \x03(\x0b\x32\x34.cs3.storageproviderv0alpha.ResourceChecksumPriority\x12\r\n\x05token\x18\x05 \x01(\t2\xce*\n\x0eGatewayService\x12p\n\x13GenerateAccessToken\x12+.cs3.authv0alpha.GenerateAccessTokenRequest\x1a,.cs3.authv0alpha.GenerateAccessTokenResponse\x12I\n\x06WhoAmI\x12\x1e.cs3.authv0alpha.WhoAmIRequest\x1a\x1f.cs3.authv0alpha.WhoAmIResponse\x12z\n\x0f\x43reateContainer\x12\x32.cs3.storageproviderv0alpha.CreateContainerRequest\x1a\x33.cs3.storageproviderv0alpha.CreateContainerResponse\x12_\n\x06\x44\x65lete\x12).cs3.storageproviderv0alpha.DeleteRequest\x1a*.cs3.storageproviderv0alpha.DeleteResponse\x12\x62\n\x07GetPath\x12*.cs3.storageproviderv0alpha.GetPathRequest\x1a+.cs3.storageproviderv0alpha.GetPathResponse\x12]\n\x08GetQuota\x12#.cs3.gatewayv0alpha.GetQuotaRequest\x1a,.cs3.storageproviderv0alpha.GetQuotaResponse\x12\x81\x01\n\x14InitiateFileDownload\x12\x37.cs3.storageproviderv0alpha.InitiateFileDownloadRequest\x1a\x30.cs3.gatewayv0alpha.InitiateFileDownloadResponse\x12{\n\x12InitiateFileUpload\x12\x35.cs3.storageproviderv0alpha.InitiateFileUploadRequest\x1a..cs3.gatewayv0alpha.InitiateFileUploadResponse\x12\x88\x01\n\x13ListContainerStream\x12\x36.cs3.storageproviderv0alpha.ListContainerStreamRequest\x1a\x37.cs3.storageproviderv0alpha.ListContainerStreamResponse0\x01\x12t\n\rListContainer\x12\x30.cs3.storageproviderv0alpha.ListContainerRequest\x1a\x31.cs3.storageproviderv0alpha.ListContainerResponse\x12}\n\x10ListFileVersions\x12\x33.cs3.storageproviderv0alpha.ListFileVersionsRequest\x1a\x34.cs3.storageproviderv0alpha.ListFileVersionsResponse\x12z\n\x11ListRecycleStream\x12,.cs3.gatewayv0alpha.ListRecycleStreamRequest\x1a\x35.cs3.storageproviderv0alpha.ListRecycleStreamResponse0\x01\x12\x66\n\x0bListRecycle\x12&.cs3.gatewayv0alpha.ListRecycleRequest\x1a/.cs3.storageproviderv0alpha.ListRecycleResponse\x12Y\n\x04Move\x12\'.cs3.storageproviderv0alpha.MoveRequest\x1a(.cs3.storageproviderv0alpha.MoveResponse\x12i\n\x0cPurgeRecycle\x12\'.cs3.gatewayv0alpha.PurgeRecycleRequest\x1a\x30.cs3.storageproviderv0alpha.PurgeRecycleResponse\x12\x83\x01\n\x12RestoreFileVersion\x12\x35.cs3.storageproviderv0alpha.RestoreFileVersionRequest\x1a\x36.cs3.storageproviderv0alpha.RestoreFileVersionResponse\x12\x83\x01\n\x12RestoreRecycleItem\x12\x35.cs3.storageproviderv0alpha.RestoreRecycleItemRequest\x1a\x36.cs3.storageproviderv0alpha.RestoreRecycleItemResponse\x12Y\n\x04Stat\x12\'.cs3.storageproviderv0alpha.StatRequest\x1a(.cs3.storageproviderv0alpha.StatResponse\x12\x89\x01\n\x14SetArbitraryMetadata\x12\x37.cs3.storageproviderv0alpha.SetArbitraryMetadataRequest\x1a\x38.cs3.storageproviderv0alpha.SetArbitraryMetadataResponse\x12\x8f\x01\n\x16UnsetArbitraryMetadata\x12\x39.cs3.storageproviderv0alpha.UnsetArbitraryMetadataRequest\x1a:.cs3.storageproviderv0alpha.UnsetArbitraryMetadataResponse\x12r\n\x0b\x43reateShare\x12\x30.cs3.usershareproviderv0alpha.CreateShareRequest\x1a\x31.cs3.usershareproviderv0alpha.CreateShareResponse\x12r\n\x0bRemoveShare\x12\x30.cs3.usershareproviderv0alpha.RemoveShareRequest\x1a\x31.cs3.usershareproviderv0alpha.RemoveShareResponse\x12i\n\x08GetShare\x12-.cs3.usershareproviderv0alpha.GetShareRequest\x1a..cs3.usershareproviderv0alpha.GetShareResponse\x12o\n\nListShares\x12/.cs3.usershareproviderv0alpha.ListSharesRequest\x1a\x30.cs3.usershareproviderv0alpha.ListSharesResponse\x12r\n\x0bUpdateShare\x12\x30.cs3.usershareproviderv0alpha.UpdateShareRequest\x1a\x31.cs3.usershareproviderv0alpha.UpdateShareResponse\x12\x87\x01\n\x12ListReceivedShares\x12\x37.cs3.usershareproviderv0alpha.ListReceivedSharesRequest\x1a\x38.cs3.usershareproviderv0alpha.ListReceivedSharesResponse\x12\x8a\x01\n\x13UpdateReceivedShare\x12\x38.cs3.usershareproviderv0alpha.UpdateReceivedShareRequest\x1a\x39.cs3.usershareproviderv0alpha.UpdateReceivedShareResponse\x12\x81\x01\n\x10GetReceivedShare\x12\x35.cs3.usershareproviderv0alpha.GetReceivedShareRequest\x1a\x36.cs3.usershareproviderv0alpha.GetReceivedShareResponse\x12W\n\x06SetKey\x12%.cs3.preferencesv0alpha.SetKeyRequest\x1a&.cs3.preferencesv0alpha.SetKeyResponse\x12W\n\x06GetKey\x12%.cs3.preferencesv0alpha.GetKeyRequest\x1a&.cs3.preferencesv0alpha.GetKeyResponse\x12\x88\x01\n\x11\x43reatePublicShare\x12\x38.cs3.publicshareproviderv0alpha.CreatePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.CreatePublicShareResponse\x12\x88\x01\n\x11RemovePublicShare\x12\x38.cs3.publicshareproviderv0alpha.RemovePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.RemovePublicShareResponse\x12\x7f\n\x0eGetPublicShare\x12\x35.cs3.publicshareproviderv0alpha.GetPublicShareRequest\x1a\x36.cs3.publicshareproviderv0alpha.GetPublicShareResponse\x12\x94\x01\n\x15GetPublicShareByToken\x12<.cs3.publicshareproviderv0alpha.GetPublicShareByTokenRequest\x1a=.cs3.publicshareproviderv0alpha.GetPublicShareByTokenResponse\x12\x85\x01\n\x10ListPublicShares\x12\x37.cs3.publicshareproviderv0alpha.ListPublicSharesRequest\x1a\x38.cs3.publicshareproviderv0alpha.ListPublicSharesResponse\x12\x88\x01\n\x11UpdatePublicShare\x12\x38.cs3.publicshareproviderv0alpha.UpdatePublicShareRequest\x1a\x39.cs3.publicshareproviderv0alpha.UpdatePublicShareResponse\x12y\n\x0e\x43reateOCMShare\x12\x32.cs3.ocmshareproviderv0alpha.CreateOCMShareRequest\x1a\x33.cs3.ocmshareproviderv0alpha.CreateOCMShareResponse\x12y\n\x0eRemoveOCMShare\x12\x32.cs3.ocmshareproviderv0alpha.RemoveOCMShareRequest\x1a\x33.cs3.ocmshareproviderv0alpha.RemoveOCMShareResponse\x12p\n\x0bGetOCMShare\x12/.cs3.ocmshareproviderv0alpha.GetOCMShareRequest\x1a\x30.cs3.ocmshareproviderv0alpha.GetOCMShareResponse\x12v\n\rListOCMShares\x12\x31.cs3.ocmshareproviderv0alpha.ListOCMSharesRequest\x1a\x32.cs3.ocmshareproviderv0alpha.ListOCMSharesResponse\x12y\n\x0eUpdateOCMShare\x12\x32.cs3.ocmshareproviderv0alpha.UpdateOCMShareRequest\x1a\x33.cs3.ocmshareproviderv0alpha.UpdateOCMShareResponse\x12\x8e\x01\n\x15ListReceivedOCMShares\x12\x39.cs3.ocmshareproviderv0alpha.ListReceivedOCMSharesRequest\x1a:.cs3.ocmshareproviderv0alpha.ListReceivedOCMSharesResponse\x12\x91\x01\n\x16UpdateReceivedOCMShare\x12:.cs3.ocmshareproviderv0alpha.UpdateReceivedOCMShareRequest\x1a;.cs3.ocmshareproviderv0alpha.UpdateReceivedOCMShareResponse\x12r\n\x0fGetAppProviders\x12..cs3.appregistryv0alpha.GetAppProvidersRequest\x1a/.cs3.appregistryv0alpha.GetAppProvidersResponse\x12u\n\x10ListAppProviders\x12/.cs3.appregistryv0alpha.ListAppProvidersRequest\x1a\x30.cs3.appregistryv0alpha.ListAppProvidersResponseBm\n\x16\x63om.cs3.gatewayv0alphaB\x0cGatewayProtoP\x01Z\x10gatewayv0alphapb\xa2\x02\x06\x43\x42OXAB\xaa\x02\x12\x43S3.GatewayV0Alpha\xca\x02\x12\x43S3\\GatewayV0Alphab\x06proto3')
   ,
-  dependencies=[cs3_dot_appregistry_dot_v0alpha_dot_appregistry__pb2.DESCRIPTOR,cs3_dot_auth_dot_v0alpha_dot_auth__pb2.DESCRIPTOR,cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.DESCRIPTOR,cs3_dot_preferences_dot_v0alpha_dot_preferences__pb2.DESCRIPTOR,cs3_dot_publicshareprovider_dot_v0alpha_dot_publicshareprovider__pb2.DESCRIPTOR,cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2.DESCRIPTOR,cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.DESCRIPTOR,cs3_dot_types_dot_types__pb2.DESCRIPTOR,cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2.DESCRIPTOR,])
+  dependencies=[cs3_dot_appregistry_dot_v0alpha_dot_appregistry__pb2.DESCRIPTOR,cs3_dot_auth_dot_v0alpha_dot_auth__pb2.DESCRIPTOR,cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2.DESCRIPTOR,cs3_dot_preferences_dot_v0alpha_dot_preferences__pb2.DESCRIPTOR,cs3_dot_publicshareprovider_dot_v0alpha_dot_publicshareprovider__pb2.DESCRIPTOR,cs3_dot_rpc_dot_status__pb2.DESCRIPTOR,cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2.DESCRIPTOR,cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2.DESCRIPTOR,cs3_dot_types_dot_types__pb2.DESCRIPTOR,cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2.DESCRIPTOR,])
 
 
 
@@ -69,8 +70,8 @@ _GETQUOTAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=458,
-  serialized_end=562,
+  serialized_start=480,
+  serialized_end=584,
 )
 
 
@@ -121,8 +122,8 @@ _LISTRECYCLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=565,
-  serialized_end=748,
+  serialized_start=587,
+  serialized_end=770,
 )
 
 
@@ -173,8 +174,8 @@ _LISTRECYCLESTREAMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=751,
-  serialized_end=940,
+  serialized_start=773,
+  serialized_end=962,
 )
 
 
@@ -211,8 +212,126 @@ _PURGERECYCLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=942,
-  serialized_end=1050,
+  serialized_start=964,
+  serialized_end=1072,
+)
+
+
+_INITIATEFILEDOWNLOADRESPONSE = _descriptor.Descriptor(
+  name='InitiateFileDownloadResponse',
+  full_name='cs3.gatewayv0alpha.InitiateFileDownloadResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='cs3.gatewayv0alpha.InitiateFileDownloadResponse.status', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.gatewayv0alpha.InitiateFileDownloadResponse.opaque', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='download_endpoint', full_name='cs3.gatewayv0alpha.InitiateFileDownloadResponse.download_endpoint', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='expose', full_name='cs3.gatewayv0alpha.InitiateFileDownloadResponse.expose', index=3,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='token', full_name='cs3.gatewayv0alpha.InitiateFileDownloadResponse.token', index=4,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1075,
+  serialized_end=1231,
+)
+
+
+_INITIATEFILEUPLOADRESPONSE = _descriptor.Descriptor(
+  name='InitiateFileUploadResponse',
+  full_name='cs3.gatewayv0alpha.InitiateFileUploadResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='cs3.gatewayv0alpha.InitiateFileUploadResponse.status', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.gatewayv0alpha.InitiateFileUploadResponse.opaque', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='upload_endpoint', full_name='cs3.gatewayv0alpha.InitiateFileUploadResponse.upload_endpoint', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='available_checksums', full_name='cs3.gatewayv0alpha.InitiateFileUploadResponse.available_checksums', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='token', full_name='cs3.gatewayv0alpha.InitiateFileUploadResponse.token', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1234,
+  serialized_end=1453,
 )
 
 _GETQUOTAREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
@@ -227,10 +346,17 @@ _LISTRECYCLESTREAMREQUEST.fields_by_name['from_ts'].message_type = cs3_dot_types
 _LISTRECYCLESTREAMREQUEST.fields_by_name['to_ts'].message_type = cs3_dot_types_dot_types__pb2._TIMESTAMP
 _PURGERECYCLEREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
 _PURGERECYCLEREQUEST.fields_by_name['ref'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._REFERENCE
+_INITIATEFILEDOWNLOADRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
+_INITIATEFILEDOWNLOADRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
+_INITIATEFILEUPLOADRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
+_INITIATEFILEUPLOADRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
+_INITIATEFILEUPLOADRESPONSE.fields_by_name['available_checksums'].message_type = cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2._RESOURCECHECKSUMPRIORITY
 DESCRIPTOR.message_types_by_name['GetQuotaRequest'] = _GETQUOTAREQUEST
 DESCRIPTOR.message_types_by_name['ListRecycleRequest'] = _LISTRECYCLEREQUEST
 DESCRIPTOR.message_types_by_name['ListRecycleStreamRequest'] = _LISTRECYCLESTREAMREQUEST
 DESCRIPTOR.message_types_by_name['PurgeRecycleRequest'] = _PURGERECYCLEREQUEST
+DESCRIPTOR.message_types_by_name['InitiateFileDownloadResponse'] = _INITIATEFILEDOWNLOADRESPONSE
+DESCRIPTOR.message_types_by_name['InitiateFileUploadResponse'] = _INITIATEFILEUPLOADRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GetQuotaRequest = _reflection.GeneratedProtocolMessageType('GetQuotaRequest', (_message.Message,), {
@@ -261,6 +387,20 @@ PurgeRecycleRequest = _reflection.GeneratedProtocolMessageType('PurgeRecycleRequ
   })
 _sym_db.RegisterMessage(PurgeRecycleRequest)
 
+InitiateFileDownloadResponse = _reflection.GeneratedProtocolMessageType('InitiateFileDownloadResponse', (_message.Message,), {
+  'DESCRIPTOR' : _INITIATEFILEDOWNLOADRESPONSE,
+  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.InitiateFileDownloadResponse)
+  })
+_sym_db.RegisterMessage(InitiateFileDownloadResponse)
+
+InitiateFileUploadResponse = _reflection.GeneratedProtocolMessageType('InitiateFileUploadResponse', (_message.Message,), {
+  'DESCRIPTOR' : _INITIATEFILEUPLOADRESPONSE,
+  '__module__' : 'cs3.gateway.v0alpha.gateway_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.gatewayv0alpha.InitiateFileUploadResponse)
+  })
+_sym_db.RegisterMessage(InitiateFileUploadResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -270,8 +410,8 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1053,
-  serialized_end=6524,
+  serialized_start=1456,
+  serialized_end=6910,
   methods=[
   _descriptor.MethodDescriptor(
     name='GenerateAccessToken',
@@ -333,7 +473,7 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
     index=6,
     containing_service=None,
     input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._INITIATEFILEDOWNLOADREQUEST,
-    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._INITIATEFILEDOWNLOADRESPONSE,
+    output_type=_INITIATEFILEDOWNLOADRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -342,7 +482,7 @@ _GATEWAYSERVICE = _descriptor.ServiceDescriptor(
     index=7,
     containing_service=None,
     input_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._INITIATEFILEUPLOADREQUEST,
-    output_type=cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2._INITIATEFILEUPLOADRESPONSE,
+    output_type=_INITIATEFILEUPLOADRESPONSE,
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
