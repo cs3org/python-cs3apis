@@ -8,6 +8,7 @@ from cs3.ocmshareprovider.v0alpha import ocmshareprovider_pb2 as cs3_dot_ocmshar
 from cs3.preferences.v0alpha import preferences_pb2 as cs3_dot_preferences_dot_v0alpha_dot_preferences__pb2
 from cs3.publicshareprovider.v0alpha import publicshareprovider_pb2 as cs3_dot_publicshareprovider_dot_v0alpha_dot_publicshareprovider__pb2
 from cs3.storageprovider.v0alpha import storageprovider_pb2 as cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2
+from cs3.userprovider.v0alpha import userprovider_pb2 as cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2
 from cs3.usershareprovider.v0alpha import usershareprovider_pb2 as cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2
 
 
@@ -261,6 +262,26 @@ class GatewayServiceStub(object):
         '/cs3.gatewayv0alpha.GatewayService/ListAppProviders',
         request_serializer=cs3_dot_appregistry_dot_v0alpha_dot_appregistry__pb2.ListAppProvidersRequest.SerializeToString,
         response_deserializer=cs3_dot_appregistry_dot_v0alpha_dot_appregistry__pb2.ListAppProvidersResponse.FromString,
+        )
+    self.GetUser = channel.unary_unary(
+        '/cs3.gatewayv0alpha.GatewayService/GetUser',
+        request_serializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.GetUserRequest.SerializeToString,
+        response_deserializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.GetUserResponse.FromString,
+        )
+    self.GetUserGroups = channel.unary_unary(
+        '/cs3.gatewayv0alpha.GatewayService/GetUserGroups',
+        request_serializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.GetUserGroupsRequest.SerializeToString,
+        response_deserializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.GetUserGroupsResponse.FromString,
+        )
+    self.IsInGroup = channel.unary_unary(
+        '/cs3.gatewayv0alpha.GatewayService/IsInGroup',
+        request_serializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.IsInGroupRequest.SerializeToString,
+        response_deserializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.IsInGroupResponse.FromString,
+        )
+    self.FindUsers = channel.unary_unary(
+        '/cs3.gatewayv0alpha.GatewayService/FindUsers',
+        request_serializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.FindUsersRequest.SerializeToString,
+        response_deserializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.FindUsersResponse.FromString,
         )
 
 
@@ -687,6 +708,38 @@ class GatewayServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetUser(self, request, context):
+    """*****************************************************************/
+    ************************ USER PROVIDER **************************/
+    *****************************************************************/
+    Gets the information about an user by its user id.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetUserGroups(self, request, context):
+    """Gets the groups of a user.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def IsInGroup(self, request, context):
+    """Tells if the user is in a certain group.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def FindUsers(self, request, context):
+    """Finds users by any attribute of the user?
+    TODO(labkode): to define the filters that make more sense.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_GatewayServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -914,6 +967,26 @@ def add_GatewayServiceServicer_to_server(servicer, server):
           servicer.ListAppProviders,
           request_deserializer=cs3_dot_appregistry_dot_v0alpha_dot_appregistry__pb2.ListAppProvidersRequest.FromString,
           response_serializer=cs3_dot_appregistry_dot_v0alpha_dot_appregistry__pb2.ListAppProvidersResponse.SerializeToString,
+      ),
+      'GetUser': grpc.unary_unary_rpc_method_handler(
+          servicer.GetUser,
+          request_deserializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.GetUserRequest.FromString,
+          response_serializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.GetUserResponse.SerializeToString,
+      ),
+      'GetUserGroups': grpc.unary_unary_rpc_method_handler(
+          servicer.GetUserGroups,
+          request_deserializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.GetUserGroupsRequest.FromString,
+          response_serializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.GetUserGroupsResponse.SerializeToString,
+      ),
+      'IsInGroup': grpc.unary_unary_rpc_method_handler(
+          servicer.IsInGroup,
+          request_deserializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.IsInGroupRequest.FromString,
+          response_serializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.IsInGroupResponse.SerializeToString,
+      ),
+      'FindUsers': grpc.unary_unary_rpc_method_handler(
+          servicer.FindUsers,
+          request_deserializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.FindUsersRequest.FromString,
+          response_serializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.FindUsersResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
