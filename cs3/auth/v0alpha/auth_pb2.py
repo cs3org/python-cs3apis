@@ -15,6 +15,7 @@ _sym_db = _symbol_database.Default()
 
 from cs3.auth.v0alpha import resources_pb2 as cs3_dot_auth_dot_v0alpha_dot_resources__pb2
 from cs3.rpc import status_pb2 as cs3_dot_rpc_dot_status__pb2
+from cs3.types import types_pb2 as cs3_dot_types_dot_types__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.authv0alpha',
   syntax='proto3',
   serialized_options=_b('\n\023com.cs3.authv0alphaB\tAuthProtoP\001Z\rauthv0alphapb\242\002\006CBOXAB\252\002\017CS3.AuthV0Alpha\312\002\017CS3\\AuthV0Alpha'),
-  serialized_pb=_b('\n\x1b\x63s3/auth/v0alpha/auth.proto\x12\x0f\x63s3.authv0alpha\x1a cs3/auth/v0alpha/resources.proto\x1a\x14\x63s3/rpc/status.proto\"F\n\x1aGenerateAccessTokenRequest\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\"T\n\x1bGenerateAccessTokenResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x02 \x01(\t\"%\n\rWhoAmIRequest\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\"V\n\x0eWhoAmIResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12#\n\x04user\x18\x02 \x01(\x0b\x32\x15.cs3.authv0alpha.User2\xca\x01\n\x0b\x41uthService\x12p\n\x13GenerateAccessToken\x12+.cs3.authv0alpha.GenerateAccessTokenRequest\x1a,.cs3.authv0alpha.GenerateAccessTokenResponse\x12I\n\x06WhoAmI\x12\x1e.cs3.authv0alpha.WhoAmIRequest\x1a\x1f.cs3.authv0alpha.WhoAmIResponseB^\n\x13\x63om.cs3.authv0alphaB\tAuthProtoP\x01Z\rauthv0alphapb\xa2\x02\x06\x43\x42OXAB\xaa\x02\x0f\x43S3.AuthV0Alpha\xca\x02\x0f\x43S3\\AuthV0Alphab\x06proto3')
+  serialized_pb=_b('\n\x1b\x63s3/auth/v0alpha/auth.proto\x12\x0f\x63s3.authv0alpha\x1a cs3/auth/v0alpha/resources.proto\x1a\x14\x63s3/rpc/status.proto\x1a\x15\x63s3/types/types.proto\"F\n\x1aGenerateAccessTokenRequest\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\"x\n\x1bGenerateAccessTokenResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x02 \x01(\t\x12\"\n\x07user_id\x18\x03 \x01(\x0b\x32\x11.cs3.types.UserId\"%\n\rWhoAmIRequest\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\"V\n\x0eWhoAmIResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12#\n\x04user\x18\x02 \x01(\x0b\x32\x15.cs3.authv0alpha.User2\xca\x01\n\x0b\x41uthService\x12p\n\x13GenerateAccessToken\x12+.cs3.authv0alpha.GenerateAccessTokenRequest\x1a,.cs3.authv0alpha.GenerateAccessTokenResponse\x12I\n\x06WhoAmI\x12\x1e.cs3.authv0alpha.WhoAmIRequest\x1a\x1f.cs3.authv0alpha.WhoAmIResponseB^\n\x13\x63om.cs3.authv0alphaB\tAuthProtoP\x01Z\rauthv0alphapb\xa2\x02\x06\x43\x42OXAB\xaa\x02\x0f\x43S3.AuthV0Alpha\xca\x02\x0f\x43S3\\AuthV0Alphab\x06proto3')
   ,
-  dependencies=[cs3_dot_auth_dot_v0alpha_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_status__pb2.DESCRIPTOR,])
+  dependencies=[cs3_dot_auth_dot_v0alpha_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_status__pb2.DESCRIPTOR,cs3_dot_types_dot_types__pb2.DESCRIPTOR,])
 
 
 
@@ -62,8 +63,8 @@ _GENERATEACCESSTOKENREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=104,
-  serialized_end=174,
+  serialized_start=127,
+  serialized_end=197,
 )
 
 
@@ -88,6 +89,13 @@ _GENERATEACCESSTOKENRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='cs3.authv0alpha.GenerateAccessTokenResponse.user_id', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -100,8 +108,8 @@ _GENERATEACCESSTOKENRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=176,
-  serialized_end=260,
+  serialized_start=199,
+  serialized_end=319,
 )
 
 
@@ -131,8 +139,8 @@ _WHOAMIREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=262,
-  serialized_end=299,
+  serialized_start=321,
+  serialized_end=358,
 )
 
 
@@ -169,11 +177,12 @@ _WHOAMIRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=301,
-  serialized_end=387,
+  serialized_start=360,
+  serialized_end=446,
 )
 
 _GENERATEACCESSTOKENRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
+_GENERATEACCESSTOKENRESPONSE.fields_by_name['user_id'].message_type = cs3_dot_types_dot_types__pb2._USERID
 _WHOAMIRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_status__pb2._STATUS
 _WHOAMIRESPONSE.fields_by_name['user'].message_type = cs3_dot_auth_dot_v0alpha_dot_resources__pb2._USER
 DESCRIPTOR.message_types_by_name['GenerateAccessTokenRequest'] = _GENERATEACCESSTOKENREQUEST
@@ -219,8 +228,8 @@ _AUTHSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=390,
-  serialized_end=592,
+  serialized_start=449,
+  serialized_end=651,
   methods=[
   _descriptor.MethodDescriptor(
     name='GenerateAccessToken',
