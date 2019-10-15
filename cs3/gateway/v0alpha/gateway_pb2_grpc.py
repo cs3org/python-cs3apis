@@ -2,7 +2,8 @@
 import grpc
 
 from cs3.appregistry.v0alpha import appregistry_pb2 as cs3_dot_appregistry_dot_v0alpha_dot_appregistry__pb2
-from cs3.auth.v0alpha import auth_pb2 as cs3_dot_auth_dot_v0alpha_dot_auth__pb2
+from cs3.authprovider.v0alpha import authprovider_pb2 as cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2
+from cs3.authregistry.v0alpha import authregistry_pb2 as cs3_dot_authregistry_dot_v0alpha_dot_authregistry__pb2
 from cs3.gateway.v0alpha import gateway_pb2 as cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2
 from cs3.ocmshareprovider.v0alpha import ocmshareprovider_pb2 as cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2
 from cs3.preferences.v0alpha import preferences_pb2 as cs3_dot_preferences_dot_v0alpha_dot_preferences__pb2
@@ -40,13 +41,13 @@ class GatewayServiceStub(object):
     """
     self.GenerateAccessToken = channel.unary_unary(
         '/cs3.gatewayv0alpha.GatewayService/GenerateAccessToken',
-        request_serializer=cs3_dot_auth_dot_v0alpha_dot_auth__pb2.GenerateAccessTokenRequest.SerializeToString,
-        response_deserializer=cs3_dot_auth_dot_v0alpha_dot_auth__pb2.GenerateAccessTokenResponse.FromString,
+        request_serializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.GenerateAccessTokenRequest.SerializeToString,
+        response_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.GenerateAccessTokenResponse.FromString,
         )
     self.WhoAmI = channel.unary_unary(
         '/cs3.gatewayv0alpha.GatewayService/WhoAmI',
-        request_serializer=cs3_dot_auth_dot_v0alpha_dot_auth__pb2.WhoAmIRequest.SerializeToString,
-        response_deserializer=cs3_dot_auth_dot_v0alpha_dot_auth__pb2.WhoAmIResponse.FromString,
+        request_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIRequest.SerializeToString,
+        response_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIResponse.FromString,
         )
     self.CreateContainer = channel.unary_unary(
         '/cs3.gatewayv0alpha.GatewayService/CreateContainer',
@@ -283,6 +284,11 @@ class GatewayServiceStub(object):
         request_serializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.FindUsersRequest.SerializeToString,
         response_deserializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.FindUsersResponse.FromString,
         )
+    self.ListAuthProviders = channel.unary_unary(
+        '/cs3.gatewayv0alpha.GatewayService/ListAuthProviders',
+        request_serializer=cs3_dot_authregistry_dot_v0alpha_dot_authregistry__pb2.ListAuthProvidersRequest.SerializeToString,
+        response_deserializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.ListAuthProvidersResponse.FromString,
+        )
 
 
 class GatewayServiceServicer(object):
@@ -516,7 +522,7 @@ class GatewayServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListShares(self, request, context):
-    """List the shares the authenticated principal has created,
+    """List the shares the authproviderenticated principal has created,
     both as owner and creator. If a filter is specified, only
     shares satisfying the filter MUST be returned.
     """
@@ -533,7 +539,7 @@ class GatewayServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListReceivedShares(self, request, context):
-    """List all shares the authenticated principal has received.
+    """List all shares the authproviderenticated principal has received.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -612,7 +618,7 @@ class GatewayServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListPublicShares(self, request, context):
-    """List the shares the authenticated principal has created,
+    """List the shares the authproviderenticated principal has created,
     both as owner and creator. If a filter is specified, only
     shares satisfying the filter MUST be returned.
     """
@@ -659,7 +665,7 @@ class GatewayServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListOCMShares(self, request, context):
-    """List the shares the authenticated principal has created,
+    """List the shares the authproviderenticated principal has created,
     both as owner and creator. If a filter is specified, only
     shares satisfying the filter MUST be returned.
     """
@@ -676,7 +682,7 @@ class GatewayServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListReceivedOCMShares(self, request, context):
-    """List all shares the authenticated principal has received.
+    """List all shares the authproviderenticated principal has received.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -740,18 +746,28 @@ class GatewayServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListAuthProviders(self, request, context):
+    """*****************************************************************/
+    ************************ AUTH REGISTRY  **************************/
+    *****************************************************************/
+    Returns a list of the available auth providers known by this registry.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_GatewayServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'GenerateAccessToken': grpc.unary_unary_rpc_method_handler(
           servicer.GenerateAccessToken,
-          request_deserializer=cs3_dot_auth_dot_v0alpha_dot_auth__pb2.GenerateAccessTokenRequest.FromString,
-          response_serializer=cs3_dot_auth_dot_v0alpha_dot_auth__pb2.GenerateAccessTokenResponse.SerializeToString,
+          request_deserializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.GenerateAccessTokenRequest.FromString,
+          response_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.GenerateAccessTokenResponse.SerializeToString,
       ),
       'WhoAmI': grpc.unary_unary_rpc_method_handler(
           servicer.WhoAmI,
-          request_deserializer=cs3_dot_auth_dot_v0alpha_dot_auth__pb2.WhoAmIRequest.FromString,
-          response_serializer=cs3_dot_auth_dot_v0alpha_dot_auth__pb2.WhoAmIResponse.SerializeToString,
+          request_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIRequest.FromString,
+          response_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIResponse.SerializeToString,
       ),
       'CreateContainer': grpc.unary_unary_rpc_method_handler(
           servicer.CreateContainer,
@@ -987,6 +1003,11 @@ def add_GatewayServiceServicer_to_server(servicer, server):
           servicer.FindUsers,
           request_deserializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.FindUsersRequest.FromString,
           response_serializer=cs3_dot_userprovider_dot_v0alpha_dot_userprovider__pb2.FindUsersResponse.SerializeToString,
+      ),
+      'ListAuthProviders': grpc.unary_unary_rpc_method_handler(
+          servicer.ListAuthProviders,
+          request_deserializer=cs3_dot_authregistry_dot_v0alpha_dot_authregistry__pb2.ListAuthProvidersRequest.FromString,
+          response_serializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.ListAuthProvidersResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
