@@ -14,15 +14,10 @@ class AuthProviderServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.GenerateAccessToken = channel.unary_unary(
-        '/cs3.authproviderv0alpha.AuthProviderService/GenerateAccessToken',
-        request_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.GenerateAccessTokenRequest.SerializeToString,
-        response_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.GenerateAccessTokenResponse.FromString,
-        )
-    self.WhoAmI = channel.unary_unary(
-        '/cs3.authproviderv0alpha.AuthProviderService/WhoAmI',
-        request_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIRequest.SerializeToString,
-        response_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIResponse.FromString,
+    self.Authenticate = channel.unary_unary(
+        '/cs3.authproviderv0alpha.AuthProviderService/Authenticate',
+        request_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.AuthenticateRequest.SerializeToString,
+        response_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.AuthenticateResponse.FromString,
         )
 
 
@@ -30,14 +25,7 @@ class AuthProviderServiceServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
-  def GenerateAccessToken(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def WhoAmI(self, request, context):
+  def Authenticate(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -47,15 +35,10 @@ class AuthProviderServiceServicer(object):
 
 def add_AuthProviderServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'GenerateAccessToken': grpc.unary_unary_rpc_method_handler(
-          servicer.GenerateAccessToken,
-          request_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.GenerateAccessTokenRequest.FromString,
-          response_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.GenerateAccessTokenResponse.SerializeToString,
-      ),
-      'WhoAmI': grpc.unary_unary_rpc_method_handler(
-          servicer.WhoAmI,
-          request_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIRequest.FromString,
-          response_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIResponse.SerializeToString,
+      'Authenticate': grpc.unary_unary_rpc_method_handler(
+          servicer.Authenticate,
+          request_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.AuthenticateRequest.FromString,
+          response_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.AuthenticateResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

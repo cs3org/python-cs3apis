@@ -2,7 +2,6 @@
 import grpc
 
 from cs3.appregistry.v0alpha import appregistry_pb2 as cs3_dot_appregistry_dot_v0alpha_dot_appregistry__pb2
-from cs3.authprovider.v0alpha import authprovider_pb2 as cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2
 from cs3.authregistry.v0alpha import authregistry_pb2 as cs3_dot_authregistry_dot_v0alpha_dot_authregistry__pb2
 from cs3.gateway.v0alpha import gateway_pb2 as cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2
 from cs3.ocmshareprovider.v0alpha import ocmshareprovider_pb2 as cs3_dot_ocmshareprovider_dot_v0alpha_dot_ocmshareprovider__pb2
@@ -39,15 +38,15 @@ class GatewayServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.GenerateAccessToken = channel.unary_unary(
-        '/cs3.gatewayv0alpha.GatewayService/GenerateAccessToken',
-        request_serializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.GenerateAccessTokenRequest.SerializeToString,
-        response_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.GenerateAccessTokenResponse.FromString,
+    self.Authenticate = channel.unary_unary(
+        '/cs3.gatewayv0alpha.GatewayService/Authenticate',
+        request_serializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.AuthenticateRequest.SerializeToString,
+        response_deserializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.AuthenticateResponse.FromString,
         )
     self.WhoAmI = channel.unary_unary(
         '/cs3.gatewayv0alpha.GatewayService/WhoAmI',
-        request_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIRequest.SerializeToString,
-        response_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIResponse.FromString,
+        request_serializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.WhoAmIRequest.SerializeToString,
+        response_deserializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.WhoAmIResponse.FromString,
         )
     self.CreateContainer = channel.unary_unary(
         '/cs3.gatewayv0alpha.GatewayService/CreateContainer',
@@ -311,7 +310,7 @@ class GatewayServiceServicer(object):
   Any method MAY return UNAUTHENTICATED.
   """
 
-  def GenerateAccessToken(self, request, context):
+  def Authenticate(self, request, context):
     """*****************************************************************/
     ************************ AUTH ******** **************************/
     *****************************************************************/
@@ -759,15 +758,15 @@ class GatewayServiceServicer(object):
 
 def add_GatewayServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'GenerateAccessToken': grpc.unary_unary_rpc_method_handler(
-          servicer.GenerateAccessToken,
-          request_deserializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.GenerateAccessTokenRequest.FromString,
-          response_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.GenerateAccessTokenResponse.SerializeToString,
+      'Authenticate': grpc.unary_unary_rpc_method_handler(
+          servicer.Authenticate,
+          request_deserializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.AuthenticateRequest.FromString,
+          response_serializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.AuthenticateResponse.SerializeToString,
       ),
       'WhoAmI': grpc.unary_unary_rpc_method_handler(
           servicer.WhoAmI,
-          request_deserializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIRequest.FromString,
-          response_serializer=cs3_dot_authprovider_dot_v0alpha_dot_authprovider__pb2.WhoAmIResponse.SerializeToString,
+          request_deserializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.WhoAmIRequest.FromString,
+          response_serializer=cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2.WhoAmIResponse.SerializeToString,
       ),
       'CreateContainer': grpc.unary_unary_rpc_method_handler(
           servicer.CreateContainer,
