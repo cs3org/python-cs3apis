@@ -4,6 +4,7 @@ import grpc
 from cs3.auth.v0alpha import auth_pb2 as cs3_dot_auth_dot_v0alpha_dot_auth__pb2
 from cs3.gateway.v0alpha import gateway_pb2 as cs3_dot_gateway_dot_v0alpha_dot_gateway__pb2
 from cs3.storageprovider.v0alpha import storageprovider_pb2 as cs3_dot_storageprovider_dot_v0alpha_dot_storageprovider__pb2
+from cs3.storageregistry.v0alpha import storageregistry_pb2 as cs3_dot_storageregistry_dot_v0alpha_dot_storageregistry__pb2
 from cs3.usershareprovider.v0alpha import usershareprovider_pb2 as cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2
 
 
@@ -162,6 +163,11 @@ class GatewayServiceStub(object):
         '/cs3.gatewayv0alpha.GatewayService/GetReceivedShare',
         request_serializer=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2.GetReceivedShareRequest.SerializeToString,
         response_deserializer=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2.GetReceivedShareResponse.FromString,
+        )
+    self.GetHome = channel.unary_unary(
+        '/cs3.gatewayv0alpha.GatewayService/GetHome',
+        request_serializer=cs3_dot_storageregistry_dot_v0alpha_dot_storageregistry__pb2.GetHomeRequest.SerializeToString,
+        response_deserializer=cs3_dot_storageregistry_dot_v0alpha_dot_storageregistry__pb2.GetHomeResponse.FromString,
         )
 
 
@@ -419,6 +425,17 @@ class GatewayServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetHome(self, request, context):
+    """*****************************************************************/
+    ************************ STORAGE REGISTRY ** ********************/
+    *****************************************************************/
+    Returns the home path for the given authenticated user.
+    When a user has access to multiple storage providers, one of them is the home.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_GatewayServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -551,6 +568,11 @@ def add_GatewayServiceServicer_to_server(servicer, server):
           servicer.GetReceivedShare,
           request_deserializer=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2.GetReceivedShareRequest.FromString,
           response_serializer=cs3_dot_usershareprovider_dot_v0alpha_dot_usershareprovider__pb2.GetReceivedShareResponse.SerializeToString,
+      ),
+      'GetHome': grpc.unary_unary_rpc_method_handler(
+          servicer.GetHome,
+          request_deserializer=cs3_dot_storageregistry_dot_v0alpha_dot_storageregistry__pb2.GetHomeRequest.FromString,
+          response_serializer=cs3_dot_storageregistry_dot_v0alpha_dot_storageregistry__pb2.GetHomeResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
