@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.storageproviderv0alpha',
   syntax='proto3',
   serialized_options=_b('\n\036com.cs3.storageproviderv0alphaB\024StorageproviderProtoP\001Z\030storageproviderv0alphapb\242\002\006CBOXAB\252\002\032CS3.StorageProviderV0Alpha\312\002\032CS3\\StorageProviderV0Alpha'),
-  serialized_pb=_b('\n1cs3/storageprovider/v0alpha/storageprovider.proto\x12\x1a\x63s3.storageproviderv0alpha\x1a\x14\x63s3/rpc/status.proto\x1a+cs3/storageprovider/v0alpha/resources.proto\x1a#cs3/storagetypes/storagetypes.proto\x1a\x15\x63s3/types/types.proto\"\x9a\x01\n\x0f\x41\x64\x64GrantRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x30\n\x05grant\x18\x03 \x01(\x0b\x32!.cs3.storageproviderv0alpha.Grant\"V\n\x10\x41\x64\x64GrantResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"o\n\x16\x43reateContainerRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"]\n\x17\x43reateContainerResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"f\n\rDeleteRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"T\n\x0e\x44\x65leteResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"7\n\x12GetProviderRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x87\x01\n\x13GetProviderResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12,\n\x04info\x18\x03 \x01(\x0b\x32\x1e.cs3.storagetypes.ProviderInfo\"p\n\x0eGetPathRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12;\n\x0bresource_id\x18\x02 \x01(\x0b\x32&.cs3.storageproviderv0alpha.ResourceId\"c\n\x0fGetPathResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x0c\n\x04path\x18\x03 \x01(\t\"4\n\x0fGetQuotaRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x7f\n\x10GetQuotaResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x13\n\x0btotal_bytes\x18\x03 \x01(\x04\x12\x12\n\nused_bytes\x18\x04 \x01(\x04\"r\n\x19InitiateFileUploadRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\xcc\x01\n\x1aInitiateFileUploadResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x17\n\x0fupload_endpoint\x18\x03 \x01(\t\x12Q\n\x13\x61vailable_checksums\x18\x04 \x03(\x0b\x32\x34.cs3.storageproviderv0alpha.ResourceChecksumPriority\"t\n\x1bInitiateFileDownloadRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"}\n\x1cInitiateFileDownloadResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x19\n\x11\x64ownload_endpoint\x18\x03 \x01(\t\"j\n\x11ListGrantsRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\x8b\x01\n\x12ListGrantsResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x31\n\x06grants\x18\x03 \x03(\x0b\x32!.cs3.storageproviderv0alpha.Grant\"\x94\x01\n\x1aListContainerStreamRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"\x99\x01\n\x1bListContainerStreamResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x36\n\x04info\x18\x03 \x01(\x0b\x32(.cs3.storageproviderv0alpha.ResourceInfo\"\x8e\x01\n\x14ListContainerRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"\x94\x01\n\x15ListContainerResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x37\n\x05infos\x18\x03 \x03(\x0b\x32(.cs3.storageproviderv0alpha.ResourceInfo\"p\n\x17ListFileVersionsRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\x99\x01\n\x18ListFileVersionsResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x39\n\x08versions\x18\x03 \x03(\x0b\x32\'.cs3.storageproviderv0alpha.FileVersion\"\x83\x01\n\x12ListRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12%\n\x07\x66rom_ts\x18\x02 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\"\x99\x01\n\x13ListRecycleResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12>\n\rrecycle_items\x18\x03 \x03(\x0b\x32\'.cs3.storageproviderv0alpha.RecycleItem\"\x89\x01\n\x18ListRecycleStreamRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12%\n\x07\x66rom_ts\x18\x02 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\"\x9e\x01\n\x19ListRecycleStreamResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12=\n\x0crecycle_item\x18\x03 \x01(\x0b\x32\'.cs3.storageproviderv0alpha.RecycleItem\"\xa3\x01\n\x0bMoveRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x35\n\x06source\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12:\n\x0b\x64\x65stination\x18\x03 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"R\n\x0cMoveResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"l\n\x13PurgeRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"Z\n\x14PurgeRecycleResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x7f\n\x19RestoreFileVersionRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x0b\n\x03key\x18\x03 \x01(\t\"`\n\x1aRestoreFileVersionResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x95\x01\n\x19RestoreRecycleItemRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x14\n\x0crestore_path\x18\x04 \x01(\t\"`\n\x1aRestoreRecycleItemResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x9d\x01\n\x12RemoveGrantRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x30\n\x05grant\x18\x03 \x01(\x0b\x32!.cs3.storageproviderv0alpha.Grant\"Y\n\x13RemoveGrantResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x85\x01\n\x0bStatRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"\x8a\x01\n\x0cStatResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x36\n\x04info\x18\x03 \x01(\x0b\x32(.cs3.storageproviderv0alpha.ResourceInfo\"\x9d\x01\n\x12UpdateGrantRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x30\n\x05grant\x18\x03 \x01(\x0b\x32!.cs3.storageproviderv0alpha.Grant\"Y\n\x13UpdateGrantResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"]\n\x16\x43reateReferenceRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x12\n\ntarget_uri\x18\x03 \x01(\t\"]\n\x17\x43reateReferenceResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\xbf\x01\n\x1bSetArbitraryMetadataRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12I\n\x12\x61rbitrary_metadata\x18\x03 \x01(\x0b\x32-.cs3.storageproviderv0alpha.ArbitraryMetadata\"b\n\x1cSetArbitraryMetadataResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x97\x01\n\x1dUnsetArbitraryMetadataRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"d\n\x1eUnsetArbitraryMetadataResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque2\xba\x16\n\x16StorageProviderService\x12\x65\n\x08\x41\x64\x64Grant\x12+.cs3.storageproviderv0alpha.AddGrantRequest\x1a,.cs3.storageproviderv0alpha.AddGrantResponse\x12z\n\x0f\x43reateContainer\x12\x32.cs3.storageproviderv0alpha.CreateContainerRequest\x1a\x33.cs3.storageproviderv0alpha.CreateContainerResponse\x12_\n\x06\x44\x65lete\x12).cs3.storageproviderv0alpha.DeleteRequest\x1a*.cs3.storageproviderv0alpha.DeleteResponse\x12n\n\x0bGetProvider\x12..cs3.storageproviderv0alpha.GetProviderRequest\x1a/.cs3.storageproviderv0alpha.GetProviderResponse\x12\x62\n\x07GetPath\x12*.cs3.storageproviderv0alpha.GetPathRequest\x1a+.cs3.storageproviderv0alpha.GetPathResponse\x12\x65\n\x08GetQuota\x12+.cs3.storageproviderv0alpha.GetQuotaRequest\x1a,.cs3.storageproviderv0alpha.GetQuotaResponse\x12\x89\x01\n\x14InitiateFileDownload\x12\x37.cs3.storageproviderv0alpha.InitiateFileDownloadRequest\x1a\x38.cs3.storageproviderv0alpha.InitiateFileDownloadResponse\x12\x83\x01\n\x12InitiateFileUpload\x12\x35.cs3.storageproviderv0alpha.InitiateFileUploadRequest\x1a\x36.cs3.storageproviderv0alpha.InitiateFileUploadResponse\x12k\n\nListGrants\x12-.cs3.storageproviderv0alpha.ListGrantsRequest\x1a..cs3.storageproviderv0alpha.ListGrantsResponse\x12\x88\x01\n\x13ListContainerStream\x12\x36.cs3.storageproviderv0alpha.ListContainerStreamRequest\x1a\x37.cs3.storageproviderv0alpha.ListContainerStreamResponse0\x01\x12t\n\rListContainer\x12\x30.cs3.storageproviderv0alpha.ListContainerRequest\x1a\x31.cs3.storageproviderv0alpha.ListContainerResponse\x12}\n\x10ListFileVersions\x12\x33.cs3.storageproviderv0alpha.ListFileVersionsRequest\x1a\x34.cs3.storageproviderv0alpha.ListFileVersionsResponse\x12\x82\x01\n\x11ListRecycleStream\x12\x34.cs3.storageproviderv0alpha.ListRecycleStreamRequest\x1a\x35.cs3.storageproviderv0alpha.ListRecycleStreamResponse0\x01\x12n\n\x0bListRecycle\x12..cs3.storageproviderv0alpha.ListRecycleRequest\x1a/.cs3.storageproviderv0alpha.ListRecycleResponse\x12Y\n\x04Move\x12\'.cs3.storageproviderv0alpha.MoveRequest\x1a(.cs3.storageproviderv0alpha.MoveResponse\x12n\n\x0bRemoveGrant\x12..cs3.storageproviderv0alpha.RemoveGrantRequest\x1a/.cs3.storageproviderv0alpha.RemoveGrantResponse\x12q\n\x0cPurgeRecycle\x12/.cs3.storageproviderv0alpha.PurgeRecycleRequest\x1a\x30.cs3.storageproviderv0alpha.PurgeRecycleResponse\x12\x83\x01\n\x12RestoreFileVersion\x12\x35.cs3.storageproviderv0alpha.RestoreFileVersionRequest\x1a\x36.cs3.storageproviderv0alpha.RestoreFileVersionResponse\x12\x83\x01\n\x12RestoreRecycleItem\x12\x35.cs3.storageproviderv0alpha.RestoreRecycleItemRequest\x1a\x36.cs3.storageproviderv0alpha.RestoreRecycleItemResponse\x12Y\n\x04Stat\x12\'.cs3.storageproviderv0alpha.StatRequest\x1a(.cs3.storageproviderv0alpha.StatResponse\x12n\n\x0bUpdateGrant\x12..cs3.storageproviderv0alpha.UpdateGrantRequest\x1a/.cs3.storageproviderv0alpha.UpdateGrantResponse\x12z\n\x0f\x43reateReference\x12\x32.cs3.storageproviderv0alpha.CreateReferenceRequest\x1a\x33.cs3.storageproviderv0alpha.CreateReferenceResponse\x12\x89\x01\n\x14SetArbitraryMetadata\x12\x37.cs3.storageproviderv0alpha.SetArbitraryMetadataRequest\x1a\x38.cs3.storageproviderv0alpha.SetArbitraryMetadataResponse\x12\x8f\x01\n\x16UnsetArbitraryMetadata\x12\x39.cs3.storageproviderv0alpha.UnsetArbitraryMetadataRequest\x1a:.cs3.storageproviderv0alpha.UnsetArbitraryMetadataResponseB\x95\x01\n\x1e\x63om.cs3.storageproviderv0alphaB\x14StorageproviderProtoP\x01Z\x18storageproviderv0alphapb\xa2\x02\x06\x43\x42OXAB\xaa\x02\x1a\x43S3.StorageProviderV0Alpha\xca\x02\x1a\x43S3\\StorageProviderV0Alphab\x06proto3')
+  serialized_pb=_b('\n1cs3/storageprovider/v0alpha/storageprovider.proto\x12\x1a\x63s3.storageproviderv0alpha\x1a\x14\x63s3/rpc/status.proto\x1a+cs3/storageprovider/v0alpha/resources.proto\x1a#cs3/storagetypes/storagetypes.proto\x1a\x15\x63s3/types/types.proto\"\x9a\x01\n\x0f\x41\x64\x64GrantRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x30\n\x05grant\x18\x03 \x01(\x0b\x32!.cs3.storageproviderv0alpha.Grant\"V\n\x10\x41\x64\x64GrantResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"o\n\x16\x43reateContainerRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"]\n\x17\x43reateContainerResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"f\n\rDeleteRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"T\n\x0e\x44\x65leteResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"7\n\x12GetProviderRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x87\x01\n\x13GetProviderResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12,\n\x04info\x18\x03 \x01(\x0b\x32\x1e.cs3.storagetypes.ProviderInfo\"p\n\x0eGetPathRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12;\n\x0bresource_id\x18\x02 \x01(\x0b\x32&.cs3.storageproviderv0alpha.ResourceId\"c\n\x0fGetPathResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x0c\n\x04path\x18\x03 \x01(\t\"4\n\x0fGetQuotaRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x7f\n\x10GetQuotaResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x13\n\x0btotal_bytes\x18\x03 \x01(\x04\x12\x12\n\nused_bytes\x18\x04 \x01(\x04\"r\n\x19InitiateFileUploadRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\xdc\x01\n\x1aInitiateFileUploadResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x17\n\x0fupload_endpoint\x18\x03 \x01(\t\x12Q\n\x13\x61vailable_checksums\x18\x04 \x03(\x0b\x32\x34.cs3.storageproviderv0alpha.ResourceChecksumPriority\x12\x0e\n\x06\x65xpose\x18\x05 \x01(\x08\"t\n\x1bInitiateFileDownloadRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\x8d\x01\n\x1cInitiateFileDownloadResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x19\n\x11\x64ownload_endpoint\x18\x03 \x01(\t\x12\x0e\n\x06\x65xpose\x18\x05 \x01(\x08\"j\n\x11ListGrantsRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\x8b\x01\n\x12ListGrantsResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x31\n\x06grants\x18\x03 \x03(\x0b\x32!.cs3.storageproviderv0alpha.Grant\"\x94\x01\n\x1aListContainerStreamRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"\x99\x01\n\x1bListContainerStreamResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x36\n\x04info\x18\x03 \x01(\x0b\x32(.cs3.storageproviderv0alpha.ResourceInfo\"\x8e\x01\n\x14ListContainerRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"\x94\x01\n\x15ListContainerResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x37\n\x05infos\x18\x03 \x03(\x0b\x32(.cs3.storageproviderv0alpha.ResourceInfo\"p\n\x17ListFileVersionsRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"\x99\x01\n\x18ListFileVersionsResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x39\n\x08versions\x18\x03 \x03(\x0b\x32\'.cs3.storageproviderv0alpha.FileVersion\"\x83\x01\n\x12ListRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12%\n\x07\x66rom_ts\x18\x02 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\"\x99\x01\n\x13ListRecycleResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12>\n\rrecycle_items\x18\x03 \x03(\x0b\x32\'.cs3.storageproviderv0alpha.RecycleItem\"\x89\x01\n\x18ListRecycleStreamRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12%\n\x07\x66rom_ts\x18\x02 \x01(\x0b\x32\x14.cs3.types.Timestamp\x12#\n\x05to_ts\x18\x03 \x01(\x0b\x32\x14.cs3.types.Timestamp\"\x9e\x01\n\x19ListRecycleStreamResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12=\n\x0crecycle_item\x18\x03 \x01(\x0b\x32\'.cs3.storageproviderv0alpha.RecycleItem\"\xa3\x01\n\x0bMoveRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x35\n\x06source\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12:\n\x0b\x64\x65stination\x18\x03 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"R\n\x0cMoveResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"l\n\x13PurgeRecycleRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\"Z\n\x14PurgeRecycleResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x7f\n\x19RestoreFileVersionRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x0b\n\x03key\x18\x03 \x01(\t\"`\n\x1aRestoreFileVersionResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x95\x01\n\x19RestoreRecycleItemRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x14\n\x0crestore_path\x18\x04 \x01(\t\"`\n\x1aRestoreRecycleItemResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x9d\x01\n\x12RemoveGrantRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x30\n\x05grant\x18\x03 \x01(\x0b\x32!.cs3.storageproviderv0alpha.Grant\"Y\n\x13RemoveGrantResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x85\x01\n\x0bStatRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"\x8a\x01\n\x0cStatResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x36\n\x04info\x18\x03 \x01(\x0b\x32(.cs3.storageproviderv0alpha.ResourceInfo\"\x9d\x01\n\x12UpdateGrantRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x30\n\x05grant\x18\x03 \x01(\x0b\x32!.cs3.storageproviderv0alpha.Grant\"Y\n\x13UpdateGrantResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"]\n\x16\x43reateReferenceRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x0c\n\x04path\x18\x02 \x01(\t\x12\x12\n\ntarget_uri\x18\x03 \x01(\t\"]\n\x17\x43reateReferenceResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\xbf\x01\n\x1bSetArbitraryMetadataRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12I\n\x12\x61rbitrary_metadata\x18\x03 \x01(\x0b\x32-.cs3.storageproviderv0alpha.ArbitraryMetadata\"b\n\x1cSetArbitraryMetadataResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque\"\x97\x01\n\x1dUnsetArbitraryMetadataRequest\x12!\n\x06opaque\x18\x01 \x01(\x0b\x32\x11.cs3.types.Opaque\x12\x32\n\x03ref\x18\x02 \x01(\x0b\x32%.cs3.storageproviderv0alpha.Reference\x12\x1f\n\x17\x61rbitrary_metadata_keys\x18\x03 \x03(\t\"d\n\x1eUnsetArbitraryMetadataResponse\x12\x1f\n\x06status\x18\x01 \x01(\x0b\x32\x0f.cs3.rpc.Status\x12!\n\x06opaque\x18\x02 \x01(\x0b\x32\x11.cs3.types.Opaque2\xba\x16\n\x16StorageProviderService\x12\x65\n\x08\x41\x64\x64Grant\x12+.cs3.storageproviderv0alpha.AddGrantRequest\x1a,.cs3.storageproviderv0alpha.AddGrantResponse\x12z\n\x0f\x43reateContainer\x12\x32.cs3.storageproviderv0alpha.CreateContainerRequest\x1a\x33.cs3.storageproviderv0alpha.CreateContainerResponse\x12_\n\x06\x44\x65lete\x12).cs3.storageproviderv0alpha.DeleteRequest\x1a*.cs3.storageproviderv0alpha.DeleteResponse\x12n\n\x0bGetProvider\x12..cs3.storageproviderv0alpha.GetProviderRequest\x1a/.cs3.storageproviderv0alpha.GetProviderResponse\x12\x62\n\x07GetPath\x12*.cs3.storageproviderv0alpha.GetPathRequest\x1a+.cs3.storageproviderv0alpha.GetPathResponse\x12\x65\n\x08GetQuota\x12+.cs3.storageproviderv0alpha.GetQuotaRequest\x1a,.cs3.storageproviderv0alpha.GetQuotaResponse\x12\x89\x01\n\x14InitiateFileDownload\x12\x37.cs3.storageproviderv0alpha.InitiateFileDownloadRequest\x1a\x38.cs3.storageproviderv0alpha.InitiateFileDownloadResponse\x12\x83\x01\n\x12InitiateFileUpload\x12\x35.cs3.storageproviderv0alpha.InitiateFileUploadRequest\x1a\x36.cs3.storageproviderv0alpha.InitiateFileUploadResponse\x12k\n\nListGrants\x12-.cs3.storageproviderv0alpha.ListGrantsRequest\x1a..cs3.storageproviderv0alpha.ListGrantsResponse\x12\x88\x01\n\x13ListContainerStream\x12\x36.cs3.storageproviderv0alpha.ListContainerStreamRequest\x1a\x37.cs3.storageproviderv0alpha.ListContainerStreamResponse0\x01\x12t\n\rListContainer\x12\x30.cs3.storageproviderv0alpha.ListContainerRequest\x1a\x31.cs3.storageproviderv0alpha.ListContainerResponse\x12}\n\x10ListFileVersions\x12\x33.cs3.storageproviderv0alpha.ListFileVersionsRequest\x1a\x34.cs3.storageproviderv0alpha.ListFileVersionsResponse\x12\x82\x01\n\x11ListRecycleStream\x12\x34.cs3.storageproviderv0alpha.ListRecycleStreamRequest\x1a\x35.cs3.storageproviderv0alpha.ListRecycleStreamResponse0\x01\x12n\n\x0bListRecycle\x12..cs3.storageproviderv0alpha.ListRecycleRequest\x1a/.cs3.storageproviderv0alpha.ListRecycleResponse\x12Y\n\x04Move\x12\'.cs3.storageproviderv0alpha.MoveRequest\x1a(.cs3.storageproviderv0alpha.MoveResponse\x12n\n\x0bRemoveGrant\x12..cs3.storageproviderv0alpha.RemoveGrantRequest\x1a/.cs3.storageproviderv0alpha.RemoveGrantResponse\x12q\n\x0cPurgeRecycle\x12/.cs3.storageproviderv0alpha.PurgeRecycleRequest\x1a\x30.cs3.storageproviderv0alpha.PurgeRecycleResponse\x12\x83\x01\n\x12RestoreFileVersion\x12\x35.cs3.storageproviderv0alpha.RestoreFileVersionRequest\x1a\x36.cs3.storageproviderv0alpha.RestoreFileVersionResponse\x12\x83\x01\n\x12RestoreRecycleItem\x12\x35.cs3.storageproviderv0alpha.RestoreRecycleItemRequest\x1a\x36.cs3.storageproviderv0alpha.RestoreRecycleItemResponse\x12Y\n\x04Stat\x12\'.cs3.storageproviderv0alpha.StatRequest\x1a(.cs3.storageproviderv0alpha.StatResponse\x12n\n\x0bUpdateGrant\x12..cs3.storageproviderv0alpha.UpdateGrantRequest\x1a/.cs3.storageproviderv0alpha.UpdateGrantResponse\x12z\n\x0f\x43reateReference\x12\x32.cs3.storageproviderv0alpha.CreateReferenceRequest\x1a\x33.cs3.storageproviderv0alpha.CreateReferenceResponse\x12\x89\x01\n\x14SetArbitraryMetadata\x12\x37.cs3.storageproviderv0alpha.SetArbitraryMetadataRequest\x1a\x38.cs3.storageproviderv0alpha.SetArbitraryMetadataResponse\x12\x8f\x01\n\x16UnsetArbitraryMetadata\x12\x39.cs3.storageproviderv0alpha.UnsetArbitraryMetadataRequest\x1a:.cs3.storageproviderv0alpha.UnsetArbitraryMetadataResponseB\x95\x01\n\x1e\x63om.cs3.storageproviderv0alphaB\x14StorageproviderProtoP\x01Z\x18storageproviderv0alphapb\xa2\x02\x06\x43\x42OXAB\xaa\x02\x1a\x43S3.StorageProviderV0Alpha\xca\x02\x1a\x43S3\\StorageProviderV0Alphab\x06proto3')
   ,
   dependencies=[cs3_dot_rpc_dot_status__pb2.DESCRIPTOR,cs3_dot_storageprovider_dot_v0alpha_dot_resources__pb2.DESCRIPTOR,cs3_dot_storagetypes_dot_storagetypes__pb2.DESCRIPTOR,cs3_dot_types_dot_types__pb2.DESCRIPTOR,])
 
@@ -581,6 +581,13 @@ _INITIATEFILEUPLOADRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='expose', full_name='cs3.storageproviderv0alpha.InitiateFileUploadResponse.expose', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -594,7 +601,7 @@ _INITIATEFILEUPLOADRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1561,
-  serialized_end=1765,
+  serialized_end=1781,
 )
 
 
@@ -631,8 +638,8 @@ _INITIATEFILEDOWNLOADREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1767,
-  serialized_end=1883,
+  serialized_start=1783,
+  serialized_end=1899,
 )
 
 
@@ -664,6 +671,13 @@ _INITIATEFILEDOWNLOADRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='expose', full_name='cs3.storageproviderv0alpha.InitiateFileDownloadResponse.expose', index=3,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -676,8 +690,8 @@ _INITIATEFILEDOWNLOADRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1885,
-  serialized_end=2010,
+  serialized_start=1902,
+  serialized_end=2043,
 )
 
 
@@ -714,8 +728,8 @@ _LISTGRANTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2012,
-  serialized_end=2118,
+  serialized_start=2045,
+  serialized_end=2151,
 )
 
 
@@ -759,8 +773,8 @@ _LISTGRANTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2121,
-  serialized_end=2260,
+  serialized_start=2154,
+  serialized_end=2293,
 )
 
 
@@ -804,8 +818,8 @@ _LISTCONTAINERSTREAMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2263,
-  serialized_end=2411,
+  serialized_start=2296,
+  serialized_end=2444,
 )
 
 
@@ -849,8 +863,8 @@ _LISTCONTAINERSTREAMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2414,
-  serialized_end=2567,
+  serialized_start=2447,
+  serialized_end=2600,
 )
 
 
@@ -894,8 +908,8 @@ _LISTCONTAINERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2570,
-  serialized_end=2712,
+  serialized_start=2603,
+  serialized_end=2745,
 )
 
 
@@ -939,8 +953,8 @@ _LISTCONTAINERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2715,
-  serialized_end=2863,
+  serialized_start=2748,
+  serialized_end=2896,
 )
 
 
@@ -977,8 +991,8 @@ _LISTFILEVERSIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2865,
-  serialized_end=2977,
+  serialized_start=2898,
+  serialized_end=3010,
 )
 
 
@@ -1022,8 +1036,8 @@ _LISTFILEVERSIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2980,
-  serialized_end=3133,
+  serialized_start=3013,
+  serialized_end=3166,
 )
 
 
@@ -1067,8 +1081,8 @@ _LISTRECYCLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3136,
-  serialized_end=3267,
+  serialized_start=3169,
+  serialized_end=3300,
 )
 
 
@@ -1112,8 +1126,8 @@ _LISTRECYCLERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3270,
-  serialized_end=3423,
+  serialized_start=3303,
+  serialized_end=3456,
 )
 
 
@@ -1157,8 +1171,8 @@ _LISTRECYCLESTREAMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3426,
-  serialized_end=3563,
+  serialized_start=3459,
+  serialized_end=3596,
 )
 
 
@@ -1202,8 +1216,8 @@ _LISTRECYCLESTREAMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3566,
-  serialized_end=3724,
+  serialized_start=3599,
+  serialized_end=3757,
 )
 
 
@@ -1247,8 +1261,8 @@ _MOVEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3727,
-  serialized_end=3890,
+  serialized_start=3760,
+  serialized_end=3923,
 )
 
 
@@ -1285,8 +1299,8 @@ _MOVERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3892,
-  serialized_end=3974,
+  serialized_start=3925,
+  serialized_end=4007,
 )
 
 
@@ -1323,8 +1337,8 @@ _PURGERECYCLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3976,
-  serialized_end=4084,
+  serialized_start=4009,
+  serialized_end=4117,
 )
 
 
@@ -1361,8 +1375,8 @@ _PURGERECYCLERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4086,
-  serialized_end=4176,
+  serialized_start=4119,
+  serialized_end=4209,
 )
 
 
@@ -1406,8 +1420,8 @@ _RESTOREFILEVERSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4178,
-  serialized_end=4305,
+  serialized_start=4211,
+  serialized_end=4338,
 )
 
 
@@ -1444,8 +1458,8 @@ _RESTOREFILEVERSIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4307,
-  serialized_end=4403,
+  serialized_start=4340,
+  serialized_end=4436,
 )
 
 
@@ -1496,8 +1510,8 @@ _RESTORERECYCLEITEMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4406,
-  serialized_end=4555,
+  serialized_start=4439,
+  serialized_end=4588,
 )
 
 
@@ -1534,8 +1548,8 @@ _RESTORERECYCLEITEMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4557,
-  serialized_end=4653,
+  serialized_start=4590,
+  serialized_end=4686,
 )
 
 
@@ -1579,8 +1593,8 @@ _REMOVEGRANTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4656,
-  serialized_end=4813,
+  serialized_start=4689,
+  serialized_end=4846,
 )
 
 
@@ -1617,8 +1631,8 @@ _REMOVEGRANTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4815,
-  serialized_end=4904,
+  serialized_start=4848,
+  serialized_end=4937,
 )
 
 
@@ -1662,8 +1676,8 @@ _STATREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4907,
-  serialized_end=5040,
+  serialized_start=4940,
+  serialized_end=5073,
 )
 
 
@@ -1707,8 +1721,8 @@ _STATRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5043,
-  serialized_end=5181,
+  serialized_start=5076,
+  serialized_end=5214,
 )
 
 
@@ -1752,8 +1766,8 @@ _UPDATEGRANTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5184,
-  serialized_end=5341,
+  serialized_start=5217,
+  serialized_end=5374,
 )
 
 
@@ -1790,8 +1804,8 @@ _UPDATEGRANTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5343,
-  serialized_end=5432,
+  serialized_start=5376,
+  serialized_end=5465,
 )
 
 
@@ -1835,8 +1849,8 @@ _CREATEREFERENCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5434,
-  serialized_end=5527,
+  serialized_start=5467,
+  serialized_end=5560,
 )
 
 
@@ -1873,8 +1887,8 @@ _CREATEREFERENCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5529,
-  serialized_end=5622,
+  serialized_start=5562,
+  serialized_end=5655,
 )
 
 
@@ -1918,8 +1932,8 @@ _SETARBITRARYMETADATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5625,
-  serialized_end=5816,
+  serialized_start=5658,
+  serialized_end=5849,
 )
 
 
@@ -1956,8 +1970,8 @@ _SETARBITRARYMETADATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5818,
-  serialized_end=5916,
+  serialized_start=5851,
+  serialized_end=5949,
 )
 
 
@@ -2001,8 +2015,8 @@ _UNSETARBITRARYMETADATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5919,
-  serialized_end=6070,
+  serialized_start=5952,
+  serialized_end=6103,
 )
 
 
@@ -2039,8 +2053,8 @@ _UNSETARBITRARYMETADATARESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6072,
-  serialized_end=6172,
+  serialized_start=6105,
+  serialized_end=6205,
 )
 
 _ADDGRANTREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_types__pb2._OPAQUE
@@ -2547,8 +2561,8 @@ _STORAGEPROVIDERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=6175,
-  serialized_end=9049,
+  serialized_start=6208,
+  serialized_end=9082,
   methods=[
   _descriptor.MethodDescriptor(
     name='AddGrant',
