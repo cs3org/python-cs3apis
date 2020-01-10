@@ -142,6 +142,11 @@ class GatewayAPIStub(object):
         request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataRequest.SerializeToString,
         response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataResponse.FromString,
         )
+    self.CreateHome = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/CreateHome',
+        request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeRequest.SerializeToString,
+        response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeResponse.FromString,
+        )
     self.CreateShare = channel.unary_unary(
         '/cs3.gateway.v1beta1.GatewayAPI/CreateShare',
         request_serializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.CreateShareRequest.SerializeToString,
@@ -495,6 +500,13 @@ class GatewayAPIServicer(object):
   def UnsetArbitraryMetadata(self, request, context):
     """Unsets arbitrary metdata into a storage resource.
     Arbitrary metadata is returned in a cs3.storage.provider.v1beta1.ResourceInfo.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateHome(self, request, context):
+    """Creates the home directory for a user.
     *****************************************************************/
     ************************ USER SHARE PROVIDER ********************/
     *****************************************************************/
@@ -877,6 +889,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
           servicer.UnsetArbitraryMetadata,
           request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataRequest.FromString,
           response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataResponse.SerializeToString,
+      ),
+      'CreateHome': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateHome,
+          request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeRequest.FromString,
+          response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeResponse.SerializeToString,
       ),
       'CreateShare': grpc.unary_unary_rpc_method_handler(
           servicer.CreateShare,
