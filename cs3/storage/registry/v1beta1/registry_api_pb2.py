@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.storage.registry.v1beta1',
   syntax='proto3',
   serialized_options=_b('\n com.cs3.storage.registry.v1beta1B\020RegistryApiProtoP\001Z\017registryv1beta1\242\002\003CSR\252\002\034Cs3.Storage.Registry.V1Beta1\312\002\034Cs3\\Storage\\Registry\\V1Beta1'),
-  serialized_pb=_b('\n/cs3/storage/registry/v1beta1/registry_api.proto\x12\x1c\x63s3.storage.registry.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a,cs3/storage/registry/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"|\n\x19GetStorageProviderRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\"\xae\x01\n\x1aGetStorageProviderResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12<\n\x08provider\x18\x03 \x01(\x0b\x32*.cs3.storage.registry.v1beta1.ProviderInfo\"H\n\x1bListStorageProvidersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xb1\x01\n\x1cListStorageProvidersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12=\n\tproviders\x18\x03 \x03(\x0b\x32*.cs3.storage.registry.v1beta1.ProviderInfo\";\n\x0eGetHomeRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xb1\x01\n\x0fGetHomeResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0c\n\x04path\x18\x03 \x01(\t\x12<\n\x08provider\x18\x04 \x01(\x0b\x32*.cs3.storage.registry.v1beta1.ProviderInfo2\x8f\x03\n\x0bRegistryAPI\x12\x87\x01\n\x12GetStorageProvider\x12\x37.cs3.storage.registry.v1beta1.GetStorageProviderRequest\x1a\x38.cs3.storage.registry.v1beta1.GetStorageProviderResponse\x12\x8d\x01\n\x14ListStorageProviders\x12\x39.cs3.storage.registry.v1beta1.ListStorageProvidersRequest\x1a:.cs3.storage.registry.v1beta1.ListStorageProvidersResponse\x12\x66\n\x07GetHome\x12,.cs3.storage.registry.v1beta1.GetHomeRequest\x1a-.cs3.storage.registry.v1beta1.GetHomeResponseB\x8b\x01\n com.cs3.storage.registry.v1beta1B\x10RegistryApiProtoP\x01Z\x0fregistryv1beta1\xa2\x02\x03\x43SR\xaa\x02\x1c\x43s3.Storage.Registry.V1Beta1\xca\x02\x1c\x43s3\\Storage\\Registry\\V1Beta1b\x06proto3')
+  serialized_pb=_b('\n/cs3/storage/registry/v1beta1/registry_api.proto\x12\x1c\x63s3.storage.registry.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a,cs3/storage/registry/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"|\n\x19GetStorageProviderRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\"\xae\x01\n\x1aGetStorageProviderResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12<\n\x08provider\x18\x03 \x01(\x0b\x32*.cs3.storage.registry.v1beta1.ProviderInfo\"H\n\x1bListStorageProvidersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xb1\x01\n\x1cListStorageProvidersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12=\n\tproviders\x18\x03 \x03(\x0b\x32*.cs3.storage.registry.v1beta1.ProviderInfo\";\n\x0eGetHomeRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"s\n\x0fGetHomeResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0c\n\x04path\x18\x03 \x01(\t2\x8f\x03\n\x0bRegistryAPI\x12\x87\x01\n\x12GetStorageProvider\x12\x37.cs3.storage.registry.v1beta1.GetStorageProviderRequest\x1a\x38.cs3.storage.registry.v1beta1.GetStorageProviderResponse\x12\x8d\x01\n\x14ListStorageProviders\x12\x39.cs3.storage.registry.v1beta1.ListStorageProvidersRequest\x1a:.cs3.storage.registry.v1beta1.ListStorageProvidersResponse\x12\x66\n\x07GetHome\x12,.cs3.storage.registry.v1beta1.GetHomeRequest\x1a-.cs3.storage.registry.v1beta1.GetHomeResponseB\x8b\x01\n com.cs3.storage.registry.v1beta1B\x10RegistryApiProtoP\x01Z\x0fregistryv1beta1\xa2\x02\x03\x43SR\xaa\x02\x1c\x43s3.Storage.Registry.V1Beta1\xca\x02\x1c\x43s3\\Storage\\Registry\\V1Beta1b\x06proto3')
   ,
   dependencies=[cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_storage_dot_registry_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -249,13 +249,6 @@ _GETHOMERESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='provider', full_name='cs3.storage.registry.v1beta1.GetHomeResponse.provider', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -268,8 +261,8 @@ _GETHOMERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=853,
-  serialized_end=1030,
+  serialized_start=852,
+  serialized_end=967,
 )
 
 _GETSTORAGEPROVIDERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
@@ -284,7 +277,6 @@ _LISTSTORAGEPROVIDERSRESPONSE.fields_by_name['providers'].message_type = cs3_dot
 _GETHOMEREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _GETHOMERESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
 _GETHOMERESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-_GETHOMERESPONSE.fields_by_name['provider'].message_type = cs3_dot_storage_dot_registry_dot_v1beta1_dot_resources__pb2._PROVIDERINFO
 DESCRIPTOR.message_types_by_name['GetStorageProviderRequest'] = _GETSTORAGEPROVIDERREQUEST
 DESCRIPTOR.message_types_by_name['GetStorageProviderResponse'] = _GETSTORAGEPROVIDERRESPONSE
 DESCRIPTOR.message_types_by_name['ListStorageProvidersRequest'] = _LISTSTORAGEPROVIDERSREQUEST
@@ -344,8 +336,8 @@ _REGISTRYAPI = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1033,
-  serialized_end=1432,
+  serialized_start=970,
+  serialized_end=1369,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetStorageProvider',
