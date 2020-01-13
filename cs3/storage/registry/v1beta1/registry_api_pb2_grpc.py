@@ -82,8 +82,7 @@ class RegistryAPIServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def GetHome(self, request, context):
-    """Returns the home path for the given authenticated user.
-    When a user has access to multiple storage providers, one of them is the home.
+    """Gets the user home storage provider.
     TODO(labkode): missing methods for adding and removing a storage provider
     with different visibility levels (system-wide, user-wide, group-wide)...
     """

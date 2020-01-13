@@ -10,7 +10,6 @@ from cs3.sharing.collaboration.v1beta1 import collaboration_api_pb2 as cs3_dot_s
 from cs3.sharing.link.v1beta1 import link_api_pb2 as cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2
 from cs3.sharing.ocm.v1beta1 import ocm_api_pb2 as cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2
 from cs3.storage.provider.v1beta1 import provider_api_pb2 as cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2
-from cs3.storage.registry.v1beta1 import registry_api_pb2 as cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2
 
 
 class GatewayAPIStub(object):
@@ -299,8 +298,8 @@ class GatewayAPIStub(object):
         )
     self.GetHome = channel.unary_unary(
         '/cs3.gateway.v1beta1.GatewayAPI/GetHome',
-        request_serializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetHomeRequest.SerializeToString,
-        response_deserializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetHomeResponse.FromString,
+        request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.SerializeToString,
+        response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.FromString,
         )
 
 
@@ -1047,8 +1046,8 @@ def add_GatewayAPIServicer_to_server(servicer, server):
       ),
       'GetHome': grpc.unary_unary_rpc_method_handler(
           servicer.GetHome,
-          request_deserializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetHomeRequest.FromString,
-          response_serializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetHomeResponse.SerializeToString,
+          request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.FromString,
+          response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

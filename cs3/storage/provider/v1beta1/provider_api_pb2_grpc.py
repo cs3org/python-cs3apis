@@ -149,6 +149,11 @@ class ProviderAPIStub(object):
         request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeRequest.SerializeToString,
         response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeResponse.FromString,
         )
+    self.GetHome = channel.unary_unary(
+        '/cs3.storage.provider.v1beta1.ProviderAPI/GetHome',
+        request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.SerializeToString,
+        response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.FromString,
+        )
 
 
 class ProviderAPIServicer(object):
@@ -381,6 +386,13 @@ class ProviderAPIServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetHome(self, request, context):
+    """Gets the home path for the user.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ProviderAPIServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -503,6 +515,11 @@ def add_ProviderAPIServicer_to_server(servicer, server):
           servicer.CreateHome,
           request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeRequest.FromString,
           response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeResponse.SerializeToString,
+      ),
+      'GetHome': grpc.unary_unary_rpc_method_handler(
+          servicer.GetHome,
+          request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.FromString,
+          response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
