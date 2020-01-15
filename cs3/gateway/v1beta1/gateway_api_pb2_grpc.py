@@ -10,7 +10,6 @@ from cs3.sharing.collaboration.v1beta1 import collaboration_api_pb2 as cs3_dot_s
 from cs3.sharing.link.v1beta1 import link_api_pb2 as cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2
 from cs3.sharing.ocm.v1beta1 import ocm_api_pb2 as cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2
 from cs3.storage.provider.v1beta1 import provider_api_pb2 as cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2
-from cs3.storage.registry.v1beta1 import registry_api_pb2 as cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2
 
 
 class GatewayAPIStub(object):
@@ -141,6 +140,11 @@ class GatewayAPIStub(object):
         '/cs3.gateway.v1beta1.GatewayAPI/UnsetArbitraryMetadata',
         request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataRequest.SerializeToString,
         response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataResponse.FromString,
+        )
+    self.CreateHome = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/CreateHome',
+        request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeRequest.SerializeToString,
+        response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeResponse.FromString,
         )
     self.CreateShare = channel.unary_unary(
         '/cs3.gateway.v1beta1.GatewayAPI/CreateShare',
@@ -294,8 +298,8 @@ class GatewayAPIStub(object):
         )
     self.GetHome = channel.unary_unary(
         '/cs3.gateway.v1beta1.GatewayAPI/GetHome',
-        request_serializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetHomeRequest.SerializeToString,
-        response_deserializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetHomeResponse.FromString,
+        request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.SerializeToString,
+        response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.FromString,
         )
 
 
@@ -495,6 +499,13 @@ class GatewayAPIServicer(object):
   def UnsetArbitraryMetadata(self, request, context):
     """Unsets arbitrary metdata into a storage resource.
     Arbitrary metadata is returned in a cs3.storage.provider.v1beta1.ResourceInfo.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateHome(self, request, context):
+    """Creates the home directory for a user.
     *****************************************************************/
     ************************ USER SHARE PROVIDER ********************/
     *****************************************************************/
@@ -878,6 +889,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
           request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataRequest.FromString,
           response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataResponse.SerializeToString,
       ),
+      'CreateHome': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateHome,
+          request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeRequest.FromString,
+          response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeResponse.SerializeToString,
+      ),
       'CreateShare': grpc.unary_unary_rpc_method_handler(
           servicer.CreateShare,
           request_deserializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.CreateShareRequest.FromString,
@@ -1030,8 +1046,8 @@ def add_GatewayAPIServicer_to_server(servicer, server):
       ),
       'GetHome': grpc.unary_unary_rpc_method_handler(
           servicer.GetHome,
-          request_deserializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetHomeRequest.FromString,
-          response_serializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetHomeResponse.SerializeToString,
+          request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.FromString,
+          response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
