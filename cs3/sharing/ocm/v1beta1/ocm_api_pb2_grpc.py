@@ -65,6 +65,11 @@ class OcmAPIStub(object):
         request_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.UpdateReceivedOCMShareRequest.SerializeToString,
         response_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.UpdateReceivedOCMShareResponse.FromString,
         )
+    self.GetReceivedOCMShare = channel.unary_unary(
+        '/cs3.sharing.ocm.v1beta1.OcmAPI/GetReceivedOCMShare',
+        request_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetReceivedOCMShareRequest.SerializeToString,
+        response_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetReceivedOCMShareResponse.FromString,
+        )
 
 
 class OcmAPIServicer(object):
@@ -146,6 +151,14 @@ class OcmAPIServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetReceivedOCMShare(self, request, context):
+    """Get the information for the given received share reference.
+    MUST return CODE_NOT_FOUND if the received share reference does not exist.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_OcmAPIServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -183,6 +196,11 @@ def add_OcmAPIServicer_to_server(servicer, server):
           servicer.UpdateReceivedOCMShare,
           request_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.UpdateReceivedOCMShareRequest.FromString,
           response_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.UpdateReceivedOCMShareResponse.SerializeToString,
+      ),
+      'GetReceivedOCMShare': grpc.unary_unary_rpc_method_handler(
+          servicer.GetReceivedOCMShare,
+          request_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetReceivedOCMShareRequest.FromString,
+          response_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetReceivedOCMShareResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

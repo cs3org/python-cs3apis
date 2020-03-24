@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.sharing.ocm.v1beta1',
   syntax='proto3',
   serialized_options=_b('\n\033com.cs3.sharing.ocm.v1beta1B\013OcmApiProtoP\001Z\nocmv1beta1\242\002\003CSO\252\002\027Cs3.Sharing.Ocm.V1Beta1\312\002\027Cs3\\Sharing\\Ocm\\V1Beta1'),
-  serialized_pb=_b('\n%cs3/sharing/ocm/v1beta1/ocm_api.proto\x12\x17\x63s3.sharing.ocm.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\'cs3/sharing/ocm/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xb5\x01\n\x15\x43reateOCMShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12=\n\x0bresource_id\x18\x02 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x32\n\x05grant\x18\x03 \x01(\x0b\x32#.cs3.sharing.ocm.v1beta1.ShareGrant\"\x9b\x01\n\x16\x43reateOCMShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12-\n\x05share\x18\x03 \x01(\x0b\x32\x1e.cs3.sharing.ocm.v1beta1.Share\"\xb5\x02\n\x15UpdateOCMShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.sharing.ocm.v1beta1.ShareReference\x12I\n\x05\x66ield\x18\x03 \x01(\x0b\x32:.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField\x1ap\n\x0bUpdateField\x12@\n\x0bpermissions\x18\x02 \x01(\x0b\x32).cs3.sharing.ocm.v1beta1.SharePermissionsH\x00\x12\x16\n\x0c\x64isplay_name\x18\x03 \x01(\tH\x00\x42\x07\n\x05\x66ield\"l\n\x16UpdateOCMShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xa3\x04\n\x14ListOCMSharesRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x45\n\x07\x66ilters\x18\x02 \x03(\x0b\x32\x34.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.Filter\x1a\x98\x03\n\x06\x46ilter\x12G\n\x04type\x18\x02 \x01(\x0e\x32\x39.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.Filter.Type\x12?\n\x0bresource_id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceIdH\x00\x12\x32\n\x05owner\x18\x04 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdH\x00\x12\x34\n\x07\x63reator\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdH\x00\"\x91\x01\n\x04Type\x12\x10\n\x0cTYPE_INVALID\x10\x00\x12\x0b\n\x07TYPE_NO\x10\x01\x12\x14\n\x10TYPE_RESOURCE_ID\x10\x02\x12\x0e\n\nTYPE_OWNER\x10\x03\x12\x10\n\x0cTYPE_CREATOR\x10\x04\x12\x17\n\x13TYPE_OWNER_PROVIDER\x10\x05\x12\x19\n\x15TYPE_CREATOR_PROVIDER\x10\x06\x42\x06\n\x04term\"\x9b\x01\n\x15ListOCMSharesResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12.\n\x06shares\x18\x03 \x03(\x0b\x32\x1e.cs3.sharing.ocm.v1beta1.Share\"x\n\x15RemoveOCMShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.sharing.ocm.v1beta1.ShareReference\"l\n\x16RemoveOCMShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"u\n\x12GetOCMShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.sharing.ocm.v1beta1.ShareReference\"\x98\x01\n\x13GetOCMShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12-\n\x05share\x18\x03 \x01(\x0b\x32\x1e.cs3.sharing.ocm.v1beta1.Share\"I\n\x1cListReceivedOCMSharesRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xab\x01\n\x1dListReceivedOCMSharesResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x36\n\x06shares\x18\x03 \x03(\x0b\x32&.cs3.sharing.ocm.v1beta1.ReceivedShare\"\xb9\x02\n\x1dUpdateReceivedOCMShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.sharing.ocm.v1beta1.ShareReference\x12Q\n\x05\x66ield\x18\x03 \x01(\x0b\x32\x42.cs3.sharing.ocm.v1beta1.UpdateReceivedOCMShareRequest.UpdateField\x1a\x64\n\x0bUpdateField\x12\x16\n\x0c\x64isplay_name\x18\x01 \x01(\tH\x00\x12\x34\n\x05state\x18\x02 \x01(\x0e\x32#.cs3.sharing.ocm.v1beta1.ShareStateH\x00\x42\x07\n\x05\x66ield\"t\n\x1eUpdateReceivedOCMShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque2\xd0\x06\n\x06OcmAPI\x12q\n\x0e\x43reateOCMShare\x12..cs3.sharing.ocm.v1beta1.CreateOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse\x12q\n\x0eRemoveOCMShare\x12..cs3.sharing.ocm.v1beta1.RemoveOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.RemoveOCMShareResponse\x12h\n\x0bGetOCMShare\x12+.cs3.sharing.ocm.v1beta1.GetOCMShareRequest\x1a,.cs3.sharing.ocm.v1beta1.GetOCMShareResponse\x12n\n\rListOCMShares\x12-.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest\x1a..cs3.sharing.ocm.v1beta1.ListOCMSharesResponse\x12q\n\x0eUpdateOCMShare\x12..cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.UpdateOCMShareResponse\x12\x86\x01\n\x15ListReceivedOCMShares\x12\x35.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest\x1a\x36.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse\x12\x89\x01\n\x16UpdateReceivedOCMShare\x12\x36.cs3.sharing.ocm.v1beta1.UpdateReceivedOCMShareRequest\x1a\x37.cs3.sharing.ocm.v1beta1.UpdateReceivedOCMShareResponseBr\n\x1b\x63om.cs3.sharing.ocm.v1beta1B\x0bOcmApiProtoP\x01Z\nocmv1beta1\xa2\x02\x03\x43SO\xaa\x02\x17\x43s3.Sharing.Ocm.V1Beta1\xca\x02\x17\x43s3\\Sharing\\Ocm\\V1Beta1b\x06proto3')
+  serialized_pb=_b('\n%cs3/sharing/ocm/v1beta1/ocm_api.proto\x12\x17\x63s3.sharing.ocm.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\'cs3/sharing/ocm/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xb5\x01\n\x15\x43reateOCMShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12=\n\x0bresource_id\x18\x02 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x32\n\x05grant\x18\x03 \x01(\x0b\x32#.cs3.sharing.ocm.v1beta1.ShareGrant\"\x9b\x01\n\x16\x43reateOCMShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12-\n\x05share\x18\x03 \x01(\x0b\x32\x1e.cs3.sharing.ocm.v1beta1.Share\"\xb5\x02\n\x15UpdateOCMShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.sharing.ocm.v1beta1.ShareReference\x12I\n\x05\x66ield\x18\x03 \x01(\x0b\x32:.cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest.UpdateField\x1ap\n\x0bUpdateField\x12@\n\x0bpermissions\x18\x02 \x01(\x0b\x32).cs3.sharing.ocm.v1beta1.SharePermissionsH\x00\x12\x16\n\x0c\x64isplay_name\x18\x03 \x01(\tH\x00\x42\x07\n\x05\x66ield\"l\n\x16UpdateOCMShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xa3\x04\n\x14ListOCMSharesRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x45\n\x07\x66ilters\x18\x02 \x03(\x0b\x32\x34.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.Filter\x1a\x98\x03\n\x06\x46ilter\x12G\n\x04type\x18\x02 \x01(\x0e\x32\x39.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest.Filter.Type\x12?\n\x0bresource_id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceIdH\x00\x12\x32\n\x05owner\x18\x04 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdH\x00\x12\x34\n\x07\x63reator\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdH\x00\"\x91\x01\n\x04Type\x12\x10\n\x0cTYPE_INVALID\x10\x00\x12\x0b\n\x07TYPE_NO\x10\x01\x12\x14\n\x10TYPE_RESOURCE_ID\x10\x02\x12\x0e\n\nTYPE_OWNER\x10\x03\x12\x10\n\x0cTYPE_CREATOR\x10\x04\x12\x17\n\x13TYPE_OWNER_PROVIDER\x10\x05\x12\x19\n\x15TYPE_CREATOR_PROVIDER\x10\x06\x42\x06\n\x04term\"\x9b\x01\n\x15ListOCMSharesResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12.\n\x06shares\x18\x03 \x03(\x0b\x32\x1e.cs3.sharing.ocm.v1beta1.Share\"x\n\x15RemoveOCMShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.sharing.ocm.v1beta1.ShareReference\"l\n\x16RemoveOCMShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"u\n\x12GetOCMShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.sharing.ocm.v1beta1.ShareReference\"\x98\x01\n\x13GetOCMShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12-\n\x05share\x18\x03 \x01(\x0b\x32\x1e.cs3.sharing.ocm.v1beta1.Share\"I\n\x1cListReceivedOCMSharesRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xab\x01\n\x1dListReceivedOCMSharesResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x36\n\x06shares\x18\x03 \x03(\x0b\x32&.cs3.sharing.ocm.v1beta1.ReceivedShare\"\xb9\x02\n\x1dUpdateReceivedOCMShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.sharing.ocm.v1beta1.ShareReference\x12Q\n\x05\x66ield\x18\x03 \x01(\x0b\x32\x42.cs3.sharing.ocm.v1beta1.UpdateReceivedOCMShareRequest.UpdateField\x1a\x64\n\x0bUpdateField\x12\x16\n\x0c\x64isplay_name\x18\x01 \x01(\tH\x00\x12\x34\n\x05state\x18\x02 \x01(\x0e\x32#.cs3.sharing.ocm.v1beta1.ShareStateH\x00\x42\x07\n\x05\x66ield\"t\n\x1eUpdateReceivedOCMShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"}\n\x1aGetReceivedOCMShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.sharing.ocm.v1beta1.ShareReference\"\xa8\x01\n\x1bGetReceivedOCMShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x35\n\x05share\x18\x03 \x01(\x0b\x32&.cs3.sharing.ocm.v1beta1.ReceivedShare2\xd3\x07\n\x06OcmAPI\x12q\n\x0e\x43reateOCMShare\x12..cs3.sharing.ocm.v1beta1.CreateOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse\x12q\n\x0eRemoveOCMShare\x12..cs3.sharing.ocm.v1beta1.RemoveOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.RemoveOCMShareResponse\x12h\n\x0bGetOCMShare\x12+.cs3.sharing.ocm.v1beta1.GetOCMShareRequest\x1a,.cs3.sharing.ocm.v1beta1.GetOCMShareResponse\x12n\n\rListOCMShares\x12-.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest\x1a..cs3.sharing.ocm.v1beta1.ListOCMSharesResponse\x12q\n\x0eUpdateOCMShare\x12..cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.UpdateOCMShareResponse\x12\x86\x01\n\x15ListReceivedOCMShares\x12\x35.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest\x1a\x36.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse\x12\x89\x01\n\x16UpdateReceivedOCMShare\x12\x36.cs3.sharing.ocm.v1beta1.UpdateReceivedOCMShareRequest\x1a\x37.cs3.sharing.ocm.v1beta1.UpdateReceivedOCMShareResponse\x12\x80\x01\n\x13GetReceivedOCMShare\x12\x33.cs3.sharing.ocm.v1beta1.GetReceivedOCMShareRequest\x1a\x34.cs3.sharing.ocm.v1beta1.GetReceivedOCMShareResponseBr\n\x1b\x63om.cs3.sharing.ocm.v1beta1B\x0bOcmApiProtoP\x01Z\nocmv1beta1\xa2\x02\x03\x43SO\xaa\x02\x17\x43s3.Sharing.Ocm.V1Beta1\xca\x02\x17\x43s3\\Sharing\\Ocm\\V1Beta1b\x06proto3')
   ,
   dependencies=[cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -782,6 +782,89 @@ _UPDATERECEIVEDOCMSHARERESPONSE = _descriptor.Descriptor(
   serialized_end=2916,
 )
 
+
+_GETRECEIVEDOCMSHAREREQUEST = _descriptor.Descriptor(
+  name='GetReceivedOCMShareRequest',
+  full_name='cs3.sharing.ocm.v1beta1.GetReceivedOCMShareRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.sharing.ocm.v1beta1.GetReceivedOCMShareRequest.opaque', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ref', full_name='cs3.sharing.ocm.v1beta1.GetReceivedOCMShareRequest.ref', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2918,
+  serialized_end=3043,
+)
+
+
+_GETRECEIVEDOCMSHARERESPONSE = _descriptor.Descriptor(
+  name='GetReceivedOCMShareResponse',
+  full_name='cs3.sharing.ocm.v1beta1.GetReceivedOCMShareResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='cs3.sharing.ocm.v1beta1.GetReceivedOCMShareResponse.status', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.sharing.ocm.v1beta1.GetReceivedOCMShareResponse.opaque', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='share', full_name='cs3.sharing.ocm.v1beta1.GetReceivedOCMShareResponse.share', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3046,
+  serialized_end=3214,
+)
+
 _CREATEOCMSHAREREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _CREATEOCMSHAREREQUEST.fields_by_name['resource_id'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._RESOURCEID
 _CREATEOCMSHAREREQUEST.fields_by_name['grant'].message_type = cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_resources__pb2._SHAREGRANT
@@ -847,6 +930,11 @@ _UPDATERECEIVEDOCMSHAREREQUEST.fields_by_name['ref'].message_type = cs3_dot_shar
 _UPDATERECEIVEDOCMSHAREREQUEST.fields_by_name['field'].message_type = _UPDATERECEIVEDOCMSHAREREQUEST_UPDATEFIELD
 _UPDATERECEIVEDOCMSHARERESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
 _UPDATERECEIVEDOCMSHARERESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_GETRECEIVEDOCMSHAREREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_GETRECEIVEDOCMSHAREREQUEST.fields_by_name['ref'].message_type = cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_resources__pb2._SHAREREFERENCE
+_GETRECEIVEDOCMSHARERESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
+_GETRECEIVEDOCMSHARERESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_GETRECEIVEDOCMSHARERESPONSE.fields_by_name['share'].message_type = cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_resources__pb2._RECEIVEDSHARE
 DESCRIPTOR.message_types_by_name['CreateOCMShareRequest'] = _CREATEOCMSHAREREQUEST
 DESCRIPTOR.message_types_by_name['CreateOCMShareResponse'] = _CREATEOCMSHARERESPONSE
 DESCRIPTOR.message_types_by_name['UpdateOCMShareRequest'] = _UPDATEOCMSHAREREQUEST
@@ -861,6 +949,8 @@ DESCRIPTOR.message_types_by_name['ListReceivedOCMSharesRequest'] = _LISTRECEIVED
 DESCRIPTOR.message_types_by_name['ListReceivedOCMSharesResponse'] = _LISTRECEIVEDOCMSHARESRESPONSE
 DESCRIPTOR.message_types_by_name['UpdateReceivedOCMShareRequest'] = _UPDATERECEIVEDOCMSHAREREQUEST
 DESCRIPTOR.message_types_by_name['UpdateReceivedOCMShareResponse'] = _UPDATERECEIVEDOCMSHARERESPONSE
+DESCRIPTOR.message_types_by_name['GetReceivedOCMShareRequest'] = _GETRECEIVEDOCMSHAREREQUEST
+DESCRIPTOR.message_types_by_name['GetReceivedOCMShareResponse'] = _GETRECEIVEDOCMSHARERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateOCMShareRequest = _reflection.GeneratedProtocolMessageType('CreateOCMShareRequest', (_message.Message,), {
@@ -985,6 +1075,20 @@ UpdateReceivedOCMShareResponse = _reflection.GeneratedProtocolMessageType('Updat
   })
 _sym_db.RegisterMessage(UpdateReceivedOCMShareResponse)
 
+GetReceivedOCMShareRequest = _reflection.GeneratedProtocolMessageType('GetReceivedOCMShareRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETRECEIVEDOCMSHAREREQUEST,
+  '__module__' : 'cs3.sharing.ocm.v1beta1.ocm_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.sharing.ocm.v1beta1.GetReceivedOCMShareRequest)
+  })
+_sym_db.RegisterMessage(GetReceivedOCMShareRequest)
+
+GetReceivedOCMShareResponse = _reflection.GeneratedProtocolMessageType('GetReceivedOCMShareResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETRECEIVEDOCMSHARERESPONSE,
+  '__module__' : 'cs3.sharing.ocm.v1beta1.ocm_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.sharing.ocm.v1beta1.GetReceivedOCMShareResponse)
+  })
+_sym_db.RegisterMessage(GetReceivedOCMShareResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -994,8 +1098,8 @@ _OCMAPI = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2919,
-  serialized_end=3767,
+  serialized_start=3217,
+  serialized_end=4196,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateOCMShare',
@@ -1058,6 +1162,15 @@ _OCMAPI = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATERECEIVEDOCMSHAREREQUEST,
     output_type=_UPDATERECEIVEDOCMSHARERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetReceivedOCMShare',
+    full_name='cs3.sharing.ocm.v1beta1.OcmAPI.GetReceivedOCMShare',
+    index=7,
+    containing_service=None,
+    input_type=_GETRECEIVEDOCMSHAREREQUEST,
+    output_type=_GETRECEIVEDOCMSHARERESPONSE,
     serialized_options=None,
   ),
 ])
