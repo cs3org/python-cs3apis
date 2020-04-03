@@ -17,6 +17,7 @@ from cs3.app.registry.v1beta1 import registry_api_pb2 as cs3_dot_app_dot_registr
 from cs3.auth.registry.v1beta1 import registry_api_pb2 as cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2
 from cs3.identity.user.v1beta1 import resources_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2
 from cs3.identity.user.v1beta1 import user_api_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2
+from cs3.invite.v1beta1 import invite_api_pb2 as cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2
 from cs3.preferences.v1beta1 import preferences_api_pb2 as cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2
 from cs3.rpc.v1beta1 import status_pb2 as cs3_dot_rpc_dot_v1beta1_dot_status__pb2
 from cs3.sharing.collaboration.v1beta1 import collaboration_api_pb2 as cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2
@@ -32,9 +33,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.gateway.v1beta1',
   syntax='proto3',
   serialized_options=_b('\n\027com.cs3.gateway.v1beta1B\017GatewayApiProtoP\001Z\016gatewayv1beta1\242\002\003CGX\252\002\023Cs3.Gateway.V1Beta1\312\002\023Cs3\\Gateway\\V1Beta1'),
-  serialized_pb=_b('\n%cs3/gateway/v1beta1/gateway_api.proto\x12\x13\x63s3.gateway.v1beta1\x1a+cs3/app/registry/v1beta1/registry_api.proto\x1a,cs3/auth/registry/v1beta1/registry_api.proto\x1a)cs3/identity/user/v1beta1/resources.proto\x1a(cs3/identity/user/v1beta1/user_api.proto\x1a-cs3/preferences/v1beta1/preferences_api.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x39\x63s3/sharing/collaboration/v1beta1/collaboration_api.proto\x1a\'cs3/sharing/link/v1beta1/link_api.proto\x1a%cs3/sharing/ocm/v1beta1/ocm_api.proto\x1a/cs3/storage/provider/v1beta1/provider_api.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"x\n\x13\x41uthenticateRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x11\n\tclient_id\x18\x03 \x01(\t\x12\x15\n\rclient_secret\x18\x04 \x01(\t\"\xa8\x01\n\x14\x41uthenticateResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\r\n\x05token\x18\x03 \x01(\t\x12-\n\x04user\x18\x04 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"I\n\rWhoAmIRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\r\n\x05token\x18\x02 \x01(\t\"\x93\x01\n\x0eWhoAmIResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12-\n\x04user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"r\n\x0fGetQuotaRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\"\xd1\x01\n\x12ListRecycleRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\x12-\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12+\n\x05to_ts\x18\x04 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"\xd7\x01\n\x18ListRecycleStreamRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\x12-\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12+\n\x05to_ts\x18\x04 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"v\n\x13PurgeRecycleRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\"\xac\x01\n\x1cInitiateFileDownloadResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x19\n\x11\x64ownload_endpoint\x18\x03 \x01(\t\x12\x0e\n\x06\x65xpose\x18\x05 \x01(\x08\x12\r\n\x05token\x18\x06 \x01(\t\"\xed\x01\n\x1aInitiateFileUploadResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x17\n\x0fupload_endpoint\x18\x03 \x01(\t\x12S\n\x13\x61vailable_checksums\x18\x04 \x03(\x0b\x32\x36.cs3.storage.provider.v1beta1.ResourceChecksumPriority\x12\r\n\x05token\x18\x05 \x01(\t\"~\n\x19ListAuthProvidersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\r\n\x05types\x18\x03 \x03(\t2\xd9\x30\n\nGatewayAPI\x12\x63\n\x0c\x41uthenticate\x12(.cs3.gateway.v1beta1.AuthenticateRequest\x1a).cs3.gateway.v1beta1.AuthenticateResponse\x12Q\n\x06WhoAmI\x12\".cs3.gateway.v1beta1.WhoAmIRequest\x1a#.cs3.gateway.v1beta1.WhoAmIResponse\x12~\n\x0f\x43reateContainer\x12\x34.cs3.storage.provider.v1beta1.CreateContainerRequest\x1a\x35.cs3.storage.provider.v1beta1.CreateContainerResponse\x12\x63\n\x06\x44\x65lete\x12+.cs3.storage.provider.v1beta1.DeleteRequest\x1a,.cs3.storage.provider.v1beta1.DeleteResponse\x12\x66\n\x07GetPath\x12,.cs3.storage.provider.v1beta1.GetPathRequest\x1a-.cs3.storage.provider.v1beta1.GetPathResponse\x12`\n\x08GetQuota\x12$.cs3.gateway.v1beta1.GetQuotaRequest\x1a..cs3.storage.provider.v1beta1.GetQuotaResponse\x12\x84\x01\n\x14InitiateFileDownload\x12\x39.cs3.storage.provider.v1beta1.InitiateFileDownloadRequest\x1a\x31.cs3.gateway.v1beta1.InitiateFileDownloadResponse\x12~\n\x12InitiateFileUpload\x12\x37.cs3.storage.provider.v1beta1.InitiateFileUploadRequest\x1a/.cs3.gateway.v1beta1.InitiateFileUploadResponse\x12\x8c\x01\n\x13ListContainerStream\x12\x38.cs3.storage.provider.v1beta1.ListContainerStreamRequest\x1a\x39.cs3.storage.provider.v1beta1.ListContainerStreamResponse0\x01\x12x\n\rListContainer\x12\x32.cs3.storage.provider.v1beta1.ListContainerRequest\x1a\x33.cs3.storage.provider.v1beta1.ListContainerResponse\x12\x81\x01\n\x10ListFileVersions\x12\x35.cs3.storage.provider.v1beta1.ListFileVersionsRequest\x1a\x36.cs3.storage.provider.v1beta1.ListFileVersionsResponse\x12}\n\x11ListRecycleStream\x12-.cs3.gateway.v1beta1.ListRecycleStreamRequest\x1a\x37.cs3.storage.provider.v1beta1.ListRecycleStreamResponse0\x01\x12i\n\x0bListRecycle\x12\'.cs3.gateway.v1beta1.ListRecycleRequest\x1a\x31.cs3.storage.provider.v1beta1.ListRecycleResponse\x12]\n\x04Move\x12).cs3.storage.provider.v1beta1.MoveRequest\x1a*.cs3.storage.provider.v1beta1.MoveResponse\x12l\n\x0cPurgeRecycle\x12(.cs3.gateway.v1beta1.PurgeRecycleRequest\x1a\x32.cs3.storage.provider.v1beta1.PurgeRecycleResponse\x12\x87\x01\n\x12RestoreFileVersion\x12\x37.cs3.storage.provider.v1beta1.RestoreFileVersionRequest\x1a\x38.cs3.storage.provider.v1beta1.RestoreFileVersionResponse\x12\x87\x01\n\x12RestoreRecycleItem\x12\x37.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest\x1a\x38.cs3.storage.provider.v1beta1.RestoreRecycleItemResponse\x12]\n\x04Stat\x12).cs3.storage.provider.v1beta1.StatRequest\x1a*.cs3.storage.provider.v1beta1.StatResponse\x12\x8d\x01\n\x14SetArbitraryMetadata\x12\x39.cs3.storage.provider.v1beta1.SetArbitraryMetadataRequest\x1a:.cs3.storage.provider.v1beta1.SetArbitraryMetadataResponse\x12\x93\x01\n\x16UnsetArbitraryMetadata\x12;.cs3.storage.provider.v1beta1.UnsetArbitraryMetadataRequest\x1a<.cs3.storage.provider.v1beta1.UnsetArbitraryMetadataResponse\x12o\n\nCreateHome\x12/.cs3.storage.provider.v1beta1.CreateHomeRequest\x1a\x30.cs3.storage.provider.v1beta1.CreateHomeResponse\x12|\n\x0b\x43reateShare\x12\x35.cs3.sharing.collaboration.v1beta1.CreateShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.CreateShareResponse\x12|\n\x0bRemoveShare\x12\x35.cs3.sharing.collaboration.v1beta1.RemoveShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.RemoveShareResponse\x12s\n\x08GetShare\x12\x32.cs3.sharing.collaboration.v1beta1.GetShareRequest\x1a\x33.cs3.sharing.collaboration.v1beta1.GetShareResponse\x12y\n\nListShares\x12\x34.cs3.sharing.collaboration.v1beta1.ListSharesRequest\x1a\x35.cs3.sharing.collaboration.v1beta1.ListSharesResponse\x12|\n\x0bUpdateShare\x12\x35.cs3.sharing.collaboration.v1beta1.UpdateShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.UpdateShareResponse\x12\x91\x01\n\x12ListReceivedShares\x12<.cs3.sharing.collaboration.v1beta1.ListReceivedSharesRequest\x1a=.cs3.sharing.collaboration.v1beta1.ListReceivedSharesResponse\x12\x94\x01\n\x13UpdateReceivedShare\x12=.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest\x1a>.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse\x12\x8b\x01\n\x10GetReceivedShare\x12:.cs3.sharing.collaboration.v1beta1.GetReceivedShareRequest\x1a;.cs3.sharing.collaboration.v1beta1.GetReceivedShareResponse\x12Y\n\x06SetKey\x12&.cs3.preferences.v1beta1.SetKeyRequest\x1a\'.cs3.preferences.v1beta1.SetKeyResponse\x12Y\n\x06GetKey\x12&.cs3.preferences.v1beta1.GetKeyRequest\x1a\'.cs3.preferences.v1beta1.GetKeyResponse\x12|\n\x11\x43reatePublicShare\x12\x32.cs3.sharing.link.v1beta1.CreatePublicShareRequest\x1a\x33.cs3.sharing.link.v1beta1.CreatePublicShareResponse\x12|\n\x11RemovePublicShare\x12\x32.cs3.sharing.link.v1beta1.RemovePublicShareRequest\x1a\x33.cs3.sharing.link.v1beta1.RemovePublicShareResponse\x12s\n\x0eGetPublicShare\x12/.cs3.sharing.link.v1beta1.GetPublicShareRequest\x1a\x30.cs3.sharing.link.v1beta1.GetPublicShareResponse\x12\x88\x01\n\x15GetPublicShareByToken\x12\x36.cs3.sharing.link.v1beta1.GetPublicShareByTokenRequest\x1a\x37.cs3.sharing.link.v1beta1.GetPublicShareByTokenResponse\x12y\n\x10ListPublicShares\x12\x31.cs3.sharing.link.v1beta1.ListPublicSharesRequest\x1a\x32.cs3.sharing.link.v1beta1.ListPublicSharesResponse\x12|\n\x11UpdatePublicShare\x12\x32.cs3.sharing.link.v1beta1.UpdatePublicShareRequest\x1a\x33.cs3.sharing.link.v1beta1.UpdatePublicShareResponse\x12q\n\x0e\x43reateOCMShare\x12..cs3.sharing.ocm.v1beta1.CreateOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse\x12q\n\x0eRemoveOCMShare\x12..cs3.sharing.ocm.v1beta1.RemoveOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.RemoveOCMShareResponse\x12h\n\x0bGetOCMShare\x12+.cs3.sharing.ocm.v1beta1.GetOCMShareRequest\x1a,.cs3.sharing.ocm.v1beta1.GetOCMShareResponse\x12n\n\rListOCMShares\x12-.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest\x1a..cs3.sharing.ocm.v1beta1.ListOCMSharesResponse\x12q\n\x0eUpdateOCMShare\x12..cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.UpdateOCMShareResponse\x12\x86\x01\n\x15ListReceivedOCMShares\x12\x35.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest\x1a\x36.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse\x12\x89\x01\n\x16UpdateReceivedOCMShare\x12\x36.cs3.sharing.ocm.v1beta1.UpdateReceivedOCMShareRequest\x1a\x37.cs3.sharing.ocm.v1beta1.UpdateReceivedOCMShareResponse\x12v\n\x0fGetAppProviders\x12\x30.cs3.app.registry.v1beta1.GetAppProvidersRequest\x1a\x31.cs3.app.registry.v1beta1.GetAppProvidersResponse\x12y\n\x10ListAppProviders\x12\x31.cs3.app.registry.v1beta1.ListAppProvidersRequest\x1a\x32.cs3.app.registry.v1beta1.ListAppProvidersResponse\x12`\n\x07GetUser\x12).cs3.identity.user.v1beta1.GetUserRequest\x1a*.cs3.identity.user.v1beta1.GetUserResponse\x12r\n\rGetUserGroups\x12/.cs3.identity.user.v1beta1.GetUserGroupsRequest\x1a\x30.cs3.identity.user.v1beta1.GetUserGroupsResponse\x12\x66\n\tIsInGroup\x12+.cs3.identity.user.v1beta1.IsInGroupRequest\x1a,.cs3.identity.user.v1beta1.IsInGroupResponse\x12\x66\n\tFindUsers\x12+.cs3.identity.user.v1beta1.FindUsersRequest\x1a,.cs3.identity.user.v1beta1.FindUsersResponse\x12x\n\x11ListAuthProviders\x12\x33.cs3.auth.registry.v1beta1.ListAuthProvidersRequest\x1a..cs3.gateway.v1beta1.ListAuthProvidersResponse\x12\x66\n\x07GetHome\x12,.cs3.storage.provider.v1beta1.GetHomeRequest\x1a-.cs3.storage.provider.v1beta1.GetHomeResponseBn\n\x17\x63om.cs3.gateway.v1beta1B\x0fGatewayApiProtoP\x01Z\x0egatewayv1beta1\xa2\x02\x03\x43GX\xaa\x02\x13\x43s3.Gateway.V1Beta1\xca\x02\x13\x43s3\\Gateway\\V1Beta1b\x06proto3')
+  serialized_pb=_b('\n%cs3/gateway/v1beta1/gateway_api.proto\x12\x13\x63s3.gateway.v1beta1\x1a+cs3/app/registry/v1beta1/registry_api.proto\x1a,cs3/auth/registry/v1beta1/registry_api.proto\x1a)cs3/identity/user/v1beta1/resources.proto\x1a(cs3/identity/user/v1beta1/user_api.proto\x1a#cs3/invite/v1beta1/invite_api.proto\x1a-cs3/preferences/v1beta1/preferences_api.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x39\x63s3/sharing/collaboration/v1beta1/collaboration_api.proto\x1a\'cs3/sharing/link/v1beta1/link_api.proto\x1a%cs3/sharing/ocm/v1beta1/ocm_api.proto\x1a/cs3/storage/provider/v1beta1/provider_api.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"x\n\x13\x41uthenticateRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x11\n\tclient_id\x18\x03 \x01(\t\x12\x15\n\rclient_secret\x18\x04 \x01(\t\"\xa8\x01\n\x14\x41uthenticateResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\r\n\x05token\x18\x03 \x01(\t\x12-\n\x04user\x18\x04 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"I\n\rWhoAmIRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\r\n\x05token\x18\x02 \x01(\t\"\x93\x01\n\x0eWhoAmIResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12-\n\x04user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"r\n\x0fGetQuotaRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\"\xd1\x01\n\x12ListRecycleRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\x12-\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12+\n\x05to_ts\x18\x04 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"\xd7\x01\n\x18ListRecycleStreamRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\x12-\n\x07\x66rom_ts\x18\x03 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12+\n\x05to_ts\x18\x04 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"v\n\x13PurgeRecycleRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\"\xac\x01\n\x1cInitiateFileDownloadResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x19\n\x11\x64ownload_endpoint\x18\x03 \x01(\t\x12\x0e\n\x06\x65xpose\x18\x05 \x01(\x08\x12\r\n\x05token\x18\x06 \x01(\t\"\xed\x01\n\x1aInitiateFileUploadResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x17\n\x0fupload_endpoint\x18\x03 \x01(\t\x12S\n\x13\x61vailable_checksums\x18\x04 \x03(\x0b\x32\x36.cs3.storage.provider.v1beta1.ResourceChecksumPriority\x12\r\n\x05token\x18\x05 \x01(\t\"~\n\x19ListAuthProvidersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\r\n\x05types\x18\x03 \x03(\t2\x9d\x34\n\nGatewayAPI\x12\x63\n\x0c\x41uthenticate\x12(.cs3.gateway.v1beta1.AuthenticateRequest\x1a).cs3.gateway.v1beta1.AuthenticateResponse\x12Q\n\x06WhoAmI\x12\".cs3.gateway.v1beta1.WhoAmIRequest\x1a#.cs3.gateway.v1beta1.WhoAmIResponse\x12~\n\x0f\x43reateContainer\x12\x34.cs3.storage.provider.v1beta1.CreateContainerRequest\x1a\x35.cs3.storage.provider.v1beta1.CreateContainerResponse\x12\x63\n\x06\x44\x65lete\x12+.cs3.storage.provider.v1beta1.DeleteRequest\x1a,.cs3.storage.provider.v1beta1.DeleteResponse\x12\x66\n\x07GetPath\x12,.cs3.storage.provider.v1beta1.GetPathRequest\x1a-.cs3.storage.provider.v1beta1.GetPathResponse\x12`\n\x08GetQuota\x12$.cs3.gateway.v1beta1.GetQuotaRequest\x1a..cs3.storage.provider.v1beta1.GetQuotaResponse\x12\x84\x01\n\x14InitiateFileDownload\x12\x39.cs3.storage.provider.v1beta1.InitiateFileDownloadRequest\x1a\x31.cs3.gateway.v1beta1.InitiateFileDownloadResponse\x12~\n\x12InitiateFileUpload\x12\x37.cs3.storage.provider.v1beta1.InitiateFileUploadRequest\x1a/.cs3.gateway.v1beta1.InitiateFileUploadResponse\x12\x8c\x01\n\x13ListContainerStream\x12\x38.cs3.storage.provider.v1beta1.ListContainerStreamRequest\x1a\x39.cs3.storage.provider.v1beta1.ListContainerStreamResponse0\x01\x12x\n\rListContainer\x12\x32.cs3.storage.provider.v1beta1.ListContainerRequest\x1a\x33.cs3.storage.provider.v1beta1.ListContainerResponse\x12\x81\x01\n\x10ListFileVersions\x12\x35.cs3.storage.provider.v1beta1.ListFileVersionsRequest\x1a\x36.cs3.storage.provider.v1beta1.ListFileVersionsResponse\x12}\n\x11ListRecycleStream\x12-.cs3.gateway.v1beta1.ListRecycleStreamRequest\x1a\x37.cs3.storage.provider.v1beta1.ListRecycleStreamResponse0\x01\x12i\n\x0bListRecycle\x12\'.cs3.gateway.v1beta1.ListRecycleRequest\x1a\x31.cs3.storage.provider.v1beta1.ListRecycleResponse\x12]\n\x04Move\x12).cs3.storage.provider.v1beta1.MoveRequest\x1a*.cs3.storage.provider.v1beta1.MoveResponse\x12l\n\x0cPurgeRecycle\x12(.cs3.gateway.v1beta1.PurgeRecycleRequest\x1a\x32.cs3.storage.provider.v1beta1.PurgeRecycleResponse\x12\x87\x01\n\x12RestoreFileVersion\x12\x37.cs3.storage.provider.v1beta1.RestoreFileVersionRequest\x1a\x38.cs3.storage.provider.v1beta1.RestoreFileVersionResponse\x12\x87\x01\n\x12RestoreRecycleItem\x12\x37.cs3.storage.provider.v1beta1.RestoreRecycleItemRequest\x1a\x38.cs3.storage.provider.v1beta1.RestoreRecycleItemResponse\x12]\n\x04Stat\x12).cs3.storage.provider.v1beta1.StatRequest\x1a*.cs3.storage.provider.v1beta1.StatResponse\x12\x8d\x01\n\x14SetArbitraryMetadata\x12\x39.cs3.storage.provider.v1beta1.SetArbitraryMetadataRequest\x1a:.cs3.storage.provider.v1beta1.SetArbitraryMetadataResponse\x12\x93\x01\n\x16UnsetArbitraryMetadata\x12;.cs3.storage.provider.v1beta1.UnsetArbitraryMetadataRequest\x1a<.cs3.storage.provider.v1beta1.UnsetArbitraryMetadataResponse\x12o\n\nCreateHome\x12/.cs3.storage.provider.v1beta1.CreateHomeRequest\x1a\x30.cs3.storage.provider.v1beta1.CreateHomeResponse\x12|\n\x0b\x43reateShare\x12\x35.cs3.sharing.collaboration.v1beta1.CreateShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.CreateShareResponse\x12|\n\x0bRemoveShare\x12\x35.cs3.sharing.collaboration.v1beta1.RemoveShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.RemoveShareResponse\x12s\n\x08GetShare\x12\x32.cs3.sharing.collaboration.v1beta1.GetShareRequest\x1a\x33.cs3.sharing.collaboration.v1beta1.GetShareResponse\x12y\n\nListShares\x12\x34.cs3.sharing.collaboration.v1beta1.ListSharesRequest\x1a\x35.cs3.sharing.collaboration.v1beta1.ListSharesResponse\x12|\n\x0bUpdateShare\x12\x35.cs3.sharing.collaboration.v1beta1.UpdateShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.UpdateShareResponse\x12\x91\x01\n\x12ListReceivedShares\x12<.cs3.sharing.collaboration.v1beta1.ListReceivedSharesRequest\x1a=.cs3.sharing.collaboration.v1beta1.ListReceivedSharesResponse\x12\x94\x01\n\x13UpdateReceivedShare\x12=.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest\x1a>.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse\x12\x8b\x01\n\x10GetReceivedShare\x12:.cs3.sharing.collaboration.v1beta1.GetReceivedShareRequest\x1a;.cs3.sharing.collaboration.v1beta1.GetReceivedShareResponse\x12Y\n\x06SetKey\x12&.cs3.preferences.v1beta1.SetKeyRequest\x1a\'.cs3.preferences.v1beta1.SetKeyResponse\x12Y\n\x06GetKey\x12&.cs3.preferences.v1beta1.GetKeyRequest\x1a\'.cs3.preferences.v1beta1.GetKeyResponse\x12|\n\x11\x43reatePublicShare\x12\x32.cs3.sharing.link.v1beta1.CreatePublicShareRequest\x1a\x33.cs3.sharing.link.v1beta1.CreatePublicShareResponse\x12|\n\x11RemovePublicShare\x12\x32.cs3.sharing.link.v1beta1.RemovePublicShareRequest\x1a\x33.cs3.sharing.link.v1beta1.RemovePublicShareResponse\x12s\n\x0eGetPublicShare\x12/.cs3.sharing.link.v1beta1.GetPublicShareRequest\x1a\x30.cs3.sharing.link.v1beta1.GetPublicShareResponse\x12\x88\x01\n\x15GetPublicShareByToken\x12\x36.cs3.sharing.link.v1beta1.GetPublicShareByTokenRequest\x1a\x37.cs3.sharing.link.v1beta1.GetPublicShareByTokenResponse\x12y\n\x10ListPublicShares\x12\x31.cs3.sharing.link.v1beta1.ListPublicSharesRequest\x1a\x32.cs3.sharing.link.v1beta1.ListPublicSharesResponse\x12|\n\x11UpdatePublicShare\x12\x32.cs3.sharing.link.v1beta1.UpdatePublicShareRequest\x1a\x33.cs3.sharing.link.v1beta1.UpdatePublicShareResponse\x12q\n\x0e\x43reateOCMShare\x12..cs3.sharing.ocm.v1beta1.CreateOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.CreateOCMShareResponse\x12q\n\x0eRemoveOCMShare\x12..cs3.sharing.ocm.v1beta1.RemoveOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.RemoveOCMShareResponse\x12h\n\x0bGetOCMShare\x12+.cs3.sharing.ocm.v1beta1.GetOCMShareRequest\x1a,.cs3.sharing.ocm.v1beta1.GetOCMShareResponse\x12n\n\rListOCMShares\x12-.cs3.sharing.ocm.v1beta1.ListOCMSharesRequest\x1a..cs3.sharing.ocm.v1beta1.ListOCMSharesResponse\x12q\n\x0eUpdateOCMShare\x12..cs3.sharing.ocm.v1beta1.UpdateOCMShareRequest\x1a/.cs3.sharing.ocm.v1beta1.UpdateOCMShareResponse\x12\x86\x01\n\x15ListReceivedOCMShares\x12\x35.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesRequest\x1a\x36.cs3.sharing.ocm.v1beta1.ListReceivedOCMSharesResponse\x12\x89\x01\n\x16UpdateReceivedOCMShare\x12\x36.cs3.sharing.ocm.v1beta1.UpdateReceivedOCMShareRequest\x1a\x37.cs3.sharing.ocm.v1beta1.UpdateReceivedOCMShareResponse\x12\x80\x01\n\x13GetReceivedOCMShare\x12\x33.cs3.sharing.ocm.v1beta1.GetReceivedOCMShareRequest\x1a\x34.cs3.sharing.ocm.v1beta1.GetReceivedOCMShareResponse\x12v\n\x0fGetAppProviders\x12\x30.cs3.app.registry.v1beta1.GetAppProvidersRequest\x1a\x31.cs3.app.registry.v1beta1.GetAppProvidersResponse\x12y\n\x10ListAppProviders\x12\x31.cs3.app.registry.v1beta1.ListAppProvidersRequest\x1a\x32.cs3.app.registry.v1beta1.ListAppProvidersResponse\x12`\n\x07GetUser\x12).cs3.identity.user.v1beta1.GetUserRequest\x1a*.cs3.identity.user.v1beta1.GetUserResponse\x12r\n\rGetUserGroups\x12/.cs3.identity.user.v1beta1.GetUserGroupsRequest\x1a\x30.cs3.identity.user.v1beta1.GetUserGroupsResponse\x12\x66\n\tIsInGroup\x12+.cs3.identity.user.v1beta1.IsInGroupRequest\x1a,.cs3.identity.user.v1beta1.IsInGroupResponse\x12\x66\n\tFindUsers\x12+.cs3.identity.user.v1beta1.FindUsersRequest\x1a,.cs3.identity.user.v1beta1.FindUsersResponse\x12x\n\x11ListAuthProviders\x12\x33.cs3.auth.registry.v1beta1.ListAuthProvidersRequest\x1a..cs3.gateway.v1beta1.ListAuthProvidersResponse\x12\x66\n\x07GetHome\x12,.cs3.storage.provider.v1beta1.GetHomeRequest\x1a-.cs3.storage.provider.v1beta1.GetHomeResponse\x12v\n\x13GenerateInviteToken\x12..cs3.invite.v1beta1.GenerateInviteTokenRequest\x1a/.cs3.invite.v1beta1.GenerateInviteTokenResponse\x12\x64\n\rForwardInvite\x12(.cs3.invite.v1beta1.ForwardInviteRequest\x1a).cs3.invite.v1beta1.ForwardInviteResponse\x12\x61\n\x0c\x41\x63\x63\x65ptInvite\x12\'.cs3.invite.v1beta1.AcceptInviteRequest\x1a(.cs3.invite.v1beta1.AcceptInviteResponseBn\n\x17\x63om.cs3.gateway.v1beta1B\x0fGatewayApiProtoP\x01Z\x0egatewayv1beta1\xa2\x02\x03\x43GX\xaa\x02\x13\x43s3.Gateway.V1Beta1\xca\x02\x13\x43s3\\Gateway\\V1Beta1b\x06proto3')
   ,
-  dependencies=[cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.DESCRIPTOR,cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.DESCRIPTOR,cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.DESCRIPTOR,cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2.DESCRIPTOR,cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.DESCRIPTOR,cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2.DESCRIPTOR,cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
+  dependencies=[cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.DESCRIPTOR,cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.DESCRIPTOR,cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.DESCRIPTOR,cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.DESCRIPTOR,cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2.DESCRIPTOR,cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.DESCRIPTOR,cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2.DESCRIPTOR,cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
 
 
@@ -86,8 +87,8 @@ _AUTHENTICATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=580,
-  serialized_end=700,
+  serialized_start=617,
+  serialized_end=737,
 )
 
 
@@ -138,8 +139,8 @@ _AUTHENTICATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=703,
-  serialized_end=871,
+  serialized_start=740,
+  serialized_end=908,
 )
 
 
@@ -176,8 +177,8 @@ _WHOAMIREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=873,
-  serialized_end=946,
+  serialized_start=910,
+  serialized_end=983,
 )
 
 
@@ -221,8 +222,8 @@ _WHOAMIRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=949,
-  serialized_end=1096,
+  serialized_start=986,
+  serialized_end=1133,
 )
 
 
@@ -259,8 +260,8 @@ _GETQUOTAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1098,
-  serialized_end=1212,
+  serialized_start=1135,
+  serialized_end=1249,
 )
 
 
@@ -311,8 +312,8 @@ _LISTRECYCLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1215,
-  serialized_end=1424,
+  serialized_start=1252,
+  serialized_end=1461,
 )
 
 
@@ -363,8 +364,8 @@ _LISTRECYCLESTREAMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1427,
-  serialized_end=1642,
+  serialized_start=1464,
+  serialized_end=1679,
 )
 
 
@@ -401,8 +402,8 @@ _PURGERECYCLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1644,
-  serialized_end=1762,
+  serialized_start=1681,
+  serialized_end=1799,
 )
 
 
@@ -460,8 +461,8 @@ _INITIATEFILEDOWNLOADRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1765,
-  serialized_end=1937,
+  serialized_start=1802,
+  serialized_end=1974,
 )
 
 
@@ -519,8 +520,8 @@ _INITIATEFILEUPLOADRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1940,
-  serialized_end=2177,
+  serialized_start=1977,
+  serialized_end=2214,
 )
 
 
@@ -564,8 +565,8 @@ _LISTAUTHPROVIDERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2179,
-  serialized_end=2305,
+  serialized_start=2216,
+  serialized_end=2342,
 )
 
 _AUTHENTICATEREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
@@ -694,8 +695,8 @@ _GATEWAYAPI = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2308,
-  serialized_end=8541,
+  serialized_start=2345,
+  serialized_end=9030,
   methods=[
   _descriptor.MethodDescriptor(
     name='Authenticate',
@@ -1094,9 +1095,18 @@ _GATEWAYAPI = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
+    name='GetReceivedOCMShare',
+    full_name='cs3.gateway.v1beta1.GatewayAPI.GetReceivedOCMShare',
+    index=44,
+    containing_service=None,
+    input_type=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2._GETRECEIVEDOCMSHAREREQUEST,
+    output_type=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2._GETRECEIVEDOCMSHARERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
     name='GetAppProviders',
     full_name='cs3.gateway.v1beta1.GatewayAPI.GetAppProviders',
-    index=44,
+    index=45,
     containing_service=None,
     input_type=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2._GETAPPPROVIDERSREQUEST,
     output_type=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2._GETAPPPROVIDERSRESPONSE,
@@ -1105,7 +1115,7 @@ _GATEWAYAPI = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListAppProviders',
     full_name='cs3.gateway.v1beta1.GatewayAPI.ListAppProviders',
-    index=45,
+    index=46,
     containing_service=None,
     input_type=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2._LISTAPPPROVIDERSREQUEST,
     output_type=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2._LISTAPPPROVIDERSRESPONSE,
@@ -1114,7 +1124,7 @@ _GATEWAYAPI = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetUser',
     full_name='cs3.gateway.v1beta1.GatewayAPI.GetUser',
-    index=46,
+    index=47,
     containing_service=None,
     input_type=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2._GETUSERREQUEST,
     output_type=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2._GETUSERRESPONSE,
@@ -1123,7 +1133,7 @@ _GATEWAYAPI = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetUserGroups',
     full_name='cs3.gateway.v1beta1.GatewayAPI.GetUserGroups',
-    index=47,
+    index=48,
     containing_service=None,
     input_type=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2._GETUSERGROUPSREQUEST,
     output_type=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2._GETUSERGROUPSRESPONSE,
@@ -1132,7 +1142,7 @@ _GATEWAYAPI = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='IsInGroup',
     full_name='cs3.gateway.v1beta1.GatewayAPI.IsInGroup',
-    index=48,
+    index=49,
     containing_service=None,
     input_type=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2._ISINGROUPREQUEST,
     output_type=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2._ISINGROUPRESPONSE,
@@ -1141,7 +1151,7 @@ _GATEWAYAPI = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='FindUsers',
     full_name='cs3.gateway.v1beta1.GatewayAPI.FindUsers',
-    index=49,
+    index=50,
     containing_service=None,
     input_type=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2._FINDUSERSREQUEST,
     output_type=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2._FINDUSERSRESPONSE,
@@ -1150,7 +1160,7 @@ _GATEWAYAPI = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListAuthProviders',
     full_name='cs3.gateway.v1beta1.GatewayAPI.ListAuthProviders',
-    index=50,
+    index=51,
     containing_service=None,
     input_type=cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2._LISTAUTHPROVIDERSREQUEST,
     output_type=_LISTAUTHPROVIDERSRESPONSE,
@@ -1159,10 +1169,37 @@ _GATEWAYAPI = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='GetHome',
     full_name='cs3.gateway.v1beta1.GatewayAPI.GetHome',
-    index=51,
+    index=52,
     containing_service=None,
     input_type=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2._GETHOMEREQUEST,
     output_type=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2._GETHOMERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GenerateInviteToken',
+    full_name='cs3.gateway.v1beta1.GatewayAPI.GenerateInviteToken',
+    index=53,
+    containing_service=None,
+    input_type=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2._GENERATEINVITETOKENREQUEST,
+    output_type=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2._GENERATEINVITETOKENRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ForwardInvite',
+    full_name='cs3.gateway.v1beta1.GatewayAPI.ForwardInvite',
+    index=54,
+    containing_service=None,
+    input_type=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2._FORWARDINVITEREQUEST,
+    output_type=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2._FORWARDINVITERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='AcceptInvite',
+    full_name='cs3.gateway.v1beta1.GatewayAPI.AcceptInvite',
+    index=55,
+    containing_service=None,
+    input_type=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2._ACCEPTINVITEREQUEST,
+    output_type=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2._ACCEPTINVITERESPONSE,
     serialized_options=None,
   ),
 ])

@@ -5,6 +5,7 @@ from cs3.app.registry.v1beta1 import registry_api_pb2 as cs3_dot_app_dot_registr
 from cs3.auth.registry.v1beta1 import registry_api_pb2 as cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2
 from cs3.gateway.v1beta1 import gateway_api_pb2 as cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2
 from cs3.identity.user.v1beta1 import user_api_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2
+from cs3.invite.v1beta1 import invite_api_pb2 as cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2
 from cs3.preferences.v1beta1 import preferences_api_pb2 as cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2
 from cs3.sharing.collaboration.v1beta1 import collaboration_api_pb2 as cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2
 from cs3.sharing.link.v1beta1 import link_api_pb2 as cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2
@@ -261,6 +262,11 @@ class GatewayAPIStub(object):
         request_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.UpdateReceivedOCMShareRequest.SerializeToString,
         response_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.UpdateReceivedOCMShareResponse.FromString,
         )
+    self.GetReceivedOCMShare = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/GetReceivedOCMShare',
+        request_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetReceivedOCMShareRequest.SerializeToString,
+        response_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetReceivedOCMShareResponse.FromString,
+        )
     self.GetAppProviders = channel.unary_unary(
         '/cs3.gateway.v1beta1.GatewayAPI/GetAppProviders',
         request_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAppProvidersRequest.SerializeToString,
@@ -300,6 +306,21 @@ class GatewayAPIStub(object):
         '/cs3.gateway.v1beta1.GatewayAPI/GetHome',
         request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.SerializeToString,
         response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.FromString,
+        )
+    self.GenerateInviteToken = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/GenerateInviteToken',
+        request_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenRequest.SerializeToString,
+        response_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenResponse.FromString,
+        )
+    self.ForwardInvite = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/ForwardInvite',
+        request_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteRequest.SerializeToString,
+        response_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteResponse.FromString,
+        )
+    self.AcceptInvite = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/AcceptInvite',
+        request_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.SerializeToString,
+        response_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.FromString,
         )
 
 
@@ -711,6 +732,14 @@ class GatewayAPIServicer(object):
   def UpdateReceivedOCMShare(self, request, context):
     """Update the received share to change the share state or the display name.
     MUST return CODE_NOT_FOUND if the share reference does not exist.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetReceivedOCMShare(self, request, context):
+    """Get the information for the given received share reference.
+    MUST return CODE_NOT_FOUND if the received share reference does not exist.
     *****************************************************************/
     ************************ APP REGISTRY ****************************/
     *****************************************************************/
@@ -781,6 +810,30 @@ class GatewayAPIServicer(object):
   def GetHome(self, request, context):
     """Returns the home path for the given authenticated user.
     When a user has access to multiple storage providers, one of them is the home.
+    *****************************************************************/
+    ************************ OCM INVITE MANAGER *********************/
+    *****************************************************************/
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GenerateInviteToken(self, request, context):
+    """Generates a new token for the user with a validity of 24 hours.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ForwardInvite(self, request, context):
+    """Forwards a received invite to the sync'n'share system provider.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def AcceptInvite(self, request, context):
+    """Completes an invitation acceptance.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -1009,6 +1062,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
           request_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.UpdateReceivedOCMShareRequest.FromString,
           response_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.UpdateReceivedOCMShareResponse.SerializeToString,
       ),
+      'GetReceivedOCMShare': grpc.unary_unary_rpc_method_handler(
+          servicer.GetReceivedOCMShare,
+          request_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetReceivedOCMShareRequest.FromString,
+          response_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetReceivedOCMShareResponse.SerializeToString,
+      ),
       'GetAppProviders': grpc.unary_unary_rpc_method_handler(
           servicer.GetAppProviders,
           request_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAppProvidersRequest.FromString,
@@ -1048,6 +1106,21 @@ def add_GatewayAPIServicer_to_server(servicer, server):
           servicer.GetHome,
           request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.FromString,
           response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.SerializeToString,
+      ),
+      'GenerateInviteToken': grpc.unary_unary_rpc_method_handler(
+          servicer.GenerateInviteToken,
+          request_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenRequest.FromString,
+          response_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenResponse.SerializeToString,
+      ),
+      'ForwardInvite': grpc.unary_unary_rpc_method_handler(
+          servicer.ForwardInvite,
+          request_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteRequest.FromString,
+          response_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteResponse.SerializeToString,
+      ),
+      'AcceptInvite': grpc.unary_unary_rpc_method_handler(
+          servicer.AcceptInvite,
+          request_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.FromString,
+          response_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

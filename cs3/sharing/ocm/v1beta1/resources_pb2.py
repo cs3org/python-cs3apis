@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.sharing.ocm.v1beta1',
   syntax='proto3',
   serialized_options=_b('\n\033com.cs3.sharing.ocm.v1beta1B\016ResourcesProtoP\001Z\nocmv1beta1\242\002\003CSO\252\002\027Cs3.Sharing.Ocm.V1Beta1\312\002\027Cs3\\Sharing\\Ocm\\V1Beta1'),
-  serialized_pb=_b('\n\'cs3/sharing/ocm/v1beta1/resources.proto\x12\x17\x63s3.sharing.ocm.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xac\x03\n\x05Share\x12,\n\x02id\x18\x01 \x01(\x0b\x32 .cs3.sharing.ocm.v1beta1.ShareId\x12=\n\x0bresource_id\x18\x02 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12>\n\x0bpermissions\x18\x03 \x01(\x0b\x32).cs3.sharing.ocm.v1beta1.SharePermissions\x12\x36\n\x07grantee\x18\x04 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12\x30\n\x05owner\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x32\n\x07\x63reator\x18\x06 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12+\n\x05\x63time\x18\x07 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12+\n\x05mtime\x18\x08 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"k\n\x10SharePermissions\x12\x46\n\x0bpermissions\x18\x01 \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\x12\x0f\n\x07reshare\x18\x02 \x01(\x08\"r\n\rReceivedShare\x12-\n\x05share\x18\x01 \x01(\x0b\x32\x1e.cs3.sharing.ocm.v1beta1.Share\x12\x32\n\x05state\x18\x02 \x01(\x0e\x32#.cs3.sharing.ocm.v1beta1.ShareState\"\xb3\x01\n\x08ShareKey\x12\x30\n\x05owner\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12=\n\x0bresource_id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x36\n\x07grantee\x18\x04 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\"\x1c\n\x07ShareId\x12\x11\n\topaque_id\x18\x02 \x01(\t\"z\n\x0eShareReference\x12.\n\x02id\x18\x01 \x01(\x0b\x32 .cs3.sharing.ocm.v1beta1.ShareIdH\x00\x12\x30\n\x03key\x18\x02 \x01(\x0b\x32!.cs3.sharing.ocm.v1beta1.ShareKeyH\x00\x42\x06\n\x04spec\"\x84\x01\n\nShareGrant\x12\x36\n\x07grantee\x18\x01 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12>\n\x0bpermissions\x18\x02 \x01(\x0b\x32).cs3.sharing.ocm.v1beta1.SharePermissions\"b\n\x0cProviderInfo\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x13\n\x0b\x61pi_version\x18\x02 \x01(\t\x12\x14\n\x0c\x61pi_endpoint\x18\x03 \x01(\t\x12\x17\n\x0fwebdav_endpoint\x18\x04 \x01(\t*r\n\nShareState\x12\x17\n\x13SHARE_STATE_INVALID\x10\x00\x12\x17\n\x13SHARE_STATE_PENDING\x10\x01\x12\x18\n\x14SHARE_STATE_ACCEPTED\x10\x02\x12\x18\n\x14SHARE_STATE_REJECTED\x10\x03\x42u\n\x1b\x63om.cs3.sharing.ocm.v1beta1B\x0eResourcesProtoP\x01Z\nocmv1beta1\xa2\x02\x03\x43SO\xaa\x02\x17\x43s3.Sharing.Ocm.V1Beta1\xca\x02\x17\x43s3\\Sharing\\Ocm\\V1Beta1b\x06proto3')
+  serialized_pb=_b('\n\'cs3/sharing/ocm/v1beta1/resources.proto\x12\x17\x63s3.sharing.ocm.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xac\x03\n\x05Share\x12,\n\x02id\x18\x01 \x01(\x0b\x32 .cs3.sharing.ocm.v1beta1.ShareId\x12=\n\x0bresource_id\x18\x02 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12>\n\x0bpermissions\x18\x03 \x01(\x0b\x32).cs3.sharing.ocm.v1beta1.SharePermissions\x12\x36\n\x07grantee\x18\x04 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12\x30\n\x05owner\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x32\n\x07\x63reator\x18\x06 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12+\n\x05\x63time\x18\x07 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12+\n\x05mtime\x18\x08 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"k\n\x10SharePermissions\x12\x46\n\x0bpermissions\x18\x01 \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\x12\x0f\n\x07reshare\x18\x02 \x01(\x08\"r\n\rReceivedShare\x12-\n\x05share\x18\x01 \x01(\x0b\x32\x1e.cs3.sharing.ocm.v1beta1.Share\x12\x32\n\x05state\x18\x02 \x01(\x0e\x32#.cs3.sharing.ocm.v1beta1.ShareState\"\xb3\x01\n\x08ShareKey\x12\x30\n\x05owner\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12=\n\x0bresource_id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x36\n\x07grantee\x18\x04 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\"\x1c\n\x07ShareId\x12\x11\n\topaque_id\x18\x02 \x01(\t\"z\n\x0eShareReference\x12.\n\x02id\x18\x01 \x01(\x0b\x32 .cs3.sharing.ocm.v1beta1.ShareIdH\x00\x12\x30\n\x03key\x18\x02 \x01(\x0b\x32!.cs3.sharing.ocm.v1beta1.ShareKeyH\x00\x42\x06\n\x04spec\"\x84\x01\n\nShareGrant\x12\x36\n\x07grantee\x18\x01 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12>\n\x0bpermissions\x18\x02 \x01(\x0b\x32).cs3.sharing.ocm.v1beta1.SharePermissions\"b\n\x0cProviderInfo\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x13\n\x0b\x61pi_version\x18\x02 \x01(\t\x12\x14\n\x0c\x61pi_endpoint\x18\x03 \x01(\t\x12\x17\n\x0fwebdav_endpoint\x18\x04 \x01(\t\"u\n\rUserShareList\x12\x32\n\x07user_id\x18\x01 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x30\n\x05users\x18\x02 \x03(\x0b\x32!.cs3.identity.user.v1beta1.UserId*r\n\nShareState\x12\x17\n\x13SHARE_STATE_INVALID\x10\x00\x12\x17\n\x13SHARE_STATE_PENDING\x10\x01\x12\x18\n\x14SHARE_STATE_ACCEPTED\x10\x02\x12\x18\n\x14SHARE_STATE_REJECTED\x10\x03\x42u\n\x1b\x63om.cs3.sharing.ocm.v1beta1B\x0eResourcesProtoP\x01Z\nocmv1beta1\xa2\x02\x03\x43SO\xaa\x02\x17\x43s3.Sharing.Ocm.V1Beta1\xca\x02\x17\x43s3\\Sharing\\Ocm\\V1Beta1b\x06proto3')
   ,
   dependencies=[cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -53,8 +53,8 @@ _SHARESTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1415,
-  serialized_end=1529,
+  serialized_start=1534,
+  serialized_end=1648,
 )
 _sym_db.RegisterEnumDescriptor(_SHARESTATE)
 
@@ -428,6 +428,44 @@ _PROVIDERINFO = _descriptor.Descriptor(
   serialized_end=1413,
 )
 
+
+_USERSHARELIST = _descriptor.Descriptor(
+  name='UserShareList',
+  full_name='cs3.sharing.ocm.v1beta1.UserShareList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='user_id', full_name='cs3.sharing.ocm.v1beta1.UserShareList.user_id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='users', full_name='cs3.sharing.ocm.v1beta1.UserShareList.users', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1415,
+  serialized_end=1532,
+)
+
 _SHARE.fields_by_name['id'].message_type = _SHAREID
 _SHARE.fields_by_name['resource_id'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._RESOURCEID
 _SHARE.fields_by_name['permissions'].message_type = _SHAREPERMISSIONS
@@ -452,6 +490,8 @@ _SHAREREFERENCE.oneofs_by_name['spec'].fields.append(
 _SHAREREFERENCE.fields_by_name['key'].containing_oneof = _SHAREREFERENCE.oneofs_by_name['spec']
 _SHAREGRANT.fields_by_name['grantee'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._GRANTEE
 _SHAREGRANT.fields_by_name['permissions'].message_type = _SHAREPERMISSIONS
+_USERSHARELIST.fields_by_name['user_id'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USERID
+_USERSHARELIST.fields_by_name['users'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USERID
 DESCRIPTOR.message_types_by_name['Share'] = _SHARE
 DESCRIPTOR.message_types_by_name['SharePermissions'] = _SHAREPERMISSIONS
 DESCRIPTOR.message_types_by_name['ReceivedShare'] = _RECEIVEDSHARE
@@ -460,6 +500,7 @@ DESCRIPTOR.message_types_by_name['ShareId'] = _SHAREID
 DESCRIPTOR.message_types_by_name['ShareReference'] = _SHAREREFERENCE
 DESCRIPTOR.message_types_by_name['ShareGrant'] = _SHAREGRANT
 DESCRIPTOR.message_types_by_name['ProviderInfo'] = _PROVIDERINFO
+DESCRIPTOR.message_types_by_name['UserShareList'] = _USERSHARELIST
 DESCRIPTOR.enum_types_by_name['ShareState'] = _SHARESTATE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -518,6 +559,13 @@ ProviderInfo = _reflection.GeneratedProtocolMessageType('ProviderInfo', (_messag
   # @@protoc_insertion_point(class_scope:cs3.sharing.ocm.v1beta1.ProviderInfo)
   })
 _sym_db.RegisterMessage(ProviderInfo)
+
+UserShareList = _reflection.GeneratedProtocolMessageType('UserShareList', (_message.Message,), {
+  'DESCRIPTOR' : _USERSHARELIST,
+  '__module__' : 'cs3.sharing.ocm.v1beta1.resources_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.sharing.ocm.v1beta1.UserShareList)
+  })
+_sym_db.RegisterMessage(UserShareList)
 
 
 DESCRIPTOR._options = None
