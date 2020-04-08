@@ -5,7 +5,8 @@ from cs3.app.registry.v1beta1 import registry_api_pb2 as cs3_dot_app_dot_registr
 from cs3.auth.registry.v1beta1 import registry_api_pb2 as cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2
 from cs3.gateway.v1beta1 import gateway_api_pb2 as cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2
 from cs3.identity.user.v1beta1 import user_api_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2
-from cs3.invite.v1beta1 import invite_api_pb2 as cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2
+from cs3.ocm.invite.v1beta1 import invite_api_pb2 as cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2
+from cs3.ocm.provider.v1beta1 import provider_api_pb2 as cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2
 from cs3.preferences.v1beta1 import preferences_api_pb2 as cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2
 from cs3.sharing.collaboration.v1beta1 import collaboration_api_pb2 as cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2
 from cs3.sharing.link.v1beta1 import link_api_pb2 as cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2
@@ -309,18 +310,33 @@ class GatewayAPIStub(object):
         )
     self.GenerateInviteToken = channel.unary_unary(
         '/cs3.gateway.v1beta1.GatewayAPI/GenerateInviteToken',
-        request_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenRequest.SerializeToString,
-        response_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenResponse.FromString,
+        request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenResponse.FromString,
         )
     self.ForwardInvite = channel.unary_unary(
         '/cs3.gateway.v1beta1.GatewayAPI/ForwardInvite',
-        request_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteRequest.SerializeToString,
-        response_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteResponse.FromString,
+        request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteResponse.FromString,
         )
     self.AcceptInvite = channel.unary_unary(
         '/cs3.gateway.v1beta1.GatewayAPI/AcceptInvite',
-        request_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.SerializeToString,
-        response_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.FromString,
+        request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.FromString,
+        )
+    self.IsProviderAllowed = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/IsProviderAllowed',
+        request_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.IsProviderAllowedRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.IsProviderAllowedResponse.FromString,
+        )
+    self.GetInfoByDomain = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/GetInfoByDomain',
+        request_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetInfoByDomainRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetInfoByDomainResponse.FromString,
+        )
+    self.ListAllProviders = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/ListAllProviders',
+        request_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersResponse.FromString,
         )
 
 
@@ -834,6 +850,32 @@ class GatewayAPIServicer(object):
 
   def AcceptInvite(self, request, context):
     """Completes an invitation acceptance.
+    *****************************************************************/
+    ******************** OCM PROVIDER AUTHORIZER ********************/
+    *****************************************************************/
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def IsProviderAllowed(self, request, context):
+    """Check if a given system provider is registered in the mesh or not.
+    MUST return CODE_UNAUTHENTICATED if the system is not registered
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetInfoByDomain(self, request, context):
+    """Get the information of the provider identified by a specific domain.
+    MUST return CODE_NOT_FOUND if the sync'n'share system provider does not exist.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListAllProviders(self, request, context):
+    """Get the information of all the providers registered in the mesh.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -1109,18 +1151,33 @@ def add_GatewayAPIServicer_to_server(servicer, server):
       ),
       'GenerateInviteToken': grpc.unary_unary_rpc_method_handler(
           servicer.GenerateInviteToken,
-          request_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenRequest.FromString,
-          response_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenResponse.SerializeToString,
+          request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenRequest.FromString,
+          response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GenerateInviteTokenResponse.SerializeToString,
       ),
       'ForwardInvite': grpc.unary_unary_rpc_method_handler(
           servicer.ForwardInvite,
-          request_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteRequest.FromString,
-          response_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteResponse.SerializeToString,
+          request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteRequest.FromString,
+          response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.ForwardInviteResponse.SerializeToString,
       ),
       'AcceptInvite': grpc.unary_unary_rpc_method_handler(
           servicer.AcceptInvite,
-          request_deserializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.FromString,
-          response_serializer=cs3_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.SerializeToString,
+          request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.FromString,
+          response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.SerializeToString,
+      ),
+      'IsProviderAllowed': grpc.unary_unary_rpc_method_handler(
+          servicer.IsProviderAllowed,
+          request_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.IsProviderAllowedRequest.FromString,
+          response_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.IsProviderAllowedResponse.SerializeToString,
+      ),
+      'GetInfoByDomain': grpc.unary_unary_rpc_method_handler(
+          servicer.GetInfoByDomain,
+          request_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetInfoByDomainRequest.FromString,
+          response_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetInfoByDomainResponse.SerializeToString,
+      ),
+      'ListAllProviders': grpc.unary_unary_rpc_method_handler(
+          servicer.ListAllProviders,
+          request_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersRequest.FromString,
+          response_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
