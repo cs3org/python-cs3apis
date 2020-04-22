@@ -5,6 +5,7 @@ from cs3.app.registry.v1beta1 import registry_api_pb2 as cs3_dot_app_dot_registr
 from cs3.auth.registry.v1beta1 import registry_api_pb2 as cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2
 from cs3.gateway.v1beta1 import gateway_api_pb2 as cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2
 from cs3.identity.user.v1beta1 import user_api_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2
+from cs3.ocm.core.v1beta1 import ocm_core_api_pb2 as cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2
 from cs3.ocm.invite.v1beta1 import invite_api_pb2 as cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2
 from cs3.ocm.provider.v1beta1 import provider_api_pb2 as cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2
 from cs3.preferences.v1beta1 import preferences_api_pb2 as cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2
@@ -323,6 +324,11 @@ class GatewayAPIStub(object):
         request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.SerializeToString,
         response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.FromString,
         )
+    self.GetRemoteUser = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/GetRemoteUser',
+        request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserResponse.FromString,
+        )
     self.IsProviderAllowed = channel.unary_unary(
         '/cs3.gateway.v1beta1.GatewayAPI/IsProviderAllowed',
         request_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.IsProviderAllowedRequest.SerializeToString,
@@ -337,6 +343,11 @@ class GatewayAPIStub(object):
         '/cs3.gateway.v1beta1.GatewayAPI/ListAllProviders',
         request_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersRequest.SerializeToString,
         response_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersResponse.FromString,
+        )
+    self.CreateOCMCoreShare = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/CreateOCMCoreShare',
+        request_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.FromString,
         )
 
 
@@ -850,6 +861,13 @@ class GatewayAPIServicer(object):
 
   def AcceptInvite(self, request, context):
     """Completes an invitation acceptance.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetRemoteUser(self, request, context):
+    """Retrieves details about a remote user who has accepted an invite to share.
     *****************************************************************/
     ******************** OCM PROVIDER AUTHORIZER ********************/
     *****************************************************************/
@@ -876,6 +894,16 @@ class GatewayAPIServicer(object):
 
   def ListAllProviders(self, request, context):
     """Get the information of all the providers registered in the mesh.
+    *****************************************************************/
+    **************************** OCM CORE ***************************/
+    *****************************************************************/
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateOCMCoreShare(self, request, context):
+    """Creates a new ocm share.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -1164,6 +1192,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
           request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.FromString,
           response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.SerializeToString,
       ),
+      'GetRemoteUser': grpc.unary_unary_rpc_method_handler(
+          servicer.GetRemoteUser,
+          request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserRequest.FromString,
+          response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserResponse.SerializeToString,
+      ),
       'IsProviderAllowed': grpc.unary_unary_rpc_method_handler(
           servicer.IsProviderAllowed,
           request_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.IsProviderAllowedRequest.FromString,
@@ -1178,6 +1211,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
           servicer.ListAllProviders,
           request_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersRequest.FromString,
           response_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersResponse.SerializeToString,
+      ),
+      'CreateOCMCoreShare': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateOCMCoreShare,
+          request_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.FromString,
+          response_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

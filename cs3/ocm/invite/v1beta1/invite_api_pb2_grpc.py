@@ -44,6 +44,11 @@ class InviteAPIStub(object):
         request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.SerializeToString,
         response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.FromString,
         )
+    self.GetRemoteUser = channel.unary_unary(
+        '/cs3.ocm.invite.v1beta1.InviteAPI/GetRemoteUser',
+        request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserRequest.SerializeToString,
+        response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserResponse.FromString,
+        )
 
 
 class InviteAPIServicer(object):
@@ -86,6 +91,13 @@ class InviteAPIServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetRemoteUser(self, request, context):
+    """Retrieves details about a remote user who has accepted an invite to share.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_InviteAPIServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -103,6 +115,11 @@ def add_InviteAPIServicer_to_server(servicer, server):
           servicer.AcceptInvite,
           request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.FromString,
           response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.SerializeToString,
+      ),
+      'GetRemoteUser': grpc.unary_unary_rpc_method_handler(
+          servicer.GetRemoteUser,
+          request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserRequest.FromString,
+          response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
