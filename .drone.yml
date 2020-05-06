@@ -1,0 +1,15 @@
+---
+kind: pipeline
+name: publish
+
+steps:
+- name: pypi_publish
+  image: plugins/pypi
+  settings:
+    username:
+      from_secret: pypi_username
+    password:
+      from_secret: pypi_password
+    distributions:
+    - sdist
+    - bdist_wheel
