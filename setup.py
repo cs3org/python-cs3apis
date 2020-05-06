@@ -5,7 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="cs3apis",
-    version="0.1.0",
+    use_scm_version={
+      "local_scheme": "no-local-version"
+    },
+    setup_requires=['setuptools_scm'],
     author="CS3 Organization",
     author_email="contact@cs3community.org",
     description="CS3 API client for Python",
