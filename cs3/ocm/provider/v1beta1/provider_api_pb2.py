@@ -13,7 +13,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from cs3.identity.user.v1beta1 import resources_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2
 from cs3.ocm.provider.v1beta1 import resources_pb2 as cs3_dot_ocm_dot_provider_dot_v1beta1_dot_resources__pb2
 from cs3.rpc.v1beta1 import status_pb2 as cs3_dot_rpc_dot_v1beta1_dot_status__pb2
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
@@ -24,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.ocm.provider.v1beta1',
   syntax='proto3',
   serialized_options=_b('\n\034com.cs3.ocm.provider.v1beta1B\020ProviderApiProtoP\001Z\017providerv1beta1\242\002\003COP\252\002\030Cs3.Ocm.Provider.V1Beta1\312\002\030Cs3\\Ocm\\Provider\\V1Beta1'),
-  serialized_pb=_b('\n+cs3/ocm/provider/v1beta1/provider_api.proto\x12\x18\x63s3.ocm.provider.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a(cs3/ocm/provider/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"t\n\x18IsProviderAllowedRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12-\n\x04user\x18\x02 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"o\n\x19IsProviderAllowedResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"S\n\x16GetInfoByDomainRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\"\xac\x01\n\x17GetInfoByDomainResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12=\n\rprovider_info\x18\x03 \x01(\x0b\x32&.cs3.ocm.provider.v1beta1.ProviderInfo\"D\n\x17ListAllProvidersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xa9\x01\n\x18ListAllProvidersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\tproviders\x18\x03 \x03(\x0b\x32&.cs3.ocm.provider.v1beta1.ProviderInfo2\xfe\x02\n\x0bProviderAPI\x12|\n\x11IsProviderAllowed\x12\x32.cs3.ocm.provider.v1beta1.IsProviderAllowedRequest\x1a\x33.cs3.ocm.provider.v1beta1.IsProviderAllowedResponse\x12v\n\x0fGetInfoByDomain\x12\x30.cs3.ocm.provider.v1beta1.GetInfoByDomainRequest\x1a\x31.cs3.ocm.provider.v1beta1.GetInfoByDomainResponse\x12y\n\x10ListAllProviders\x12\x31.cs3.ocm.provider.v1beta1.ListAllProvidersRequest\x1a\x32.cs3.ocm.provider.v1beta1.ListAllProvidersResponseB\x7f\n\x1c\x63om.cs3.ocm.provider.v1beta1B\x10ProviderApiProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43OP\xaa\x02\x18\x43s3.Ocm.Provider.V1Beta1\xca\x02\x18\x43s3\\Ocm\\Provider\\V1Beta1b\x06proto3')
+  serialized_pb=_b('\n+cs3/ocm/provider/v1beta1/provider_api.proto\x12\x18\x63s3.ocm.provider.v1beta1\x1a(cs3/ocm/provider/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\x7f\n\x18IsProviderAllowedRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x08provider\x18\x02 \x01(\x0b\x32&.cs3.ocm.provider.v1beta1.ProviderInfo\"o\n\x19IsProviderAllowedResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"S\n\x16GetInfoByDomainRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0e\n\x06\x64omain\x18\x02 \x01(\t\"\xac\x01\n\x17GetInfoByDomainResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12=\n\rprovider_info\x18\x03 \x01(\x0b\x32&.cs3.ocm.provider.v1beta1.ProviderInfo\"D\n\x17ListAllProvidersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xa9\x01\n\x18ListAllProvidersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\tproviders\x18\x03 \x03(\x0b\x32&.cs3.ocm.provider.v1beta1.ProviderInfo2\xfe\x02\n\x0bProviderAPI\x12|\n\x11IsProviderAllowed\x12\x32.cs3.ocm.provider.v1beta1.IsProviderAllowedRequest\x1a\x33.cs3.ocm.provider.v1beta1.IsProviderAllowedResponse\x12v\n\x0fGetInfoByDomain\x12\x30.cs3.ocm.provider.v1beta1.GetInfoByDomainRequest\x1a\x31.cs3.ocm.provider.v1beta1.GetInfoByDomainResponse\x12y\n\x10ListAllProviders\x12\x31.cs3.ocm.provider.v1beta1.ListAllProvidersRequest\x1a\x32.cs3.ocm.provider.v1beta1.ListAllProvidersResponseB\x7f\n\x1c\x63om.cs3.ocm.provider.v1beta1B\x10ProviderApiProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43OP\xaa\x02\x18\x43s3.Ocm.Provider.V1Beta1\xca\x02\x18\x43s3\\Ocm\\Provider\\V1Beta1b\x06proto3')
   ,
-  dependencies=[cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_ocm_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
+  dependencies=[cs3_dot_ocm_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
 
 
@@ -46,7 +45,7 @@ _ISPROVIDERALLOWEDREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='user', full_name='cs3.ocm.provider.v1beta1.IsProviderAllowedRequest.user', index=1,
+      name='provider', full_name='cs3.ocm.provider.v1beta1.IsProviderAllowedRequest.provider', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -64,8 +63,8 @@ _ISPROVIDERALLOWEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=219,
-  serialized_end=335,
+  serialized_start=176,
+  serialized_end=303,
 )
 
 
@@ -102,8 +101,8 @@ _ISPROVIDERALLOWEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=337,
-  serialized_end=448,
+  serialized_start=305,
+  serialized_end=416,
 )
 
 
@@ -140,8 +139,8 @@ _GETINFOBYDOMAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=450,
-  serialized_end=533,
+  serialized_start=418,
+  serialized_end=501,
 )
 
 
@@ -185,8 +184,8 @@ _GETINFOBYDOMAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=536,
-  serialized_end=708,
+  serialized_start=504,
+  serialized_end=676,
 )
 
 
@@ -216,8 +215,8 @@ _LISTALLPROVIDERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=710,
-  serialized_end=778,
+  serialized_start=678,
+  serialized_end=746,
 )
 
 
@@ -261,12 +260,12 @@ _LISTALLPROVIDERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=781,
-  serialized_end=950,
+  serialized_start=749,
+  serialized_end=918,
 )
 
 _ISPROVIDERALLOWEDREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-_ISPROVIDERALLOWEDREQUEST.fields_by_name['user'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USER
+_ISPROVIDERALLOWEDREQUEST.fields_by_name['provider'].message_type = cs3_dot_ocm_dot_provider_dot_v1beta1_dot_resources__pb2._PROVIDERINFO
 _ISPROVIDERALLOWEDRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
 _ISPROVIDERALLOWEDRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _GETINFOBYDOMAINREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
@@ -336,8 +335,8 @@ _PROVIDERAPI = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=953,
-  serialized_end=1335,
+  serialized_start=921,
+  serialized_end=1303,
   methods=[
   _descriptor.MethodDescriptor(
     name='IsProviderAllowed',
