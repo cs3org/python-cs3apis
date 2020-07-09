@@ -32,10 +32,10 @@ class ProviderAPIStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.Open = channel.unary_unary(
-        '/cs3.app.provider.v1beta1.ProviderAPI/Open',
-        request_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenRequest.SerializeToString,
-        response_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenResponse.FromString,
+    self.OpenFileInAppProvider = channel.unary_unary(
+        '/cs3.app.provider.v1beta1.ProviderAPI/OpenFileInAppProvider',
+        request_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderRequest.SerializeToString,
+        response_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderResponse.FromString,
         )
 
 
@@ -61,7 +61,7 @@ class ProviderAPIServicer(object):
   Any method MAY return UNAUTHENTICATED.
   """
 
-  def Open(self, request, context):
+  def OpenFileInAppProvider(self, request, context):
     """Returns the iframe url
     MUST return CODE_NOT_FOUND if the resource does not exist.
     """
@@ -72,10 +72,10 @@ class ProviderAPIServicer(object):
 
 def add_ProviderAPIServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'Open': grpc.unary_unary_rpc_method_handler(
-          servicer.Open,
-          request_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenRequest.FromString,
-          response_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenResponse.SerializeToString,
+      'OpenFileInAppProvider': grpc.unary_unary_rpc_method_handler(
+          servicer.OpenFileInAppProvider,
+          request_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderRequest.FromString,
+          response_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

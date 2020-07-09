@@ -23,15 +23,15 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.app.provider.v1beta1',
   syntax='proto3',
   serialized_options=_b('\n\034com.cs3.app.provider.v1beta1B\020ProviderApiProtoP\001Z\017providerv1beta1\242\002\003CAP\252\002\030Cs3.App.Provider.V1Beta1\312\002\030Cs3\\App\\Provider\\V1Beta1'),
-  serialized_pb=_b('\n+cs3/app/provider/v1beta1/provider_api.proto\x12\x18\x63s3.app.provider.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xc3\x02\n\x0bOpenRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x41\n\rresource_info\x18\x02 \x01(\x0b\x32*.cs3.storage.provider.v1beta1.ResourceInfo\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x03 \x01(\t\x12\x41\n\tview_mode\x18\x04 \x01(\x0e\x32..cs3.app.provider.v1beta1.OpenRequest.ViewMode\"m\n\x08ViewMode\x12\x15\n\x11VIEW_MODE_INVALID\x10\x00\x12\x17\n\x13VIEW_MODE_VIEW_ONLY\x10\x01\x12\x17\n\x13VIEW_MODE_READ_ONLY\x10\x02\x12\x18\n\x14VIEW_MODE_READ_WRITE\x10\x03\"v\n\x0cOpenResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x12\n\niframe_url\x18\x03 \x01(\t2d\n\x0bProviderAPI\x12U\n\x04Open\x12%.cs3.app.provider.v1beta1.OpenRequest\x1a&.cs3.app.provider.v1beta1.OpenResponseB\x7f\n\x1c\x63om.cs3.app.provider.v1beta1B\x10ProviderApiProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43\x41P\xaa\x02\x18\x43s3.App.Provider.V1Beta1\xca\x02\x18\x43s3\\App\\Provider\\V1Beta1b\x06proto3')
+  serialized_pb=_b('\n+cs3/app/provider/v1beta1/provider_api.proto\x12\x18\x63s3.app.provider.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xd8\x02\n\x1cOpenFileInAppProviderRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x03ref\x18\x02 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x03 \x01(\t\x12R\n\tview_mode\x18\x04 \x01(\x0e\x32?.cs3.app.provider.v1beta1.OpenFileInAppProviderRequest.ViewMode\"m\n\x08ViewMode\x12\x15\n\x11VIEW_MODE_INVALID\x10\x00\x12\x17\n\x13VIEW_MODE_VIEW_ONLY\x10\x01\x12\x17\n\x13VIEW_MODE_READ_ONLY\x10\x02\x12\x18\n\x14VIEW_MODE_READ_WRITE\x10\x03\"\x8d\x01\n\x1dOpenFileInAppProviderResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x18\n\x10\x61pp_provider_url\x18\x03 \x01(\t2\x98\x01\n\x0bProviderAPI\x12\x88\x01\n\x15OpenFileInAppProvider\x12\x36.cs3.app.provider.v1beta1.OpenFileInAppProviderRequest\x1a\x37.cs3.app.provider.v1beta1.OpenFileInAppProviderResponseB\x7f\n\x1c\x63om.cs3.app.provider.v1beta1B\x10ProviderApiProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43\x41P\xaa\x02\x18\x43s3.App.Provider.V1Beta1\xca\x02\x18\x43s3\\App\\Provider\\V1Beta1b\x06proto3')
   ,
   dependencies=[cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
 
 
-_OPENREQUEST_VIEWMODE = _descriptor.EnumDescriptor(
+_OPENFILEINAPPPROVIDERREQUEST_VIEWMODE = _descriptor.EnumDescriptor(
   name='ViewMode',
-  full_name='cs3.app.provider.v1beta1.OpenRequest.ViewMode',
+  full_name='cs3.app.provider.v1beta1.OpenFileInAppProviderRequest.ViewMode',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -54,42 +54,42 @@ _OPENREQUEST_VIEWMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=395,
-  serialized_end=504,
+  serialized_start=416,
+  serialized_end=525,
 )
-_sym_db.RegisterEnumDescriptor(_OPENREQUEST_VIEWMODE)
+_sym_db.RegisterEnumDescriptor(_OPENFILEINAPPPROVIDERREQUEST_VIEWMODE)
 
 
-_OPENREQUEST = _descriptor.Descriptor(
-  name='OpenRequest',
-  full_name='cs3.app.provider.v1beta1.OpenRequest',
+_OPENFILEINAPPPROVIDERREQUEST = _descriptor.Descriptor(
+  name='OpenFileInAppProviderRequest',
+  full_name='cs3.app.provider.v1beta1.OpenFileInAppProviderRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.app.provider.v1beta1.OpenRequest.opaque', index=0,
+      name='opaque', full_name='cs3.app.provider.v1beta1.OpenFileInAppProviderRequest.opaque', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resource_info', full_name='cs3.app.provider.v1beta1.OpenRequest.resource_info', index=1,
+      name='ref', full_name='cs3.app.provider.v1beta1.OpenFileInAppProviderRequest.ref', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='access_token', full_name='cs3.app.provider.v1beta1.OpenRequest.access_token', index=2,
+      name='access_token', full_name='cs3.app.provider.v1beta1.OpenFileInAppProviderRequest.access_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='view_mode', full_name='cs3.app.provider.v1beta1.OpenRequest.view_mode', index=3,
+      name='view_mode', full_name='cs3.app.provider.v1beta1.OpenFileInAppProviderRequest.view_mode', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -100,7 +100,7 @@ _OPENREQUEST = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
-    _OPENREQUEST_VIEWMODE,
+    _OPENFILEINAPPPROVIDERREQUEST_VIEWMODE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -109,33 +109,33 @@ _OPENREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=181,
-  serialized_end=504,
+  serialized_end=525,
 )
 
 
-_OPENRESPONSE = _descriptor.Descriptor(
-  name='OpenResponse',
-  full_name='cs3.app.provider.v1beta1.OpenResponse',
+_OPENFILEINAPPPROVIDERRESPONSE = _descriptor.Descriptor(
+  name='OpenFileInAppProviderResponse',
+  full_name='cs3.app.provider.v1beta1.OpenFileInAppProviderResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.app.provider.v1beta1.OpenResponse.status', index=0,
+      name='status', full_name='cs3.app.provider.v1beta1.OpenFileInAppProviderResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.app.provider.v1beta1.OpenResponse.opaque', index=1,
+      name='opaque', full_name='cs3.app.provider.v1beta1.OpenFileInAppProviderResponse.opaque', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iframe_url', full_name='cs3.app.provider.v1beta1.OpenResponse.iframe_url', index=2,
+      name='app_provider_url', full_name='cs3.app.provider.v1beta1.OpenFileInAppProviderResponse.app_provider_url', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -153,33 +153,33 @@ _OPENRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=506,
-  serialized_end=624,
+  serialized_start=528,
+  serialized_end=669,
 )
 
-_OPENREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-_OPENREQUEST.fields_by_name['resource_info'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._RESOURCEINFO
-_OPENREQUEST.fields_by_name['view_mode'].enum_type = _OPENREQUEST_VIEWMODE
-_OPENREQUEST_VIEWMODE.containing_type = _OPENREQUEST
-_OPENRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
-_OPENRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-DESCRIPTOR.message_types_by_name['OpenRequest'] = _OPENREQUEST
-DESCRIPTOR.message_types_by_name['OpenResponse'] = _OPENRESPONSE
+_OPENFILEINAPPPROVIDERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_OPENFILEINAPPPROVIDERREQUEST.fields_by_name['ref'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._REFERENCE
+_OPENFILEINAPPPROVIDERREQUEST.fields_by_name['view_mode'].enum_type = _OPENFILEINAPPPROVIDERREQUEST_VIEWMODE
+_OPENFILEINAPPPROVIDERREQUEST_VIEWMODE.containing_type = _OPENFILEINAPPPROVIDERREQUEST
+_OPENFILEINAPPPROVIDERRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
+_OPENFILEINAPPPROVIDERRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+DESCRIPTOR.message_types_by_name['OpenFileInAppProviderRequest'] = _OPENFILEINAPPPROVIDERREQUEST
+DESCRIPTOR.message_types_by_name['OpenFileInAppProviderResponse'] = _OPENFILEINAPPPROVIDERRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-OpenRequest = _reflection.GeneratedProtocolMessageType('OpenRequest', (_message.Message,), {
-  'DESCRIPTOR' : _OPENREQUEST,
+OpenFileInAppProviderRequest = _reflection.GeneratedProtocolMessageType('OpenFileInAppProviderRequest', (_message.Message,), {
+  'DESCRIPTOR' : _OPENFILEINAPPPROVIDERREQUEST,
   '__module__' : 'cs3.app.provider.v1beta1.provider_api_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.app.provider.v1beta1.OpenRequest)
+  # @@protoc_insertion_point(class_scope:cs3.app.provider.v1beta1.OpenFileInAppProviderRequest)
   })
-_sym_db.RegisterMessage(OpenRequest)
+_sym_db.RegisterMessage(OpenFileInAppProviderRequest)
 
-OpenResponse = _reflection.GeneratedProtocolMessageType('OpenResponse', (_message.Message,), {
-  'DESCRIPTOR' : _OPENRESPONSE,
+OpenFileInAppProviderResponse = _reflection.GeneratedProtocolMessageType('OpenFileInAppProviderResponse', (_message.Message,), {
+  'DESCRIPTOR' : _OPENFILEINAPPPROVIDERRESPONSE,
   '__module__' : 'cs3.app.provider.v1beta1.provider_api_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.app.provider.v1beta1.OpenResponse)
+  # @@protoc_insertion_point(class_scope:cs3.app.provider.v1beta1.OpenFileInAppProviderResponse)
   })
-_sym_db.RegisterMessage(OpenResponse)
+_sym_db.RegisterMessage(OpenFileInAppProviderResponse)
 
 
 DESCRIPTOR._options = None
@@ -190,16 +190,16 @@ _PROVIDERAPI = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=626,
-  serialized_end=726,
+  serialized_start=672,
+  serialized_end=824,
   methods=[
   _descriptor.MethodDescriptor(
-    name='Open',
-    full_name='cs3.app.provider.v1beta1.ProviderAPI.Open',
+    name='OpenFileInAppProvider',
+    full_name='cs3.app.provider.v1beta1.ProviderAPI.OpenFileInAppProvider',
     index=0,
     containing_service=None,
-    input_type=_OPENREQUEST,
-    output_type=_OPENRESPONSE,
+    input_type=_OPENFILEINAPPPROVIDERREQUEST,
+    output_type=_OPENFILEINAPPPROVIDERRESPONSE,
     serialized_options=None,
   ),
 ])
