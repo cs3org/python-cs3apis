@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.storage.provider.v1beta1',
   syntax='proto3',
   serialized_options=_b('\n com.cs3.storage.provider.v1beta1B\016ResourcesProtoP\001Z\017providerv1beta1\242\002\003CSP\252\002\034Cs3.Storage.Provider.V1Beta1\312\002\034Cs3\\Storage\\Provider\\V1Beta1'),
-  serialized_pb=_b('\n,cs3/storage/provider/v1beta1/resources.proto\x12\x1c\x63s3.storage.provider.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xfc\x04\n\x0cResourceInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x04type\x18\x02 \x01(\x0e\x32*.cs3.storage.provider.v1beta1.ResourceType\x12\x34\n\x02id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12@\n\x08\x63hecksum\x18\x04 \x01(\x0b\x32..cs3.storage.provider.v1beta1.ResourceChecksum\x12\x0c\n\x04\x65tag\x18\x05 \x01(\t\x12\x11\n\tmime_type\x18\x06 \x01(\t\x12+\n\x05mtime\x18\x07 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x0c\n\x04path\x18\x08 \x01(\t\x12I\n\x0epermission_set\x18\t \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\x12\x0c\n\x04size\x18\n \x01(\x04\x12\x30\n\x05owner\x18\x0b \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x0e\n\x06target\x18\x0c \x01(\t\x12K\n\x12\x63\x61nonical_metadata\x18\r \x01(\x0b\x32/.cs3.storage.provider.v1beta1.CanonicalMetadata\x12K\n\x12\x61rbitrary_metadata\x18\x0e \x01(\x0b\x32/.cs3.storage.provider.v1beta1.ArbitraryMetadata\"L\n\x11\x43\x61nonicalMetadata\x12\x37\n\x06target\x18\x01 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\"\x95\x01\n\x11\x41rbitraryMetadata\x12O\n\x08metadata\x18\x01 \x03(\x0b\x32=.cs3.storage.provider.v1beta1.ArbitraryMetadata.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x10ResourceChecksum\x12@\n\x04type\x18\x01 \x01(\x0e\x32\x32.cs3.storage.provider.v1beta1.ResourceChecksumType\x12\x0b\n\x03sum\x18\x02 \x01(\t\"n\n\x18ResourceChecksumPriority\x12@\n\x04type\x18\x01 \x01(\x0e\x32\x32.cs3.storage.provider.v1beta1.ResourceChecksumType\x12\x10\n\x08priority\x18\x02 \x01(\r\"[\n\tReference\x12\x0e\n\x04path\x18\x01 \x01(\tH\x00\x12\x36\n\x02id\x18\x02 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceIdH\x00\x42\x06\n\x04spec\"3\n\nResourceId\x12\x12\n\nstorage_id\x18\x01 \x01(\t\x12\x11\n\topaque_id\x18\x02 \x01(\t\"\xaf\x03\n\x13ResourcePermissions\x12\x11\n\tadd_grant\x18\x01 \x01(\x08\x12\x18\n\x10\x63reate_container\x18\x02 \x01(\x08\x12\x0e\n\x06\x64\x65lete\x18\x03 \x01(\x08\x12\x10\n\x08get_path\x18\x05 \x01(\x08\x12\x11\n\tget_quota\x18\x06 \x01(\x08\x12\x1e\n\x16initiate_file_download\x18\x07 \x01(\x08\x12\x1c\n\x14initiate_file_upload\x18\x08 \x01(\x08\x12\x13\n\x0blist_grants\x18\t \x01(\x08\x12\x16\n\x0elist_container\x18\n \x01(\x08\x12\x1a\n\x12list_file_versions\x18\x0b \x01(\x08\x12\x14\n\x0clist_recycle\x18\x0c \x01(\x08\x12\x0c\n\x04move\x18\r \x01(\x08\x12\x14\n\x0cremove_grant\x18\x0e \x01(\x08\x12\x15\n\rpurge_recycle\x18\x0f \x01(\x08\x12\x1c\n\x14restore_file_version\x18\x10 \x01(\x08\x12\x1c\n\x14restore_recycle_item\x18\x11 \x01(\x08\x12\x0c\n\x04stat\x18\x12 \x01(\x08\x12\x14\n\x0cupdate_grant\x18\x13 \x01(\x08\"\x87\x01\n\x05Grant\x12\x36\n\x07grantee\x18\x01 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12\x46\n\x0bpermissions\x18\x02 \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\"q\n\x07Grantee\x12\x37\n\x04type\x18\x01 \x01(\x0e\x32).cs3.storage.provider.v1beta1.GranteeType\x12-\n\x02id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\"b\n\x0b\x46ileVersion\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x04\x12\r\n\x05mtime\x18\x05 \x01(\x04\"\xd0\x01\n\x0bRecycleItem\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x04type\x18\x02 \x01(\x0e\x32*.cs3.storage.provider.v1beta1.ResourceType\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x0c\n\x04path\x18\x04 \x01(\t\x12\x0c\n\x04size\x18\x05 \x01(\x04\x12\x33\n\rdeletion_time\x18\x06 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp*\xb2\x01\n\x0cResourceType\x12\x19\n\x15RESOURCE_TYPE_INVALID\x10\x00\x12\x16\n\x12RESOURCE_TYPE_FILE\x10\x01\x12\x1b\n\x17RESOURCE_TYPE_CONTAINER\x10\x02\x12\x1b\n\x17RESOURCE_TYPE_REFERENCE\x10\x03\x12\x19\n\x15RESOURCE_TYPE_SYMLINK\x10\x04\x12\x1a\n\x16RESOURCE_TYPE_INTERNAL\x10\x05*\xc1\x01\n\x14ResourceChecksumType\x12\"\n\x1eRESOURCE_CHECKSUM_TYPE_INVALID\x10\x00\x12 \n\x1cRESOURCE_CHECKSUM_TYPE_UNSET\x10\x01\x12\"\n\x1eRESOURCE_CHECKSUM_TYPE_ADLER32\x10\x02\x12\x1e\n\x1aRESOURCE_CHECKSUM_TYPE_MD5\x10\x03\x12\x1f\n\x1bRESOURCE_CHECKSUM_TYPE_SHA1\x10\x04*V\n\x0bGranteeType\x12\x18\n\x14GRANTEE_TYPE_INVALID\x10\x00\x12\x15\n\x11GRANTEE_TYPE_USER\x10\x01\x12\x16\n\x12GRANTEE_TYPE_GROUP\x10\x02\x42\x89\x01\n com.cs3.storage.provider.v1beta1B\x0eResourcesProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43SP\xaa\x02\x1c\x43s3.Storage.Provider.V1Beta1\xca\x02\x1c\x43s3\\Storage\\Provider\\V1Beta1b\x06proto3')
+  serialized_pb=_b('\n,cs3/storage/provider/v1beta1/resources.proto\x12\x1c\x63s3.storage.provider.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xfc\x04\n\x0cResourceInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x04type\x18\x02 \x01(\x0e\x32*.cs3.storage.provider.v1beta1.ResourceType\x12\x34\n\x02id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12@\n\x08\x63hecksum\x18\x04 \x01(\x0b\x32..cs3.storage.provider.v1beta1.ResourceChecksum\x12\x0c\n\x04\x65tag\x18\x05 \x01(\t\x12\x11\n\tmime_type\x18\x06 \x01(\t\x12+\n\x05mtime\x18\x07 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x0c\n\x04path\x18\x08 \x01(\t\x12I\n\x0epermission_set\x18\t \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\x12\x0c\n\x04size\x18\n \x01(\x04\x12\x30\n\x05owner\x18\x0b \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x0e\n\x06target\x18\x0c \x01(\t\x12K\n\x12\x63\x61nonical_metadata\x18\r \x01(\x0b\x32/.cs3.storage.provider.v1beta1.CanonicalMetadata\x12K\n\x12\x61rbitrary_metadata\x18\x0e \x01(\x0b\x32/.cs3.storage.provider.v1beta1.ArbitraryMetadata\"L\n\x11\x43\x61nonicalMetadata\x12\x37\n\x06target\x18\x01 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\"\x95\x01\n\x11\x41rbitraryMetadata\x12O\n\x08metadata\x18\x01 \x03(\x0b\x32=.cs3.storage.provider.v1beta1.ArbitraryMetadata.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x10ResourceChecksum\x12@\n\x04type\x18\x01 \x01(\x0e\x32\x32.cs3.storage.provider.v1beta1.ResourceChecksumType\x12\x0b\n\x03sum\x18\x02 \x01(\t\"n\n\x18ResourceChecksumPriority\x12@\n\x04type\x18\x01 \x01(\x0e\x32\x32.cs3.storage.provider.v1beta1.ResourceChecksumType\x12\x10\n\x08priority\x18\x02 \x01(\r\"[\n\tReference\x12\x0e\n\x04path\x18\x01 \x01(\tH\x00\x12\x36\n\x02id\x18\x02 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceIdH\x00\x42\x06\n\x04spec\"3\n\nResourceId\x12\x12\n\nstorage_id\x18\x01 \x01(\t\x12\x11\n\topaque_id\x18\x02 \x01(\t\"\xaf\x03\n\x13ResourcePermissions\x12\x11\n\tadd_grant\x18\x01 \x01(\x08\x12\x18\n\x10\x63reate_container\x18\x02 \x01(\x08\x12\x0e\n\x06\x64\x65lete\x18\x03 \x01(\x08\x12\x10\n\x08get_path\x18\x05 \x01(\x08\x12\x11\n\tget_quota\x18\x06 \x01(\x08\x12\x1e\n\x16initiate_file_download\x18\x07 \x01(\x08\x12\x1c\n\x14initiate_file_upload\x18\x08 \x01(\x08\x12\x13\n\x0blist_grants\x18\t \x01(\x08\x12\x16\n\x0elist_container\x18\n \x01(\x08\x12\x1a\n\x12list_file_versions\x18\x0b \x01(\x08\x12\x14\n\x0clist_recycle\x18\x0c \x01(\x08\x12\x0c\n\x04move\x18\r \x01(\x08\x12\x14\n\x0cremove_grant\x18\x0e \x01(\x08\x12\x15\n\rpurge_recycle\x18\x0f \x01(\x08\x12\x1c\n\x14restore_file_version\x18\x10 \x01(\x08\x12\x1c\n\x14restore_recycle_item\x18\x11 \x01(\x08\x12\x0c\n\x04stat\x18\x12 \x01(\x08\x12\x14\n\x0cupdate_grant\x18\x13 \x01(\x08\"\x87\x01\n\x05Grant\x12\x36\n\x07grantee\x18\x01 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12\x46\n\x0bpermissions\x18\x02 \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\"\x9c\x01\n\x07Grantee\x12\x37\n\x04type\x18\x01 \x01(\x0e\x32).cs3.storage.provider.v1beta1.GranteeType\x12-\n\x02id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"b\n\x0b\x46ileVersion\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x04\x12\r\n\x05mtime\x18\x05 \x01(\x04\"\xd0\x01\n\x0bRecycleItem\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x04type\x18\x02 \x01(\x0e\x32*.cs3.storage.provider.v1beta1.ResourceType\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x0c\n\x04path\x18\x04 \x01(\t\x12\x0c\n\x04size\x18\x05 \x01(\x04\x12\x33\n\rdeletion_time\x18\x06 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp*\xb2\x01\n\x0cResourceType\x12\x19\n\x15RESOURCE_TYPE_INVALID\x10\x00\x12\x16\n\x12RESOURCE_TYPE_FILE\x10\x01\x12\x1b\n\x17RESOURCE_TYPE_CONTAINER\x10\x02\x12\x1b\n\x17RESOURCE_TYPE_REFERENCE\x10\x03\x12\x19\n\x15RESOURCE_TYPE_SYMLINK\x10\x04\x12\x1a\n\x16RESOURCE_TYPE_INTERNAL\x10\x05*\xc1\x01\n\x14ResourceChecksumType\x12\"\n\x1eRESOURCE_CHECKSUM_TYPE_INVALID\x10\x00\x12 \n\x1cRESOURCE_CHECKSUM_TYPE_UNSET\x10\x01\x12\"\n\x1eRESOURCE_CHECKSUM_TYPE_ADLER32\x10\x02\x12\x1e\n\x1aRESOURCE_CHECKSUM_TYPE_MD5\x10\x03\x12\x1f\n\x1bRESOURCE_CHECKSUM_TYPE_SHA1\x10\x04*V\n\x0bGranteeType\x12\x18\n\x14GRANTEE_TYPE_INVALID\x10\x00\x12\x15\n\x11GRANTEE_TYPE_USER\x10\x01\x12\x16\n\x12GRANTEE_TYPE_GROUP\x10\x02\x42\x89\x01\n com.cs3.storage.provider.v1beta1B\x0eResourcesProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43SP\xaa\x02\x1c\x43s3.Storage.Provider.V1Beta1\xca\x02\x1c\x43s3\\Storage\\Provider\\V1Beta1b\x06proto3')
   ,
   dependencies=[cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -60,8 +60,8 @@ _RESOURCETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2377,
-  serialized_end=2555,
+  serialized_start=2421,
+  serialized_end=2599,
 )
 _sym_db.RegisterEnumDescriptor(_RESOURCETYPE)
 
@@ -95,8 +95,8 @@ _RESOURCECHECKSUMTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2558,
-  serialized_end=2751,
+  serialized_start=2602,
+  serialized_end=2795,
 )
 _sym_db.RegisterEnumDescriptor(_RESOURCECHECKSUMTYPE)
 
@@ -122,8 +122,8 @@ _GRANTEETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2753,
-  serialized_end=2839,
+  serialized_start=2797,
+  serialized_end=2883,
 )
 _sym_db.RegisterEnumDescriptor(_GRANTEETYPE)
 
@@ -730,6 +730,13 @@ _GRANTEE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.storage.provider.v1beta1.Grantee.opaque', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -742,8 +749,8 @@ _GRANTEE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1950,
-  serialized_end=2063,
+  serialized_start=1951,
+  serialized_end=2107,
 )
 
 
@@ -794,8 +801,8 @@ _FILEVERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2065,
-  serialized_end=2163,
+  serialized_start=2109,
+  serialized_end=2207,
 )
 
 
@@ -860,8 +867,8 @@ _RECYCLEITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2166,
-  serialized_end=2374,
+  serialized_start=2210,
+  serialized_end=2418,
 )
 
 _RESOURCEINFO.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
@@ -889,6 +896,7 @@ _GRANT.fields_by_name['grantee'].message_type = _GRANTEE
 _GRANT.fields_by_name['permissions'].message_type = _RESOURCEPERMISSIONS
 _GRANTEE.fields_by_name['type'].enum_type = _GRANTEETYPE
 _GRANTEE.fields_by_name['id'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USERID
+_GRANTEE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _FILEVERSION.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _RECYCLEITEM.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _RECYCLEITEM.fields_by_name['type'].enum_type = _RESOURCETYPE
