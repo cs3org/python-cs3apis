@@ -36,6 +36,11 @@ class UserAPIStub(object):
         request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserRequest.SerializeToString,
         response_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserResponse.FromString,
         )
+    self.GetUserByClaim = channel.unary_unary(
+        '/cs3.identity.user.v1beta1.UserAPI/GetUserByClaim',
+        request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserByClaimRequest.SerializeToString,
+        response_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserByClaimResponse.FromString,
+        )
     self.GetUserGroups = channel.unary_unary(
         '/cs3.identity.user.v1beta1.UserAPI/GetUserGroups',
         request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsRequest.SerializeToString,
@@ -75,7 +80,14 @@ class UserAPIServicer(object):
   """
 
   def GetUser(self, request, context):
-    """Gets the information about an user by its user id.
+    """Gets the information about a user by its user id.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetUserByClaim(self, request, context):
+    """Gets the information about a user based on a specified claim.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -110,6 +122,11 @@ def add_UserAPIServicer_to_server(servicer, server):
           servicer.GetUser,
           request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserRequest.FromString,
           response_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserResponse.SerializeToString,
+      ),
+      'GetUserByClaim': grpc.unary_unary_rpc_method_handler(
+          servicer.GetUserByClaim,
+          request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserByClaimRequest.FromString,
+          response_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserByClaimResponse.SerializeToString,
       ),
       'GetUserGroups': grpc.unary_unary_rpc_method_handler(
           servicer.GetUserGroups,

@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='cs3.identity.user.v1beta1',
   syntax='proto3',
   serialized_options=_b('\n\035com.cs3.identity.user.v1beta1B\014UserApiProtoP\001Z\013userv1beta1\242\002\003CIU\252\002\031Cs3.Identity.User.V1Beta1\312\002\031Cs3\\Identity\\User\\V1Beta1'),
-  serialized_pb=_b('\n(cs3/identity/user/v1beta1/user_api.proto\x12\x19\x63s3.identity.user.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"o\n\x0eGetUserRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x32\n\x07user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\"\x94\x01\n\x0fGetUserResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12-\n\x04user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"u\n\x14GetUserGroupsRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x32\n\x07user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\"{\n\x15GetUserGroupsResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0e\n\x06groups\x18\x03 \x03(\t\"\x80\x01\n\x10IsInGroupRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x32\n\x07user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\r\n\x05group\x18\x03 \x01(\t\"s\n\x11IsInGroupResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\n\n\x02ok\x18\x03 \x01(\x08\"M\n\x10\x46indUsersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\"\x97\x01\n\x11\x46indUsersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12.\n\x05users\x18\x03 \x03(\x0b\x32\x1f.cs3.identity.user.v1beta1.User2\xaf\x03\n\x07UserAPI\x12`\n\x07GetUser\x12).cs3.identity.user.v1beta1.GetUserRequest\x1a*.cs3.identity.user.v1beta1.GetUserResponse\x12r\n\rGetUserGroups\x12/.cs3.identity.user.v1beta1.GetUserGroupsRequest\x1a\x30.cs3.identity.user.v1beta1.GetUserGroupsResponse\x12\x66\n\tIsInGroup\x12+.cs3.identity.user.v1beta1.IsInGroupRequest\x1a,.cs3.identity.user.v1beta1.IsInGroupResponse\x12\x66\n\tFindUsers\x12+.cs3.identity.user.v1beta1.FindUsersRequest\x1a,.cs3.identity.user.v1beta1.FindUsersResponseBz\n\x1d\x63om.cs3.identity.user.v1beta1B\x0cUserApiProtoP\x01Z\x0buserv1beta1\xa2\x02\x03\x43IU\xaa\x02\x19\x43s3.Identity.User.V1Beta1\xca\x02\x19\x43s3\\Identity\\User\\V1Beta1b\x06proto3')
+  serialized_pb=_b('\n(cs3/identity/user/v1beta1/user_api.proto\x12\x19\x63s3.identity.user.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"o\n\x0eGetUserRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x32\n\x07user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\"\x94\x01\n\x0fGetUserResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12-\n\x04user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"`\n\x15GetUserByClaimRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\r\n\x05\x63laim\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\"\x9b\x01\n\x16GetUserByClaimResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12-\n\x04user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"u\n\x14GetUserGroupsRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x32\n\x07user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\"{\n\x15GetUserGroupsResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0e\n\x06groups\x18\x03 \x03(\t\"\x80\x01\n\x10IsInGroupRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x32\n\x07user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\r\n\x05group\x18\x03 \x01(\t\"s\n\x11IsInGroupResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\n\n\x02ok\x18\x03 \x01(\x08\"M\n\x10\x46indUsersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\"\x97\x01\n\x11\x46indUsersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12.\n\x05users\x18\x03 \x03(\x0b\x32\x1f.cs3.identity.user.v1beta1.User2\xa6\x04\n\x07UserAPI\x12`\n\x07GetUser\x12).cs3.identity.user.v1beta1.GetUserRequest\x1a*.cs3.identity.user.v1beta1.GetUserResponse\x12u\n\x0eGetUserByClaim\x12\x30.cs3.identity.user.v1beta1.GetUserByClaimRequest\x1a\x31.cs3.identity.user.v1beta1.GetUserByClaimResponse\x12r\n\rGetUserGroups\x12/.cs3.identity.user.v1beta1.GetUserGroupsRequest\x1a\x30.cs3.identity.user.v1beta1.GetUserGroupsResponse\x12\x66\n\tIsInGroup\x12+.cs3.identity.user.v1beta1.IsInGroupRequest\x1a,.cs3.identity.user.v1beta1.IsInGroupResponse\x12\x66\n\tFindUsers\x12+.cs3.identity.user.v1beta1.FindUsersRequest\x1a,.cs3.identity.user.v1beta1.FindUsersResponseBz\n\x1d\x63om.cs3.identity.user.v1beta1B\x0cUserApiProtoP\x01Z\x0buserv1beta1\xa2\x02\x03\x43IU\xaa\x02\x19\x43s3.Identity.User.V1Beta1\xca\x02\x19\x43s3\\Identity\\User\\V1Beta1b\x06proto3')
   ,
   dependencies=[cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -113,6 +113,96 @@ _GETUSERRESPONSE = _descriptor.Descriptor(
 )
 
 
+_GETUSERBYCLAIMREQUEST = _descriptor.Descriptor(
+  name='GetUserByClaimRequest',
+  full_name='cs3.identity.user.v1beta1.GetUserByClaimRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.identity.user.v1beta1.GetUserByClaimRequest.opaque', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='claim', full_name='cs3.identity.user.v1beta1.GetUserByClaimRequest.claim', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='cs3.identity.user.v1beta1.GetUserByClaimRequest.value', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=439,
+  serialized_end=535,
+)
+
+
+_GETUSERBYCLAIMRESPONSE = _descriptor.Descriptor(
+  name='GetUserByClaimResponse',
+  full_name='cs3.identity.user.v1beta1.GetUserByClaimResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='cs3.identity.user.v1beta1.GetUserByClaimResponse.status', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.identity.user.v1beta1.GetUserByClaimResponse.opaque', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='cs3.identity.user.v1beta1.GetUserByClaimResponse.user', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=538,
+  serialized_end=693,
+)
+
+
 _GETUSERGROUPSREQUEST = _descriptor.Descriptor(
   name='GetUserGroupsRequest',
   full_name='cs3.identity.user.v1beta1.GetUserGroupsRequest',
@@ -146,8 +236,8 @@ _GETUSERGROUPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=439,
-  serialized_end=556,
+  serialized_start=695,
+  serialized_end=812,
 )
 
 
@@ -191,8 +281,8 @@ _GETUSERGROUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=558,
-  serialized_end=681,
+  serialized_start=814,
+  serialized_end=937,
 )
 
 
@@ -236,8 +326,8 @@ _ISINGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=684,
-  serialized_end=812,
+  serialized_start=940,
+  serialized_end=1068,
 )
 
 
@@ -281,8 +371,8 @@ _ISINGROUPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=814,
-  serialized_end=929,
+  serialized_start=1070,
+  serialized_end=1185,
 )
 
 
@@ -319,8 +409,8 @@ _FINDUSERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=931,
-  serialized_end=1008,
+  serialized_start=1187,
+  serialized_end=1264,
 )
 
 
@@ -364,8 +454,8 @@ _FINDUSERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1011,
-  serialized_end=1162,
+  serialized_start=1267,
+  serialized_end=1418,
 )
 
 _GETUSERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
@@ -373,6 +463,10 @@ _GETUSERREQUEST.fields_by_name['user_id'].message_type = cs3_dot_identity_dot_us
 _GETUSERRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
 _GETUSERRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _GETUSERRESPONSE.fields_by_name['user'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USER
+_GETUSERBYCLAIMREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_GETUSERBYCLAIMRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
+_GETUSERBYCLAIMRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_GETUSERBYCLAIMRESPONSE.fields_by_name['user'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USER
 _GETUSERGROUPSREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _GETUSERGROUPSREQUEST.fields_by_name['user_id'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USERID
 _GETUSERGROUPSRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
@@ -387,6 +481,8 @@ _FINDUSERSRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1b
 _FINDUSERSRESPONSE.fields_by_name['users'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USER
 DESCRIPTOR.message_types_by_name['GetUserRequest'] = _GETUSERREQUEST
 DESCRIPTOR.message_types_by_name['GetUserResponse'] = _GETUSERRESPONSE
+DESCRIPTOR.message_types_by_name['GetUserByClaimRequest'] = _GETUSERBYCLAIMREQUEST
+DESCRIPTOR.message_types_by_name['GetUserByClaimResponse'] = _GETUSERBYCLAIMRESPONSE
 DESCRIPTOR.message_types_by_name['GetUserGroupsRequest'] = _GETUSERGROUPSREQUEST
 DESCRIPTOR.message_types_by_name['GetUserGroupsResponse'] = _GETUSERGROUPSRESPONSE
 DESCRIPTOR.message_types_by_name['IsInGroupRequest'] = _ISINGROUPREQUEST
@@ -408,6 +504,20 @@ GetUserResponse = _reflection.GeneratedProtocolMessageType('GetUserResponse', (_
   # @@protoc_insertion_point(class_scope:cs3.identity.user.v1beta1.GetUserResponse)
   })
 _sym_db.RegisterMessage(GetUserResponse)
+
+GetUserByClaimRequest = _reflection.GeneratedProtocolMessageType('GetUserByClaimRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETUSERBYCLAIMREQUEST,
+  '__module__' : 'cs3.identity.user.v1beta1.user_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.identity.user.v1beta1.GetUserByClaimRequest)
+  })
+_sym_db.RegisterMessage(GetUserByClaimRequest)
+
+GetUserByClaimResponse = _reflection.GeneratedProtocolMessageType('GetUserByClaimResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETUSERBYCLAIMRESPONSE,
+  '__module__' : 'cs3.identity.user.v1beta1.user_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.identity.user.v1beta1.GetUserByClaimResponse)
+  })
+_sym_db.RegisterMessage(GetUserByClaimResponse)
 
 GetUserGroupsRequest = _reflection.GeneratedProtocolMessageType('GetUserGroupsRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETUSERGROUPSREQUEST,
@@ -460,8 +570,8 @@ _USERAPI = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1165,
-  serialized_end=1596,
+  serialized_start=1421,
+  serialized_end=1971,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetUser',
@@ -473,9 +583,18 @@ _USERAPI = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
+    name='GetUserByClaim',
+    full_name='cs3.identity.user.v1beta1.UserAPI.GetUserByClaim',
+    index=1,
+    containing_service=None,
+    input_type=_GETUSERBYCLAIMREQUEST,
+    output_type=_GETUSERBYCLAIMRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
     name='GetUserGroups',
     full_name='cs3.identity.user.v1beta1.UserAPI.GetUserGroups',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=_GETUSERGROUPSREQUEST,
     output_type=_GETUSERGROUPSRESPONSE,
@@ -484,7 +603,7 @@ _USERAPI = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='IsInGroup',
     full_name='cs3.identity.user.v1beta1.UserAPI.IsInGroup',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=_ISINGROUPREQUEST,
     output_type=_ISINGROUPRESPONSE,
@@ -493,7 +612,7 @@ _USERAPI = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='FindUsers',
     full_name='cs3.identity.user.v1beta1.UserAPI.FindUsers',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_FINDUSERSREQUEST,
     output_type=_FINDUSERSRESPONSE,
