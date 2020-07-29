@@ -9,9 +9,9 @@ class ProviderAPIStub(object):
 
   App Provider API
 
-  The App Provider API is responsible for creating urls that
-  will render a viewer or editor for the given resource.
-  For example, an OnlyOffice or HackMD editor.
+  The App Provider API is responsible for creating URLs that
+  will render a viewer or editor for the given resource, typically via WOPI protocol.
+  For example, a Collabora or HackMD editor.
 
   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
   NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -44,9 +44,9 @@ class ProviderAPIServicer(object):
 
   App Provider API
 
-  The App Provider API is responsible for creating urls that
-  will render a viewer or editor for the given resource.
-  For example, an OnlyOffice or HackMD editor.
+  The App Provider API is responsible for creating URLs that
+  will render a viewer or editor for the given resource, typically via WOPI protocol.
+  For example, a Collabora or HackMD editor.
 
   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
   NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
