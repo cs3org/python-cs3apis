@@ -152,7 +152,7 @@ class GatewayAPIStub(object):
         )
     self.OpenFileInAppProvider = channel.unary_unary(
         '/cs3.gateway.v1beta1.GatewayAPI/OpenFileInAppProvider',
-        request_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderRequest.SerializeToString,
+        request_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.OpenFileInAppProviderRequest.SerializeToString,
         response_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderResponse.FromString,
         )
     self.CreateShare = channel.unary_unary(
@@ -574,7 +574,7 @@ class GatewayAPIServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def OpenFileInAppProvider(self, request, context):
-    """Returns the iframe url from the WOPI server. The iframe url will let you open the document in the correct online document editor.
+    """Returns the App provider URL, which lets the user open a file in the correct online document editor.
     *****************************************************************/
     ************************ USER SHARE PROVIDER ********************/
     *****************************************************************/
@@ -1047,7 +1047,7 @@ def add_GatewayAPIServicer_to_server(servicer, server):
       ),
       'OpenFileInAppProvider': grpc.unary_unary_rpc_method_handler(
           servicer.OpenFileInAppProvider,
-          request_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderRequest.FromString,
+          request_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.OpenFileInAppProviderRequest.FromString,
           response_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderResponse.SerializeToString,
       ),
       'CreateShare': grpc.unary_unary_rpc_method_handler(

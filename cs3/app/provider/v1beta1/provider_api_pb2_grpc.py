@@ -62,7 +62,7 @@ class ProviderAPIServicer(object):
   """
 
   def OpenFileInAppProvider(self, request, context):
-    """Returns the iframe url
+    """Returns the App provider URL
     MUST return CODE_NOT_FOUND if the resource does not exist.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
