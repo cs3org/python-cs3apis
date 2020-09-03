@@ -129,6 +129,11 @@ class ProviderAPIStub(object):
         request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UpdateGrantRequest.SerializeToString,
         response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UpdateGrantResponse.FromString,
         )
+    self.CreateSymlink = channel.unary_unary(
+        '/cs3.storage.provider.v1beta1.ProviderAPI/CreateSymlink',
+        request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateSymlinkRequest.SerializeToString,
+        response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateSymlinkResponse.FromString,
+        )
     self.CreateReference = channel.unary_unary(
         '/cs3.storage.provider.v1beta1.ProviderAPI/CreateReference',
         request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateReferenceRequest.SerializeToString,
@@ -355,6 +360,13 @@ class ProviderAPIServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def CreateSymlink(self, request, context):
+    """Creates a symlink to another resource.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def CreateReference(self, request, context):
     """Creates a reference to another resource in the same cluster or another domain (OCM shares).
     The references resource can be accessed by the protocol specificied in the request message.
@@ -495,6 +507,11 @@ def add_ProviderAPIServicer_to_server(servicer, server):
           servicer.UpdateGrant,
           request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UpdateGrantRequest.FromString,
           response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UpdateGrantResponse.SerializeToString,
+      ),
+      'CreateSymlink': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateSymlink,
+          request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateSymlinkRequest.FromString,
+          response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateSymlinkResponse.SerializeToString,
       ),
       'CreateReference': grpc.unary_unary_rpc_method_handler(
           servicer.CreateReference,

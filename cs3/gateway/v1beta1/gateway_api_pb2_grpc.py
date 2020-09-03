@@ -135,6 +135,11 @@ class GatewayAPIStub(object):
         request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.StatRequest.SerializeToString,
         response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.StatResponse.FromString,
         )
+    self.CreateSymlink = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/CreateSymlink',
+        request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateSymlinkRequest.SerializeToString,
+        response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateSymlinkResponse.FromString,
+        )
     self.SetArbitraryMetadata = channel.unary_unary(
         '/cs3.gateway.v1beta1.GatewayAPI/SetArbitraryMetadata',
         request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetArbitraryMetadataRequest.SerializeToString,
@@ -542,6 +547,13 @@ class GatewayAPIServicer(object):
   def Stat(self, request, context):
     """Returns the resource information at the provided reference.
     MUST return CODE_NOT_FOUND if the reference does not exist.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateSymlink(self, request, context):
+    """Creates a symlink to another resource.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -1029,6 +1041,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
           servicer.Stat,
           request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.StatRequest.FromString,
           response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.StatResponse.SerializeToString,
+      ),
+      'CreateSymlink': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateSymlink,
+          request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateSymlinkRequest.FromString,
+          response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateSymlinkResponse.SerializeToString,
       ),
       'SetArbitraryMetadata': grpc.unary_unary_rpc_method_handler(
           servicer.SetArbitraryMetadata,
