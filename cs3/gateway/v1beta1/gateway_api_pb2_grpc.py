@@ -14,6 +14,7 @@ from cs3.sharing.collaboration.v1beta1 import collaboration_api_pb2 as cs3_dot_s
 from cs3.sharing.link.v1beta1 import link_api_pb2 as cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2
 from cs3.sharing.ocm.v1beta1 import ocm_api_pb2 as cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2
 from cs3.storage.provider.v1beta1 import provider_api_pb2 as cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2
+from cs3.tx.v1beta1 import tx_api_pb2 as cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2
 
 
 class GatewayAPIStub(object):
@@ -364,6 +365,21 @@ class GatewayAPIStub(object):
         '/cs3.gateway.v1beta1.GatewayAPI/CreateOCMCoreShare',
         request_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.SerializeToString,
         response_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.FromString,
+        )
+    self.CreateTransfer = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/CreateTransfer',
+        request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.SerializeToString,
+        response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.FromString,
+        )
+    self.GetTransferStatus = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/GetTransferStatus',
+        request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.GetTransferStatusRequest.SerializeToString,
+        response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.GetTransferStatusResponse.FromString,
+        )
+    self.CancelTransfer = channel.unary_unary(
+        '/cs3.gateway.v1beta1.GatewayAPI/CancelTransfer',
+        request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferRequest.SerializeToString,
+        response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferResponse.FromString,
         )
 
 
@@ -944,6 +960,30 @@ class GatewayAPIServicer(object):
 
   def CreateOCMCoreShare(self, request, context):
     """Creates a new ocm share.
+    *****************************************************************/
+    ************************** FILE TRANSFER ************************/
+    *****************************************************************/
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateTransfer(self, request, context):
+    """Returns a response containing a TxInfo (transfer info) object.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def GetTransferStatus(self, request, context):
+    """Requests a transfer status.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CancelTransfer(self, request, context):
+    """Requests to cancel a transfer.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -1271,6 +1311,21 @@ def add_GatewayAPIServicer_to_server(servicer, server):
           servicer.CreateOCMCoreShare,
           request_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.FromString,
           response_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.SerializeToString,
+      ),
+      'CreateTransfer': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateTransfer,
+          request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.FromString,
+          response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.SerializeToString,
+      ),
+      'GetTransferStatus': grpc.unary_unary_rpc_method_handler(
+          servicer.GetTransferStatus,
+          request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.GetTransferStatusRequest.FromString,
+          response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.GetTransferStatusResponse.SerializeToString,
+      ),
+      'CancelTransfer': grpc.unary_unary_rpc_method_handler(
+          servicer.CancelTransfer,
+          request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferRequest.FromString,
+          response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
