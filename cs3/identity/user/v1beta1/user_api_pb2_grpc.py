@@ -57,11 +57,6 @@ class UserAPIStub(object):
                 request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersRequest.SerializeToString,
                 response_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersResponse.FromString,
                 )
-        self.FindGroups = channel.unary_unary(
-                '/cs3.identity.user.v1beta1.UserAPI/FindGroups',
-                request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsRequest.SerializeToString,
-                response_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsResponse.FromString,
-                )
 
 
 class UserAPIServicer(object):
@@ -121,13 +116,6 @@ class UserAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def FindGroups(self, request, context):
-        """Finds groups whose names match the specified filter.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_UserAPIServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -155,11 +143,6 @@ def add_UserAPIServicer_to_server(servicer, server):
                     servicer.FindUsers,
                     request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersRequest.FromString,
                     response_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersResponse.SerializeToString,
-            ),
-            'FindGroups': grpc.unary_unary_rpc_method_handler(
-                    servicer.FindGroups,
-                    request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsRequest.FromString,
-                    response_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -271,22 +254,5 @@ class UserAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.identity.user.v1beta1.UserAPI/FindUsers',
             cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersRequest.SerializeToString,
             cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def FindGroups(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.identity.user.v1beta1.UserAPI/FindGroups',
-            cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsRequest.SerializeToString,
-            cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

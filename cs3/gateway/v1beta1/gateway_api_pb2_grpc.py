@@ -6,6 +6,7 @@ from cs3.app.provider.v1beta1 import provider_api_pb2 as cs3_dot_app_dot_provide
 from cs3.app.registry.v1beta1 import registry_api_pb2 as cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2
 from cs3.auth.registry.v1beta1 import registry_api_pb2 as cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2
 from cs3.gateway.v1beta1 import gateway_api_pb2 as cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2
+from cs3.identity.group.v1beta1 import group_api_pb2 as cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2
 from cs3.identity.user.v1beta1 import user_api_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2
 from cs3.ocm.core.v1beta1 import ocm_core_api_pb2 as cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2
 from cs3.ocm.invite.v1beta1 import invite_api_pb2 as cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2
@@ -317,10 +318,30 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersRequest.SerializeToString,
                 response_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersResponse.FromString,
                 )
+        self.GetGroup = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/GetGroup',
+                request_serializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupRequest.SerializeToString,
+                response_deserializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupResponse.FromString,
+                )
+        self.GetGroupByClaim = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/GetGroupByClaim',
+                request_serializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupByClaimRequest.SerializeToString,
+                response_deserializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupByClaimResponse.FromString,
+                )
+        self.GetMembers = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/GetMembers',
+                request_serializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetMembersRequest.SerializeToString,
+                response_deserializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetMembersResponse.FromString,
+                )
+        self.HasMember = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/HasMember',
+                request_serializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.HasMemberRequest.SerializeToString,
+                response_deserializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.HasMemberResponse.FromString,
+                )
         self.FindGroups = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/FindGroups',
-                request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsRequest.SerializeToString,
-                response_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsResponse.FromString,
+                request_serializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.FindGroupsRequest.SerializeToString,
+                response_deserializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.FindGroupsResponse.FromString,
                 )
         self.ListAuthProviders = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/ListAuthProviders',
@@ -879,13 +900,45 @@ class GatewayAPIServicer(object):
     def FindUsers(self, request, context):
         """Finds users by any attribute of the user.
         TODO(labkode): to define the filters that make more sense.
+        *****************************************************************/
+        ************************ GROUP PROVIDER **************************/
+        *****************************************************************/
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetGroup(self, request, context):
+        """Gets the information about a group by the group id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetGroupByClaim(self, request, context):
+        """Gets the information about a group based on a specified claim.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetMembers(self, request, context):
+        """Gets the members of a group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def HasMember(self, request, context):
+        """Tells if the group has a certain member.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def FindGroups(self, request, context):
-        """Finds groups whose names match the specified filter.
+        """TODO(labkode): to define the filters that make more sense.
+        Finds groups whose names match the specified filter.
         *****************************************************************/
         ************************ AUTH REGISTRY  **************************/
         *****************************************************************/
@@ -1275,10 +1328,30 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersRequest.FromString,
                     response_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersResponse.SerializeToString,
             ),
+            'GetGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGroup,
+                    request_deserializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupRequest.FromString,
+                    response_serializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupResponse.SerializeToString,
+            ),
+            'GetGroupByClaim': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGroupByClaim,
+                    request_deserializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupByClaimRequest.FromString,
+                    response_serializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupByClaimResponse.SerializeToString,
+            ),
+            'GetMembers': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMembers,
+                    request_deserializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetMembersRequest.FromString,
+                    response_serializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetMembersResponse.SerializeToString,
+            ),
+            'HasMember': grpc.unary_unary_rpc_method_handler(
+                    servicer.HasMember,
+                    request_deserializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.HasMemberRequest.FromString,
+                    response_serializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.HasMemberResponse.SerializeToString,
+            ),
             'FindGroups': grpc.unary_unary_rpc_method_handler(
                     servicer.FindGroups,
-                    request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsRequest.FromString,
-                    response_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsResponse.SerializeToString,
+                    request_deserializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.FindGroupsRequest.FromString,
+                    response_serializer=cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.FindGroupsResponse.SerializeToString,
             ),
             'ListAuthProviders': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAuthProviders,
@@ -2294,6 +2367,74 @@ class GatewayAPI(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def GetGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GetGroup',
+            cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupRequest.SerializeToString,
+            cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetGroupByClaim(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GetGroupByClaim',
+            cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupByClaimRequest.SerializeToString,
+            cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetGroupByClaimResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetMembers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GetMembers',
+            cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetMembersRequest.SerializeToString,
+            cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.GetMembersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def HasMember(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/HasMember',
+            cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.HasMemberRequest.SerializeToString,
+            cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.HasMemberResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def FindGroups(request,
             target,
             options=(),
@@ -2305,8 +2446,8 @@ class GatewayAPI(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/FindGroups',
-            cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsRequest.SerializeToString,
-            cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindGroupsResponse.FromString,
+            cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.FindGroupsRequest.SerializeToString,
+            cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2.FindGroupsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
