@@ -6,10 +6,10 @@ from cs3.identity.group.v1beta1 import group_api_pb2 as cs3_dot_identity_dot_gro
 
 
 class GroupAPIStub(object):
-    """UserProvider API.
+    """GroupProvider API.
 
-    The UserProvider API is responsible for creating
-    a key-value map according to group groupprovider.
+    The GroupProvider API is responsible for providing methods to retrieve
+    information about groups and their interactions with users.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -17,7 +17,7 @@ class GroupAPIStub(object):
     RFC 2119.
 
     The following are global requirements that apply to all methods:
-    Any method MUST return CODE_OK on a succesful operation.
+    Any method MUST return CODE_OK on a successful operation.
     Any method MAY return NOT_IMPLEMENTED.
     Any method MAY return INTERNAL.
     Any method MAY return UNKNOWN.
@@ -60,10 +60,10 @@ class GroupAPIStub(object):
 
 
 class GroupAPIServicer(object):
-    """UserProvider API.
+    """GroupProvider API.
 
-    The UserProvider API is responsible for creating
-    a key-value map according to group groupprovider.
+    The GroupProvider API is responsible for providing methods to retrieve
+    information about groups and their interactions with users.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -71,7 +71,7 @@ class GroupAPIServicer(object):
     RFC 2119.
 
     The following are global requirements that apply to all methods:
-    Any method MUST return CODE_OK on a succesful operation.
+    Any method MUST return CODE_OK on a successful operation.
     Any method MAY return NOT_IMPLEMENTED.
     Any method MAY return INTERNAL.
     Any method MAY return UNKNOWN.
@@ -151,10 +151,10 @@ def add_GroupAPIServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class GroupAPI(object):
-    """UserProvider API.
+    """GroupProvider API.
 
-    The UserProvider API is responsible for creating
-    a key-value map according to group groupprovider.
+    The GroupProvider API is responsible for providing methods to retrieve
+    information about groups and their interactions with users.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -162,7 +162,7 @@ class GroupAPI(object):
     RFC 2119.
 
     The following are global requirements that apply to all methods:
-    Any method MUST return CODE_OK on a succesful operation.
+    Any method MUST return CODE_OK on a successful operation.
     Any method MAY return NOT_IMPLEMENTED.
     Any method MAY return INTERNAL.
     Any method MAY return UNKNOWN.

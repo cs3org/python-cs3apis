@@ -308,11 +308,6 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsRequest.SerializeToString,
                 response_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsResponse.FromString,
                 )
-        self.IsInGroup = channel.unary_unary(
-                '/cs3.gateway.v1beta1.GatewayAPI/IsInGroup',
-                request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupRequest.SerializeToString,
-                response_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupResponse.FromString,
-                )
         self.FindUsers = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/FindUsers',
                 request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersRequest.SerializeToString,
@@ -890,13 +885,6 @@ class GatewayAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def IsInGroup(self, request, context):
-        """Tells if the user is in a certain group.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def FindUsers(self, request, context):
         """Finds users by any attribute of the user.
         TODO(labkode): to define the filters that make more sense.
@@ -1317,11 +1305,6 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.GetUserGroups,
                     request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsRequest.FromString,
                     response_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsResponse.SerializeToString,
-            ),
-            'IsInGroup': grpc.unary_unary_rpc_method_handler(
-                    servicer.IsInGroup,
-                    request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupRequest.FromString,
-                    response_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupResponse.SerializeToString,
             ),
             'FindUsers': grpc.unary_unary_rpc_method_handler(
                     servicer.FindUsers,
@@ -2329,23 +2312,6 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GetUserGroups',
             cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsRequest.SerializeToString,
             cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def IsInGroup(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/IsInGroup',
-            cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupRequest.SerializeToString,
-            cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

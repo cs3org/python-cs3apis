@@ -8,8 +8,8 @@ from cs3.identity.user.v1beta1 import user_api_pb2 as cs3_dot_identity_dot_user_
 class UserAPIStub(object):
     """UserProvider API.
 
-    The UserProvider API is responsible for creating
-    a key-value map according to user userprovider.
+    The UserProvider API is responsible for providing
+    methods to retrieve information about the users.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -17,7 +17,7 @@ class UserAPIStub(object):
     RFC 2119.
 
     The following are global requirements that apply to all methods:
-    Any method MUST return CODE_OK on a succesful operation.
+    Any method MUST return CODE_OK on a successful operation.
     Any method MAY return NOT_IMPLEMENTED.
     Any method MAY return INTERNAL.
     Any method MAY return UNKNOWN.
@@ -47,11 +47,6 @@ class UserAPIStub(object):
                 request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsRequest.SerializeToString,
                 response_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsResponse.FromString,
                 )
-        self.IsInGroup = channel.unary_unary(
-                '/cs3.identity.user.v1beta1.UserAPI/IsInGroup',
-                request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupRequest.SerializeToString,
-                response_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupResponse.FromString,
-                )
         self.FindUsers = channel.unary_unary(
                 '/cs3.identity.user.v1beta1.UserAPI/FindUsers',
                 request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersRequest.SerializeToString,
@@ -62,8 +57,8 @@ class UserAPIStub(object):
 class UserAPIServicer(object):
     """UserProvider API.
 
-    The UserProvider API is responsible for creating
-    a key-value map according to user userprovider.
+    The UserProvider API is responsible for providing
+    methods to retrieve information about the users.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -71,7 +66,7 @@ class UserAPIServicer(object):
     RFC 2119.
 
     The following are global requirements that apply to all methods:
-    Any method MUST return CODE_OK on a succesful operation.
+    Any method MUST return CODE_OK on a successful operation.
     Any method MAY return NOT_IMPLEMENTED.
     Any method MAY return INTERNAL.
     Any method MAY return UNKNOWN.
@@ -96,13 +91,6 @@ class UserAPIServicer(object):
 
     def GetUserGroups(self, request, context):
         """Gets the groups of a user.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def IsInGroup(self, request, context):
-        """Tells if the user is in a certain group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -134,11 +122,6 @@ def add_UserAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsRequest.FromString,
                     response_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsResponse.SerializeToString,
             ),
-            'IsInGroup': grpc.unary_unary_rpc_method_handler(
-                    servicer.IsInGroup,
-                    request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupRequest.FromString,
-                    response_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupResponse.SerializeToString,
-            ),
             'FindUsers': grpc.unary_unary_rpc_method_handler(
                     servicer.FindUsers,
                     request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersRequest.FromString,
@@ -154,8 +137,8 @@ def add_UserAPIServicer_to_server(servicer, server):
 class UserAPI(object):
     """UserProvider API.
 
-    The UserProvider API is responsible for creating
-    a key-value map according to user userprovider.
+    The UserProvider API is responsible for providing
+    methods to retrieve information about the users.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -163,7 +146,7 @@ class UserAPI(object):
     RFC 2119.
 
     The following are global requirements that apply to all methods:
-    Any method MUST return CODE_OK on a succesful operation.
+    Any method MUST return CODE_OK on a successful operation.
     Any method MAY return NOT_IMPLEMENTED.
     Any method MAY return INTERNAL.
     Any method MAY return UNKNOWN.
@@ -220,23 +203,6 @@ class UserAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.identity.user.v1beta1.UserAPI/GetUserGroups',
             cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsRequest.SerializeToString,
             cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.GetUserGroupsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def IsInGroup(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.identity.user.v1beta1.UserAPI/IsInGroup',
-            cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupRequest.SerializeToString,
-            cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.IsInGroupResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
