@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\032com.cs3.ocm.invite.v1beta1B\016InviteApiProtoP\001Z\rinvitev1beta1\242\002\003COI\252\002\026Cs3.Ocm.Invite.V1Beta1\312\002\026Cs3\\Ocm\\Invite\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'cs3/ocm/invite/v1beta1/invite_api.proto\x12\x16\x63s3.ocm.invite.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a&cs3/ocm/invite/v1beta1/resources.proto\x1a(cs3/ocm/provider/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"G\n\x1aGenerateInviteTokenRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xac\x01\n\x1bGenerateInviteTokenResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x03 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\"\xc4\x01\n\x14\x46orwardInviteRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x02 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\x12\x46\n\x16origin_system_provider\x18\x03 \x01(\x0b\x32&.cs3.ocm.provider.v1beta1.ProviderInfo\"k\n\x15\x46orwardInviteResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xb1\x01\n\x13\x41\x63\x63\x65ptInviteRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x02 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\x12\x34\n\x0bremote_user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"j\n\x14\x41\x63\x63\x65ptInviteResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"|\n\x14GetRemoteUserRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0eremote_user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\"\xa1\x01\n\x15GetRemoteUserResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x0bremote_user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"X\n\x17GetAcceptedUsersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x12\n\ntoken_name\x18\x02 \x01(\t\"\xa7\x01\n\x18GetAcceptedUsersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x0e\x61\x63\x63\x65pted_users\x18\x03 \x03(\x0b\x32\x1f.cs3.identity.user.v1beta1.User2\xc9\x04\n\tInviteAPI\x12~\n\x13GenerateInviteToken\x12\x32.cs3.ocm.invite.v1beta1.GenerateInviteTokenRequest\x1a\x33.cs3.ocm.invite.v1beta1.GenerateInviteTokenResponse\x12l\n\rForwardInvite\x12,.cs3.ocm.invite.v1beta1.ForwardInviteRequest\x1a-.cs3.ocm.invite.v1beta1.ForwardInviteResponse\x12i\n\x0c\x41\x63\x63\x65ptInvite\x12+.cs3.ocm.invite.v1beta1.AcceptInviteRequest\x1a,.cs3.ocm.invite.v1beta1.AcceptInviteResponse\x12l\n\rGetRemoteUser\x12,.cs3.ocm.invite.v1beta1.GetRemoteUserRequest\x1a-.cs3.ocm.invite.v1beta1.GetRemoteUserResponse\x12u\n\x10GetAcceptedUsers\x12/.cs3.ocm.invite.v1beta1.GetAcceptedUsersRequest\x1a\x30.cs3.ocm.invite.v1beta1.GetAcceptedUsersResponseBu\n\x1a\x63om.cs3.ocm.invite.v1beta1B\x0eInviteApiProtoP\x01Z\rinvitev1beta1\xa2\x02\x03\x43OI\xaa\x02\x16\x43s3.Ocm.Invite.V1Beta1\xca\x02\x16\x43s3\\Ocm\\Invite\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n\'cs3/ocm/invite/v1beta1/invite_api.proto\x12\x16\x63s3.ocm.invite.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a&cs3/ocm/invite/v1beta1/resources.proto\x1a(cs3/ocm/provider/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"G\n\x1aGenerateInviteTokenRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xac\x01\n\x1bGenerateInviteTokenResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x03 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\"\xc4\x01\n\x14\x46orwardInviteRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x02 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\x12\x46\n\x16origin_system_provider\x18\x03 \x01(\x0b\x32&.cs3.ocm.provider.v1beta1.ProviderInfo\"k\n\x15\x46orwardInviteResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xb1\x01\n\x13\x41\x63\x63\x65ptInviteRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x02 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\x12\x34\n\x0bremote_user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"j\n\x14\x41\x63\x63\x65ptInviteResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"~\n\x16GetAcceptedUserRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0eremote_user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\"\xa3\x01\n\x17GetAcceptedUserResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x0bremote_user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"U\n\x18\x46indAcceptedUsersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\"\xa8\x01\n\x19\x46indAcceptedUsersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x0e\x61\x63\x63\x65pted_users\x18\x03 \x03(\x0b\x32\x1f.cs3.identity.user.v1beta1.User2\xd2\x04\n\tInviteAPI\x12~\n\x13GenerateInviteToken\x12\x32.cs3.ocm.invite.v1beta1.GenerateInviteTokenRequest\x1a\x33.cs3.ocm.invite.v1beta1.GenerateInviteTokenResponse\x12l\n\rForwardInvite\x12,.cs3.ocm.invite.v1beta1.ForwardInviteRequest\x1a-.cs3.ocm.invite.v1beta1.ForwardInviteResponse\x12i\n\x0c\x41\x63\x63\x65ptInvite\x12+.cs3.ocm.invite.v1beta1.AcceptInviteRequest\x1a,.cs3.ocm.invite.v1beta1.AcceptInviteResponse\x12r\n\x0fGetAcceptedUser\x12..cs3.ocm.invite.v1beta1.GetAcceptedUserRequest\x1a/.cs3.ocm.invite.v1beta1.GetAcceptedUserResponse\x12x\n\x11\x46indAcceptedUsers\x12\x30.cs3.ocm.invite.v1beta1.FindAcceptedUsersRequest\x1a\x31.cs3.ocm.invite.v1beta1.FindAcceptedUsersResponseBu\n\x1a\x63om.cs3.ocm.invite.v1beta1B\x0eInviteApiProtoP\x01Z\rinvitev1beta1\xa2\x02\x03\x43OI\xaa\x02\x16\x43s3.Ocm.Invite.V1Beta1\xca\x02\x16\x43s3\\Ocm\\Invite\\V1Beta1b\x06proto3'
   ,
   dependencies=[cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_ocm_dot_invite_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_ocm_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -279,23 +279,23 @@ _ACCEPTINVITERESPONSE = _descriptor.Descriptor(
 )
 
 
-_GETREMOTEUSERREQUEST = _descriptor.Descriptor(
-  name='GetRemoteUserRequest',
-  full_name='cs3.ocm.invite.v1beta1.GetRemoteUserRequest',
+_GETACCEPTEDUSERREQUEST = _descriptor.Descriptor(
+  name='GetAcceptedUserRequest',
+  full_name='cs3.ocm.invite.v1beta1.GetAcceptedUserRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.ocm.invite.v1beta1.GetRemoteUserRequest.opaque', index=0,
+      name='opaque', full_name='cs3.ocm.invite.v1beta1.GetAcceptedUserRequest.opaque', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='remote_user_id', full_name='cs3.ocm.invite.v1beta1.GetRemoteUserRequest.remote_user_id', index=1,
+      name='remote_user_id', full_name='cs3.ocm.invite.v1beta1.GetAcceptedUserRequest.remote_user_id', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -314,34 +314,34 @@ _GETREMOTEUSERREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1097,
-  serialized_end=1221,
+  serialized_end=1223,
 )
 
 
-_GETREMOTEUSERRESPONSE = _descriptor.Descriptor(
-  name='GetRemoteUserResponse',
-  full_name='cs3.ocm.invite.v1beta1.GetRemoteUserResponse',
+_GETACCEPTEDUSERRESPONSE = _descriptor.Descriptor(
+  name='GetAcceptedUserResponse',
+  full_name='cs3.ocm.invite.v1beta1.GetAcceptedUserResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.ocm.invite.v1beta1.GetRemoteUserResponse.status', index=0,
+      name='status', full_name='cs3.ocm.invite.v1beta1.GetAcceptedUserResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.ocm.invite.v1beta1.GetRemoteUserResponse.opaque', index=1,
+      name='opaque', full_name='cs3.ocm.invite.v1beta1.GetAcceptedUserResponse.opaque', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='remote_user', full_name='cs3.ocm.invite.v1beta1.GetRemoteUserResponse.remote_user', index=2,
+      name='remote_user', full_name='cs3.ocm.invite.v1beta1.GetAcceptedUserResponse.remote_user', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -359,28 +359,28 @@ _GETREMOTEUSERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1224,
-  serialized_end=1385,
+  serialized_start=1226,
+  serialized_end=1389,
 )
 
 
-_GETACCEPTEDUSERSREQUEST = _descriptor.Descriptor(
-  name='GetAcceptedUsersRequest',
-  full_name='cs3.ocm.invite.v1beta1.GetAcceptedUsersRequest',
+_FINDACCEPTEDUSERSREQUEST = _descriptor.Descriptor(
+  name='FindAcceptedUsersRequest',
+  full_name='cs3.ocm.invite.v1beta1.FindAcceptedUsersRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.ocm.invite.v1beta1.GetAcceptedUsersRequest.opaque', index=0,
+      name='opaque', full_name='cs3.ocm.invite.v1beta1.FindAcceptedUsersRequest.opaque', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='token_name', full_name='cs3.ocm.invite.v1beta1.GetAcceptedUsersRequest.token_name', index=1,
+      name='filter', full_name='cs3.ocm.invite.v1beta1.FindAcceptedUsersRequest.filter', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -398,35 +398,35 @@ _GETACCEPTEDUSERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1387,
-  serialized_end=1475,
+  serialized_start=1391,
+  serialized_end=1476,
 )
 
 
-_GETACCEPTEDUSERSRESPONSE = _descriptor.Descriptor(
-  name='GetAcceptedUsersResponse',
-  full_name='cs3.ocm.invite.v1beta1.GetAcceptedUsersResponse',
+_FINDACCEPTEDUSERSRESPONSE = _descriptor.Descriptor(
+  name='FindAcceptedUsersResponse',
+  full_name='cs3.ocm.invite.v1beta1.FindAcceptedUsersResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.ocm.invite.v1beta1.GetAcceptedUsersResponse.status', index=0,
+      name='status', full_name='cs3.ocm.invite.v1beta1.FindAcceptedUsersResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.ocm.invite.v1beta1.GetAcceptedUsersResponse.opaque', index=1,
+      name='opaque', full_name='cs3.ocm.invite.v1beta1.FindAcceptedUsersResponse.opaque', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='accepted_users', full_name='cs3.ocm.invite.v1beta1.GetAcceptedUsersResponse.accepted_users', index=2,
+      name='accepted_users', full_name='cs3.ocm.invite.v1beta1.FindAcceptedUsersResponse.accepted_users', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -444,8 +444,8 @@ _GETACCEPTEDUSERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1478,
-  serialized_end=1645,
+  serialized_start=1479,
+  serialized_end=1647,
 )
 
 _GENERATEINVITETOKENREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
@@ -462,25 +462,25 @@ _ACCEPTINVITEREQUEST.fields_by_name['invite_token'].message_type = cs3_dot_ocm_d
 _ACCEPTINVITEREQUEST.fields_by_name['remote_user'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USER
 _ACCEPTINVITERESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
 _ACCEPTINVITERESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-_GETREMOTEUSERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-_GETREMOTEUSERREQUEST.fields_by_name['remote_user_id'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USERID
-_GETREMOTEUSERRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
-_GETREMOTEUSERRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-_GETREMOTEUSERRESPONSE.fields_by_name['remote_user'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USER
-_GETACCEPTEDUSERSREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-_GETACCEPTEDUSERSRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
-_GETACCEPTEDUSERSRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-_GETACCEPTEDUSERSRESPONSE.fields_by_name['accepted_users'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USER
+_GETACCEPTEDUSERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_GETACCEPTEDUSERREQUEST.fields_by_name['remote_user_id'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USERID
+_GETACCEPTEDUSERRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
+_GETACCEPTEDUSERRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_GETACCEPTEDUSERRESPONSE.fields_by_name['remote_user'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USER
+_FINDACCEPTEDUSERSREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_FINDACCEPTEDUSERSRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
+_FINDACCEPTEDUSERSRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_FINDACCEPTEDUSERSRESPONSE.fields_by_name['accepted_users'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USER
 DESCRIPTOR.message_types_by_name['GenerateInviteTokenRequest'] = _GENERATEINVITETOKENREQUEST
 DESCRIPTOR.message_types_by_name['GenerateInviteTokenResponse'] = _GENERATEINVITETOKENRESPONSE
 DESCRIPTOR.message_types_by_name['ForwardInviteRequest'] = _FORWARDINVITEREQUEST
 DESCRIPTOR.message_types_by_name['ForwardInviteResponse'] = _FORWARDINVITERESPONSE
 DESCRIPTOR.message_types_by_name['AcceptInviteRequest'] = _ACCEPTINVITEREQUEST
 DESCRIPTOR.message_types_by_name['AcceptInviteResponse'] = _ACCEPTINVITERESPONSE
-DESCRIPTOR.message_types_by_name['GetRemoteUserRequest'] = _GETREMOTEUSERREQUEST
-DESCRIPTOR.message_types_by_name['GetRemoteUserResponse'] = _GETREMOTEUSERRESPONSE
-DESCRIPTOR.message_types_by_name['GetAcceptedUsersRequest'] = _GETACCEPTEDUSERSREQUEST
-DESCRIPTOR.message_types_by_name['GetAcceptedUsersResponse'] = _GETACCEPTEDUSERSRESPONSE
+DESCRIPTOR.message_types_by_name['GetAcceptedUserRequest'] = _GETACCEPTEDUSERREQUEST
+DESCRIPTOR.message_types_by_name['GetAcceptedUserResponse'] = _GETACCEPTEDUSERRESPONSE
+DESCRIPTOR.message_types_by_name['FindAcceptedUsersRequest'] = _FINDACCEPTEDUSERSREQUEST
+DESCRIPTOR.message_types_by_name['FindAcceptedUsersResponse'] = _FINDACCEPTEDUSERSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GenerateInviteTokenRequest = _reflection.GeneratedProtocolMessageType('GenerateInviteTokenRequest', (_message.Message,), {
@@ -525,33 +525,33 @@ AcceptInviteResponse = _reflection.GeneratedProtocolMessageType('AcceptInviteRes
   })
 _sym_db.RegisterMessage(AcceptInviteResponse)
 
-GetRemoteUserRequest = _reflection.GeneratedProtocolMessageType('GetRemoteUserRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETREMOTEUSERREQUEST,
+GetAcceptedUserRequest = _reflection.GeneratedProtocolMessageType('GetAcceptedUserRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETACCEPTEDUSERREQUEST,
   '__module__' : 'cs3.ocm.invite.v1beta1.invite_api_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.ocm.invite.v1beta1.GetRemoteUserRequest)
+  # @@protoc_insertion_point(class_scope:cs3.ocm.invite.v1beta1.GetAcceptedUserRequest)
   })
-_sym_db.RegisterMessage(GetRemoteUserRequest)
+_sym_db.RegisterMessage(GetAcceptedUserRequest)
 
-GetRemoteUserResponse = _reflection.GeneratedProtocolMessageType('GetRemoteUserResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETREMOTEUSERRESPONSE,
+GetAcceptedUserResponse = _reflection.GeneratedProtocolMessageType('GetAcceptedUserResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETACCEPTEDUSERRESPONSE,
   '__module__' : 'cs3.ocm.invite.v1beta1.invite_api_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.ocm.invite.v1beta1.GetRemoteUserResponse)
+  # @@protoc_insertion_point(class_scope:cs3.ocm.invite.v1beta1.GetAcceptedUserResponse)
   })
-_sym_db.RegisterMessage(GetRemoteUserResponse)
+_sym_db.RegisterMessage(GetAcceptedUserResponse)
 
-GetAcceptedUsersRequest = _reflection.GeneratedProtocolMessageType('GetAcceptedUsersRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETACCEPTEDUSERSREQUEST,
+FindAcceptedUsersRequest = _reflection.GeneratedProtocolMessageType('FindAcceptedUsersRequest', (_message.Message,), {
+  'DESCRIPTOR' : _FINDACCEPTEDUSERSREQUEST,
   '__module__' : 'cs3.ocm.invite.v1beta1.invite_api_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.ocm.invite.v1beta1.GetAcceptedUsersRequest)
+  # @@protoc_insertion_point(class_scope:cs3.ocm.invite.v1beta1.FindAcceptedUsersRequest)
   })
-_sym_db.RegisterMessage(GetAcceptedUsersRequest)
+_sym_db.RegisterMessage(FindAcceptedUsersRequest)
 
-GetAcceptedUsersResponse = _reflection.GeneratedProtocolMessageType('GetAcceptedUsersResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETACCEPTEDUSERSRESPONSE,
+FindAcceptedUsersResponse = _reflection.GeneratedProtocolMessageType('FindAcceptedUsersResponse', (_message.Message,), {
+  'DESCRIPTOR' : _FINDACCEPTEDUSERSRESPONSE,
   '__module__' : 'cs3.ocm.invite.v1beta1.invite_api_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.ocm.invite.v1beta1.GetAcceptedUsersResponse)
+  # @@protoc_insertion_point(class_scope:cs3.ocm.invite.v1beta1.FindAcceptedUsersResponse)
   })
-_sym_db.RegisterMessage(GetAcceptedUsersResponse)
+_sym_db.RegisterMessage(FindAcceptedUsersResponse)
 
 
 DESCRIPTOR._options = None
@@ -563,8 +563,8 @@ _INVITEAPI = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1648,
-  serialized_end=2233,
+  serialized_start=1650,
+  serialized_end=2244,
   methods=[
   _descriptor.MethodDescriptor(
     name='GenerateInviteToken',
@@ -597,22 +597,22 @@ _INVITEAPI = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='GetRemoteUser',
-    full_name='cs3.ocm.invite.v1beta1.InviteAPI.GetRemoteUser',
+    name='GetAcceptedUser',
+    full_name='cs3.ocm.invite.v1beta1.InviteAPI.GetAcceptedUser',
     index=3,
     containing_service=None,
-    input_type=_GETREMOTEUSERREQUEST,
-    output_type=_GETREMOTEUSERRESPONSE,
+    input_type=_GETACCEPTEDUSERREQUEST,
+    output_type=_GETACCEPTEDUSERRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='GetAcceptedUsers',
-    full_name='cs3.ocm.invite.v1beta1.InviteAPI.GetAcceptedUsers',
+    name='FindAcceptedUsers',
+    full_name='cs3.ocm.invite.v1beta1.InviteAPI.FindAcceptedUsers',
     index=4,
     containing_service=None,
-    input_type=_GETACCEPTEDUSERSREQUEST,
-    output_type=_GETACCEPTEDUSERSRESPONSE,
+    input_type=_FINDACCEPTEDUSERSREQUEST,
+    output_type=_FINDACCEPTEDUSERSRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

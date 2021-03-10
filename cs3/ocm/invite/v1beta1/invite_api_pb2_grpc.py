@@ -45,15 +45,15 @@ class InviteAPIStub(object):
                 request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.SerializeToString,
                 response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.FromString,
                 )
-        self.GetRemoteUser = channel.unary_unary(
-                '/cs3.ocm.invite.v1beta1.InviteAPI/GetRemoteUser',
-                request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserRequest.SerializeToString,
-                response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserResponse.FromString,
+        self.GetAcceptedUser = channel.unary_unary(
+                '/cs3.ocm.invite.v1beta1.InviteAPI/GetAcceptedUser',
+                request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserResponse.FromString,
                 )
-        self.GetAcceptedUsers = channel.unary_unary(
-                '/cs3.ocm.invite.v1beta1.InviteAPI/GetAcceptedUsers',
-                request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUsersRequest.SerializeToString,
-                response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUsersResponse.FromString,
+        self.FindAcceptedUsers = channel.unary_unary(
+                '/cs3.ocm.invite.v1beta1.InviteAPI/FindAcceptedUsers',
+                request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersResponse.FromString,
                 )
 
 
@@ -97,15 +97,15 @@ class InviteAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetRemoteUser(self, request, context):
+    def GetAcceptedUser(self, request, context):
         """Retrieves details about a remote user who has accepted an invite to share.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetAcceptedUsers(self, request, context):
-        """Retrieves a list of users that accepted a certain invite token.
+    def FindAcceptedUsers(self, request, context):
+        """Finds users who accepted invite tokens by their attributes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -129,15 +129,15 @@ def add_InviteAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.FromString,
                     response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.SerializeToString,
             ),
-            'GetRemoteUser': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetRemoteUser,
-                    request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserRequest.FromString,
-                    response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserResponse.SerializeToString,
+            'GetAcceptedUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAcceptedUser,
+                    request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserResponse.SerializeToString,
             ),
-            'GetAcceptedUsers': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetAcceptedUsers,
-                    request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUsersRequest.FromString,
-                    response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUsersResponse.SerializeToString,
+            'FindAcceptedUsers': grpc.unary_unary_rpc_method_handler(
+                    servicer.FindAcceptedUsers,
+                    request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -217,7 +217,7 @@ class InviteAPI(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetRemoteUser(request,
+    def GetAcceptedUser(request,
             target,
             options=(),
             channel_credentials=None,
@@ -227,14 +227,14 @@ class InviteAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.ocm.invite.v1beta1.InviteAPI/GetRemoteUser',
-            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserRequest.SerializeToString,
-            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cs3.ocm.invite.v1beta1.InviteAPI/GetAcceptedUser',
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserRequest.SerializeToString,
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetAcceptedUsers(request,
+    def FindAcceptedUsers(request,
             target,
             options=(),
             channel_credentials=None,
@@ -244,8 +244,8 @@ class InviteAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.ocm.invite.v1beta1.InviteAPI/GetAcceptedUsers',
-            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUsersRequest.SerializeToString,
-            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUsersResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cs3.ocm.invite.v1beta1.InviteAPI/FindAcceptedUsers',
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersRequest.SerializeToString,
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

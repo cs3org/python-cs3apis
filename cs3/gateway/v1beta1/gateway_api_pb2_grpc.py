@@ -383,10 +383,15 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.SerializeToString,
                 response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.FromString,
                 )
-        self.GetRemoteUser = channel.unary_unary(
-                '/cs3.gateway.v1beta1.GatewayAPI/GetRemoteUser',
-                request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserRequest.SerializeToString,
-                response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserResponse.FromString,
+        self.GetAcceptedUser = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/GetAcceptedUser',
+                request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserResponse.FromString,
+                )
+        self.FindAcceptedUsers = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/FindAcceptedUsers',
+                request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersResponse.FromString,
                 )
         self.IsProviderAllowed = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/IsProviderAllowed',
@@ -1024,8 +1029,15 @@ class GatewayAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetRemoteUser(self, request, context):
+    def GetAcceptedUser(self, request, context):
         """Retrieves details about a remote user who has accepted an invite to share.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def FindAcceptedUsers(self, request, context):
+        """Finds users who accepted invite tokens by their attributes.
         *****************************************************************/
         ******************** OCM PROVIDER AUTHORIZER ********************/
         *****************************************************************/
@@ -1429,10 +1441,15 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteRequest.FromString,
                     response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.AcceptInviteResponse.SerializeToString,
             ),
-            'GetRemoteUser': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetRemoteUser,
-                    request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserRequest.FromString,
-                    response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserResponse.SerializeToString,
+            'GetAcceptedUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAcceptedUser,
+                    request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserResponse.SerializeToString,
+            ),
+            'FindAcceptedUsers': grpc.unary_unary_rpc_method_handler(
+                    servicer.FindAcceptedUsers,
+                    request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersResponse.SerializeToString,
             ),
             'IsProviderAllowed': grpc.unary_unary_rpc_method_handler(
                     servicer.IsProviderAllowed,
@@ -2639,7 +2656,7 @@ class GatewayAPI(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetRemoteUser(request,
+    def GetAcceptedUser(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2649,9 +2666,26 @@ class GatewayAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GetRemoteUser',
-            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserRequest.SerializeToString,
-            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetRemoteUserResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GetAcceptedUser',
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserRequest.SerializeToString,
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.GetAcceptedUserResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def FindAcceptedUsers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/FindAcceptedUsers',
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersRequest.SerializeToString,
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
