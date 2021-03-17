@@ -11,6 +11,10 @@ class LinkAPIStub(object):
     The Public Share Provider API is meant to manipulate public shares
     also called public links.
 
+    Access to public shares can be limitted by a password. The share
+    provider must store this password in a secure manner e.g. hashed
+    with the bcrypt algorithm.
+
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
     "OPTIONAL" in this document are to be interpreted as described in
@@ -67,6 +71,10 @@ class LinkAPIServicer(object):
 
     The Public Share Provider API is meant to manipulate public shares
     also called public links.
+
+    Access to public shares can be limitted by a password. The share
+    provider must store this password in a secure manner e.g. hashed
+    with the bcrypt algorithm.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -178,6 +186,10 @@ class LinkAPI(object):
 
     The Public Share Provider API is meant to manipulate public shares
     also called public links.
+
+    Access to public shares can be limitted by a password. The share
+    provider must store this password in a secure manner e.g. hashed
+    with the bcrypt algorithm.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
