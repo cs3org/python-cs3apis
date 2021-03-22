@@ -30,10 +30,10 @@ class RegistryAPIStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetStorageProvider = channel.unary_unary(
-                '/cs3.storage.registry.v1beta1.RegistryAPI/GetStorageProvider',
-                request_serializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProviderRequest.SerializeToString,
-                response_deserializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProviderResponse.FromString,
+        self.GetStorageProviders = channel.unary_unary(
+                '/cs3.storage.registry.v1beta1.RegistryAPI/GetStorageProviders',
+                request_serializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProvidersRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProvidersResponse.FromString,
                 )
         self.ListStorageProviders = channel.unary_unary(
                 '/cs3.storage.registry.v1beta1.RegistryAPI/ListStorageProviders',
@@ -66,7 +66,7 @@ class RegistryAPIServicer(object):
     Any method MAY return UNAUTHENTICATED.
     """
 
-    def GetStorageProvider(self, request, context):
+    def GetStorageProviders(self, request, context):
         """Returns the storage provider that is reponsible for the given
         resource reference.
         MUST return CODE_NOT_FOUND if the reference does not exist.
@@ -94,10 +94,10 @@ class RegistryAPIServicer(object):
 
 def add_RegistryAPIServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetStorageProvider': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetStorageProvider,
-                    request_deserializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProviderRequest.FromString,
-                    response_serializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProviderResponse.SerializeToString,
+            'GetStorageProviders': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetStorageProviders,
+                    request_deserializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProvidersRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProvidersResponse.SerializeToString,
             ),
             'ListStorageProviders': grpc.unary_unary_rpc_method_handler(
                     servicer.ListStorageProviders,
@@ -136,7 +136,7 @@ class RegistryAPI(object):
     """
 
     @staticmethod
-    def GetStorageProvider(request,
+    def GetStorageProviders(request,
             target,
             options=(),
             channel_credentials=None,
@@ -146,9 +146,9 @@ class RegistryAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.storage.registry.v1beta1.RegistryAPI/GetStorageProvider',
-            cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProviderRequest.SerializeToString,
-            cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProviderResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.registry.v1beta1.RegistryAPI/GetStorageProviders',
+            cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProvidersRequest.SerializeToString,
+            cs3_dot_storage_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetStorageProvidersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

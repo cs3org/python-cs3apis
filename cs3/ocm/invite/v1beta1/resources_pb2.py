@@ -12,7 +12,6 @@ _sym_db = _symbol_database.Default()
 
 
 from cs3.identity.user.v1beta1 import resources_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2
-from cs3.storage.provider.v1beta1 import resources_pb2 as cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
 
@@ -22,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\032com.cs3.ocm.invite.v1beta1B\016ResourcesProtoP\001Z\rinvitev1beta1\242\002\003COI\252\002\026Cs3.Ocm.Invite.V1Beta1\312\002\026Cs3\\Ocm\\Invite\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&cs3/ocm/invite/v1beta1/resources.proto\x12\x16\x63s3.ocm.invite.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\x97\x01\n\x0bInviteToken\x12\r\n\x05token\x18\x01 \x01(\t\x12\x32\n\x07user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x30\n\nexpiration\x18\x03 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\tBu\n\x1a\x63om.cs3.ocm.invite.v1beta1B\x0eResourcesProtoP\x01Z\rinvitev1beta1\xa2\x02\x03\x43OI\xaa\x02\x16\x43s3.Ocm.Invite.V1Beta1\xca\x02\x16\x43s3\\Ocm\\Invite\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n&cs3/ocm/invite/v1beta1/resources.proto\x12\x16\x63s3.ocm.invite.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\x97\x01\n\x0bInviteToken\x12\r\n\x05token\x18\x01 \x01(\t\x12\x32\n\x07user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x30\n\nexpiration\x18\x03 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\tBu\n\x1a\x63om.cs3.ocm.invite.v1beta1B\x0eResourcesProtoP\x01Z\rinvitev1beta1\xa2\x02\x03\x43OI\xaa\x02\x16\x43s3.Ocm.Invite.V1Beta1\xca\x02\x16\x43s3\\Ocm\\Invite\\V1Beta1b\x06proto3'
   ,
-  dependencies=[cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
+  dependencies=[cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
 
 
@@ -77,8 +76,8 @@ _INVITETOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=187,
-  serialized_end=338,
+  serialized_start=141,
+  serialized_end=292,
 )
 
 _INVITETOKEN.fields_by_name['user_id'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USERID

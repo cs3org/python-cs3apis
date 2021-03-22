@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from cs3.rpc.v1beta1 import status_pb2 as cs3_dot_rpc_dot_v1beta1_dot_status__pb2
 from cs3.storage.provider.v1beta1 import resources_pb2 as cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
@@ -22,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027com.cs3.gateway.v1beta1B\016ResourcesProtoP\001Z\016gatewayv1beta1\242\002\003CGX\252\002\023Cs3.Gateway.V1Beta1\312\002\023Cs3\\Gateway\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n#cs3/gateway/v1beta1/resources.proto\x12\x13\x63s3.gateway.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xce\x01\n\x12\x46ileUploadProtocol\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\x17\n\x0fupload_endpoint\x18\x03 \x01(\t\x12S\n\x13\x61vailable_checksums\x18\x04 \x03(\x0b\x32\x36.cs3.storage.provider.v1beta1.ResourceChecksumPriority\x12\r\n\x05token\x18\x05 \x01(\t\"}\n\x14\x46ileDownloadProtocol\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\x19\n\x11\x64ownload_endpoint\x18\x03 \x01(\t\x12\r\n\x05token\x18\x04 \x01(\tBm\n\x17\x63om.cs3.gateway.v1beta1B\x0eResourcesProtoP\x01Z\x0egatewayv1beta1\xa2\x02\x03\x43GX\xaa\x02\x13\x43s3.Gateway.V1Beta1\xca\x02\x13\x43s3\\Gateway\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n#cs3/gateway/v1beta1/resources.proto\x12\x13\x63s3.gateway.v1beta1\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xce\x01\n\x12\x46ileUploadProtocol\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\x17\n\x0fupload_endpoint\x18\x03 \x01(\t\x12S\n\x13\x61vailable_checksums\x18\x04 \x03(\x0b\x32\x36.cs3.storage.provider.v1beta1.ResourceChecksumPriority\x12\r\n\x05token\x18\x05 \x01(\t\"}\n\x14\x46ileDownloadProtocol\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\x19\n\x11\x64ownload_endpoint\x18\x03 \x01(\t\x12\r\n\x05token\x18\x04 \x01(\tBm\n\x17\x63om.cs3.gateway.v1beta1B\x0eResourcesProtoP\x01Z\x0egatewayv1beta1\xa2\x02\x03\x43GX\xaa\x02\x13\x43s3.Gateway.V1Beta1\xca\x02\x13\x43s3\\Gateway\\V1Beta1b\x06proto3'
   ,
-  dependencies=[cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
+  dependencies=[cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
 
 
@@ -84,8 +83,8 @@ _FILEUPLOADPROTOCOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=168,
-  serialized_end=374,
+  serialized_start=138,
+  serialized_end=344,
 )
 
 
@@ -137,8 +136,8 @@ _FILEDOWNLOADPROTOCOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=376,
-  serialized_end=501,
+  serialized_start=346,
+  serialized_end=471,
 )
 
 _FILEUPLOADPROTOCOL.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
