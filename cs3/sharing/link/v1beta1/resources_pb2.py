@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.cs3.sharing.link.v1beta1B\016ResourcesProtoP\001Z\013linkv1beta1\242\002\003CSL\252\002\030Cs3.Sharing.Link.V1Beta1\312\002\030Cs3\\Sharing\\Link\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(cs3/sharing/link/v1beta1/resources.proto\x12\x18\x63s3.sharing.link.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xfb\x03\n\x0bPublicShare\x12\x33\n\x02id\x18\x01 \x01(\x0b\x32\'.cs3.sharing.link.v1beta1.PublicShareId\x12\r\n\x05token\x18\x02 \x01(\t\x12=\n\x0bresource_id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x45\n\x0bpermissions\x18\x04 \x01(\x0b\x32\x30.cs3.sharing.link.v1beta1.PublicSharePermissions\x12\x30\n\x05owner\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x32\n\x07\x63reator\x18\x06 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12+\n\x05\x63time\x18\x07 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12+\n\x05mtime\x18\x08 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x1a\n\x12password_protected\x18\t \x01(\x08\x12\x30\n\nexpiration\x18\n \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x14\n\x0c\x64isplay_name\x18\x0b \x01(\t\"`\n\x16PublicSharePermissions\x12\x46\n\x0bpermissions\x18\x01 \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\"\"\n\rPublicShareId\x12\x11\n\topaque_id\x18\x02 \x01(\t\"f\n\x14PublicShareReference\x12\x35\n\x02id\x18\x01 \x01(\x0b\x32\'.cs3.sharing.link.v1beta1.PublicShareIdH\x00\x12\x0f\n\x05token\x18\x02 \x01(\tH\x00\x42\x06\n\x04spec\"\x92\x01\n\x05Grant\x12\x45\n\x0bpermissions\x18\x01 \x01(\x0b\x32\x30.cs3.sharing.link.v1beta1.PublicSharePermissions\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x30\n\nexpiration\x18\x03 \x01(\x0b\x32\x1c.cs3.types.v1beta1.TimestampBy\n\x1c\x63om.cs3.sharing.link.v1beta1B\x0eResourcesProtoP\x01Z\x0blinkv1beta1\xa2\x02\x03\x43SL\xaa\x02\x18\x43s3.Sharing.Link.V1Beta1\xca\x02\x18\x43s3\\Sharing\\Link\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n(cs3/sharing/link/v1beta1/resources.proto\x12\x18\x63s3.sharing.link.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xb8\x04\n\x0bPublicShare\x12\x33\n\x02id\x18\x01 \x01(\x0b\x32\'.cs3.sharing.link.v1beta1.PublicShareId\x12\r\n\x05token\x18\x02 \x01(\t\x12=\n\x0bresource_id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x45\n\x0bpermissions\x18\x04 \x01(\x0b\x32\x30.cs3.sharing.link.v1beta1.PublicSharePermissions\x12\x30\n\x05owner\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x32\n\x07\x63reator\x18\x06 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12+\n\x05\x63time\x18\x07 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12+\n\x05mtime\x18\x08 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x1a\n\x12password_protected\x18\t \x01(\x08\x12\x30\n\nexpiration\x18\n \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x14\n\x0c\x64isplay_name\x18\x0b \x01(\t\x12;\n\tsignature\x18\x0c \x01(\x0b\x32(.cs3.sharing.link.v1beta1.ShareSignature\"`\n\x16PublicSharePermissions\x12\x46\n\x0bpermissions\x18\x01 \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\"\"\n\rPublicShareId\x12\x11\n\topaque_id\x18\x02 \x01(\t\"f\n\x14PublicShareReference\x12\x35\n\x02id\x18\x01 \x01(\x0b\x32\'.cs3.sharing.link.v1beta1.PublicShareIdH\x00\x12\x0f\n\x05token\x18\x02 \x01(\tH\x00\x42\x06\n\x04spec\"v\n\x19PublicShareAuthentication\x12\x12\n\x08password\x18\x01 \x01(\tH\x00\x12=\n\tsignature\x18\x02 \x01(\x0b\x32(.cs3.sharing.link.v1beta1.ShareSignatureH\x00\x42\x06\n\x04spec\"_\n\x0eShareSignature\x12\x11\n\tsignature\x18\x01 \x01(\t\x12:\n\x14signature_expiration\x18\x02 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"\x92\x01\n\x05Grant\x12\x45\n\x0bpermissions\x18\x01 \x01(\x0b\x32\x30.cs3.sharing.link.v1beta1.PublicSharePermissions\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x30\n\nexpiration\x18\x03 \x01(\x0b\x32\x1c.cs3.types.v1beta1.TimestampBy\n\x1c\x63om.cs3.sharing.link.v1beta1B\x0eResourcesProtoP\x01Z\x0blinkv1beta1\xa2\x02\x03\x43SL\xaa\x02\x18\x43s3.Sharing.Link.V1Beta1\xca\x02\x18\x43s3\\Sharing\\Link\\V1Beta1b\x06proto3'
   ,
   dependencies=[cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -114,6 +114,13 @@ _PUBLICSHARE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='signature', full_name='cs3.sharing.link.v1beta1.PublicShare.signature', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -127,7 +134,7 @@ _PUBLICSHARE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=191,
-  serialized_end=698,
+  serialized_end=759,
 )
 
 
@@ -158,8 +165,8 @@ _PUBLICSHAREPERMISSIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=700,
-  serialized_end=796,
+  serialized_start=761,
+  serialized_end=857,
 )
 
 
@@ -190,8 +197,8 @@ _PUBLICSHAREID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=798,
-  serialized_end=832,
+  serialized_start=859,
+  serialized_end=893,
 )
 
 
@@ -234,8 +241,91 @@ _PUBLICSHAREREFERENCE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=834,
-  serialized_end=936,
+  serialized_start=895,
+  serialized_end=997,
+)
+
+
+_PUBLICSHAREAUTHENTICATION = _descriptor.Descriptor(
+  name='PublicShareAuthentication',
+  full_name='cs3.sharing.link.v1beta1.PublicShareAuthentication',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='password', full_name='cs3.sharing.link.v1beta1.PublicShareAuthentication.password', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='signature', full_name='cs3.sharing.link.v1beta1.PublicShareAuthentication.signature', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='spec', full_name='cs3.sharing.link.v1beta1.PublicShareAuthentication.spec',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=999,
+  serialized_end=1117,
+)
+
+
+_SHARESIGNATURE = _descriptor.Descriptor(
+  name='ShareSignature',
+  full_name='cs3.sharing.link.v1beta1.ShareSignature',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='signature', full_name='cs3.sharing.link.v1beta1.ShareSignature.signature', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='signature_expiration', full_name='cs3.sharing.link.v1beta1.ShareSignature.signature_expiration', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1119,
+  serialized_end=1214,
 )
 
 
@@ -280,8 +370,8 @@ _GRANT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=939,
-  serialized_end=1085,
+  serialized_start=1217,
+  serialized_end=1363,
 )
 
 _PUBLICSHARE.fields_by_name['id'].message_type = _PUBLICSHAREID
@@ -292,6 +382,7 @@ _PUBLICSHARE.fields_by_name['creator'].message_type = cs3_dot_identity_dot_user_
 _PUBLICSHARE.fields_by_name['ctime'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._TIMESTAMP
 _PUBLICSHARE.fields_by_name['mtime'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._TIMESTAMP
 _PUBLICSHARE.fields_by_name['expiration'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._TIMESTAMP
+_PUBLICSHARE.fields_by_name['signature'].message_type = _SHARESIGNATURE
 _PUBLICSHAREPERMISSIONS.fields_by_name['permissions'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._RESOURCEPERMISSIONS
 _PUBLICSHAREREFERENCE.fields_by_name['id'].message_type = _PUBLICSHAREID
 _PUBLICSHAREREFERENCE.oneofs_by_name['spec'].fields.append(
@@ -300,12 +391,22 @@ _PUBLICSHAREREFERENCE.fields_by_name['id'].containing_oneof = _PUBLICSHAREREFERE
 _PUBLICSHAREREFERENCE.oneofs_by_name['spec'].fields.append(
   _PUBLICSHAREREFERENCE.fields_by_name['token'])
 _PUBLICSHAREREFERENCE.fields_by_name['token'].containing_oneof = _PUBLICSHAREREFERENCE.oneofs_by_name['spec']
+_PUBLICSHAREAUTHENTICATION.fields_by_name['signature'].message_type = _SHARESIGNATURE
+_PUBLICSHAREAUTHENTICATION.oneofs_by_name['spec'].fields.append(
+  _PUBLICSHAREAUTHENTICATION.fields_by_name['password'])
+_PUBLICSHAREAUTHENTICATION.fields_by_name['password'].containing_oneof = _PUBLICSHAREAUTHENTICATION.oneofs_by_name['spec']
+_PUBLICSHAREAUTHENTICATION.oneofs_by_name['spec'].fields.append(
+  _PUBLICSHAREAUTHENTICATION.fields_by_name['signature'])
+_PUBLICSHAREAUTHENTICATION.fields_by_name['signature'].containing_oneof = _PUBLICSHAREAUTHENTICATION.oneofs_by_name['spec']
+_SHARESIGNATURE.fields_by_name['signature_expiration'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._TIMESTAMP
 _GRANT.fields_by_name['permissions'].message_type = _PUBLICSHAREPERMISSIONS
 _GRANT.fields_by_name['expiration'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['PublicShare'] = _PUBLICSHARE
 DESCRIPTOR.message_types_by_name['PublicSharePermissions'] = _PUBLICSHAREPERMISSIONS
 DESCRIPTOR.message_types_by_name['PublicShareId'] = _PUBLICSHAREID
 DESCRIPTOR.message_types_by_name['PublicShareReference'] = _PUBLICSHAREREFERENCE
+DESCRIPTOR.message_types_by_name['PublicShareAuthentication'] = _PUBLICSHAREAUTHENTICATION
+DESCRIPTOR.message_types_by_name['ShareSignature'] = _SHARESIGNATURE
 DESCRIPTOR.message_types_by_name['Grant'] = _GRANT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -336,6 +437,20 @@ PublicShareReference = _reflection.GeneratedProtocolMessageType('PublicShareRefe
   # @@protoc_insertion_point(class_scope:cs3.sharing.link.v1beta1.PublicShareReference)
   })
 _sym_db.RegisterMessage(PublicShareReference)
+
+PublicShareAuthentication = _reflection.GeneratedProtocolMessageType('PublicShareAuthentication', (_message.Message,), {
+  'DESCRIPTOR' : _PUBLICSHAREAUTHENTICATION,
+  '__module__' : 'cs3.sharing.link.v1beta1.resources_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.sharing.link.v1beta1.PublicShareAuthentication)
+  })
+_sym_db.RegisterMessage(PublicShareAuthentication)
+
+ShareSignature = _reflection.GeneratedProtocolMessageType('ShareSignature', (_message.Message,), {
+  'DESCRIPTOR' : _SHARESIGNATURE,
+  '__module__' : 'cs3.sharing.link.v1beta1.resources_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.sharing.link.v1beta1.ShareSignature)
+  })
+_sym_db.RegisterMessage(ShareSignature)
 
 Grant = _reflection.GeneratedProtocolMessageType('Grant', (_message.Message,), {
   'DESCRIPTOR' : _GRANT,
