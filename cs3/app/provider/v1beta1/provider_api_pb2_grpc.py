@@ -38,6 +38,11 @@ class ProviderAPIStub(object):
                 request_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderRequest.SerializeToString,
                 response_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderResponse.FromString,
                 )
+        self.OpenInApp = channel.unary_unary(
+                '/cs3.app.provider.v1beta1.ProviderAPI/OpenInApp',
+                request_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenInAppRequest.SerializeToString,
+                response_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenInAppResponse.FromString,
+                )
 
 
 class ProviderAPIServicer(object):
@@ -63,6 +68,14 @@ class ProviderAPIServicer(object):
     """
 
     def OpenFileInAppProvider(self, request, context):
+        """Returns the App provider URL (deprecated)
+        MUST return CODE_NOT_FOUND if the resource does not exist.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def OpenInApp(self, request, context):
         """Returns the App provider URL
         MUST return CODE_NOT_FOUND if the resource does not exist.
         """
@@ -77,6 +90,11 @@ def add_ProviderAPIServicer_to_server(servicer, server):
                     servicer.OpenFileInAppProvider,
                     request_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderRequest.FromString,
                     response_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderResponse.SerializeToString,
+            ),
+            'OpenInApp': grpc.unary_unary_rpc_method_handler(
+                    servicer.OpenInApp,
+                    request_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenInAppRequest.FromString,
+                    response_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenInAppResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -121,5 +139,22 @@ class ProviderAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.app.provider.v1beta1.ProviderAPI/OpenFileInAppProvider',
             cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderRequest.SerializeToString,
             cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def OpenInApp(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.app.provider.v1beta1.ProviderAPI/OpenInApp',
+            cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenInAppRequest.SerializeToString,
+            cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenInAppResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
