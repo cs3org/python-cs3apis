@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from cs3.auth.provider.v1beta1 import resources_pb2 as cs3_dot_auth_dot_provider_dot_v1beta1_dot_resources__pb2
 from cs3.identity.user.v1beta1 import resources_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2
 from cs3.rpc.v1beta1 import status_pb2 as cs3_dot_rpc_dot_v1beta1_dot_status__pb2
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035com.cs3.auth.provider.v1beta1B\020ProviderApiProtoP\001Z\017providerv1beta1\242\002\003CAP\252\002\031Cs3.Auth.Provider.V1Beta1\312\002\031Cs3\\Auth\\Provider\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,cs3/auth/provider/v1beta1/provider_api.proto\x12\x19\x63s3.auth.provider.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"j\n\x13\x41uthenticateRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\"n\n\x14\x41uthenticateResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12-\n\x04user\x18\x02 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User2~\n\x0bProviderAPI\x12o\n\x0c\x41uthenticate\x12..cs3.auth.provider.v1beta1.AuthenticateRequest\x1a/.cs3.auth.provider.v1beta1.AuthenticateResponseB\x82\x01\n\x1d\x63om.cs3.auth.provider.v1beta1B\x10ProviderApiProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43\x41P\xaa\x02\x19\x43s3.Auth.Provider.V1Beta1\xca\x02\x19\x43s3\\Auth\\Provider\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n,cs3/auth/provider/v1beta1/provider_api.proto\x12\x19\x63s3.auth.provider.v1beta1\x1a)cs3/auth/provider/v1beta1/resources.proto\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"j\n\x13\x41uthenticateRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\"\x99\x02\n\x14\x41uthenticateResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12-\n\x04user\x18\x02 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\x12T\n\x0btoken_scope\x18\x03 \x03(\x0b\x32?.cs3.auth.provider.v1beta1.AuthenticateResponse.TokenScopeEntry\x1aS\n\x0fTokenScopeEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12/\n\x05value\x18\x02 \x01(\x0b\x32 .cs3.auth.provider.v1beta1.Scope:\x02\x38\x01\x32~\n\x0bProviderAPI\x12o\n\x0c\x41uthenticate\x12..cs3.auth.provider.v1beta1.AuthenticateRequest\x1a/.cs3.auth.provider.v1beta1.AuthenticateResponseB\x82\x01\n\x1d\x63om.cs3.auth.provider.v1beta1B\x10ProviderApiProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43\x41P\xaa\x02\x19\x43s3.Auth.Provider.V1Beta1\xca\x02\x19\x43s3\\Auth\\Provider\\V1Beta1b\x06proto3'
   ,
-  dependencies=[cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
+  dependencies=[cs3_dot_auth_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
 
 
@@ -70,10 +71,48 @@ _AUTHENTICATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=179,
-  serialized_end=285,
+  serialized_start=222,
+  serialized_end=328,
 )
 
+
+_AUTHENTICATERESPONSE_TOKENSCOPEENTRY = _descriptor.Descriptor(
+  name='TokenScopeEntry',
+  full_name='cs3.auth.provider.v1beta1.AuthenticateResponse.TokenScopeEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='cs3.auth.provider.v1beta1.AuthenticateResponse.TokenScopeEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='cs3.auth.provider.v1beta1.AuthenticateResponse.TokenScopeEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=529,
+  serialized_end=612,
+)
 
 _AUTHENTICATERESPONSE = _descriptor.Descriptor(
   name='AuthenticateResponse',
@@ -97,10 +136,17 @@ _AUTHENTICATERESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='token_scope', full_name='cs3.auth.provider.v1beta1.AuthenticateResponse.token_scope', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_AUTHENTICATERESPONSE_TOKENSCOPEENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -109,13 +155,16 @@ _AUTHENTICATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=287,
-  serialized_end=397,
+  serialized_start=331,
+  serialized_end=612,
 )
 
 _AUTHENTICATEREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_AUTHENTICATERESPONSE_TOKENSCOPEENTRY.fields_by_name['value'].message_type = cs3_dot_auth_dot_provider_dot_v1beta1_dot_resources__pb2._SCOPE
+_AUTHENTICATERESPONSE_TOKENSCOPEENTRY.containing_type = _AUTHENTICATERESPONSE
 _AUTHENTICATERESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
 _AUTHENTICATERESPONSE.fields_by_name['user'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USER
+_AUTHENTICATERESPONSE.fields_by_name['token_scope'].message_type = _AUTHENTICATERESPONSE_TOKENSCOPEENTRY
 DESCRIPTOR.message_types_by_name['AuthenticateRequest'] = _AUTHENTICATEREQUEST
 DESCRIPTOR.message_types_by_name['AuthenticateResponse'] = _AUTHENTICATERESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -128,14 +177,23 @@ AuthenticateRequest = _reflection.GeneratedProtocolMessageType('AuthenticateRequ
 _sym_db.RegisterMessage(AuthenticateRequest)
 
 AuthenticateResponse = _reflection.GeneratedProtocolMessageType('AuthenticateResponse', (_message.Message,), {
+
+  'TokenScopeEntry' : _reflection.GeneratedProtocolMessageType('TokenScopeEntry', (_message.Message,), {
+    'DESCRIPTOR' : _AUTHENTICATERESPONSE_TOKENSCOPEENTRY,
+    '__module__' : 'cs3.auth.provider.v1beta1.provider_api_pb2'
+    # @@protoc_insertion_point(class_scope:cs3.auth.provider.v1beta1.AuthenticateResponse.TokenScopeEntry)
+    })
+  ,
   'DESCRIPTOR' : _AUTHENTICATERESPONSE,
   '__module__' : 'cs3.auth.provider.v1beta1.provider_api_pb2'
   # @@protoc_insertion_point(class_scope:cs3.auth.provider.v1beta1.AuthenticateResponse)
   })
 _sym_db.RegisterMessage(AuthenticateResponse)
+_sym_db.RegisterMessage(AuthenticateResponse.TokenScopeEntry)
 
 
 DESCRIPTOR._options = None
+_AUTHENTICATERESPONSE_TOKENSCOPEENTRY._options = None
 
 _PROVIDERAPI = _descriptor.ServiceDescriptor(
   name='ProviderAPI',
@@ -144,8 +202,8 @@ _PROVIDERAPI = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=399,
-  serialized_end=525,
+  serialized_start=614,
+  serialized_end=740,
   methods=[
   _descriptor.MethodDescriptor(
     name='Authenticate',
