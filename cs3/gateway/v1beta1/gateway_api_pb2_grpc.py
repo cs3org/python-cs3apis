@@ -4,6 +4,7 @@ import grpc
 
 from cs3.app.provider.v1beta1 import provider_api_pb2 as cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2
 from cs3.app.registry.v1beta1 import registry_api_pb2 as cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2
+from cs3.auth.applications.v1beta1 import applications_api_pb2 as cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2
 from cs3.auth.registry.v1beta1 import registry_api_pb2 as cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2
 from cs3.gateway.v1beta1 import gateway_api_pb2 as cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2
 from cs3.identity.group.v1beta1 import group_api_pb2 as cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2
@@ -57,6 +58,26 @@ class GatewayAPIStub(object):
                 '/cs3.gateway.v1beta1.GatewayAPI/WhoAmI',
                 request_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIRequest.SerializeToString,
                 response_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIResponse.FromString,
+                )
+        self.GenerateAppPassword = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/GenerateAppPassword',
+                request_serializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GenerateAppPasswordRequest.SerializeToString,
+                response_deserializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GenerateAppPasswordResponse.FromString,
+                )
+        self.ListAppPasswords = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/ListAppPasswords',
+                request_serializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.ListAppPasswordsRequest.SerializeToString,
+                response_deserializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.ListAppPasswordsResponse.FromString,
+                )
+        self.InvalidateAppPassword = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/InvalidateAppPassword',
+                request_serializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.InvalidateAppPasswordRequest.SerializeToString,
+                response_deserializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.InvalidateAppPasswordResponse.FromString,
+                )
+        self.GetAppPassword = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/GetAppPassword',
+                request_serializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GetAppPasswordRequest.SerializeToString,
+                response_deserializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GetAppPasswordResponse.FromString,
                 )
         self.CreateContainer = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/CreateContainer',
@@ -462,6 +483,38 @@ class GatewayAPIServicer(object):
 
     def WhoAmI(self, request, context):
         """WhoAmI returns the information for a user.
+        *****************************************************************/
+        ********************** APPLICATIONS AUTH ************************/
+        *****************************************************************/
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GenerateAppPassword(self, request, context):
+        """GenerateAppPassword creates a password with specified scope to be used by
+        third-party applications.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListAppPasswords(self, request, context):
+        """ListAppPasswords lists the application passwords created by a user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def InvalidateAppPassword(self, request, context):
+        """InvalidateAppPassword invalidates a generated password.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAppPassword(self, request, context):
+        """GetAppPassword retrieves the password information by the combination of username and password.
         *****************************************************************/
         ************************ STORAGE PROVIDER ***********************/
         *****************************************************************/
@@ -1116,6 +1169,26 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIRequest.FromString,
                     response_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIResponse.SerializeToString,
             ),
+            'GenerateAppPassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.GenerateAppPassword,
+                    request_deserializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GenerateAppPasswordRequest.FromString,
+                    response_serializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GenerateAppPasswordResponse.SerializeToString,
+            ),
+            'ListAppPasswords': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAppPasswords,
+                    request_deserializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.ListAppPasswordsRequest.FromString,
+                    response_serializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.ListAppPasswordsResponse.SerializeToString,
+            ),
+            'InvalidateAppPassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.InvalidateAppPassword,
+                    request_deserializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.InvalidateAppPasswordRequest.FromString,
+                    response_serializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.InvalidateAppPasswordResponse.SerializeToString,
+            ),
+            'GetAppPassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAppPassword,
+                    request_deserializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GetAppPasswordRequest.FromString,
+                    response_serializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GetAppPasswordResponse.SerializeToString,
+            ),
             'CreateContainer': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateContainer,
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateContainerRequest.FromString,
@@ -1547,6 +1620,74 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/WhoAmI',
             cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIRequest.SerializeToString,
             cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GenerateAppPassword(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GenerateAppPassword',
+            cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GenerateAppPasswordRequest.SerializeToString,
+            cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GenerateAppPasswordResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListAppPasswords(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListAppPasswords',
+            cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.ListAppPasswordsRequest.SerializeToString,
+            cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.ListAppPasswordsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def InvalidateAppPassword(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/InvalidateAppPassword',
+            cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.InvalidateAppPasswordRequest.SerializeToString,
+            cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.InvalidateAppPasswordResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAppPassword(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GetAppPassword',
+            cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GetAppPasswordRequest.SerializeToString,
+            cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GetAppPasswordResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
