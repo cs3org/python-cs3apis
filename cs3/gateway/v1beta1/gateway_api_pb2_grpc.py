@@ -334,10 +334,25 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAppProvidersRequest.SerializeToString,
                 response_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAppProvidersResponse.FromString,
                 )
+        self.AddAppProvider = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/AddAppProvider',
+                request_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.AddAppProviderRequest.SerializeToString,
+                response_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.AddAppProviderResponse.FromString,
+                )
         self.ListAppProviders = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/ListAppProviders',
                 request_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersRequest.SerializeToString,
                 response_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersResponse.FromString,
+                )
+        self.GetDefaultAppProviderForMimeType = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/GetDefaultAppProviderForMimeType',
+                request_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetDefaultAppProviderForMimeTypeRequest.SerializeToString,
+                response_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetDefaultAppProviderForMimeTypeResponse.FromString,
+                )
+        self.SetDefaultAppProviderForMimeType = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/SetDefaultAppProviderForMimeType',
+                request_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.SetDefaultAppProviderForMimeTypeRequest.SerializeToString,
+                response_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.SetDefaultAppProviderForMimeTypeResponse.FromString,
                 )
         self.GetUser = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/GetUser',
@@ -972,8 +987,29 @@ class GatewayAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AddAppProvider(self, request, context):
+        """Registers a new app provider to the registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListAppProviders(self, request, context):
         """Returns a list of the available app providers known by this registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetDefaultAppProviderForMimeType(self, request, context):
+        """Returns the default app provider which serves a specified mime type.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetDefaultAppProviderForMimeType(self, request, context):
+        """Sets the default app provider for a specified mime type.
         *****************************************************************/
         ************************ USER PROVIDER **************************/
         *****************************************************************/
@@ -1456,10 +1492,25 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAppProvidersRequest.FromString,
                     response_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAppProvidersResponse.SerializeToString,
             ),
+            'AddAppProvider': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddAppProvider,
+                    request_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.AddAppProviderRequest.FromString,
+                    response_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.AddAppProviderResponse.SerializeToString,
+            ),
             'ListAppProviders': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAppProviders,
                     request_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersRequest.FromString,
                     response_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersResponse.SerializeToString,
+            ),
+            'GetDefaultAppProviderForMimeType': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDefaultAppProviderForMimeType,
+                    request_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetDefaultAppProviderForMimeTypeRequest.FromString,
+                    response_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetDefaultAppProviderForMimeTypeResponse.SerializeToString,
+            ),
+            'SetDefaultAppProviderForMimeType': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetDefaultAppProviderForMimeType,
+                    request_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.SetDefaultAppProviderForMimeTypeRequest.FromString,
+                    response_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.SetDefaultAppProviderForMimeTypeResponse.SerializeToString,
             ),
             'GetUser': grpc.unary_unary_rpc_method_handler(
                     servicer.GetUser,
@@ -2576,6 +2627,23 @@ class GatewayAPI(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def AddAppProvider(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/AddAppProvider',
+            cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.AddAppProviderRequest.SerializeToString,
+            cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.AddAppProviderResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def ListAppProviders(request,
             target,
             options=(),
@@ -2589,6 +2657,40 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListAppProviders',
             cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersRequest.SerializeToString,
             cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDefaultAppProviderForMimeType(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GetDefaultAppProviderForMimeType',
+            cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetDefaultAppProviderForMimeTypeRequest.SerializeToString,
+            cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetDefaultAppProviderForMimeTypeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetDefaultAppProviderForMimeType(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/SetDefaultAppProviderForMimeType',
+            cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.SetDefaultAppProviderForMimeTypeRequest.SerializeToString,
+            cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.SetDefaultAppProviderForMimeTypeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

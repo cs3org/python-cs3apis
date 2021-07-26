@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.cs3.app.provider.v1beta1B\020ProviderApiProtoP\001Z\017providerv1beta1\242\002\003CAP\252\002\030Cs3.App.Provider.V1Beta1\312\002\030Cs3\\App\\Provider\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+cs3/app/provider/v1beta1/provider_api.proto\x12\x18\x63s3.app.provider.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xda\x02\n\x10OpenInAppRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x41\n\rresource_info\x18\x02 \x01(\x0b\x32*.cs3.storage.provider.v1beta1.ResourceInfo\x12\x46\n\tview_mode\x18\x03 \x01(\x0e\x32\x33.cs3.app.provider.v1beta1.OpenInAppRequest.ViewMode\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x04 \x01(\t\x12\x0b\n\x03\x61pp\x18\x05 \x01(\t\"m\n\x08ViewMode\x12\x15\n\x11VIEW_MODE_INVALID\x10\x00\x12\x17\n\x13VIEW_MODE_VIEW_ONLY\x10\x01\x12\x17\n\x13VIEW_MODE_READ_ONLY\x10\x02\x12\x18\n\x14VIEW_MODE_READ_WRITE\x10\x03\"x\n\x11OpenInAppResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0f\n\x07\x61pp_url\x18\x03 \x01(\t\"\xe5\x02\n\x1cOpenFileInAppProviderRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x41\n\rresource_info\x18\x02 \x01(\x0b\x32*.cs3.storage.provider.v1beta1.ResourceInfo\x12R\n\tview_mode\x18\x03 \x01(\x0e\x32?.cs3.app.provider.v1beta1.OpenFileInAppProviderRequest.ViewMode\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x04 \x01(\t\"m\n\x08ViewMode\x12\x15\n\x11VIEW_MODE_INVALID\x10\x00\x12\x17\n\x13VIEW_MODE_VIEW_ONLY\x10\x01\x12\x17\n\x13VIEW_MODE_READ_ONLY\x10\x02\x12\x18\n\x14VIEW_MODE_READ_WRITE\x10\x03\"\x8d\x01\n\x1dOpenFileInAppProviderResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x18\n\x10\x61pp_provider_url\x18\x03 \x01(\t2\xfe\x01\n\x0bProviderAPI\x12\x88\x01\n\x15OpenFileInAppProvider\x12\x36.cs3.app.provider.v1beta1.OpenFileInAppProviderRequest\x1a\x37.cs3.app.provider.v1beta1.OpenFileInAppProviderResponse\x12\x64\n\tOpenInApp\x12*.cs3.app.provider.v1beta1.OpenInAppRequest\x1a+.cs3.app.provider.v1beta1.OpenInAppResponseB\x7f\n\x1c\x63om.cs3.app.provider.v1beta1B\x10ProviderApiProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43\x41P\xaa\x02\x18\x43s3.App.Provider.V1Beta1\xca\x02\x18\x43s3\\App\\Provider\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n+cs3/app/provider/v1beta1/provider_api.proto\x12\x18\x63s3.app.provider.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xcd\x02\n\x10OpenInAppRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x41\n\rresource_info\x18\x02 \x01(\x0b\x32*.cs3.storage.provider.v1beta1.ResourceInfo\x12\x46\n\tview_mode\x18\x03 \x01(\x0e\x32\x33.cs3.app.provider.v1beta1.OpenInAppRequest.ViewMode\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x04 \x01(\t\"m\n\x08ViewMode\x12\x15\n\x11VIEW_MODE_INVALID\x10\x00\x12\x17\n\x13VIEW_MODE_VIEW_ONLY\x10\x01\x12\x17\n\x13VIEW_MODE_READ_ONLY\x10\x02\x12\x18\n\x14VIEW_MODE_READ_WRITE\x10\x03\"x\n\x11OpenInAppResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0f\n\x07\x61pp_url\x18\x03 \x01(\t\"\xe5\x02\n\x1cOpenFileInAppProviderRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x41\n\rresource_info\x18\x02 \x01(\x0b\x32*.cs3.storage.provider.v1beta1.ResourceInfo\x12R\n\tview_mode\x18\x03 \x01(\x0e\x32?.cs3.app.provider.v1beta1.OpenFileInAppProviderRequest.ViewMode\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x04 \x01(\t\"m\n\x08ViewMode\x12\x15\n\x11VIEW_MODE_INVALID\x10\x00\x12\x17\n\x13VIEW_MODE_VIEW_ONLY\x10\x01\x12\x17\n\x13VIEW_MODE_READ_ONLY\x10\x02\x12\x18\n\x14VIEW_MODE_READ_WRITE\x10\x03\"\x8d\x01\n\x1dOpenFileInAppProviderResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x18\n\x10\x61pp_provider_url\x18\x03 \x01(\t2\xfe\x01\n\x0bProviderAPI\x12\x88\x01\n\x15OpenFileInAppProvider\x12\x36.cs3.app.provider.v1beta1.OpenFileInAppProviderRequest\x1a\x37.cs3.app.provider.v1beta1.OpenFileInAppProviderResponse\x12\x64\n\tOpenInApp\x12*.cs3.app.provider.v1beta1.OpenInAppRequest\x1a+.cs3.app.provider.v1beta1.OpenInAppResponseB\x7f\n\x1c\x63om.cs3.app.provider.v1beta1B\x10ProviderApiProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43\x41P\xaa\x02\x18\x43s3.App.Provider.V1Beta1\xca\x02\x18\x43s3\\App\\Provider\\V1Beta1b\x06proto3'
   ,
   dependencies=[cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -58,8 +58,8 @@ _OPENINAPPREQUEST_VIEWMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=418,
-  serialized_end=527,
+  serialized_start=405,
+  serialized_end=514,
 )
 _sym_db.RegisterEnumDescriptor(_OPENINAPPREQUEST_VIEWMODE)
 
@@ -93,8 +93,8 @@ _OPENFILEINAPPPROVIDERREQUEST_VIEWMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=418,
-  serialized_end=527,
+  serialized_start=405,
+  serialized_end=514,
 )
 _sym_db.RegisterEnumDescriptor(_OPENFILEINAPPPROVIDERREQUEST_VIEWMODE)
 
@@ -135,13 +135,6 @@ _OPENINAPPREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='app', full_name='cs3.app.provider.v1beta1.OpenInAppRequest.app', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -156,7 +149,7 @@ _OPENINAPPREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=181,
-  serialized_end=527,
+  serialized_end=514,
 )
 
 
@@ -201,8 +194,8 @@ _OPENINAPPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=529,
-  serialized_end=649,
+  serialized_start=516,
+  serialized_end=636,
 )
 
 
@@ -255,8 +248,8 @@ _OPENFILEINAPPPROVIDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=652,
-  serialized_end=1009,
+  serialized_start=639,
+  serialized_end=996,
 )
 
 
@@ -301,8 +294,8 @@ _OPENFILEINAPPPROVIDERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1012,
-  serialized_end=1153,
+  serialized_start=999,
+  serialized_end=1140,
 )
 
 _OPENINAPPREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
@@ -361,8 +354,8 @@ _PROVIDERAPI = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1156,
-  serialized_end=1410,
+  serialized_start=1143,
+  serialized_end=1397,
   methods=[
   _descriptor.MethodDescriptor(
     name='OpenFileInAppProvider',
