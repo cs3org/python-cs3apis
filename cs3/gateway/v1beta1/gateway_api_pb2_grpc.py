@@ -204,11 +204,6 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.OpenInAppRequest.SerializeToString,
                 response_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenInAppResponse.FromString,
                 )
-        self.OpenFileInAppProvider = channel.unary_unary(
-                '/cs3.gateway.v1beta1.GatewayAPI/OpenFileInAppProvider',
-                request_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.OpenFileInAppProviderRequest.SerializeToString,
-                response_deserializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderResponse.FromString,
-                )
         self.CreateShare = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/CreateShare',
                 request_serializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.CreateShareRequest.SerializeToString,
@@ -343,6 +338,11 @@ class GatewayAPIStub(object):
                 '/cs3.gateway.v1beta1.GatewayAPI/ListAppProviders',
                 request_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersRequest.SerializeToString,
                 response_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersResponse.FromString,
+                )
+        self.ListSupportedMimeTypes = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/ListSupportedMimeTypes',
+                request_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesRequest.SerializeToString,
+                response_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesResponse.FromString,
                 )
         self.GetDefaultAppProviderForMimeType = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/GetDefaultAppProviderForMimeType',
@@ -751,13 +751,6 @@ class GatewayAPIServicer(object):
 
     def OpenInApp(self, request, context):
         """Returns the App provider URL, which allows the user to open a resource in an online editor.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def OpenFileInAppProvider(self, request, context):
-        """Deprecated.
         *****************************************************************/
         ************************ USER SHARE PROVIDER ********************/
         *****************************************************************/
@@ -996,6 +989,13 @@ class GatewayAPIServicer(object):
 
     def ListAppProviders(self, request, context):
         """Returns a list of the available app providers known by this registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListSupportedMimeTypes(self, request, context):
+        """Returns a list of the supported mime types along with the apps which they can opened with.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1362,11 +1362,6 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.OpenInAppRequest.FromString,
                     response_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenInAppResponse.SerializeToString,
             ),
-            'OpenFileInAppProvider': grpc.unary_unary_rpc_method_handler(
-                    servicer.OpenFileInAppProvider,
-                    request_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.OpenFileInAppProviderRequest.FromString,
-                    response_serializer=cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderResponse.SerializeToString,
-            ),
             'CreateShare': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateShare,
                     request_deserializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.CreateShareRequest.FromString,
@@ -1501,6 +1496,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.ListAppProviders,
                     request_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersRequest.FromString,
                     response_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersResponse.SerializeToString,
+            ),
+            'ListSupportedMimeTypes': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSupportedMimeTypes,
+                    request_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesRequest.FromString,
+                    response_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesResponse.SerializeToString,
             ),
             'GetDefaultAppProviderForMimeType': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDefaultAppProviderForMimeType,
@@ -2185,23 +2185,6 @@ class GatewayAPI(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def OpenFileInAppProvider(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/OpenFileInAppProvider',
-            cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.OpenFileInAppProviderRequest.SerializeToString,
-            cs3_dot_app_dot_provider_dot_v1beta1_dot_provider__api__pb2.OpenFileInAppProviderResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def CreateShare(request,
             target,
             options=(),
@@ -2657,6 +2640,23 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListAppProviders',
             cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersRequest.SerializeToString,
             cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListSupportedMimeTypes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListSupportedMimeTypes',
+            cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesRequest.SerializeToString,
+            cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

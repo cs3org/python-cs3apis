@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.cs3.app.registry.v1beta1B\020RegistryApiProtoP\001Z\017registryv1beta1\242\002\003CAR\252\002\030Cs3.App.Registry.V1Beta1\312\002\030Cs3\\App\\Registry\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+cs3/app/registry/v1beta1/registry_api.proto\x12\x18\x63s3.app.registry.v1beta1\x1a(cs3/app/registry/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\x86\x01\n\x16GetAppProvidersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x41\n\rresource_info\x18\x02 \x01(\x0b\x32*.cs3.storage.provider.v1beta1.ResourceInfo\"\xa8\x01\n\x17GetAppProvidersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\tproviders\x18\x03 \x03(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\"|\n\x15\x41\x64\x64\x41ppProviderRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x08provider\x18\x02 \x01(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\"l\n\x16\x41\x64\x64\x41ppProviderResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"D\n\x17ListAppProvidersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xa9\x01\n\x18ListAppProvidersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\tproviders\x18\x03 \x03(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\"g\n\'GetDefaultAppProviderForMimeTypeRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x11\n\tmime_type\x18\x02 \x01(\t\"\xb8\x01\n(GetDefaultAppProviderForMimeTypeResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x08provider\x18\x03 \x01(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\"\xa1\x01\n\'SetDefaultAppProviderForMimeTypeRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x11\n\tmime_type\x18\x02 \x01(\t\x12\x38\n\x08provider\x18\x03 \x01(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\"~\n(SetDefaultAppProviderForMimeTypeResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque2\xcd\x05\n\x0bRegistryAPI\x12v\n\x0fGetAppProviders\x12\x30.cs3.app.registry.v1beta1.GetAppProvidersRequest\x1a\x31.cs3.app.registry.v1beta1.GetAppProvidersResponse\x12s\n\x0e\x41\x64\x64\x41ppProvider\x12/.cs3.app.registry.v1beta1.AddAppProviderRequest\x1a\x30.cs3.app.registry.v1beta1.AddAppProviderResponse\x12y\n\x10ListAppProviders\x12\x31.cs3.app.registry.v1beta1.ListAppProvidersRequest\x1a\x32.cs3.app.registry.v1beta1.ListAppProvidersResponse\x12\xa9\x01\n GetDefaultAppProviderForMimeType\x12\x41.cs3.app.registry.v1beta1.GetDefaultAppProviderForMimeTypeRequest\x1a\x42.cs3.app.registry.v1beta1.GetDefaultAppProviderForMimeTypeResponse\x12\xa9\x01\n SetDefaultAppProviderForMimeType\x12\x41.cs3.app.registry.v1beta1.SetDefaultAppProviderForMimeTypeRequest\x1a\x42.cs3.app.registry.v1beta1.SetDefaultAppProviderForMimeTypeResponseB\x7f\n\x1c\x63om.cs3.app.registry.v1beta1B\x10RegistryApiProtoP\x01Z\x0fregistryv1beta1\xa2\x02\x03\x43\x41R\xaa\x02\x18\x43s3.App.Registry.V1Beta1\xca\x02\x18\x43s3\\App\\Registry\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n+cs3/app/registry/v1beta1/registry_api.proto\x12\x18\x63s3.app.registry.v1beta1\x1a(cs3/app/registry/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\x86\x01\n\x16GetAppProvidersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x41\n\rresource_info\x18\x02 \x01(\x0b\x32*.cs3.storage.provider.v1beta1.ResourceInfo\"\xa8\x01\n\x17GetAppProvidersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\tproviders\x18\x03 \x03(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\"|\n\x15\x41\x64\x64\x41ppProviderRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x08provider\x18\x02 \x01(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\"l\n\x16\x41\x64\x64\x41ppProviderResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"D\n\x17ListAppProvidersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xa9\x01\n\x18ListAppProvidersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\tproviders\x18\x03 \x03(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\"J\n\x1dListSupportedMimeTypesRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xb2\x02\n\x1eListSupportedMimeTypesResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12[\n\nmime_types\x18\x03 \x03(\x0b\x32G.cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse.MimeTypesEntry\x1a_\n\x0eMimeTypesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12<\n\x05value\x18\x02 \x01(\x0b\x32-.cs3.app.registry.v1beta1.AppProviderNameList:\x02\x38\x01\"g\n\'GetDefaultAppProviderForMimeTypeRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x11\n\tmime_type\x18\x02 \x01(\t\"\xb8\x01\n(GetDefaultAppProviderForMimeTypeResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x08provider\x18\x03 \x01(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\"\xa1\x01\n\'SetDefaultAppProviderForMimeTypeRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x11\n\tmime_type\x18\x02 \x01(\t\x12\x38\n\x08provider\x18\x03 \x01(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\"~\n(SetDefaultAppProviderForMimeTypeResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque2\xdb\x06\n\x0bRegistryAPI\x12v\n\x0fGetAppProviders\x12\x30.cs3.app.registry.v1beta1.GetAppProvidersRequest\x1a\x31.cs3.app.registry.v1beta1.GetAppProvidersResponse\x12s\n\x0e\x41\x64\x64\x41ppProvider\x12/.cs3.app.registry.v1beta1.AddAppProviderRequest\x1a\x30.cs3.app.registry.v1beta1.AddAppProviderResponse\x12y\n\x10ListAppProviders\x12\x31.cs3.app.registry.v1beta1.ListAppProvidersRequest\x1a\x32.cs3.app.registry.v1beta1.ListAppProvidersResponse\x12\x8b\x01\n\x16ListSupportedMimeTypes\x12\x37.cs3.app.registry.v1beta1.ListSupportedMimeTypesRequest\x1a\x38.cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse\x12\xa9\x01\n GetDefaultAppProviderForMimeType\x12\x41.cs3.app.registry.v1beta1.GetDefaultAppProviderForMimeTypeRequest\x1a\x42.cs3.app.registry.v1beta1.GetDefaultAppProviderForMimeTypeResponse\x12\xa9\x01\n SetDefaultAppProviderForMimeType\x12\x41.cs3.app.registry.v1beta1.SetDefaultAppProviderForMimeTypeRequest\x1a\x42.cs3.app.registry.v1beta1.SetDefaultAppProviderForMimeTypeResponseB\x7f\n\x1c\x63om.cs3.app.registry.v1beta1B\x10RegistryApiProtoP\x01Z\x0fregistryv1beta1\xa2\x02\x03\x43\x41R\xaa\x02\x18\x43s3.App.Registry.V1Beta1\xca\x02\x18\x43s3\\App\\Registry\\V1Beta1b\x06proto3'
   ,
   dependencies=[cs3_dot_app_dot_registry_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -271,6 +271,122 @@ _LISTAPPPROVIDERSRESPONSE = _descriptor.Descriptor(
 )
 
 
+_LISTSUPPORTEDMIMETYPESREQUEST = _descriptor.Descriptor(
+  name='ListSupportedMimeTypesRequest',
+  full_name='cs3.app.registry.v1beta1.ListSupportedMimeTypesRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.app.registry.v1beta1.ListSupportedMimeTypesRequest.opaque', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1008,
+  serialized_end=1082,
+)
+
+
+_LISTSUPPORTEDMIMETYPESRESPONSE_MIMETYPESENTRY = _descriptor.Descriptor(
+  name='MimeTypesEntry',
+  full_name='cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse.MimeTypesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse.MimeTypesEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse.MimeTypesEntry.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1296,
+  serialized_end=1391,
+)
+
+_LISTSUPPORTEDMIMETYPESRESPONSE = _descriptor.Descriptor(
+  name='ListSupportedMimeTypesResponse',
+  full_name='cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse.status', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse.opaque', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mime_types', full_name='cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse.mime_types', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_LISTSUPPORTEDMIMETYPESRESPONSE_MIMETYPESENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1085,
+  serialized_end=1391,
+)
+
+
 _GETDEFAULTAPPPROVIDERFORMIMETYPEREQUEST = _descriptor.Descriptor(
   name='GetDefaultAppProviderForMimeTypeRequest',
   full_name='cs3.app.registry.v1beta1.GetDefaultAppProviderForMimeTypeRequest',
@@ -305,8 +421,8 @@ _GETDEFAULTAPPPROVIDERFORMIMETYPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1008,
-  serialized_end=1111,
+  serialized_start=1393,
+  serialized_end=1496,
 )
 
 
@@ -351,8 +467,8 @@ _GETDEFAULTAPPPROVIDERFORMIMETYPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1114,
-  serialized_end=1298,
+  serialized_start=1499,
+  serialized_end=1683,
 )
 
 
@@ -397,8 +513,8 @@ _SETDEFAULTAPPPROVIDERFORMIMETYPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1301,
-  serialized_end=1462,
+  serialized_start=1686,
+  serialized_end=1847,
 )
 
 
@@ -436,8 +552,8 @@ _SETDEFAULTAPPPROVIDERFORMIMETYPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1464,
-  serialized_end=1590,
+  serialized_start=1849,
+  serialized_end=1975,
 )
 
 _GETAPPPROVIDERSREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
@@ -453,6 +569,12 @@ _LISTAPPPROVIDERSREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_d
 _LISTAPPPROVIDERSRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
 _LISTAPPPROVIDERSRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _LISTAPPPROVIDERSRESPONSE.fields_by_name['providers'].message_type = cs3_dot_app_dot_registry_dot_v1beta1_dot_resources__pb2._PROVIDERINFO
+_LISTSUPPORTEDMIMETYPESREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_LISTSUPPORTEDMIMETYPESRESPONSE_MIMETYPESENTRY.fields_by_name['value'].message_type = cs3_dot_app_dot_registry_dot_v1beta1_dot_resources__pb2._APPPROVIDERNAMELIST
+_LISTSUPPORTEDMIMETYPESRESPONSE_MIMETYPESENTRY.containing_type = _LISTSUPPORTEDMIMETYPESRESPONSE
+_LISTSUPPORTEDMIMETYPESRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
+_LISTSUPPORTEDMIMETYPESRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_LISTSUPPORTEDMIMETYPESRESPONSE.fields_by_name['mime_types'].message_type = _LISTSUPPORTEDMIMETYPESRESPONSE_MIMETYPESENTRY
 _GETDEFAULTAPPPROVIDERFORMIMETYPEREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _GETDEFAULTAPPPROVIDERFORMIMETYPERESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
 _GETDEFAULTAPPPROVIDERFORMIMETYPERESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
@@ -467,6 +589,8 @@ DESCRIPTOR.message_types_by_name['AddAppProviderRequest'] = _ADDAPPPROVIDERREQUE
 DESCRIPTOR.message_types_by_name['AddAppProviderResponse'] = _ADDAPPPROVIDERRESPONSE
 DESCRIPTOR.message_types_by_name['ListAppProvidersRequest'] = _LISTAPPPROVIDERSREQUEST
 DESCRIPTOR.message_types_by_name['ListAppProvidersResponse'] = _LISTAPPPROVIDERSRESPONSE
+DESCRIPTOR.message_types_by_name['ListSupportedMimeTypesRequest'] = _LISTSUPPORTEDMIMETYPESREQUEST
+DESCRIPTOR.message_types_by_name['ListSupportedMimeTypesResponse'] = _LISTSUPPORTEDMIMETYPESRESPONSE
 DESCRIPTOR.message_types_by_name['GetDefaultAppProviderForMimeTypeRequest'] = _GETDEFAULTAPPPROVIDERFORMIMETYPEREQUEST
 DESCRIPTOR.message_types_by_name['GetDefaultAppProviderForMimeTypeResponse'] = _GETDEFAULTAPPPROVIDERFORMIMETYPERESPONSE
 DESCRIPTOR.message_types_by_name['SetDefaultAppProviderForMimeTypeRequest'] = _SETDEFAULTAPPPROVIDERFORMIMETYPEREQUEST
@@ -515,6 +639,28 @@ ListAppProvidersResponse = _reflection.GeneratedProtocolMessageType('ListAppProv
   })
 _sym_db.RegisterMessage(ListAppProvidersResponse)
 
+ListSupportedMimeTypesRequest = _reflection.GeneratedProtocolMessageType('ListSupportedMimeTypesRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTSUPPORTEDMIMETYPESREQUEST,
+  '__module__' : 'cs3.app.registry.v1beta1.registry_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.app.registry.v1beta1.ListSupportedMimeTypesRequest)
+  })
+_sym_db.RegisterMessage(ListSupportedMimeTypesRequest)
+
+ListSupportedMimeTypesResponse = _reflection.GeneratedProtocolMessageType('ListSupportedMimeTypesResponse', (_message.Message,), {
+
+  'MimeTypesEntry' : _reflection.GeneratedProtocolMessageType('MimeTypesEntry', (_message.Message,), {
+    'DESCRIPTOR' : _LISTSUPPORTEDMIMETYPESRESPONSE_MIMETYPESENTRY,
+    '__module__' : 'cs3.app.registry.v1beta1.registry_api_pb2'
+    # @@protoc_insertion_point(class_scope:cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse.MimeTypesEntry)
+    })
+  ,
+  'DESCRIPTOR' : _LISTSUPPORTEDMIMETYPESRESPONSE,
+  '__module__' : 'cs3.app.registry.v1beta1.registry_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.app.registry.v1beta1.ListSupportedMimeTypesResponse)
+  })
+_sym_db.RegisterMessage(ListSupportedMimeTypesResponse)
+_sym_db.RegisterMessage(ListSupportedMimeTypesResponse.MimeTypesEntry)
+
 GetDefaultAppProviderForMimeTypeRequest = _reflection.GeneratedProtocolMessageType('GetDefaultAppProviderForMimeTypeRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETDEFAULTAPPPROVIDERFORMIMETYPEREQUEST,
   '__module__' : 'cs3.app.registry.v1beta1.registry_api_pb2'
@@ -545,6 +691,7 @@ _sym_db.RegisterMessage(SetDefaultAppProviderForMimeTypeResponse)
 
 
 DESCRIPTOR._options = None
+_LISTSUPPORTEDMIMETYPESRESPONSE_MIMETYPESENTRY._options = None
 
 _REGISTRYAPI = _descriptor.ServiceDescriptor(
   name='RegistryAPI',
@@ -553,8 +700,8 @@ _REGISTRYAPI = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1593,
-  serialized_end=2310,
+  serialized_start=1978,
+  serialized_end=2837,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetAppProviders',
@@ -587,9 +734,19 @@ _REGISTRYAPI = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='ListSupportedMimeTypes',
+    full_name='cs3.app.registry.v1beta1.RegistryAPI.ListSupportedMimeTypes',
+    index=3,
+    containing_service=None,
+    input_type=_LISTSUPPORTEDMIMETYPESREQUEST,
+    output_type=_LISTSUPPORTEDMIMETYPESRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='GetDefaultAppProviderForMimeType',
     full_name='cs3.app.registry.v1beta1.RegistryAPI.GetDefaultAppProviderForMimeType',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_GETDEFAULTAPPPROVIDERFORMIMETYPEREQUEST,
     output_type=_GETDEFAULTAPPPROVIDERFORMIMETYPERESPONSE,
@@ -599,7 +756,7 @@ _REGISTRYAPI = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SetDefaultAppProviderForMimeType',
     full_name='cs3.app.registry.v1beta1.RegistryAPI.SetDefaultAppProviderForMimeType',
-    index=4,
+    index=5,
     containing_service=None,
     input_type=_SETDEFAULTAPPPROVIDERFORMIMETYPEREQUEST,
     output_type=_SETDEFAULTAPPPROVIDERFORMIMETYPERESPONSE,

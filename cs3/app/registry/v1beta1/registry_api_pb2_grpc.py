@@ -45,6 +45,11 @@ class RegistryAPIStub(object):
                 request_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersRequest.SerializeToString,
                 response_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersResponse.FromString,
                 )
+        self.ListSupportedMimeTypes = channel.unary_unary(
+                '/cs3.app.registry.v1beta1.RegistryAPI/ListSupportedMimeTypes',
+                request_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesRequest.SerializeToString,
+                response_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesResponse.FromString,
+                )
         self.GetDefaultAppProviderForMimeType = channel.unary_unary(
                 '/cs3.app.registry.v1beta1.RegistryAPI/GetDefaultAppProviderForMimeType',
                 request_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetDefaultAppProviderForMimeTypeRequest.SerializeToString,
@@ -98,6 +103,13 @@ class RegistryAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListSupportedMimeTypes(self, request, context):
+        """Returns a list of the supported mime types along with the apps which they can opened with.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetDefaultAppProviderForMimeType(self, request, context):
         """Returns the default app provider which serves a specified mime type.
         """
@@ -129,6 +141,11 @@ def add_RegistryAPIServicer_to_server(servicer, server):
                     servicer.ListAppProviders,
                     request_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersRequest.FromString,
                     response_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersResponse.SerializeToString,
+            ),
+            'ListSupportedMimeTypes': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSupportedMimeTypes,
+                    request_deserializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesRequest.FromString,
+                    response_serializer=cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesResponse.SerializeToString,
             ),
             'GetDefaultAppProviderForMimeType': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDefaultAppProviderForMimeType,
@@ -214,6 +231,23 @@ class RegistryAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.app.registry.v1beta1.RegistryAPI/ListAppProviders',
             cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersRequest.SerializeToString,
             cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListAppProvidersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListSupportedMimeTypes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.app.registry.v1beta1.RegistryAPI/ListSupportedMimeTypes',
+            cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesRequest.SerializeToString,
+            cs3_dot_app_dot_registry_dot_v1beta1_dot_registry__api__pb2.ListSupportedMimeTypesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
