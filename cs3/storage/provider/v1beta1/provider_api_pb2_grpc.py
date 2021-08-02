@@ -45,6 +45,11 @@ class ProviderAPIStub(object):
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteResponse.FromString,
                 )
+        self.DenyGrant = channel.unary_unary(
+                '/cs3.storage.provider.v1beta1.ProviderAPI/DenyGrant',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DenyGrantRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DenyGrantResponse.FromString,
+                )
         self.GetPath = channel.unary_unary(
                 '/cs3.storage.provider.v1beta1.ProviderAPI/GetPath',
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetPathRequest.SerializeToString,
@@ -224,6 +229,14 @@ class ProviderAPIServicer(object):
         then the entire directory is deleted recursively.
         If a resource specifies a reference or symlink type, only the reference is removed (not the target).
         MUST return CODE_NOT_FOUND if the reference does not exist.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DenyGrant(self, request, context):
+        """Denies access to the provided reference.
+        MUST return CODE_NOT_FOUND if the reference does not exist
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -472,6 +485,11 @@ def add_ProviderAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteResponse.SerializeToString,
             ),
+            'DenyGrant': grpc.unary_unary_rpc_method_handler(
+                    servicer.DenyGrant,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DenyGrantRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DenyGrantResponse.SerializeToString,
+            ),
             'GetPath': grpc.unary_unary_rpc_method_handler(
                     servicer.GetPath,
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetPathRequest.FromString,
@@ -681,6 +699,23 @@ class ProviderAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/Delete',
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteRequest.SerializeToString,
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DenyGrant(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/DenyGrant',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DenyGrantRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DenyGrantResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
