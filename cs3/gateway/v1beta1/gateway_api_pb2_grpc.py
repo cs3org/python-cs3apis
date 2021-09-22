@@ -750,7 +750,8 @@ class GatewayAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def OpenInApp(self, request, context):
-        """Returns the App provider URL, which allows the user to open a resource in an online editor.
+        """Returns the App URL and all necessary info to open a resource in an online editor.
+        MUST return CODE_NOT_FOUND if the resource does not exist.
         *****************************************************************/
         ************************ USER SHARE PROVIDER ********************/
         *****************************************************************/

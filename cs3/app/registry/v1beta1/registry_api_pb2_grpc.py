@@ -104,7 +104,7 @@ class RegistryAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListSupportedMimeTypes(self, request, context):
-        """Returns a list of the supported mime types along with the apps which they can opened with.
+        """Returns a list of the supported mime types along with the apps which they can be opened with.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

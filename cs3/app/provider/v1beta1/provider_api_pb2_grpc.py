@@ -63,7 +63,7 @@ class ProviderAPIServicer(object):
     """
 
     def OpenInApp(self, request, context):
-        """Returns the App provider URL
+        """Returns the App URL and all necessary info to open a resource in an online editor.
         MUST return CODE_NOT_FOUND if the resource does not exist.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
