@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.cs3.sharing.collaboration.v1beta1B\016ResourcesProtoP\001Z\024collaborationv1beta1\242\002\003CSC\252\002!Cs3.Sharing.Collaboration.V1Beta1\312\002!Cs3\\Sharing\\Collaboration\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1cs3/sharing/collaboration/v1beta1/resources.proto\x12!cs3.sharing.collaboration.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xc0\x03\n\x05Share\x12\x36\n\x02id\x18\x01 \x01(\x0b\x32*.cs3.sharing.collaboration.v1beta1.ShareId\x12=\n\x0bresource_id\x18\x02 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12H\n\x0bpermissions\x18\x03 \x01(\x0b\x32\x33.cs3.sharing.collaboration.v1beta1.SharePermissions\x12\x36\n\x07grantee\x18\x04 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12\x30\n\x05owner\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x32\n\x07\x63reator\x18\x06 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12+\n\x05\x63time\x18\x07 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12+\n\x05mtime\x18\x08 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"Z\n\x10SharePermissions\x12\x46\n\x0bpermissions\x18\x01 \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\"\x86\x01\n\rReceivedShare\x12\x37\n\x05share\x18\x01 \x01(\x0b\x32(.cs3.sharing.collaboration.v1beta1.Share\x12<\n\x05state\x18\x02 \x01(\x0e\x32-.cs3.sharing.collaboration.v1beta1.ShareState\"\xb3\x01\n\x08ShareKey\x12\x30\n\x05owner\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12=\n\x0bresource_id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x36\n\x07grantee\x18\x04 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\"\x1c\n\x07ShareId\x12\x11\n\topaque_id\x18\x02 \x01(\t\"\x8e\x01\n\x0eShareReference\x12\x38\n\x02id\x18\x01 \x01(\x0b\x32*.cs3.sharing.collaboration.v1beta1.ShareIdH\x00\x12:\n\x03key\x18\x02 \x01(\x0b\x32+.cs3.sharing.collaboration.v1beta1.ShareKeyH\x00\x42\x06\n\x04spec\"\x8e\x01\n\nShareGrant\x12\x36\n\x07grantee\x18\x01 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12H\n\x0bpermissions\x18\x02 \x01(\x0b\x32\x33.cs3.sharing.collaboration.v1beta1.SharePermissions\"\xcd\x03\n\x06\x46ilter\x12<\n\x04type\x18\x02 \x01(\x0e\x32..cs3.sharing.collaboration.v1beta1.Filter.Type\x12?\n\x0bresource_id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceIdH\x00\x12\x32\n\x05owner\x18\x04 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdH\x00\x12\x34\n\x07\x63reator\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdH\x00\x12\x41\n\x0cgrantee_type\x18\x06 \x01(\x0e\x32).cs3.storage.provider.v1beta1.GranteeTypeH\x00\"\x8e\x01\n\x04Type\x12\x10\n\x0cTYPE_INVALID\x10\x00\x12\x0b\n\x07TYPE_NO\x10\x01\x12\x14\n\x10TYPE_RESOURCE_ID\x10\x02\x12\x0e\n\nTYPE_OWNER\x10\x03\x12\x10\n\x0cTYPE_CREATOR\x10\x04\x12\x15\n\x11TYPE_GRANTEE_TYPE\x10\x05\x12\x18\n\x14TYPE_EXCLUDE_DENIALS\x10\x06\x42\x06\n\x04term*r\n\nShareState\x12\x17\n\x13SHARE_STATE_INVALID\x10\x00\x12\x17\n\x13SHARE_STATE_PENDING\x10\x01\x12\x18\n\x14SHARE_STATE_ACCEPTED\x10\x02\x12\x18\n\x14SHARE_STATE_REJECTED\x10\x03\x42\x9d\x01\n%com.cs3.sharing.collaboration.v1beta1B\x0eResourcesProtoP\x01Z\x14\x63ollaborationv1beta1\xa2\x02\x03\x43SC\xaa\x02!Cs3.Sharing.Collaboration.V1Beta1\xca\x02!Cs3\\Sharing\\Collaboration\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n1cs3/sharing/collaboration/v1beta1/resources.proto\x12!cs3.sharing.collaboration.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xc0\x03\n\x05Share\x12\x36\n\x02id\x18\x01 \x01(\x0b\x32*.cs3.sharing.collaboration.v1beta1.ShareId\x12=\n\x0bresource_id\x18\x02 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12H\n\x0bpermissions\x18\x03 \x01(\x0b\x32\x33.cs3.sharing.collaboration.v1beta1.SharePermissions\x12\x36\n\x07grantee\x18\x04 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12\x30\n\x05owner\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x32\n\x07\x63reator\x18\x06 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12+\n\x05\x63time\x18\x07 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12+\n\x05mtime\x18\x08 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"Z\n\x10SharePermissions\x12\x46\n\x0bpermissions\x18\x01 \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\"\xc4\x01\n\rReceivedShare\x12\x37\n\x05share\x18\x01 \x01(\x0b\x32(.cs3.sharing.collaboration.v1beta1.Share\x12<\n\x05state\x18\x02 \x01(\x0e\x32-.cs3.sharing.collaboration.v1beta1.ShareState\x12<\n\x0bmount_point\x18\x03 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\"\xb3\x01\n\x08ShareKey\x12\x30\n\x05owner\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12=\n\x0bresource_id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x36\n\x07grantee\x18\x04 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\"\x1c\n\x07ShareId\x12\x11\n\topaque_id\x18\x02 \x01(\t\"\x8e\x01\n\x0eShareReference\x12\x38\n\x02id\x18\x01 \x01(\x0b\x32*.cs3.sharing.collaboration.v1beta1.ShareIdH\x00\x12:\n\x03key\x18\x02 \x01(\x0b\x32+.cs3.sharing.collaboration.v1beta1.ShareKeyH\x00\x42\x06\n\x04spec\"\x8e\x01\n\nShareGrant\x12\x36\n\x07grantee\x18\x01 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12H\n\x0bpermissions\x18\x02 \x01(\x0b\x32\x33.cs3.sharing.collaboration.v1beta1.SharePermissions\"\xcd\x03\n\x06\x46ilter\x12<\n\x04type\x18\x02 \x01(\x0e\x32..cs3.sharing.collaboration.v1beta1.Filter.Type\x12?\n\x0bresource_id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceIdH\x00\x12\x32\n\x05owner\x18\x04 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdH\x00\x12\x34\n\x07\x63reator\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdH\x00\x12\x41\n\x0cgrantee_type\x18\x06 \x01(\x0e\x32).cs3.storage.provider.v1beta1.GranteeTypeH\x00\"\x8e\x01\n\x04Type\x12\x10\n\x0cTYPE_INVALID\x10\x00\x12\x0b\n\x07TYPE_NO\x10\x01\x12\x14\n\x10TYPE_RESOURCE_ID\x10\x02\x12\x0e\n\nTYPE_OWNER\x10\x03\x12\x10\n\x0cTYPE_CREATOR\x10\x04\x12\x15\n\x11TYPE_GRANTEE_TYPE\x10\x05\x12\x18\n\x14TYPE_EXCLUDE_DENIALS\x10\x06\x42\x06\n\x04term*r\n\nShareState\x12\x17\n\x13SHARE_STATE_INVALID\x10\x00\x12\x17\n\x13SHARE_STATE_PENDING\x10\x01\x12\x18\n\x14SHARE_STATE_ACCEPTED\x10\x02\x12\x18\n\x14SHARE_STATE_REJECTED\x10\x03\x42\x9d\x01\n%com.cs3.sharing.collaboration.v1beta1B\x0eResourcesProtoP\x01Z\x14\x63ollaborationv1beta1\xa2\x02\x03\x43SC\xaa\x02!Cs3.Sharing.Collaboration.V1Beta1\xca\x02!Cs3\\Sharing\\Collaboration\\V1Beta1b\x06proto3'
   ,
   dependencies=[cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -57,8 +57,8 @@ _SHARESTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1854,
-  serialized_end=1968,
+  serialized_start=1916,
+  serialized_end=2030,
 )
 _sym_db.RegisterEnumDescriptor(_SHARESTATE)
 
@@ -114,8 +114,8 @@ _FILTER_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1702,
-  serialized_end=1844,
+  serialized_start=1764,
+  serialized_end=1906,
 )
 _sym_db.RegisterEnumDescriptor(_FILTER_TYPE)
 
@@ -255,6 +255,13 @@ _RECEIVEDSHARE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mount_point', full_name='cs3.sharing.collaboration.v1beta1.ReceivedShare.mount_point', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -268,7 +275,7 @@ _RECEIVEDSHARE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=752,
-  serialized_end=886,
+  serialized_end=948,
 )
 
 
@@ -313,8 +320,8 @@ _SHAREKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=889,
-  serialized_end=1068,
+  serialized_start=951,
+  serialized_end=1130,
 )
 
 
@@ -345,8 +352,8 @@ _SHAREID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1070,
-  serialized_end=1098,
+  serialized_start=1132,
+  serialized_end=1160,
 )
 
 
@@ -389,8 +396,8 @@ _SHAREREFERENCE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1101,
-  serialized_end=1243,
+  serialized_start=1163,
+  serialized_end=1305,
 )
 
 
@@ -428,8 +435,8 @@ _SHAREGRANT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1246,
-  serialized_end=1388,
+  serialized_start=1308,
+  serialized_end=1450,
 )
 
 
@@ -494,8 +501,8 @@ _FILTER = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1391,
-  serialized_end=1852,
+  serialized_start=1453,
+  serialized_end=1914,
 )
 
 _SHARE.fields_by_name['id'].message_type = _SHAREID
@@ -509,6 +516,7 @@ _SHARE.fields_by_name['mtime'].message_type = cs3_dot_types_dot_v1beta1_dot_type
 _SHAREPERMISSIONS.fields_by_name['permissions'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._RESOURCEPERMISSIONS
 _RECEIVEDSHARE.fields_by_name['share'].message_type = _SHARE
 _RECEIVEDSHARE.fields_by_name['state'].enum_type = _SHARESTATE
+_RECEIVEDSHARE.fields_by_name['mount_point'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._REFERENCE
 _SHAREKEY.fields_by_name['owner'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USERID
 _SHAREKEY.fields_by_name['resource_id'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._RESOURCEID
 _SHAREKEY.fields_by_name['grantee'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._GRANTEE

@@ -15,6 +15,7 @@ from cs3.rpc.v1beta1 import status_pb2 as cs3_dot_rpc_dot_v1beta1_dot_status__pb
 from cs3.sharing.collaboration.v1beta1 import resources_pb2 as cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_resources__pb2
 from cs3.storage.provider.v1beta1 import resources_pb2 as cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -23,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%com.cs3.sharing.collaboration.v1beta1B\025CollaborationApiProtoP\001Z\024collaborationv1beta1\242\002\003CSC\252\002!Cs3.Sharing.Collaboration.V1Beta1\312\002!Cs3\\Sharing\\Collaboration\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n9cs3/sharing/collaboration/v1beta1/collaboration_api.proto\x12!cs3.sharing.collaboration.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x31\x63s3/sharing/collaboration/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xc0\x01\n\x12\x43reateShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x41\n\rresource_info\x18\x02 \x01(\x0b\x32*.cs3.storage.provider.v1beta1.ResourceInfo\x12<\n\x05grant\x18\x03 \x01(\x0b\x32-.cs3.sharing.collaboration.v1beta1.ShareGrant\"\xa2\x01\n\x13\x43reateShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x05share\x18\x03 \x01(\x0b\x32(.cs3.sharing.collaboration.v1beta1.Share\"\xcd\x02\n\x12UpdateShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12>\n\x03ref\x18\x02 \x01(\x0b\x32\x31.cs3.sharing.collaboration.v1beta1.ShareReference\x12P\n\x05\x66ield\x18\x03 \x01(\x0b\x32\x41.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.UpdateField\x1az\n\x0bUpdateField\x12J\n\x0bpermissions\x18\x02 \x01(\x0b\x32\x33.cs3.sharing.collaboration.v1beta1.SharePermissionsH\x00\x12\x16\n\x0c\x64isplay_name\x18\x03 \x01(\tH\x00\x42\x07\n\x05\x66ield\"\xa2\x01\n\x13UpdateShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x05share\x18\x03 \x01(\x0b\x32(.cs3.sharing.collaboration.v1beta1.Share\"z\n\x11ListSharesRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12:\n\x07\x66ilters\x18\x02 \x03(\x0b\x32).cs3.sharing.collaboration.v1beta1.Filter\"\xa2\x01\n\x12ListSharesResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x06shares\x18\x03 \x03(\x0b\x32(.cs3.sharing.collaboration.v1beta1.Share\"\x7f\n\x12RemoveShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12>\n\x03ref\x18\x02 \x01(\x0b\x32\x31.cs3.sharing.collaboration.v1beta1.ShareReference\"i\n\x13RemoveShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"|\n\x0fGetShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12>\n\x03ref\x18\x02 \x01(\x0b\x32\x31.cs3.sharing.collaboration.v1beta1.ShareReference\"\x9f\x01\n\x10GetShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x05share\x18\x03 \x01(\x0b\x32(.cs3.sharing.collaboration.v1beta1.Share\"\x82\x01\n\x19ListReceivedSharesRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12:\n\x07\x66ilters\x18\x03 \x03(\x0b\x32).cs3.sharing.collaboration.v1beta1.Filter\"\xb2\x01\n\x1aListReceivedSharesResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12@\n\x06shares\x18\x03 \x03(\x0b\x32\x30.cs3.sharing.collaboration.v1beta1.ReceivedShare\"\xd1\x02\n\x1aUpdateReceivedShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12>\n\x03ref\x18\x02 \x01(\x0b\x32\x31.cs3.sharing.collaboration.v1beta1.ShareReference\x12X\n\x05\x66ield\x18\x03 \x01(\x0b\x32I.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest.UpdateField\x1an\n\x0bUpdateField\x12\x16\n\x0c\x64isplay_name\x18\x01 \x01(\tH\x00\x12>\n\x05state\x18\x02 \x01(\x0e\x32-.cs3.sharing.collaboration.v1beta1.ShareStateH\x00\x42\x07\n\x05\x66ield\"\xb2\x01\n\x1bUpdateReceivedShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12?\n\x05share\x18\x03 \x01(\x0b\x32\x30.cs3.sharing.collaboration.v1beta1.ReceivedShare\"\x84\x01\n\x17GetReceivedShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12>\n\x03ref\x18\x02 \x01(\x0b\x32\x31.cs3.sharing.collaboration.v1beta1.ShareReference\"\xaf\x01\n\x18GetReceivedShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12?\n\x05share\x18\x03 \x01(\x0b\x32\x30.cs3.sharing.collaboration.v1beta1.ReceivedShare2\xb5\x08\n\x10\x43ollaborationAPI\x12|\n\x0b\x43reateShare\x12\x35.cs3.sharing.collaboration.v1beta1.CreateShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.CreateShareResponse\x12|\n\x0bRemoveShare\x12\x35.cs3.sharing.collaboration.v1beta1.RemoveShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.RemoveShareResponse\x12s\n\x08GetShare\x12\x32.cs3.sharing.collaboration.v1beta1.GetShareRequest\x1a\x33.cs3.sharing.collaboration.v1beta1.GetShareResponse\x12y\n\nListShares\x12\x34.cs3.sharing.collaboration.v1beta1.ListSharesRequest\x1a\x35.cs3.sharing.collaboration.v1beta1.ListSharesResponse\x12|\n\x0bUpdateShare\x12\x35.cs3.sharing.collaboration.v1beta1.UpdateShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.UpdateShareResponse\x12\x91\x01\n\x12ListReceivedShares\x12<.cs3.sharing.collaboration.v1beta1.ListReceivedSharesRequest\x1a=.cs3.sharing.collaboration.v1beta1.ListReceivedSharesResponse\x12\x94\x01\n\x13UpdateReceivedShare\x12=.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest\x1a>.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse\x12\x8b\x01\n\x10GetReceivedShare\x12:.cs3.sharing.collaboration.v1beta1.GetReceivedShareRequest\x1a;.cs3.sharing.collaboration.v1beta1.GetReceivedShareResponseB\xa4\x01\n%com.cs3.sharing.collaboration.v1beta1B\x15\x43ollaborationApiProtoP\x01Z\x14\x63ollaborationv1beta1\xa2\x02\x03\x43SC\xaa\x02!Cs3.Sharing.Collaboration.V1Beta1\xca\x02!Cs3\\Sharing\\Collaboration\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n9cs3/sharing/collaboration/v1beta1/collaboration_api.proto\x12!cs3.sharing.collaboration.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x31\x63s3/sharing/collaboration/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\x1a google/protobuf/field_mask.proto\"\xc0\x01\n\x12\x43reateShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x41\n\rresource_info\x18\x02 \x01(\x0b\x32*.cs3.storage.provider.v1beta1.ResourceInfo\x12<\n\x05grant\x18\x03 \x01(\x0b\x32-.cs3.sharing.collaboration.v1beta1.ShareGrant\"\xa2\x01\n\x13\x43reateShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x05share\x18\x03 \x01(\x0b\x32(.cs3.sharing.collaboration.v1beta1.Share\"\xcd\x02\n\x12UpdateShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12>\n\x03ref\x18\x02 \x01(\x0b\x32\x31.cs3.sharing.collaboration.v1beta1.ShareReference\x12P\n\x05\x66ield\x18\x03 \x01(\x0b\x32\x41.cs3.sharing.collaboration.v1beta1.UpdateShareRequest.UpdateField\x1az\n\x0bUpdateField\x12J\n\x0bpermissions\x18\x02 \x01(\x0b\x32\x33.cs3.sharing.collaboration.v1beta1.SharePermissionsH\x00\x12\x16\n\x0c\x64isplay_name\x18\x03 \x01(\tH\x00\x42\x07\n\x05\x66ield\"\xa2\x01\n\x13UpdateShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x05share\x18\x03 \x01(\x0b\x32(.cs3.sharing.collaboration.v1beta1.Share\"z\n\x11ListSharesRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12:\n\x07\x66ilters\x18\x02 \x03(\x0b\x32).cs3.sharing.collaboration.v1beta1.Filter\"\xa2\x01\n\x12ListSharesResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x06shares\x18\x03 \x03(\x0b\x32(.cs3.sharing.collaboration.v1beta1.Share\"\x7f\n\x12RemoveShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12>\n\x03ref\x18\x02 \x01(\x0b\x32\x31.cs3.sharing.collaboration.v1beta1.ShareReference\"i\n\x13RemoveShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"|\n\x0fGetShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12>\n\x03ref\x18\x02 \x01(\x0b\x32\x31.cs3.sharing.collaboration.v1beta1.ShareReference\"\x9f\x01\n\x10GetShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x05share\x18\x03 \x01(\x0b\x32(.cs3.sharing.collaboration.v1beta1.Share\"\x82\x01\n\x19ListReceivedSharesRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12:\n\x07\x66ilters\x18\x03 \x03(\x0b\x32).cs3.sharing.collaboration.v1beta1.Filter\"\xb2\x01\n\x1aListReceivedSharesResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12@\n\x06shares\x18\x03 \x03(\x0b\x32\x30.cs3.sharing.collaboration.v1beta1.ReceivedShare\"\xb9\x01\n\x1aUpdateReceivedShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12?\n\x05share\x18\x02 \x01(\x0b\x32\x30.cs3.sharing.collaboration.v1beta1.ReceivedShare\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\xb2\x01\n\x1bUpdateReceivedShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12?\n\x05share\x18\x03 \x01(\x0b\x32\x30.cs3.sharing.collaboration.v1beta1.ReceivedShare\"\x84\x01\n\x17GetReceivedShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12>\n\x03ref\x18\x02 \x01(\x0b\x32\x31.cs3.sharing.collaboration.v1beta1.ShareReference\"\xaf\x01\n\x18GetReceivedShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12?\n\x05share\x18\x03 \x01(\x0b\x32\x30.cs3.sharing.collaboration.v1beta1.ReceivedShare2\xb5\x08\n\x10\x43ollaborationAPI\x12|\n\x0b\x43reateShare\x12\x35.cs3.sharing.collaboration.v1beta1.CreateShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.CreateShareResponse\x12|\n\x0bRemoveShare\x12\x35.cs3.sharing.collaboration.v1beta1.RemoveShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.RemoveShareResponse\x12s\n\x08GetShare\x12\x32.cs3.sharing.collaboration.v1beta1.GetShareRequest\x1a\x33.cs3.sharing.collaboration.v1beta1.GetShareResponse\x12y\n\nListShares\x12\x34.cs3.sharing.collaboration.v1beta1.ListSharesRequest\x1a\x35.cs3.sharing.collaboration.v1beta1.ListSharesResponse\x12|\n\x0bUpdateShare\x12\x35.cs3.sharing.collaboration.v1beta1.UpdateShareRequest\x1a\x36.cs3.sharing.collaboration.v1beta1.UpdateShareResponse\x12\x91\x01\n\x12ListReceivedShares\x12<.cs3.sharing.collaboration.v1beta1.ListReceivedSharesRequest\x1a=.cs3.sharing.collaboration.v1beta1.ListReceivedSharesResponse\x12\x94\x01\n\x13UpdateReceivedShare\x12=.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest\x1a>.cs3.sharing.collaboration.v1beta1.UpdateReceivedShareResponse\x12\x8b\x01\n\x10GetReceivedShare\x12:.cs3.sharing.collaboration.v1beta1.GetReceivedShareRequest\x1a;.cs3.sharing.collaboration.v1beta1.GetReceivedShareResponseB\xa4\x01\n%com.cs3.sharing.collaboration.v1beta1B\x15\x43ollaborationApiProtoP\x01Z\x14\x63ollaborationv1beta1\xa2\x02\x03\x43SC\xaa\x02!Cs3.Sharing.Collaboration.V1Beta1\xca\x02!Cs3\\Sharing\\Collaboration\\V1Beta1b\x06proto3'
   ,
-  dependencies=[cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
+  dependencies=[cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,])
 
 
 
@@ -71,8 +72,8 @@ _CREATESHAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=255,
-  serialized_end=447,
+  serialized_start=289,
+  serialized_end=481,
 )
 
 
@@ -117,8 +118,8 @@ _CREATESHARERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=450,
-  serialized_end=612,
+  serialized_start=484,
+  serialized_end=646,
 )
 
 
@@ -161,8 +162,8 @@ _UPDATESHAREREQUEST_UPDATEFIELD = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=826,
-  serialized_end=948,
+  serialized_start=860,
+  serialized_end=982,
 )
 
 _UPDATESHAREREQUEST = _descriptor.Descriptor(
@@ -206,8 +207,8 @@ _UPDATESHAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=615,
-  serialized_end=948,
+  serialized_start=649,
+  serialized_end=982,
 )
 
 
@@ -252,8 +253,8 @@ _UPDATESHARERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=951,
-  serialized_end=1113,
+  serialized_start=985,
+  serialized_end=1147,
 )
 
 
@@ -291,8 +292,8 @@ _LISTSHARESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1115,
-  serialized_end=1237,
+  serialized_start=1149,
+  serialized_end=1271,
 )
 
 
@@ -337,8 +338,8 @@ _LISTSHARESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1240,
-  serialized_end=1402,
+  serialized_start=1274,
+  serialized_end=1436,
 )
 
 
@@ -376,8 +377,8 @@ _REMOVESHAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1404,
-  serialized_end=1531,
+  serialized_start=1438,
+  serialized_end=1565,
 )
 
 
@@ -415,8 +416,8 @@ _REMOVESHARERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1533,
-  serialized_end=1638,
+  serialized_start=1567,
+  serialized_end=1672,
 )
 
 
@@ -454,8 +455,8 @@ _GETSHAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1640,
-  serialized_end=1764,
+  serialized_start=1674,
+  serialized_end=1798,
 )
 
 
@@ -500,8 +501,8 @@ _GETSHARERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1767,
-  serialized_end=1926,
+  serialized_start=1801,
+  serialized_end=1960,
 )
 
 
@@ -539,8 +540,8 @@ _LISTRECEIVEDSHARESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1929,
-  serialized_end=2059,
+  serialized_start=1963,
+  serialized_end=2093,
 )
 
 
@@ -585,53 +586,10 @@ _LISTRECEIVEDSHARESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2062,
-  serialized_end=2240,
+  serialized_start=2096,
+  serialized_end=2274,
 )
 
-
-_UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD = _descriptor.Descriptor(
-  name='UpdateField',
-  full_name='cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest.UpdateField',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='display_name', full_name='cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest.UpdateField.display_name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='state', full_name='cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest.UpdateField.state', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='field', full_name='cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest.UpdateField.field',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=2470,
-  serialized_end=2580,
-)
 
 _UPDATERECEIVEDSHAREREQUEST = _descriptor.Descriptor(
   name='UpdateReceivedShareRequest',
@@ -649,14 +607,14 @@ _UPDATERECEIVEDSHAREREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest.ref', index=1,
+      name='share', full_name='cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest.share', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='field', full_name='cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest.field', index=2,
+      name='update_mask', full_name='cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest.update_mask', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -665,7 +623,7 @@ _UPDATERECEIVEDSHAREREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -674,8 +632,8 @@ _UPDATERECEIVEDSHAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2243,
-  serialized_end=2580,
+  serialized_start=2277,
+  serialized_end=2462,
 )
 
 
@@ -720,8 +678,8 @@ _UPDATERECEIVEDSHARERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2583,
-  serialized_end=2761,
+  serialized_start=2465,
+  serialized_end=2643,
 )
 
 
@@ -759,8 +717,8 @@ _GETRECEIVEDSHAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2764,
-  serialized_end=2896,
+  serialized_start=2646,
+  serialized_end=2778,
 )
 
 
@@ -805,8 +763,8 @@ _GETRECEIVEDSHARERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2899,
-  serialized_end=3074,
+  serialized_start=2781,
+  serialized_end=2956,
 )
 
 _CREATESHAREREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
@@ -848,17 +806,9 @@ _LISTRECEIVEDSHARESREQUEST.fields_by_name['filters'].message_type = cs3_dot_shar
 _LISTRECEIVEDSHARESRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
 _LISTRECEIVEDSHARESRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _LISTRECEIVEDSHARESRESPONSE.fields_by_name['shares'].message_type = cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_resources__pb2._RECEIVEDSHARE
-_UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD.fields_by_name['state'].enum_type = cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_resources__pb2._SHARESTATE
-_UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD.containing_type = _UPDATERECEIVEDSHAREREQUEST
-_UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD.oneofs_by_name['field'].fields.append(
-  _UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD.fields_by_name['display_name'])
-_UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD.fields_by_name['display_name'].containing_oneof = _UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD.oneofs_by_name['field']
-_UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD.oneofs_by_name['field'].fields.append(
-  _UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD.fields_by_name['state'])
-_UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD.fields_by_name['state'].containing_oneof = _UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD.oneofs_by_name['field']
 _UPDATERECEIVEDSHAREREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-_UPDATERECEIVEDSHAREREQUEST.fields_by_name['ref'].message_type = cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_resources__pb2._SHAREREFERENCE
-_UPDATERECEIVEDSHAREREQUEST.fields_by_name['field'].message_type = _UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD
+_UPDATERECEIVEDSHAREREQUEST.fields_by_name['share'].message_type = cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_resources__pb2._RECEIVEDSHARE
+_UPDATERECEIVEDSHAREREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _UPDATERECEIVEDSHARERESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
 _UPDATERECEIVEDSHARERESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _UPDATERECEIVEDSHARERESPONSE.fields_by_name['share'].message_type = cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_resources__pb2._RECEIVEDSHARE
@@ -978,19 +928,11 @@ ListReceivedSharesResponse = _reflection.GeneratedProtocolMessageType('ListRecei
 _sym_db.RegisterMessage(ListReceivedSharesResponse)
 
 UpdateReceivedShareRequest = _reflection.GeneratedProtocolMessageType('UpdateReceivedShareRequest', (_message.Message,), {
-
-  'UpdateField' : _reflection.GeneratedProtocolMessageType('UpdateField', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATERECEIVEDSHAREREQUEST_UPDATEFIELD,
-    '__module__' : 'cs3.sharing.collaboration.v1beta1.collaboration_api_pb2'
-    # @@protoc_insertion_point(class_scope:cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest.UpdateField)
-    })
-  ,
   'DESCRIPTOR' : _UPDATERECEIVEDSHAREREQUEST,
   '__module__' : 'cs3.sharing.collaboration.v1beta1.collaboration_api_pb2'
   # @@protoc_insertion_point(class_scope:cs3.sharing.collaboration.v1beta1.UpdateReceivedShareRequest)
   })
 _sym_db.RegisterMessage(UpdateReceivedShareRequest)
-_sym_db.RegisterMessage(UpdateReceivedShareRequest.UpdateField)
 
 UpdateReceivedShareResponse = _reflection.GeneratedProtocolMessageType('UpdateReceivedShareResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATERECEIVEDSHARERESPONSE,
@@ -1023,8 +965,8 @@ _COLLABORATIONAPI = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3077,
-  serialized_end=4154,
+  serialized_start=2959,
+  serialized_end=4036,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateShare',
