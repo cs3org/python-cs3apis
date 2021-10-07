@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034com.cs3.app.registry.v1beta1B\016ResourcesProtoP\001Z\017registryv1beta1\242\002\003CAR\252\002\030Cs3.App.Registry.V1Beta1\312\002\030Cs3\\App\\Registry\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(cs3/app/registry/v1beta1/resources.proto\x12\x18\x63s3.app.registry.v1beta1\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xc0\x02\n\x0cProviderInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x12\n\nmime_types\x18\x02 \x03(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\x12\x45\n\ncapability\x18\x04 \x01(\x0e\x32\x31.cs3.app.registry.v1beta1.ProviderInfo.Capability\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0c\n\x04icon\x18\x07 \x01(\t\x12\x14\n\x0c\x64\x65sktop_only\x18\x08 \x01(\x08\"R\n\nCapability\x12\x16\n\x12\x43\x41PABILITY_INVALID\x10\x00\x12\x15\n\x11\x43\x41PABILITY_VIEWER\x10\x01\x12\x15\n\x11\x43\x41PABILITY_EDITOR\x10\x02\"\xc9\x01\n\x0cMimeTypeInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x11\n\tmime_type\x18\x02 \x01(\t\x12\x0b\n\x03\x65xt\x18\x03 \x01(\t\x12=\n\rapp_providers\x18\x04 \x03(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0c\n\x04icon\x18\x07 \x01(\tB}\n\x1c\x63om.cs3.app.registry.v1beta1B\x0eResourcesProtoP\x01Z\x0fregistryv1beta1\xa2\x02\x03\x43\x41R\xaa\x02\x18\x43s3.App.Registry.V1Beta1\xca\x02\x18\x43s3\\App\\Registry\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n(cs3/app/registry/v1beta1/resources.proto\x12\x18\x63s3.app.registry.v1beta1\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xc0\x02\n\x0cProviderInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x12\n\nmime_types\x18\x02 \x03(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\x12\x45\n\ncapability\x18\x04 \x01(\x0e\x32\x31.cs3.app.registry.v1beta1.ProviderInfo.Capability\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0c\n\x04icon\x18\x07 \x01(\t\x12\x14\n\x0c\x64\x65sktop_only\x18\x08 \x01(\x08\"R\n\nCapability\x12\x16\n\x12\x43\x41PABILITY_INVALID\x10\x00\x12\x15\n\x11\x43\x41PABILITY_VIEWER\x10\x01\x12\x15\n\x11\x43\x41PABILITY_EDITOR\x10\x02\"\xe1\x01\n\x0cMimeTypeInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x11\n\tmime_type\x18\x02 \x01(\t\x12\x0b\n\x03\x65xt\x18\x03 \x01(\t\x12=\n\rapp_providers\x18\x04 \x03(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0c\n\x04icon\x18\x07 \x01(\t\x12\x16\n\x0e\x61llow_creation\x18\x08 \x01(\x08\x42}\n\x1c\x63om.cs3.app.registry.v1beta1B\x0eResourcesProtoP\x01Z\x0fregistryv1beta1\xa2\x02\x03\x43\x41R\xaa\x02\x18\x43s3.App.Registry.V1Beta1\xca\x02\x18\x43s3\\App\\Registry\\V1Beta1b\x06proto3'
   ,
   dependencies=[cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -196,6 +196,13 @@ _MIMETYPEINFO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='allow_creation', full_name='cs3.app.registry.v1beta1.MimeTypeInfo.allow_creation', index=7,
+      number=8, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -209,7 +216,7 @@ _MIMETYPEINFO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=425,
-  serialized_end=626,
+  serialized_end=650,
 )
 
 _PROVIDERINFO.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
