@@ -126,12 +126,12 @@ class GatewayAPIStub(object):
                 )
         self.ListRecycleStream = channel.unary_stream(
                 '/cs3.gateway.v1beta1.GatewayAPI/ListRecycleStream',
-                request_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListRecycleStreamRequest.SerializeToString,
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleStreamRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleStreamResponse.FromString,
                 )
         self.ListRecycle = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/ListRecycle',
-                request_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListRecycleRequest.SerializeToString,
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleResponse.FromString,
                 )
         self.Move = channel.unary_unary(
@@ -141,7 +141,7 @@ class GatewayAPIStub(object):
                 )
         self.PurgeRecycle = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/PurgeRecycle',
-                request_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.PurgeRecycleRequest.SerializeToString,
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.PurgeRecycleRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.PurgeRecycleResponse.FromString,
                 )
         self.RestoreFileVersion = channel.unary_unary(
@@ -1285,12 +1285,12 @@ def add_GatewayAPIServicer_to_server(servicer, server):
             ),
             'ListRecycleStream': grpc.unary_stream_rpc_method_handler(
                     servicer.ListRecycleStream,
-                    request_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListRecycleStreamRequest.FromString,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleStreamRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleStreamResponse.SerializeToString,
             ),
             'ListRecycle': grpc.unary_unary_rpc_method_handler(
                     servicer.ListRecycle,
-                    request_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListRecycleRequest.FromString,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleResponse.SerializeToString,
             ),
             'Move': grpc.unary_unary_rpc_method_handler(
@@ -1300,7 +1300,7 @@ def add_GatewayAPIServicer_to_server(servicer, server):
             ),
             'PurgeRecycle': grpc.unary_unary_rpc_method_handler(
                     servicer.PurgeRecycle,
-                    request_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.PurgeRecycleRequest.FromString,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.PurgeRecycleRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.PurgeRecycleResponse.SerializeToString,
             ),
             'RestoreFileVersion': grpc.unary_unary_rpc_method_handler(
@@ -1925,7 +1925,7 @@ class GatewayAPI(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_stream(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListRecycleStream',
-            cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListRecycleStreamRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleStreamRequest.SerializeToString,
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleStreamResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -1942,7 +1942,7 @@ class GatewayAPI(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListRecycle',
-            cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListRecycleRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleRequest.SerializeToString,
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListRecycleResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -1976,7 +1976,7 @@ class GatewayAPI(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/PurgeRecycle',
-            cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.PurgeRecycleRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.PurgeRecycleRequest.SerializeToString,
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.PurgeRecycleResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
