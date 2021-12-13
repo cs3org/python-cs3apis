@@ -84,6 +84,11 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateContainerRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateContainerResponse.FromString,
                 )
+        self.TouchFile = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/TouchFile',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.TouchFileRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.TouchFileResponse.FromString,
+                )
         self.Delete = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/Delete',
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteRequest.SerializeToString,
@@ -546,6 +551,15 @@ class GatewayAPIServicer(object):
     def CreateContainer(self, request, context):
         """Creates a new resource of type container.
         MUST return CODE_PRECONDITION_FAILED if the container
+        cannot be created at the specified reference.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def TouchFile(self, request, context):
+        """Creates a new resource of type file.
+        MUST return CODE_PRECONDITION_FAILED if the file
         cannot be created at the specified reference.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -1243,6 +1257,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateContainerRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateContainerResponse.SerializeToString,
             ),
+            'TouchFile': grpc.unary_unary_rpc_method_handler(
+                    servicer.TouchFile,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.TouchFileRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.TouchFileResponse.SerializeToString,
+            ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteRequest.FromString,
@@ -1774,6 +1793,23 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/CreateContainer',
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateContainerRequest.SerializeToString,
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateContainerResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def TouchFile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/TouchFile',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.TouchFileRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.TouchFileResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
