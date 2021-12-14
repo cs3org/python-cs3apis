@@ -160,6 +160,26 @@ class ProviderAPIStub(object):
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataResponse.FromString,
                 )
+        self.SetLock = channel.unary_unary(
+                '/cs3.storage.provider.v1beta1.ProviderAPI/SetLock',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetLockRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetLockResponse.FromString,
+                )
+        self.GetLock = channel.unary_unary(
+                '/cs3.storage.provider.v1beta1.ProviderAPI/GetLock',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetLockRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetLockResponse.FromString,
+                )
+        self.RefreshLock = channel.unary_unary(
+                '/cs3.storage.provider.v1beta1.ProviderAPI/RefreshLock',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RefreshLockRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RefreshLockResponse.FromString,
+                )
+        self.Unlock = channel.unary_unary(
+                '/cs3.storage.provider.v1beta1.ProviderAPI/Unlock',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockResponse.FromString,
+                )
         self.CreateHome = channel.unary_unary(
                 '/cs3.storage.provider.v1beta1.ProviderAPI/CreateHome',
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeRequest.SerializeToString,
@@ -439,6 +459,49 @@ class ProviderAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetLock(self, request, context):
+        """Locks a storage resource.
+        MUST return CODE_NOT_FOUND if the reference does not exist.
+        MUST return CODE_PRECONDITION_FAILED if the reference is already locked.
+        In addition, the implementation MUST ensure atomicity when multiple users
+        concurrently attempt to set a lock.
+        The caller MUST have write permissions on the resource.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetLock(self, request, context):
+        """Gets the lock metadata of a storage resource.
+        MUST return CODE_NOT_FOUND if the reference does not exist or is not locked.
+        The caller MUST have read permissions on the resource.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RefreshLock(self, request, context):
+        """Refreshes the lock metadata of a storage resource.
+        MUST return CODE_NOT_FOUND if the reference does not exist.
+        MUST return CODE_PRECONDITION_FALIED if the reference is not locked
+        or if the caller does not hold the lock.
+        The caller MUST have write permissions on the resource.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Unlock(self, request, context):
+        """Unlocks a storage resource.
+        MUST return CODE_NOT_FOUND if the reference does not exist.
+        MUST return CODE_PRECONDITION_FAILED if the reference is not locked
+        or if the caller does not hold the lock.
+        The caller MUST have write permissions on the resource.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateHome(self, request, context):
         """Creates the home directory for a user.
         """
@@ -613,6 +676,26 @@ def add_ProviderAPIServicer_to_server(servicer, server):
                     servicer.UnsetArbitraryMetadata,
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataResponse.SerializeToString,
+            ),
+            'SetLock': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetLock,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetLockRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetLockResponse.SerializeToString,
+            ),
+            'GetLock': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLock,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetLockRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetLockResponse.SerializeToString,
+            ),
+            'RefreshLock': grpc.unary_unary_rpc_method_handler(
+                    servicer.RefreshLock,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RefreshLockRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RefreshLockResponse.SerializeToString,
+            ),
+            'Unlock': grpc.unary_unary_rpc_method_handler(
+                    servicer.Unlock,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockResponse.SerializeToString,
             ),
             'CreateHome': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateHome,
@@ -1109,6 +1192,74 @@ class ProviderAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/UnsetArbitraryMetadata',
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataRequest.SerializeToString,
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetArbitraryMetadataResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetLock(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/SetLock',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetLockRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetLockResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetLock(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/GetLock',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetLockRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetLockResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RefreshLock(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/RefreshLock',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RefreshLockRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RefreshLockResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Unlock(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/Unlock',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
