@@ -12,6 +12,7 @@ from cs3.identity.user.v1beta1 import user_api_pb2 as cs3_dot_identity_dot_user_
 from cs3.ocm.core.v1beta1 import ocm_core_api_pb2 as cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2
 from cs3.ocm.invite.v1beta1 import invite_api_pb2 as cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2
 from cs3.ocm.provider.v1beta1 import provider_api_pb2 as cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2
+from cs3.permissions.v1beta1 import permissions_api_pb2 as cs3_dot_permissions_dot_v1beta1_dot_permissions__api__pb2
 from cs3.preferences.v1beta1 import preferences_api_pb2 as cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2
 from cs3.sharing.collaboration.v1beta1 import collaboration_api_pb2 as cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2
 from cs3.sharing.link.v1beta1 import link_api_pb2 as cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2
@@ -493,6 +494,11 @@ class GatewayAPIStub(object):
                 '/cs3.gateway.v1beta1.GatewayAPI/CancelTransfer',
                 request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferRequest.SerializeToString,
                 response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferResponse.FromString,
+                )
+        self.CheckPermission = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/CheckPermission',
+                request_serializer=cs3_dot_permissions_dot_v1beta1_dot_permissions__api__pb2.CheckPermissionRequest.SerializeToString,
+                response_deserializer=cs3_dot_permissions_dot_v1beta1_dot_permissions__api__pb2.CheckPermissionResponse.FromString,
                 )
 
 
@@ -1277,6 +1283,16 @@ class GatewayAPIServicer(object):
 
     def CancelTransfer(self, request, context):
         """Requests to cancel a transfer.
+        *****************************************************************/
+        ************************** Permissions **************************/
+        *****************************************************************/
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CheckPermission(self, request, context):
+        """CheckPermission checks if a user or group has a certain permission.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1729,6 +1745,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.CancelTransfer,
                     request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferRequest.FromString,
                     response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferResponse.SerializeToString,
+            ),
+            'CheckPermission': grpc.unary_unary_rpc_method_handler(
+                    servicer.CheckPermission,
+                    request_deserializer=cs3_dot_permissions_dot_v1beta1_dot_permissions__api__pb2.CheckPermissionRequest.FromString,
+                    response_serializer=cs3_dot_permissions_dot_v1beta1_dot_permissions__api__pb2.CheckPermissionResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -3270,5 +3291,22 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/CancelTransfer',
             cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferRequest.SerializeToString,
             cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CheckPermission(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/CheckPermission',
+            cs3_dot_permissions_dot_v1beta1_dot_permissions__api__pb2.CheckPermissionRequest.SerializeToString,
+            cs3_dot_permissions_dot_v1beta1_dot_permissions__api__pb2.CheckPermissionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
