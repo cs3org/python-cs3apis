@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n com.cs3.storage.provider.v1beta1B\016ResourcesProtoP\001Z\017providerv1beta1\242\002\003CSP\252\002\034Cs3.Storage.Provider.V1Beta1\312\002\034Cs3\\Storage\\Provider\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,cs3/storage/provider/v1beta1/resources.proto\x12\x1c\x63s3.storage.provider.v1beta1\x1a*cs3/identity/group/v1beta1/resources.proto\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xfc\x04\n\x0cResourceInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x04type\x18\x02 \x01(\x0e\x32*.cs3.storage.provider.v1beta1.ResourceType\x12\x34\n\x02id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12@\n\x08\x63hecksum\x18\x04 \x01(\x0b\x32..cs3.storage.provider.v1beta1.ResourceChecksum\x12\x0c\n\x04\x65tag\x18\x05 \x01(\t\x12\x11\n\tmime_type\x18\x06 \x01(\t\x12+\n\x05mtime\x18\x07 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x0c\n\x04path\x18\x08 \x01(\t\x12I\n\x0epermission_set\x18\t \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\x12\x0c\n\x04size\x18\n \x01(\x04\x12\x30\n\x05owner\x18\x0b \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x0e\n\x06target\x18\x0c \x01(\t\x12K\n\x12\x63\x61nonical_metadata\x18\r \x01(\x0b\x32/.cs3.storage.provider.v1beta1.CanonicalMetadata\x12K\n\x12\x61rbitrary_metadata\x18\x0e \x01(\x0b\x32/.cs3.storage.provider.v1beta1.ArbitraryMetadata\"L\n\x11\x43\x61nonicalMetadata\x12\x37\n\x06target\x18\x01 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\"\x95\x01\n\x11\x41rbitraryMetadata\x12O\n\x08metadata\x18\x01 \x03(\x0b\x32=.cs3.storage.provider.v1beta1.ArbitraryMetadata.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xcc\x01\n\x04Lock\x12\x34\n\x04type\x18\x01 \x01(\x0e\x32&.cs3.storage.provider.v1beta1.LockType\x12\x31\n\x04user\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdH\x00\x12\x12\n\x08\x61pp_name\x18\x03 \x01(\tH\x00\x12\x10\n\x08metadata\x18\x04 \x01(\t\x12+\n\x05mtime\x18\x05 \x01(\x0b\x32\x1c.cs3.types.v1beta1.TimestampB\x08\n\x06holder\"a\n\x10ResourceChecksum\x12@\n\x04type\x18\x01 \x01(\x0e\x32\x32.cs3.storage.provider.v1beta1.ResourceChecksumType\x12\x0b\n\x03sum\x18\x02 \x01(\t\"n\n\x18ResourceChecksumPriority\x12@\n\x04type\x18\x01 \x01(\x0e\x32\x32.cs3.storage.provider.v1beta1.ResourceChecksumType\x12\x10\n\x08priority\x18\x02 \x01(\r\"X\n\tReference\x12=\n\x0bresource_id\x18\x01 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x0c\n\x04path\x18\x02 \x01(\t\"3\n\nResourceId\x12\x12\n\nstorage_id\x18\x01 \x01(\t\x12\x11\n\topaque_id\x18\x02 \x01(\t\"\xc3\x03\n\x13ResourcePermissions\x12\x11\n\tadd_grant\x18\x01 \x01(\x08\x12\x18\n\x10\x63reate_container\x18\x02 \x01(\x08\x12\x0e\n\x06\x64\x65lete\x18\x03 \x01(\x08\x12\x10\n\x08get_path\x18\x05 \x01(\x08\x12\x11\n\tget_quota\x18\x06 \x01(\x08\x12\x1e\n\x16initiate_file_download\x18\x07 \x01(\x08\x12\x1c\n\x14initiate_file_upload\x18\x08 \x01(\x08\x12\x13\n\x0blist_grants\x18\t \x01(\x08\x12\x16\n\x0elist_container\x18\n \x01(\x08\x12\x1a\n\x12list_file_versions\x18\x0b \x01(\x08\x12\x14\n\x0clist_recycle\x18\x0c \x01(\x08\x12\x0c\n\x04move\x18\r \x01(\x08\x12\x14\n\x0cremove_grant\x18\x0e \x01(\x08\x12\x15\n\rpurge_recycle\x18\x0f \x01(\x08\x12\x1c\n\x14restore_file_version\x18\x10 \x01(\x08\x12\x1c\n\x14restore_recycle_item\x18\x11 \x01(\x08\x12\x0c\n\x04stat\x18\x12 \x01(\x08\x12\x14\n\x0cupdate_grant\x18\x13 \x01(\x08\x12\x12\n\ndeny_grant\x18\x14 \x01(\x08\"\x87\x01\n\x05Grant\x12\x36\n\x07grantee\x18\x01 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12\x46\n\x0bpermissions\x18\x02 \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\"\xe2\x01\n\x07Grantee\x12\x37\n\x04type\x18\x01 \x01(\x0e\x32).cs3.storage.provider.v1beta1.GranteeType\x12\x34\n\x07user_id\x18\x03 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdH\x00\x12\x37\n\x08group_id\x18\x04 \x01(\x0b\x32#.cs3.identity.group.v1beta1.GroupIdH\x00\x12)\n\x06opaque\x18\x05 \x01(\x0b\x32\x19.cs3.types.v1beta1.OpaqueB\x04\n\x02id\"p\n\x0b\x46ileVersion\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x04\x12\r\n\x05mtime\x18\x05 \x01(\x04\x12\x0c\n\x04\x65tag\x18\x06 \x01(\t\"\xf8\x01\n\x0bRecycleItem\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x04type\x18\x02 \x01(\x0e\x32*.cs3.storage.provider.v1beta1.ResourceType\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x34\n\x03ref\x18\x04 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\x12\x0c\n\x04size\x18\x05 \x01(\x04\x12\x33\n\rdeletion_time\x18\x06 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"\xcf\x01\n\x12\x46ileUploadProtocol\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\x17\n\x0fupload_endpoint\x18\x03 \x01(\t\x12S\n\x13\x61vailable_checksums\x18\x04 \x03(\x0b\x32\x36.cs3.storage.provider.v1beta1.ResourceChecksumPriority\x12\x0e\n\x06\x65xpose\x18\x05 \x01(\x08\"~\n\x14\x46ileDownloadProtocol\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\x19\n\x11\x64ownload_endpoint\x18\x03 \x01(\t\x12\x0e\n\x06\x65xpose\x18\x04 \x01(\x08\"\xde\x02\n\x0cStorageSpace\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x02id\x18\x02 \x01(\x0b\x32,.cs3.storage.provider.v1beta1.StorageSpaceId\x12.\n\x05owner\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\x12\x36\n\x04root\x18\x04 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x32\n\x05quota\x18\x06 \x01(\x0b\x32#.cs3.storage.provider.v1beta1.Quota\x12\x12\n\nspace_type\x18\x07 \x01(\t\x12+\n\x05mtime\x18\x08 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"#\n\x0eStorageSpaceId\x12\x11\n\topaque_id\x18\x01 \x01(\t\"d\n\x05Quota\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x17\n\x0fquota_max_bytes\x18\x02 \x01(\x04\x12\x17\n\x0fquota_max_files\x18\x03 \x01(\x04*`\n\x08LockType\x12\x15\n\x11LOCK_TYPE_INVALID\x10\x00\x12\x14\n\x10LOCK_TYPE_SHARED\x10\x01\x12\x13\n\x0fLOCK_TYPE_WRITE\x10\x02\x12\x12\n\x0eLOCK_TYPE_EXCL\x10\x03*\xb2\x01\n\x0cResourceType\x12\x19\n\x15RESOURCE_TYPE_INVALID\x10\x00\x12\x16\n\x12RESOURCE_TYPE_FILE\x10\x01\x12\x1b\n\x17RESOURCE_TYPE_CONTAINER\x10\x02\x12\x1b\n\x17RESOURCE_TYPE_REFERENCE\x10\x03\x12\x19\n\x15RESOURCE_TYPE_SYMLINK\x10\x04\x12\x1a\n\x16RESOURCE_TYPE_INTERNAL\x10\x05*\xc1\x01\n\x14ResourceChecksumType\x12\"\n\x1eRESOURCE_CHECKSUM_TYPE_INVALID\x10\x00\x12 \n\x1cRESOURCE_CHECKSUM_TYPE_UNSET\x10\x01\x12\"\n\x1eRESOURCE_CHECKSUM_TYPE_ADLER32\x10\x02\x12\x1e\n\x1aRESOURCE_CHECKSUM_TYPE_MD5\x10\x03\x12\x1f\n\x1bRESOURCE_CHECKSUM_TYPE_SHA1\x10\x04*V\n\x0bGranteeType\x12\x18\n\x14GRANTEE_TYPE_INVALID\x10\x00\x12\x15\n\x11GRANTEE_TYPE_USER\x10\x01\x12\x16\n\x12GRANTEE_TYPE_GROUP\x10\x02\x42\x89\x01\n com.cs3.storage.provider.v1beta1B\x0eResourcesProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43SP\xaa\x02\x1c\x43s3.Storage.Provider.V1Beta1\xca\x02\x1c\x43s3\\Storage\\Provider\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n,cs3/storage/provider/v1beta1/resources.proto\x12\x1c\x63s3.storage.provider.v1beta1\x1a*cs3/identity/group/v1beta1/resources.proto\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xea\x05\n\x0cResourceInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x04type\x18\x02 \x01(\x0e\x32*.cs3.storage.provider.v1beta1.ResourceType\x12\x34\n\x02id\x18\x03 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12@\n\x08\x63hecksum\x18\x04 \x01(\x0b\x32..cs3.storage.provider.v1beta1.ResourceChecksum\x12\x0c\n\x04\x65tag\x18\x05 \x01(\t\x12\x11\n\tmime_type\x18\x06 \x01(\t\x12+\n\x05mtime\x18\x07 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x0c\n\x04path\x18\x08 \x01(\t\x12I\n\x0epermission_set\x18\t \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\x12\x0c\n\x04size\x18\n \x01(\x04\x12\x30\n\x05owner\x18\x0b \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x0e\n\x06target\x18\x0c \x01(\t\x12K\n\x12\x63\x61nonical_metadata\x18\r \x01(\x0b\x32/.cs3.storage.provider.v1beta1.CanonicalMetadata\x12K\n\x12\x61rbitrary_metadata\x18\x0e \x01(\x0b\x32/.cs3.storage.provider.v1beta1.ArbitraryMetadata\x12\x30\n\x04lock\x18\x0f \x01(\x0b\x32\".cs3.storage.provider.v1beta1.Lock\x12:\n\x0e\x61\x64visory_locks\x18\x10 \x03(\x0b\x32\".cs3.storage.provider.v1beta1.Lock\"L\n\x11\x43\x61nonicalMetadata\x12\x37\n\x06target\x18\x01 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\"\x95\x01\n\x11\x41rbitraryMetadata\x12O\n\x08metadata\x18\x01 \x03(\x0b\x32=.cs3.storage.provider.v1beta1.ArbitraryMetadata.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xed\x01\n\x04Lock\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0f\n\x07lock_id\x18\x02 \x01(\t\x12\x34\n\x04type\x18\x03 \x01(\x0e\x32&.cs3.storage.provider.v1beta1.LockType\x12/\n\x04user\x18\x04 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x10\n\x08\x61pp_name\x18\x05 \x01(\t\x12\x30\n\nexpiration\x18\x06 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"a\n\x10ResourceChecksum\x12@\n\x04type\x18\x01 \x01(\x0e\x32\x32.cs3.storage.provider.v1beta1.ResourceChecksumType\x12\x0b\n\x03sum\x18\x02 \x01(\t\"n\n\x18ResourceChecksumPriority\x12@\n\x04type\x18\x01 \x01(\x0e\x32\x32.cs3.storage.provider.v1beta1.ResourceChecksumType\x12\x10\n\x08priority\x18\x02 \x01(\r\"X\n\tReference\x12=\n\x0bresource_id\x18\x01 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x0c\n\x04path\x18\x02 \x01(\t\"3\n\nResourceId\x12\x12\n\nstorage_id\x18\x01 \x01(\t\x12\x11\n\topaque_id\x18\x02 \x01(\t\"\xc3\x03\n\x13ResourcePermissions\x12\x11\n\tadd_grant\x18\x01 \x01(\x08\x12\x18\n\x10\x63reate_container\x18\x02 \x01(\x08\x12\x0e\n\x06\x64\x65lete\x18\x03 \x01(\x08\x12\x10\n\x08get_path\x18\x05 \x01(\x08\x12\x11\n\tget_quota\x18\x06 \x01(\x08\x12\x1e\n\x16initiate_file_download\x18\x07 \x01(\x08\x12\x1c\n\x14initiate_file_upload\x18\x08 \x01(\x08\x12\x13\n\x0blist_grants\x18\t \x01(\x08\x12\x16\n\x0elist_container\x18\n \x01(\x08\x12\x1a\n\x12list_file_versions\x18\x0b \x01(\x08\x12\x14\n\x0clist_recycle\x18\x0c \x01(\x08\x12\x0c\n\x04move\x18\r \x01(\x08\x12\x14\n\x0cremove_grant\x18\x0e \x01(\x08\x12\x15\n\rpurge_recycle\x18\x0f \x01(\x08\x12\x1c\n\x14restore_file_version\x18\x10 \x01(\x08\x12\x1c\n\x14restore_recycle_item\x18\x11 \x01(\x08\x12\x0c\n\x04stat\x18\x12 \x01(\x08\x12\x14\n\x0cupdate_grant\x18\x13 \x01(\x08\x12\x12\n\ndeny_grant\x18\x14 \x01(\x08\"\x87\x01\n\x05Grant\x12\x36\n\x07grantee\x18\x01 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12\x46\n\x0bpermissions\x18\x02 \x01(\x0b\x32\x31.cs3.storage.provider.v1beta1.ResourcePermissions\"\xe2\x01\n\x07Grantee\x12\x37\n\x04type\x18\x01 \x01(\x0e\x32).cs3.storage.provider.v1beta1.GranteeType\x12\x34\n\x07user_id\x18\x03 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdH\x00\x12\x37\n\x08group_id\x18\x04 \x01(\x0b\x32#.cs3.identity.group.v1beta1.GroupIdH\x00\x12)\n\x06opaque\x18\x05 \x01(\x0b\x32\x19.cs3.types.v1beta1.OpaqueB\x04\n\x02id\"p\n\x0b\x46ileVersion\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x0c\n\x04size\x18\x04 \x01(\x04\x12\r\n\x05mtime\x18\x05 \x01(\x04\x12\x0c\n\x04\x65tag\x18\x06 \x01(\t\"\xf8\x01\n\x0bRecycleItem\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x04type\x18\x02 \x01(\x0e\x32*.cs3.storage.provider.v1beta1.ResourceType\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x34\n\x03ref\x18\x04 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\x12\x0c\n\x04size\x18\x05 \x01(\x04\x12\x33\n\rdeletion_time\x18\x06 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"\xcf\x01\n\x12\x46ileUploadProtocol\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\x17\n\x0fupload_endpoint\x18\x03 \x01(\t\x12S\n\x13\x61vailable_checksums\x18\x04 \x03(\x0b\x32\x36.cs3.storage.provider.v1beta1.ResourceChecksumPriority\x12\x0e\n\x06\x65xpose\x18\x05 \x01(\x08\"~\n\x14\x46ileDownloadProtocol\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x10\n\x08protocol\x18\x02 \x01(\t\x12\x19\n\x11\x64ownload_endpoint\x18\x03 \x01(\t\x12\x0e\n\x06\x65xpose\x18\x04 \x01(\x08\"\xde\x02\n\x0cStorageSpace\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x38\n\x02id\x18\x02 \x01(\x0b\x32,.cs3.storage.provider.v1beta1.StorageSpaceId\x12.\n\x05owner\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\x12\x36\n\x04root\x18\x04 \x01(\x0b\x32(.cs3.storage.provider.v1beta1.ResourceId\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x32\n\x05quota\x18\x06 \x01(\x0b\x32#.cs3.storage.provider.v1beta1.Quota\x12\x12\n\nspace_type\x18\x07 \x01(\t\x12+\n\x05mtime\x18\x08 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"#\n\x0eStorageSpaceId\x12\x11\n\topaque_id\x18\x01 \x01(\t\"d\n\x05Quota\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x17\n\x0fquota_max_bytes\x18\x02 \x01(\x04\x12\x17\n\x0fquota_max_files\x18\x03 \x01(\x04*`\n\x08LockType\x12\x15\n\x11LOCK_TYPE_INVALID\x10\x00\x12\x14\n\x10LOCK_TYPE_SHARED\x10\x01\x12\x13\n\x0fLOCK_TYPE_WRITE\x10\x02\x12\x12\n\x0eLOCK_TYPE_EXCL\x10\x03*\xb2\x01\n\x0cResourceType\x12\x19\n\x15RESOURCE_TYPE_INVALID\x10\x00\x12\x16\n\x12RESOURCE_TYPE_FILE\x10\x01\x12\x1b\n\x17RESOURCE_TYPE_CONTAINER\x10\x02\x12\x1b\n\x17RESOURCE_TYPE_REFERENCE\x10\x03\x12\x19\n\x15RESOURCE_TYPE_SYMLINK\x10\x04\x12\x1a\n\x16RESOURCE_TYPE_INTERNAL\x10\x05*\xc1\x01\n\x14ResourceChecksumType\x12\"\n\x1eRESOURCE_CHECKSUM_TYPE_INVALID\x10\x00\x12 \n\x1cRESOURCE_CHECKSUM_TYPE_UNSET\x10\x01\x12\"\n\x1eRESOURCE_CHECKSUM_TYPE_ADLER32\x10\x02\x12\x1e\n\x1aRESOURCE_CHECKSUM_TYPE_MD5\x10\x03\x12\x1f\n\x1bRESOURCE_CHECKSUM_TYPE_SHA1\x10\x04*V\n\x0bGranteeType\x12\x18\n\x14GRANTEE_TYPE_INVALID\x10\x00\x12\x15\n\x11GRANTEE_TYPE_USER\x10\x01\x12\x16\n\x12GRANTEE_TYPE_GROUP\x10\x02\x42\x89\x01\n com.cs3.storage.provider.v1beta1B\x0eResourcesProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43SP\xaa\x02\x1c\x43s3.Storage.Provider.V1Beta1\xca\x02\x1c\x43s3\\Storage\\Provider\\V1Beta1b\x06proto3'
   ,
   dependencies=[cs3_dot_identity_dot_group_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
@@ -57,8 +57,8 @@ _LOCKTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3642,
-  serialized_end=3738,
+  serialized_start=3785,
+  serialized_end=3881,
 )
 _sym_db.RegisterEnumDescriptor(_LOCKTYPE)
 
@@ -103,8 +103,8 @@ _RESOURCETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3741,
-  serialized_end=3919,
+  serialized_start=3884,
+  serialized_end=4062,
 )
 _sym_db.RegisterEnumDescriptor(_RESOURCETYPE)
 
@@ -144,8 +144,8 @@ _RESOURCECHECKSUMTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3922,
-  serialized_end=4115,
+  serialized_start=4065,
+  serialized_end=4258,
 )
 _sym_db.RegisterEnumDescriptor(_RESOURCECHECKSUMTYPE)
 
@@ -175,8 +175,8 @@ _GRANTEETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4117,
-  serialized_end=4203,
+  serialized_start=4260,
+  serialized_end=4346,
 )
 _sym_db.RegisterEnumDescriptor(_GRANTEETYPE)
 
@@ -308,6 +308,20 @@ _RESOURCEINFO = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='lock', full_name='cs3.storage.provider.v1beta1.ResourceInfo.lock', index=14,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='advisory_locks', full_name='cs3.storage.provider.v1beta1.ResourceInfo.advisory_locks', index=15,
+      number=16, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -321,7 +335,7 @@ _RESOURCEINFO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=197,
-  serialized_end=833,
+  serialized_end=943,
 )
 
 
@@ -352,8 +366,8 @@ _CANONICALMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=835,
-  serialized_end=911,
+  serialized_start=945,
+  serialized_end=1021,
 )
 
 
@@ -391,8 +405,8 @@ _ARBITRARYMETADATA_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1016,
-  serialized_end=1063,
+  serialized_start=1126,
+  serialized_end=1173,
 )
 
 _ARBITRARYMETADATA = _descriptor.Descriptor(
@@ -422,8 +436,8 @@ _ARBITRARYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=914,
-  serialized_end=1063,
+  serialized_start=1024,
+  serialized_end=1173,
 )
 
 
@@ -436,36 +450,43 @@ _LOCK = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='cs3.storage.provider.v1beta1.Lock.type', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='user', full_name='cs3.storage.provider.v1beta1.Lock.user', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='opaque', full_name='cs3.storage.provider.v1beta1.Lock.opaque', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='app_name', full_name='cs3.storage.provider.v1beta1.Lock.app_name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='lock_id', full_name='cs3.storage.provider.v1beta1.Lock.lock_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='metadata', full_name='cs3.storage.provider.v1beta1.Lock.metadata', index=3,
-      number=4, type=9, cpp_type=9, label=1,
+      name='type', full_name='cs3.storage.provider.v1beta1.Lock.type', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='cs3.storage.provider.v1beta1.Lock.user', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='app_name', full_name='cs3.storage.provider.v1beta1.Lock.app_name', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mtime', full_name='cs3.storage.provider.v1beta1.Lock.mtime', index=4,
-      number=5, type=11, cpp_type=10, label=1,
+      name='expiration', full_name='cs3.storage.provider.v1beta1.Lock.expiration', index=5,
+      number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -481,14 +502,9 @@ _LOCK = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
-    _descriptor.OneofDescriptor(
-      name='holder', full_name='cs3.storage.provider.v1beta1.Lock.holder',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
   ],
-  serialized_start=1066,
-  serialized_end=1270,
+  serialized_start=1176,
+  serialized_end=1413,
 )
 
 
@@ -526,8 +542,8 @@ _RESOURCECHECKSUM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1272,
-  serialized_end=1369,
+  serialized_start=1415,
+  serialized_end=1512,
 )
 
 
@@ -565,8 +581,8 @@ _RESOURCECHECKSUMPRIORITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1371,
-  serialized_end=1481,
+  serialized_start=1514,
+  serialized_end=1624,
 )
 
 
@@ -604,8 +620,8 @@ _REFERENCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1483,
-  serialized_end=1571,
+  serialized_start=1626,
+  serialized_end=1714,
 )
 
 
@@ -643,8 +659,8 @@ _RESOURCEID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1573,
-  serialized_end=1624,
+  serialized_start=1716,
+  serialized_end=1767,
 )
 
 
@@ -801,8 +817,8 @@ _RESOURCEPERMISSIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1627,
-  serialized_end=2078,
+  serialized_start=1770,
+  serialized_end=2221,
 )
 
 
@@ -840,8 +856,8 @@ _GRANT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2081,
-  serialized_end=2216,
+  serialized_start=2224,
+  serialized_end=2359,
 )
 
 
@@ -898,8 +914,8 @@ _GRANTEE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2219,
-  serialized_end=2445,
+  serialized_start=2362,
+  serialized_end=2588,
 )
 
 
@@ -958,8 +974,8 @@ _FILEVERSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2447,
-  serialized_end=2559,
+  serialized_start=2590,
+  serialized_end=2702,
 )
 
 
@@ -1025,8 +1041,8 @@ _RECYCLEITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2562,
-  serialized_end=2810,
+  serialized_start=2705,
+  serialized_end=2953,
 )
 
 
@@ -1085,8 +1101,8 @@ _FILEUPLOADPROTOCOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2813,
-  serialized_end=3020,
+  serialized_start=2956,
+  serialized_end=3163,
 )
 
 
@@ -1138,8 +1154,8 @@ _FILEDOWNLOADPROTOCOL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3022,
-  serialized_end=3148,
+  serialized_start=3165,
+  serialized_end=3291,
 )
 
 
@@ -1219,8 +1235,8 @@ _STORAGESPACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3151,
-  serialized_end=3501,
+  serialized_start=3294,
+  serialized_end=3644,
 )
 
 
@@ -1251,8 +1267,8 @@ _STORAGESPACEID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3503,
-  serialized_end=3538,
+  serialized_start=3646,
+  serialized_end=3681,
 )
 
 
@@ -1297,8 +1313,8 @@ _QUOTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3540,
-  serialized_end=3640,
+  serialized_start=3683,
+  serialized_end=3783,
 )
 
 _RESOURCEINFO.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
@@ -1310,18 +1326,15 @@ _RESOURCEINFO.fields_by_name['permission_set'].message_type = _RESOURCEPERMISSIO
 _RESOURCEINFO.fields_by_name['owner'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USERID
 _RESOURCEINFO.fields_by_name['canonical_metadata'].message_type = _CANONICALMETADATA
 _RESOURCEINFO.fields_by_name['arbitrary_metadata'].message_type = _ARBITRARYMETADATA
+_RESOURCEINFO.fields_by_name['lock'].message_type = _LOCK
+_RESOURCEINFO.fields_by_name['advisory_locks'].message_type = _LOCK
 _CANONICALMETADATA.fields_by_name['target'].message_type = _REFERENCE
 _ARBITRARYMETADATA_METADATAENTRY.containing_type = _ARBITRARYMETADATA
 _ARBITRARYMETADATA.fields_by_name['metadata'].message_type = _ARBITRARYMETADATA_METADATAENTRY
+_LOCK.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _LOCK.fields_by_name['type'].enum_type = _LOCKTYPE
 _LOCK.fields_by_name['user'].message_type = cs3_dot_identity_dot_user_dot_v1beta1_dot_resources__pb2._USERID
-_LOCK.fields_by_name['mtime'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._TIMESTAMP
-_LOCK.oneofs_by_name['holder'].fields.append(
-  _LOCK.fields_by_name['user'])
-_LOCK.fields_by_name['user'].containing_oneof = _LOCK.oneofs_by_name['holder']
-_LOCK.oneofs_by_name['holder'].fields.append(
-  _LOCK.fields_by_name['app_name'])
-_LOCK.fields_by_name['app_name'].containing_oneof = _LOCK.oneofs_by_name['holder']
+_LOCK.fields_by_name['expiration'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._TIMESTAMP
 _RESOURCECHECKSUM.fields_by_name['type'].enum_type = _RESOURCECHECKSUMTYPE
 _RESOURCECHECKSUMPRIORITY.fields_by_name['type'].enum_type = _RESOURCECHECKSUMTYPE
 _REFERENCE.fields_by_name['resource_id'].message_type = _RESOURCEID
