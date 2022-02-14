@@ -480,10 +480,10 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.SerializeToString,
                 response_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.FromString,
                 )
-        self.CreateTransfer = channel.unary_unary(
-                '/cs3.gateway.v1beta1.GatewayAPI/CreateTransfer',
-                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.SerializeToString,
-                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.FromString,
+        self.PullTransfer = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/PullTransfer',
+                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.SerializeToString,
+                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.FromString,
                 )
         self.GetTransferStatus = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/GetTransferStatus',
@@ -494,6 +494,16 @@ class GatewayAPIStub(object):
                 '/cs3.gateway.v1beta1.GatewayAPI/CancelTransfer',
                 request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferRequest.SerializeToString,
                 response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferResponse.FromString,
+                )
+        self.ListTransfers = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/ListTransfers',
+                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersRequest.SerializeToString,
+                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersResponse.FromString,
+                )
+        self.RetryTransfer = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/RetryTransfer',
+                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferRequest.SerializeToString,
+                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferResponse.FromString,
                 )
         self.CheckPermission = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/CheckPermission',
@@ -1267,8 +1277,8 @@ class GatewayAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateTransfer(self, request, context):
-        """Returns a response containing a TxInfo (transfer info) object.
+    def PullTransfer(self, request, context):
+        """Requests the destination to pull a resource from source.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1283,6 +1293,20 @@ class GatewayAPIServicer(object):
 
     def CancelTransfer(self, request, context):
         """Requests to cancel a transfer.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListTransfers(self, request, context):
+        """Requests a list of transfers received by the authenticated principle.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RetryTransfer(self, request, context):
+        """Requests retrying a transfer.
         *****************************************************************/
         ************************** Permissions **************************/
         *****************************************************************/
@@ -1731,10 +1755,10 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.FromString,
                     response_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.SerializeToString,
             ),
-            'CreateTransfer': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateTransfer,
-                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.FromString,
-                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.SerializeToString,
+            'PullTransfer': grpc.unary_unary_rpc_method_handler(
+                    servicer.PullTransfer,
+                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.FromString,
+                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.SerializeToString,
             ),
             'GetTransferStatus': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTransferStatus,
@@ -1745,6 +1769,16 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.CancelTransfer,
                     request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferRequest.FromString,
                     response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferResponse.SerializeToString,
+            ),
+            'ListTransfers': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListTransfers,
+                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersRequest.FromString,
+                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersResponse.SerializeToString,
+            ),
+            'RetryTransfer': grpc.unary_unary_rpc_method_handler(
+                    servicer.RetryTransfer,
+                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferRequest.FromString,
+                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferResponse.SerializeToString,
             ),
             'CheckPermission': grpc.unary_unary_rpc_method_handler(
                     servicer.CheckPermission,
@@ -3244,7 +3278,7 @@ class GatewayAPI(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreateTransfer(request,
+    def PullTransfer(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3254,9 +3288,9 @@ class GatewayAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/CreateTransfer',
-            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.SerializeToString,
-            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/PullTransfer',
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.SerializeToString,
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3291,6 +3325,40 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/CancelTransfer',
             cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferRequest.SerializeToString,
             cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListTransfers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListTransfers',
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersRequest.SerializeToString,
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RetryTransfer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/RetryTransfer',
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferRequest.SerializeToString,
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

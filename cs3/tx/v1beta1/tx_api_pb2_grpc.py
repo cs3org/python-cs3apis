@@ -29,10 +29,10 @@ class TxAPIStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.CreateTransfer = channel.unary_unary(
-                '/cs3.tx.v1beta1.TxAPI/CreateTransfer',
-                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.SerializeToString,
-                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.FromString,
+        self.PullTransfer = channel.unary_unary(
+                '/cs3.tx.v1beta1.TxAPI/PullTransfer',
+                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.SerializeToString,
+                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.FromString,
                 )
         self.GetTransferStatus = channel.unary_unary(
                 '/cs3.tx.v1beta1.TxAPI/GetTransferStatus',
@@ -43,6 +43,16 @@ class TxAPIStub(object):
                 '/cs3.tx.v1beta1.TxAPI/CancelTransfer',
                 request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferRequest.SerializeToString,
                 response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferResponse.FromString,
+                )
+        self.ListTransfers = channel.unary_unary(
+                '/cs3.tx.v1beta1.TxAPI/ListTransfers',
+                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersRequest.SerializeToString,
+                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersResponse.FromString,
+                )
+        self.RetryTransfer = channel.unary_unary(
+                '/cs3.tx.v1beta1.TxAPI/RetryTransfer',
+                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferRequest.SerializeToString,
+                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferResponse.FromString,
                 )
 
 
@@ -64,9 +74,9 @@ class TxAPIServicer(object):
     Any method MAY return UNAUTHENTICATED.
     """
 
-    def CreateTransfer(self, request, context):
-        """Creates (requests the destination to accept) a transfer.
-        Returns a response containing a TxInfo (transfer info) object.
+    def PullTransfer(self, request, context):
+        """Requests the destination to pull a resource from source.
+        Returns a PullTransferResponse
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -86,13 +96,28 @@ class TxAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListTransfers(self, request, context):
+        """Requests a list of transfers received by the authenticated principle.
+        If a filter is specified, only transfers satisfying the filter MUST be returned.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RetryTransfer(self, request, context):
+        """Requests retrying a transfer.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_TxAPIServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'CreateTransfer': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateTransfer,
-                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.FromString,
-                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.SerializeToString,
+            'PullTransfer': grpc.unary_unary_rpc_method_handler(
+                    servicer.PullTransfer,
+                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.FromString,
+                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.SerializeToString,
             ),
             'GetTransferStatus': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTransferStatus,
@@ -103,6 +128,16 @@ def add_TxAPIServicer_to_server(servicer, server):
                     servicer.CancelTransfer,
                     request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferRequest.FromString,
                     response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferResponse.SerializeToString,
+            ),
+            'ListTransfers': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListTransfers,
+                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersRequest.FromString,
+                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersResponse.SerializeToString,
+            ),
+            'RetryTransfer': grpc.unary_unary_rpc_method_handler(
+                    servicer.RetryTransfer,
+                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferRequest.FromString,
+                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -130,7 +165,7 @@ class TxAPI(object):
     """
 
     @staticmethod
-    def CreateTransfer(request,
+    def PullTransfer(request,
             target,
             options=(),
             channel_credentials=None,
@@ -140,9 +175,9 @@ class TxAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.tx.v1beta1.TxAPI/CreateTransfer',
-            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.SerializeToString,
-            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cs3.tx.v1beta1.TxAPI/PullTransfer',
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.SerializeToString,
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -177,5 +212,39 @@ class TxAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.tx.v1beta1.TxAPI/CancelTransfer',
             cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferRequest.SerializeToString,
             cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CancelTransferResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListTransfers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.tx.v1beta1.TxAPI/ListTransfers',
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersRequest.SerializeToString,
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.ListTransfersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RetryTransfer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.tx.v1beta1.TxAPI/RetryTransfer',
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferRequest.SerializeToString,
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.RetryTransferResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

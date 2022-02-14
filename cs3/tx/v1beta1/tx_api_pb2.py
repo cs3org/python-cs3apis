@@ -12,7 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from cs3.rpc.v1beta1 import status_pb2 as cs3_dot_rpc_dot_v1beta1_dot_status__pb2
-from cs3.storage.provider.v1beta1 import resources_pb2 as cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2
+from cs3.sharing.ocm.v1beta1 import resources_pb2 as cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_resources__pb2
 from cs3.tx.v1beta1 import resources_pb2 as cs3_dot_tx_dot_v1beta1_dot_resources__pb2
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
@@ -23,37 +23,72 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\022com.cs3.tx.v1beta1B\nTxApiProtoP\001Z\ttxv1beta1\242\002\003CTX\252\002\016Cs3.Tx.V1Beta1\312\002\016Cs3\\Tx\\V1Beta1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1b\x63s3/tx/v1beta1/tx_api.proto\x12\x0e\x63s3.tx.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1e\x63s3/tx/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xb0\x01\n\x15\x43reateTransferRequest\x12\x34\n\x03ref\x18\x01 \x01(\x0b\x32\'.cs3.storage.provider.v1beta1.Reference\x12\x36\n\x07grantee\x18\x02 \x01(\x0b\x32%.cs3.storage.provider.v1beta1.Grantee\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x95\x01\n\x16\x43reateTransferResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"j\n\x18GetTransferStatusRequest\x12#\n\x05tx_id\x18\x01 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxId\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x98\x01\n\x19GetTransferStatusResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"g\n\x15\x43\x61ncelTransferRequest\x12#\n\x05tx_id\x18\x01 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxId\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x95\x01\n\x16\x43\x61ncelTransferResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque2\xb3\x02\n\x05TxAPI\x12_\n\x0e\x43reateTransfer\x12%.cs3.tx.v1beta1.CreateTransferRequest\x1a&.cs3.tx.v1beta1.CreateTransferResponse\x12h\n\x11GetTransferStatus\x12(.cs3.tx.v1beta1.GetTransferStatusRequest\x1a).cs3.tx.v1beta1.GetTransferStatusResponse\x12_\n\x0e\x43\x61ncelTransfer\x12%.cs3.tx.v1beta1.CancelTransferRequest\x1a&.cs3.tx.v1beta1.CancelTransferResponseBU\n\x12\x63om.cs3.tx.v1beta1B\nTxApiProtoP\x01Z\ttxv1beta1\xa2\x02\x03\x43TX\xaa\x02\x0e\x43s3.Tx.V1Beta1\xca\x02\x0e\x43s3\\Tx\\V1Beta1b\x06proto3'
+  serialized_pb=b'\n\x1b\x63s3/tx/v1beta1/tx_api.proto\x12\x0e\x63s3.tx.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\'cs3/sharing/ocm/v1beta1/resources.proto\x1a\x1e\x63s3/tx/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"q\n\x13PullTransferRequest\x12\x16\n\x0esrc_target_uri\x18\x01 \x01(\t\x12\x17\n\x0f\x64\x65st_target_uri\x18\x02 \x01(\t\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x93\x01\n\x14PullTransferResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"j\n\x18GetTransferStatusRequest\x12#\n\x05tx_id\x18\x01 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxId\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x98\x01\n\x19GetTransferStatusResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"g\n\x15\x43\x61ncelTransferRequest\x12#\n\x05tx_id\x18\x01 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxId\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x95\x01\n\x16\x43\x61ncelTransferResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xa7\x03\n\x14ListTransfersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12<\n\x07\x66ilters\x18\x02 \x03(\x0b\x32+.cs3.tx.v1beta1.ListTransfersRequest.Filter\x1a\xa5\x02\n\x06\x46ilter\x12>\n\x04type\x18\x01 \x01(\x0e\x32\x30.cs3.tx.v1beta1.ListTransfersRequest.Filter.Type\x12(\n\x06status\x18\x02 \x01(\x0e\x32\x16.cs3.tx.v1beta1.StatusH\x00\x12\x34\n\x08share_id\x18\x03 \x01(\x0b\x32 .cs3.sharing.ocm.v1beta1.ShareIdH\x00\x12%\n\x05tx_id\x18\x04 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxIdH\x00\"L\n\x04Type\x12\x10\n\x0cTYPE_INVALID\x10\x00\x12\x0f\n\x0bTYPE_STATUS\x10\x01\x12\x11\n\rTYPE_SHARE_ID\x10\x02\x12\x0e\n\nTYPE_TX_ID\x10\x03\x42\x06\n\x04term\"\x96\x01\n\x15ListTransfersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\ttransfers\x18\x02 \x03(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"f\n\x14RetryTransferRequest\x12#\n\x05tx_id\x18\x01 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxId\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x94\x01\n\x15RetryTransferResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque2\xe9\x03\n\x05TxAPI\x12Y\n\x0cPullTransfer\x12#.cs3.tx.v1beta1.PullTransferRequest\x1a$.cs3.tx.v1beta1.PullTransferResponse\x12h\n\x11GetTransferStatus\x12(.cs3.tx.v1beta1.GetTransferStatusRequest\x1a).cs3.tx.v1beta1.GetTransferStatusResponse\x12_\n\x0e\x43\x61ncelTransfer\x12%.cs3.tx.v1beta1.CancelTransferRequest\x1a&.cs3.tx.v1beta1.CancelTransferResponse\x12\\\n\rListTransfers\x12$.cs3.tx.v1beta1.ListTransfersRequest\x1a%.cs3.tx.v1beta1.ListTransfersResponse\x12\\\n\rRetryTransfer\x12$.cs3.tx.v1beta1.RetryTransferRequest\x1a%.cs3.tx.v1beta1.RetryTransferResponseBU\n\x12\x63om.cs3.tx.v1beta1B\nTxApiProtoP\x01Z\ttxv1beta1\xa2\x02\x03\x43TX\xaa\x02\x0e\x43s3.Tx.V1Beta1\xca\x02\x0e\x43s3\\Tx\\V1Beta1b\x06proto3'
   ,
-  dependencies=[cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_tx_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
+  dependencies=[cs3_dot_rpc_dot_v1beta1_dot_status__pb2.DESCRIPTOR,cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_tx_dot_v1beta1_dot_resources__pb2.DESCRIPTOR,cs3_dot_types_dot_v1beta1_dot_types__pb2.DESCRIPTOR,])
 
 
 
+_LISTTRANSFERSREQUEST_FILTER_TYPE = _descriptor.EnumDescriptor(
+  name='Type',
+  full_name='cs3.tx.v1beta1.ListTransfersRequest.Filter.Type',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TYPE_INVALID', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TYPE_STATUS', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TYPE_SHARE_ID', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TYPE_TX_ID', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1306,
+  serialized_end=1382,
+)
+_sym_db.RegisterEnumDescriptor(_LISTTRANSFERSREQUEST_FILTER_TYPE)
 
-_CREATETRANSFERREQUEST = _descriptor.Descriptor(
-  name='CreateTransferRequest',
-  full_name='cs3.tx.v1beta1.CreateTransferRequest',
+
+_PULLTRANSFERREQUEST = _descriptor.Descriptor(
+  name='PullTransferRequest',
+  full_name='cs3.tx.v1beta1.PullTransferRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='ref', full_name='cs3.tx.v1beta1.CreateTransferRequest.ref', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='src_target_uri', full_name='cs3.tx.v1beta1.PullTransferRequest.src_target_uri', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='grantee', full_name='cs3.tx.v1beta1.CreateTransferRequest.grantee', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='dest_target_uri', full_name='cs3.tx.v1beta1.PullTransferRequest.dest_target_uri', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.tx.v1beta1.CreateTransferRequest.opaque', index=2,
+      name='opaque', full_name='cs3.tx.v1beta1.PullTransferRequest.opaque', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -71,35 +106,35 @@ _CREATETRANSFERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=187,
-  serialized_end=363,
+  serialized_start=181,
+  serialized_end=294,
 )
 
 
-_CREATETRANSFERRESPONSE = _descriptor.Descriptor(
-  name='CreateTransferResponse',
-  full_name='cs3.tx.v1beta1.CreateTransferResponse',
+_PULLTRANSFERRESPONSE = _descriptor.Descriptor(
+  name='PullTransferResponse',
+  full_name='cs3.tx.v1beta1.PullTransferResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='cs3.tx.v1beta1.CreateTransferResponse.status', index=0,
+      name='status', full_name='cs3.tx.v1beta1.PullTransferResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='tx_info', full_name='cs3.tx.v1beta1.CreateTransferResponse.tx_info', index=1,
+      name='tx_info', full_name='cs3.tx.v1beta1.PullTransferResponse.tx_info', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='opaque', full_name='cs3.tx.v1beta1.CreateTransferResponse.opaque', index=2,
+      name='opaque', full_name='cs3.tx.v1beta1.PullTransferResponse.opaque', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -117,8 +152,8 @@ _CREATETRANSFERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=366,
-  serialized_end=515,
+  serialized_start=297,
+  serialized_end=444,
 )
 
 
@@ -156,8 +191,8 @@ _GETTRANSFERSTATUSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=517,
-  serialized_end=623,
+  serialized_start=446,
+  serialized_end=552,
 )
 
 
@@ -202,8 +237,8 @@ _GETTRANSFERSTATUSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=626,
-  serialized_end=778,
+  serialized_start=555,
+  serialized_end=707,
 )
 
 
@@ -241,8 +276,8 @@ _CANCELTRANSFERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=780,
-  serialized_end=883,
+  serialized_start=709,
+  serialized_end=812,
 )
 
 
@@ -287,16 +322,242 @@ _CANCELTRANSFERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=886,
-  serialized_end=1035,
+  serialized_start=815,
+  serialized_end=964,
 )
 
-_CREATETRANSFERREQUEST.fields_by_name['ref'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._REFERENCE
-_CREATETRANSFERREQUEST.fields_by_name['grantee'].message_type = cs3_dot_storage_dot_provider_dot_v1beta1_dot_resources__pb2._GRANTEE
-_CREATETRANSFERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-_CREATETRANSFERRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
-_CREATETRANSFERRESPONSE.fields_by_name['tx_info'].message_type = cs3_dot_tx_dot_v1beta1_dot_resources__pb2._TXINFO
-_CREATETRANSFERRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+
+_LISTTRANSFERSREQUEST_FILTER = _descriptor.Descriptor(
+  name='Filter',
+  full_name='cs3.tx.v1beta1.ListTransfersRequest.Filter',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='type', full_name='cs3.tx.v1beta1.ListTransfersRequest.Filter.type', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='cs3.tx.v1beta1.ListTransfersRequest.Filter.status', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='share_id', full_name='cs3.tx.v1beta1.ListTransfersRequest.Filter.share_id', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tx_id', full_name='cs3.tx.v1beta1.ListTransfersRequest.Filter.tx_id', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _LISTTRANSFERSREQUEST_FILTER_TYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='term', full_name='cs3.tx.v1beta1.ListTransfersRequest.Filter.term',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=1097,
+  serialized_end=1390,
+)
+
+_LISTTRANSFERSREQUEST = _descriptor.Descriptor(
+  name='ListTransfersRequest',
+  full_name='cs3.tx.v1beta1.ListTransfersRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.tx.v1beta1.ListTransfersRequest.opaque', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='filters', full_name='cs3.tx.v1beta1.ListTransfersRequest.filters', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_LISTTRANSFERSREQUEST_FILTER, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=967,
+  serialized_end=1390,
+)
+
+
+_LISTTRANSFERSRESPONSE = _descriptor.Descriptor(
+  name='ListTransfersResponse',
+  full_name='cs3.tx.v1beta1.ListTransfersResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='cs3.tx.v1beta1.ListTransfersResponse.status', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='transfers', full_name='cs3.tx.v1beta1.ListTransfersResponse.transfers', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.tx.v1beta1.ListTransfersResponse.opaque', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1393,
+  serialized_end=1543,
+)
+
+
+_RETRYTRANSFERREQUEST = _descriptor.Descriptor(
+  name='RetryTransferRequest',
+  full_name='cs3.tx.v1beta1.RetryTransferRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='tx_id', full_name='cs3.tx.v1beta1.RetryTransferRequest.tx_id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.tx.v1beta1.RetryTransferRequest.opaque', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1545,
+  serialized_end=1647,
+)
+
+
+_RETRYTRANSFERRESPONSE = _descriptor.Descriptor(
+  name='RetryTransferResponse',
+  full_name='cs3.tx.v1beta1.RetryTransferResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='status', full_name='cs3.tx.v1beta1.RetryTransferResponse.status', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tx_info', full_name='cs3.tx.v1beta1.RetryTransferResponse.tx_info', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='opaque', full_name='cs3.tx.v1beta1.RetryTransferResponse.opaque', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1650,
+  serialized_end=1798,
+)
+
+_PULLTRANSFERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_PULLTRANSFERRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
+_PULLTRANSFERRESPONSE.fields_by_name['tx_info'].message_type = cs3_dot_tx_dot_v1beta1_dot_resources__pb2._TXINFO
+_PULLTRANSFERRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _GETTRANSFERSTATUSREQUEST.fields_by_name['tx_id'].message_type = cs3_dot_tx_dot_v1beta1_dot_resources__pb2._TXID
 _GETTRANSFERSTATUSREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
 _GETTRANSFERSTATUSRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
@@ -307,27 +568,56 @@ _CANCELTRANSFERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot
 _CANCELTRANSFERRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
 _CANCELTRANSFERRESPONSE.fields_by_name['tx_info'].message_type = cs3_dot_tx_dot_v1beta1_dot_resources__pb2._TXINFO
 _CANCELTRANSFERRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
-DESCRIPTOR.message_types_by_name['CreateTransferRequest'] = _CREATETRANSFERREQUEST
-DESCRIPTOR.message_types_by_name['CreateTransferResponse'] = _CREATETRANSFERRESPONSE
+_LISTTRANSFERSREQUEST_FILTER.fields_by_name['type'].enum_type = _LISTTRANSFERSREQUEST_FILTER_TYPE
+_LISTTRANSFERSREQUEST_FILTER.fields_by_name['status'].enum_type = cs3_dot_tx_dot_v1beta1_dot_resources__pb2._STATUS
+_LISTTRANSFERSREQUEST_FILTER.fields_by_name['share_id'].message_type = cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_resources__pb2._SHAREID
+_LISTTRANSFERSREQUEST_FILTER.fields_by_name['tx_id'].message_type = cs3_dot_tx_dot_v1beta1_dot_resources__pb2._TXID
+_LISTTRANSFERSREQUEST_FILTER.containing_type = _LISTTRANSFERSREQUEST
+_LISTTRANSFERSREQUEST_FILTER_TYPE.containing_type = _LISTTRANSFERSREQUEST_FILTER
+_LISTTRANSFERSREQUEST_FILTER.oneofs_by_name['term'].fields.append(
+  _LISTTRANSFERSREQUEST_FILTER.fields_by_name['status'])
+_LISTTRANSFERSREQUEST_FILTER.fields_by_name['status'].containing_oneof = _LISTTRANSFERSREQUEST_FILTER.oneofs_by_name['term']
+_LISTTRANSFERSREQUEST_FILTER.oneofs_by_name['term'].fields.append(
+  _LISTTRANSFERSREQUEST_FILTER.fields_by_name['share_id'])
+_LISTTRANSFERSREQUEST_FILTER.fields_by_name['share_id'].containing_oneof = _LISTTRANSFERSREQUEST_FILTER.oneofs_by_name['term']
+_LISTTRANSFERSREQUEST_FILTER.oneofs_by_name['term'].fields.append(
+  _LISTTRANSFERSREQUEST_FILTER.fields_by_name['tx_id'])
+_LISTTRANSFERSREQUEST_FILTER.fields_by_name['tx_id'].containing_oneof = _LISTTRANSFERSREQUEST_FILTER.oneofs_by_name['term']
+_LISTTRANSFERSREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_LISTTRANSFERSREQUEST.fields_by_name['filters'].message_type = _LISTTRANSFERSREQUEST_FILTER
+_LISTTRANSFERSRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
+_LISTTRANSFERSRESPONSE.fields_by_name['transfers'].message_type = cs3_dot_tx_dot_v1beta1_dot_resources__pb2._TXINFO
+_LISTTRANSFERSRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_RETRYTRANSFERREQUEST.fields_by_name['tx_id'].message_type = cs3_dot_tx_dot_v1beta1_dot_resources__pb2._TXID
+_RETRYTRANSFERREQUEST.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+_RETRYTRANSFERRESPONSE.fields_by_name['status'].message_type = cs3_dot_rpc_dot_v1beta1_dot_status__pb2._STATUS
+_RETRYTRANSFERRESPONSE.fields_by_name['tx_info'].message_type = cs3_dot_tx_dot_v1beta1_dot_resources__pb2._TXINFO
+_RETRYTRANSFERRESPONSE.fields_by_name['opaque'].message_type = cs3_dot_types_dot_v1beta1_dot_types__pb2._OPAQUE
+DESCRIPTOR.message_types_by_name['PullTransferRequest'] = _PULLTRANSFERREQUEST
+DESCRIPTOR.message_types_by_name['PullTransferResponse'] = _PULLTRANSFERRESPONSE
 DESCRIPTOR.message_types_by_name['GetTransferStatusRequest'] = _GETTRANSFERSTATUSREQUEST
 DESCRIPTOR.message_types_by_name['GetTransferStatusResponse'] = _GETTRANSFERSTATUSRESPONSE
 DESCRIPTOR.message_types_by_name['CancelTransferRequest'] = _CANCELTRANSFERREQUEST
 DESCRIPTOR.message_types_by_name['CancelTransferResponse'] = _CANCELTRANSFERRESPONSE
+DESCRIPTOR.message_types_by_name['ListTransfersRequest'] = _LISTTRANSFERSREQUEST
+DESCRIPTOR.message_types_by_name['ListTransfersResponse'] = _LISTTRANSFERSRESPONSE
+DESCRIPTOR.message_types_by_name['RetryTransferRequest'] = _RETRYTRANSFERREQUEST
+DESCRIPTOR.message_types_by_name['RetryTransferResponse'] = _RETRYTRANSFERRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-CreateTransferRequest = _reflection.GeneratedProtocolMessageType('CreateTransferRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATETRANSFERREQUEST,
+PullTransferRequest = _reflection.GeneratedProtocolMessageType('PullTransferRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PULLTRANSFERREQUEST,
   '__module__' : 'cs3.tx.v1beta1.tx_api_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.CreateTransferRequest)
+  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.PullTransferRequest)
   })
-_sym_db.RegisterMessage(CreateTransferRequest)
+_sym_db.RegisterMessage(PullTransferRequest)
 
-CreateTransferResponse = _reflection.GeneratedProtocolMessageType('CreateTransferResponse', (_message.Message,), {
-  'DESCRIPTOR' : _CREATETRANSFERRESPONSE,
+PullTransferResponse = _reflection.GeneratedProtocolMessageType('PullTransferResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PULLTRANSFERRESPONSE,
   '__module__' : 'cs3.tx.v1beta1.tx_api_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.CreateTransferResponse)
+  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.PullTransferResponse)
   })
-_sym_db.RegisterMessage(CreateTransferResponse)
+_sym_db.RegisterMessage(PullTransferResponse)
 
 GetTransferStatusRequest = _reflection.GeneratedProtocolMessageType('GetTransferStatusRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETTRANSFERSTATUSREQUEST,
@@ -357,6 +647,42 @@ CancelTransferResponse = _reflection.GeneratedProtocolMessageType('CancelTransfe
   })
 _sym_db.RegisterMessage(CancelTransferResponse)
 
+ListTransfersRequest = _reflection.GeneratedProtocolMessageType('ListTransfersRequest', (_message.Message,), {
+
+  'Filter' : _reflection.GeneratedProtocolMessageType('Filter', (_message.Message,), {
+    'DESCRIPTOR' : _LISTTRANSFERSREQUEST_FILTER,
+    '__module__' : 'cs3.tx.v1beta1.tx_api_pb2'
+    # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.ListTransfersRequest.Filter)
+    })
+  ,
+  'DESCRIPTOR' : _LISTTRANSFERSREQUEST,
+  '__module__' : 'cs3.tx.v1beta1.tx_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.ListTransfersRequest)
+  })
+_sym_db.RegisterMessage(ListTransfersRequest)
+_sym_db.RegisterMessage(ListTransfersRequest.Filter)
+
+ListTransfersResponse = _reflection.GeneratedProtocolMessageType('ListTransfersResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTTRANSFERSRESPONSE,
+  '__module__' : 'cs3.tx.v1beta1.tx_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.ListTransfersResponse)
+  })
+_sym_db.RegisterMessage(ListTransfersResponse)
+
+RetryTransferRequest = _reflection.GeneratedProtocolMessageType('RetryTransferRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RETRYTRANSFERREQUEST,
+  '__module__' : 'cs3.tx.v1beta1.tx_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.RetryTransferRequest)
+  })
+_sym_db.RegisterMessage(RetryTransferRequest)
+
+RetryTransferResponse = _reflection.GeneratedProtocolMessageType('RetryTransferResponse', (_message.Message,), {
+  'DESCRIPTOR' : _RETRYTRANSFERRESPONSE,
+  '__module__' : 'cs3.tx.v1beta1.tx_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.RetryTransferResponse)
+  })
+_sym_db.RegisterMessage(RetryTransferResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -367,16 +693,16 @@ _TXAPI = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1038,
-  serialized_end=1345,
+  serialized_start=1801,
+  serialized_end=2290,
   methods=[
   _descriptor.MethodDescriptor(
-    name='CreateTransfer',
-    full_name='cs3.tx.v1beta1.TxAPI.CreateTransfer',
+    name='PullTransfer',
+    full_name='cs3.tx.v1beta1.TxAPI.PullTransfer',
     index=0,
     containing_service=None,
-    input_type=_CREATETRANSFERREQUEST,
-    output_type=_CREATETRANSFERRESPONSE,
+    input_type=_PULLTRANSFERREQUEST,
+    output_type=_PULLTRANSFERRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
@@ -397,6 +723,26 @@ _TXAPI = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CANCELTRANSFERREQUEST,
     output_type=_CANCELTRANSFERRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListTransfers',
+    full_name='cs3.tx.v1beta1.TxAPI.ListTransfers',
+    index=3,
+    containing_service=None,
+    input_type=_LISTTRANSFERSREQUEST,
+    output_type=_LISTTRANSFERSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RetryTransfer',
+    full_name='cs3.tx.v1beta1.TxAPI.RetryTransfer',
+    index=4,
+    containing_service=None,
+    input_type=_RETRYTRANSFERREQUEST,
+    output_type=_RETRYTRANSFERRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
