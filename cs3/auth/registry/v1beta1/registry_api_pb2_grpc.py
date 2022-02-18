@@ -31,10 +31,10 @@ class RegistryAPIStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetAuthProvider = channel.unary_unary(
-                '/cs3.auth.registry.v1beta1.RegistryAPI/GetAuthProvider',
-                request_serializer=cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProviderRequest.SerializeToString,
-                response_deserializer=cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProviderResponse.FromString,
+        self.GetAuthProviders = channel.unary_unary(
+                '/cs3.auth.registry.v1beta1.RegistryAPI/GetAuthProviders',
+                request_serializer=cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProvidersRequest.SerializeToString,
+                response_deserializer=cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProvidersResponse.FromString,
                 )
         self.ListAuthProviders = channel.unary_unary(
                 '/cs3.auth.registry.v1beta1.RegistryAPI/ListAuthProviders',
@@ -63,7 +63,7 @@ class RegistryAPIServicer(object):
     Any method MAY return UNAUTHENTICATED.
     """
 
-    def GetAuthProvider(self, request, context):
+    def GetAuthProviders(self, request, context):
         """Returns the auth provider that is reponsible for the given
         resource reference.
         MUST return CODE_NOT_FOUND if the reference does not exist.
@@ -82,10 +82,10 @@ class RegistryAPIServicer(object):
 
 def add_RegistryAPIServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetAuthProvider': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetAuthProvider,
-                    request_deserializer=cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProviderRequest.FromString,
-                    response_serializer=cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProviderResponse.SerializeToString,
+            'GetAuthProviders': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAuthProviders,
+                    request_deserializer=cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProvidersRequest.FromString,
+                    response_serializer=cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProvidersResponse.SerializeToString,
             ),
             'ListAuthProviders': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAuthProviders,
@@ -120,7 +120,7 @@ class RegistryAPI(object):
     """
 
     @staticmethod
-    def GetAuthProvider(request,
+    def GetAuthProviders(request,
             target,
             options=(),
             channel_credentials=None,
@@ -130,9 +130,9 @@ class RegistryAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.auth.registry.v1beta1.RegistryAPI/GetAuthProvider',
-            cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProviderRequest.SerializeToString,
-            cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProviderResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cs3.auth.registry.v1beta1.RegistryAPI/GetAuthProviders',
+            cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProvidersRequest.SerializeToString,
+            cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2.GetAuthProvidersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
