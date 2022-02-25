@@ -241,7 +241,7 @@ class ProviderAPIServicer(object):
 
     def CreateContainer(self, request, context):
         """Creates a new resource of type container.
-        MUST return CODE_PRECONDITION_FAILED if the container
+        MUST return CODE_FAILED_PRECONDITION if the container
         cannot be created at the specified reference.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -250,7 +250,7 @@ class ProviderAPIServicer(object):
 
     def TouchFile(self, request, context):
         """Creates a new resource of type file.
-        MUST return CODE_PRECONDITION_FAILED if the file
+        MUST return CODE_FAILED_PRECONDITION if the file
         cannot be created at the specified reference.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -366,7 +366,7 @@ class ProviderAPIServicer(object):
     def Move(self, request, context):
         """Moves a resource from one reference to another.
         MUST return CODE_NOT_FOUND if any of the references do not exist.
-        MUST return CODE_PRECONDITION_FAILED if the source reference
+        MUST return CODE_FAILED_PRECONDITION if the source reference
         cannot be moved to the destination reference.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -404,7 +404,7 @@ class ProviderAPIServicer(object):
     def RestoreRecycleItem(self, request, context):
         """Restores a recycle item from the recycle.
         MUST return CODE_NOT_FOUND if the recycle item id does not exist.
-        MUST return CODE_PRECONDITION_FAILED if the restore_path is non-empty
+        MUST return CODE_FAILED_PRECONDITION if the restore_path is non-empty
         and the recycle item cannot be restored to the restore_path.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -422,7 +422,7 @@ class ProviderAPIServicer(object):
     def UpdateGrant(self, request, context):
         """Updates an ACL for the provided reference.
         MUST return CODE_NOT_FOUND if the reference does not exist.
-        MUST return CODE_PRECONDITION_FAILED if the acl does not exist.
+        MUST return CODE_FAILED_PRECONDITION if the acl does not exist.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -460,9 +460,10 @@ class ProviderAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SetLock(self, request, context):
-        """Locks a storage resource.
+        """Locks a storage resource. Note that if the resource is a container,
+        MAY return CODE_NOT_IMPLEMENTED as the behavior is yet to be defined at this stage.
         MUST return CODE_NOT_FOUND if the reference does not exist.
-        MUST return CODE_PRECONDITION_FAILED if the reference is already locked.
+        MUST return CODE_FAILED_PRECONDITION if the reference is already locked.
         In addition, the implementation MUST ensure atomicity when multiple users
         concurrently attempt to set a lock.
         The caller MUST have write permissions on the resource.
@@ -494,7 +495,7 @@ class ProviderAPIServicer(object):
     def Unlock(self, request, context):
         """Unlocks a storage resource.
         MUST return CODE_NOT_FOUND if the reference does not exist.
-        MUST return CODE_PRECONDITION_FAILED if the reference is not locked
+        MUST return CODE_FAILED_PRECONDITION if the reference is not locked
         or if the caller does not hold the lock.
         The caller MUST have write permissions on the resource.
         """
