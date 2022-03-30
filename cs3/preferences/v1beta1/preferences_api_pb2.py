@@ -12,10 +12,11 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from cs3.preferences.v1beta1 import resources_pb2 as cs3_dot_preferences_dot_v1beta1_dot_resources__pb2
 from cs3.rpc.v1beta1 import status_pb2 as cs3_dot_rpc_dot_v1beta1_dot_status__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-cs3/preferences/v1beta1/preferences_api.proto\x12\x17\x63s3.preferences.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\")\n\rSetKeyRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0b\n\x03val\x18\x02 \x01(\t\"9\n\x0eSetKeyResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\"\x1c\n\rGetKeyRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"F\n\x0eGetKeyResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\x0b\n\x03val\x18\x02 \x01(\t2\xc6\x01\n\x0ePreferencesAPI\x12Y\n\x06SetKey\x12&.cs3.preferences.v1beta1.SetKeyRequest\x1a\'.cs3.preferences.v1beta1.SetKeyResponse\x12Y\n\x06GetKey\x12&.cs3.preferences.v1beta1.GetKeyRequest\x1a\'.cs3.preferences.v1beta1.GetKeyResponseB\x82\x01\n\x1b\x63om.cs3.preferences.v1beta1B\x13PreferencesApiProtoP\x01Z\x12preferencesv1beta1\xa2\x02\x03\x43PX\xaa\x02\x17\x43s3.Preferences.V1Beta1\xca\x02\x17\x43s3\\Preferences\\V1Beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-cs3/preferences/v1beta1/preferences_api.proto\x12\x17\x63s3.preferences.v1beta1\x1a\'cs3/preferences/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\"Q\n\rSetKeyRequest\x12\x33\n\x03key\x18\x01 \x01(\x0b\x32&.cs3.preferences.v1beta1.PreferenceKey\x12\x0b\n\x03val\x18\x02 \x01(\t\"9\n\x0eSetKeyResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\"D\n\rGetKeyRequest\x12\x33\n\x03key\x18\x01 \x01(\x0b\x32&.cs3.preferences.v1beta1.PreferenceKey\"F\n\x0eGetKeyResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\x0b\n\x03val\x18\x02 \x01(\t2\xc6\x01\n\x0ePreferencesAPI\x12Y\n\x06SetKey\x12&.cs3.preferences.v1beta1.SetKeyRequest\x1a\'.cs3.preferences.v1beta1.SetKeyResponse\x12Y\n\x06GetKey\x12&.cs3.preferences.v1beta1.GetKeyRequest\x1a\'.cs3.preferences.v1beta1.GetKeyResponseB\x82\x01\n\x1b\x63om.cs3.preferences.v1beta1B\x13PreferencesApiProtoP\x01Z\x12preferencesv1beta1\xa2\x02\x03\x43PX\xaa\x02\x17\x43s3.Preferences.V1Beta1\xca\x02\x17\x43s3\\Preferences\\V1Beta1b\x06proto3')
 
 
 
@@ -56,14 +57,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\033com.cs3.preferences.v1beta1B\023PreferencesApiProtoP\001Z\022preferencesv1beta1\242\002\003CPX\252\002\027Cs3.Preferences.V1Beta1\312\002\027Cs3\\Preferences\\V1Beta1'
-  _SETKEYREQUEST._serialized_start=104
-  _SETKEYREQUEST._serialized_end=145
-  _SETKEYRESPONSE._serialized_start=147
-  _SETKEYRESPONSE._serialized_end=204
-  _GETKEYREQUEST._serialized_start=206
-  _GETKEYREQUEST._serialized_end=234
-  _GETKEYRESPONSE._serialized_start=236
-  _GETKEYRESPONSE._serialized_end=306
-  _PREFERENCESAPI._serialized_start=309
-  _PREFERENCESAPI._serialized_end=507
+  _SETKEYREQUEST._serialized_start=145
+  _SETKEYREQUEST._serialized_end=226
+  _SETKEYRESPONSE._serialized_start=228
+  _SETKEYRESPONSE._serialized_end=285
+  _GETKEYREQUEST._serialized_start=287
+  _GETKEYREQUEST._serialized_end=355
+  _GETKEYRESPONSE._serialized_start=357
+  _GETKEYRESPONSE._serialized_end=427
+  _PREFERENCESAPI._serialized_start=430
+  _PREFERENCESAPI._serialized_end=628
 # @@protoc_insertion_point(module_scope)
