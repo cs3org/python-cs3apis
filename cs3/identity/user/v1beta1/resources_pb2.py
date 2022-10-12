@@ -16,7 +16,7 @@ _sym_db = _symbol_database.Default()
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)cs3/identity/user/v1beta1/resources.proto\x12\x19\x63s3.identity.user.v1beta1\x1a\x1d\x63s3/types/v1beta1/types.proto\"[\n\x06UserId\x12\x0b\n\x03idp\x18\x01 \x01(\t\x12\x11\n\topaque_id\x18\x02 \x01(\t\x12\x31\n\x04type\x18\x03 \x01(\x0e\x32#.cs3.identity.user.v1beta1.UserType\"\xe5\x01\n\x04User\x12-\n\x02id\x18\x01 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x0c\n\x04mail\x18\x03 \x01(\t\x12\x15\n\rmail_verified\x18\x04 \x01(\x08\x12\x14\n\x0c\x64isplay_name\x18\x05 \x01(\t\x12\x0e\n\x06groups\x18\x06 \x03(\t\x12)\n\x06opaque\x18\x07 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x12\n\nuid_number\x18\x08 \x01(\x03\x12\x12\n\ngid_number\x18\t \x01(\x03*\xcc\x01\n\x08UserType\x12\x15\n\x11USER_TYPE_INVALID\x10\x00\x12\x15\n\x11USER_TYPE_PRIMARY\x10\x01\x12\x17\n\x13USER_TYPE_SECONDARY\x10\x02\x12\x15\n\x11USER_TYPE_SERVICE\x10\x03\x12\x19\n\x15USER_TYPE_APPLICATION\x10\x04\x12\x13\n\x0fUSER_TYPE_GUEST\x10\x05\x12\x17\n\x13USER_TYPE_FEDERATED\x10\x06\x12\x19\n\x15USER_TYPE_LIGHTWEIGHT\x10\x07\x42|\n\x1d\x63om.cs3.identity.user.v1beta1B\x0eResourcesProtoP\x01Z\x0buserv1beta1\xa2\x02\x03\x43IU\xaa\x02\x19\x43s3.Identity.User.V1Beta1\xca\x02\x19\x43s3\\Identity\\User\\V1Beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)cs3/identity/user/v1beta1/resources.proto\x12\x19\x63s3.identity.user.v1beta1\x1a\x1d\x63s3/types/v1beta1/types.proto\"[\n\x06UserId\x12\x0b\n\x03idp\x18\x01 \x01(\t\x12\x11\n\topaque_id\x18\x02 \x01(\t\x12\x31\n\x04type\x18\x03 \x01(\x0e\x32#.cs3.identity.user.v1beta1.UserType\"\xe5\x01\n\x04User\x12-\n\x02id\x18\x01 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x0c\n\x04mail\x18\x03 \x01(\t\x12\x15\n\rmail_verified\x18\x04 \x01(\x08\x12\x14\n\x0c\x64isplay_name\x18\x05 \x01(\t\x12\x0e\n\x06groups\x18\x06 \x03(\t\x12)\n\x06opaque\x18\x07 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x12\n\nuid_number\x18\x08 \x01(\x03\x12\x12\n\ngid_number\x18\t \x01(\x03*\xe7\x01\n\x08UserType\x12\x15\n\x11USER_TYPE_INVALID\x10\x00\x12\x15\n\x11USER_TYPE_PRIMARY\x10\x01\x12\x17\n\x13USER_TYPE_SECONDARY\x10\x02\x12\x15\n\x11USER_TYPE_SERVICE\x10\x03\x12\x19\n\x15USER_TYPE_APPLICATION\x10\x04\x12\x13\n\x0fUSER_TYPE_GUEST\x10\x05\x12\x17\n\x13USER_TYPE_FEDERATED\x10\x06\x12\x19\n\x15USER_TYPE_LIGHTWEIGHT\x10\x07\x12\x19\n\x15USER_TYPE_SPACE_OWNER\x10\x08\x42|\n\x1d\x63om.cs3.identity.user.v1beta1B\x0eResourcesProtoP\x01Z\x0buserv1beta1\xa2\x02\x03\x43IU\xaa\x02\x19\x43s3.Identity.User.V1Beta1\xca\x02\x19\x43s3\\Identity\\User\\V1Beta1b\x06proto3')
 
 _USERTYPE = DESCRIPTOR.enum_types_by_name['UserType']
 UserType = enum_type_wrapper.EnumTypeWrapper(_USERTYPE)
@@ -28,6 +28,7 @@ USER_TYPE_APPLICATION = 4
 USER_TYPE_GUEST = 5
 USER_TYPE_FEDERATED = 6
 USER_TYPE_LIGHTWEIGHT = 7
+USER_TYPE_SPACE_OWNER = 8
 
 
 _USERID = DESCRIPTOR.message_types_by_name['UserId']
@@ -51,7 +52,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035com.cs3.identity.user.v1beta1B\016ResourcesProtoP\001Z\013userv1beta1\242\002\003CIU\252\002\031Cs3.Identity.User.V1Beta1\312\002\031Cs3\\Identity\\User\\V1Beta1'
   _USERTYPE._serialized_start=429
-  _USERTYPE._serialized_end=633
+  _USERTYPE._serialized_end=660
   _USERID._serialized_start=103
   _USERID._serialized_end=194
   _USER._serialized_start=197
