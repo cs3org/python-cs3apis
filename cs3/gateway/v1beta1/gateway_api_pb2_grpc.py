@@ -480,10 +480,10 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.SerializeToString,
                 response_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.FromString,
                 )
-        self.PullTransfer = channel.unary_unary(
-                '/cs3.gateway.v1beta1.GatewayAPI/PullTransfer',
-                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.SerializeToString,
-                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.FromString,
+        self.CreateTransfer = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/CreateTransfer',
+                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.SerializeToString,
+                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.FromString,
                 )
         self.GetTransferStatus = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/GetTransferStatus',
@@ -1277,8 +1277,8 @@ class GatewayAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def PullTransfer(self, request, context):
-        """Requests the destination to pull a resource from source.
+    def CreateTransfer(self, request, context):
+        """Requests creation of a transfer.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1755,10 +1755,10 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.FromString,
                     response_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.SerializeToString,
             ),
-            'PullTransfer': grpc.unary_unary_rpc_method_handler(
-                    servicer.PullTransfer,
-                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.FromString,
-                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.SerializeToString,
+            'CreateTransfer': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateTransfer,
+                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.FromString,
+                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.SerializeToString,
             ),
             'GetTransferStatus': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTransferStatus,
@@ -3278,7 +3278,7 @@ class GatewayAPI(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def PullTransfer(request,
+    def CreateTransfer(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3288,9 +3288,9 @@ class GatewayAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/PullTransfer',
-            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.SerializeToString,
-            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/CreateTransfer',
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.SerializeToString,
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

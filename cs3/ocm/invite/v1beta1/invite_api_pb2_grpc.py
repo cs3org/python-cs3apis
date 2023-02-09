@@ -85,6 +85,10 @@ class InviteAPIServicer(object):
 
     def ForwardInvite(self, request, context):
         """Forwards a received invite to the sync'n'share system provider.
+        MUST return CODE_NOT_FOUND if the token does not exist.
+        MUST return CODE_INVALID_ARGUMENT if the token expired.
+        MUST return CODE_ALREADY_EXISTS if the user already accepted an invite.
+        MUST return CODE_PERMISSION_DENIED if the remote service is not trusted to accept invitations.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -92,6 +96,9 @@ class InviteAPIServicer(object):
 
     def AcceptInvite(self, request, context):
         """Completes an invitation acceptance.
+        MUST return CODE_NOT_FOUND if the token does not exist.
+        MUST return CODE_INVALID_ARGUMENT if the token expired.
+        MUST return CODE_ALREADY_EXISTS if the user already accepted an invite.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -99,6 +106,7 @@ class InviteAPIServicer(object):
 
     def GetAcceptedUser(self, request, context):
         """Retrieves details about a remote user who has accepted an invite to share.
+        MUST return CODE_NOT_FOUND if the user does not exist.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

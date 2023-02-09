@@ -18,12 +18,12 @@ from cs3.tx.v1beta1 import resources_pb2 as cs3_dot_tx_dot_v1beta1_dot_resources
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x63s3/tx/v1beta1/tx_api.proto\x12\x0e\x63s3.tx.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\'cs3/sharing/ocm/v1beta1/resources.proto\x1a\x1e\x63s3/tx/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"q\n\x13PullTransferRequest\x12\x16\n\x0esrc_target_uri\x18\x01 \x01(\t\x12\x17\n\x0f\x64\x65st_target_uri\x18\x02 \x01(\t\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x93\x01\n\x14PullTransferResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"j\n\x18GetTransferStatusRequest\x12#\n\x05tx_id\x18\x01 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxId\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x98\x01\n\x19GetTransferStatusResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"g\n\x15\x43\x61ncelTransferRequest\x12#\n\x05tx_id\x18\x01 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxId\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x95\x01\n\x16\x43\x61ncelTransferResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xa7\x03\n\x14ListTransfersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12<\n\x07\x66ilters\x18\x02 \x03(\x0b\x32+.cs3.tx.v1beta1.ListTransfersRequest.Filter\x1a\xa5\x02\n\x06\x46ilter\x12>\n\x04type\x18\x01 \x01(\x0e\x32\x30.cs3.tx.v1beta1.ListTransfersRequest.Filter.Type\x12(\n\x06status\x18\x02 \x01(\x0e\x32\x16.cs3.tx.v1beta1.StatusH\x00\x12\x34\n\x08share_id\x18\x03 \x01(\x0b\x32 .cs3.sharing.ocm.v1beta1.ShareIdH\x00\x12%\n\x05tx_id\x18\x04 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxIdH\x00\"L\n\x04Type\x12\x10\n\x0cTYPE_INVALID\x10\x00\x12\x0f\n\x0bTYPE_STATUS\x10\x01\x12\x11\n\rTYPE_SHARE_ID\x10\x02\x12\x0e\n\nTYPE_TX_ID\x10\x03\x42\x06\n\x04term\"\x96\x01\n\x15ListTransfersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\ttransfers\x18\x02 \x03(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"f\n\x14RetryTransferRequest\x12#\n\x05tx_id\x18\x01 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxId\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x94\x01\n\x15RetryTransferResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque2\xe9\x03\n\x05TxAPI\x12Y\n\x0cPullTransfer\x12#.cs3.tx.v1beta1.PullTransferRequest\x1a$.cs3.tx.v1beta1.PullTransferResponse\x12h\n\x11GetTransferStatus\x12(.cs3.tx.v1beta1.GetTransferStatusRequest\x1a).cs3.tx.v1beta1.GetTransferStatusResponse\x12_\n\x0e\x43\x61ncelTransfer\x12%.cs3.tx.v1beta1.CancelTransferRequest\x1a&.cs3.tx.v1beta1.CancelTransferResponse\x12\\\n\rListTransfers\x12$.cs3.tx.v1beta1.ListTransfersRequest\x1a%.cs3.tx.v1beta1.ListTransfersResponse\x12\\\n\rRetryTransfer\x12$.cs3.tx.v1beta1.RetryTransferRequest\x1a%.cs3.tx.v1beta1.RetryTransferResponseBU\n\x12\x63om.cs3.tx.v1beta1B\nTxApiProtoP\x01Z\ttxv1beta1\xa2\x02\x03\x43TX\xaa\x02\x0e\x43s3.Tx.V1Beta1\xca\x02\x0e\x43s3\\Tx\\V1Beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1b\x63s3/tx/v1beta1/tx_api.proto\x12\x0e\x63s3.tx.v1beta1\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\'cs3/sharing/ocm/v1beta1/resources.proto\x1a\x1e\x63s3/tx/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xa7\x01\n\x15\x43reateTransferRequest\x12\x16\n\x0esrc_target_uri\x18\x01 \x01(\t\x12\x17\n\x0f\x64\x65st_target_uri\x18\x02 \x01(\t\x12\x32\n\x08share_id\x18\x03 \x01(\x0b\x32 .cs3.sharing.ocm.v1beta1.ShareId\x12)\n\x06opaque\x18\x04 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x95\x01\n\x16\x43reateTransferResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"j\n\x18GetTransferStatusRequest\x12#\n\x05tx_id\x18\x01 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxId\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x98\x01\n\x19GetTransferStatusResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"g\n\x15\x43\x61ncelTransferRequest\x12#\n\x05tx_id\x18\x01 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxId\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x95\x01\n\x16\x43\x61ncelTransferResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xa7\x03\n\x14ListTransfersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12<\n\x07\x66ilters\x18\x02 \x03(\x0b\x32+.cs3.tx.v1beta1.ListTransfersRequest.Filter\x1a\xa5\x02\n\x06\x46ilter\x12>\n\x04type\x18\x01 \x01(\x0e\x32\x30.cs3.tx.v1beta1.ListTransfersRequest.Filter.Type\x12(\n\x06status\x18\x02 \x01(\x0e\x32\x16.cs3.tx.v1beta1.StatusH\x00\x12\x34\n\x08share_id\x18\x03 \x01(\x0b\x32 .cs3.sharing.ocm.v1beta1.ShareIdH\x00\x12%\n\x05tx_id\x18\x04 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxIdH\x00\"L\n\x04Type\x12\x10\n\x0cTYPE_INVALID\x10\x00\x12\x0f\n\x0bTYPE_STATUS\x10\x01\x12\x11\n\rTYPE_SHARE_ID\x10\x02\x12\x0e\n\nTYPE_TX_ID\x10\x03\x42\x06\n\x04term\"\x96\x01\n\x15ListTransfersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\ttransfers\x18\x02 \x03(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"f\n\x14RetryTransferRequest\x12#\n\x05tx_id\x18\x01 \x01(\x0b\x32\x14.cs3.tx.v1beta1.TxId\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\x94\x01\n\x15RetryTransferResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12\'\n\x07tx_info\x18\x02 \x01(\x0b\x32\x16.cs3.tx.v1beta1.TxInfo\x12)\n\x06opaque\x18\x03 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque2\xef\x03\n\x05TxAPI\x12_\n\x0e\x43reateTransfer\x12%.cs3.tx.v1beta1.CreateTransferRequest\x1a&.cs3.tx.v1beta1.CreateTransferResponse\x12h\n\x11GetTransferStatus\x12(.cs3.tx.v1beta1.GetTransferStatusRequest\x1a).cs3.tx.v1beta1.GetTransferStatusResponse\x12_\n\x0e\x43\x61ncelTransfer\x12%.cs3.tx.v1beta1.CancelTransferRequest\x1a&.cs3.tx.v1beta1.CancelTransferResponse\x12\\\n\rListTransfers\x12$.cs3.tx.v1beta1.ListTransfersRequest\x1a%.cs3.tx.v1beta1.ListTransfersResponse\x12\\\n\rRetryTransfer\x12$.cs3.tx.v1beta1.RetryTransferRequest\x1a%.cs3.tx.v1beta1.RetryTransferResponseBU\n\x12\x63om.cs3.tx.v1beta1B\nTxApiProtoP\x01Z\ttxv1beta1\xa2\x02\x03\x43TX\xaa\x02\x0e\x43s3.Tx.V1Beta1\xca\x02\x0e\x43s3\\Tx\\V1Beta1b\x06proto3')
 
 
 
-_PULLTRANSFERREQUEST = DESCRIPTOR.message_types_by_name['PullTransferRequest']
-_PULLTRANSFERRESPONSE = DESCRIPTOR.message_types_by_name['PullTransferResponse']
+_CREATETRANSFERREQUEST = DESCRIPTOR.message_types_by_name['CreateTransferRequest']
+_CREATETRANSFERRESPONSE = DESCRIPTOR.message_types_by_name['CreateTransferResponse']
 _GETTRANSFERSTATUSREQUEST = DESCRIPTOR.message_types_by_name['GetTransferStatusRequest']
 _GETTRANSFERSTATUSRESPONSE = DESCRIPTOR.message_types_by_name['GetTransferStatusResponse']
 _CANCELTRANSFERREQUEST = DESCRIPTOR.message_types_by_name['CancelTransferRequest']
@@ -34,19 +34,19 @@ _LISTTRANSFERSRESPONSE = DESCRIPTOR.message_types_by_name['ListTransfersResponse
 _RETRYTRANSFERREQUEST = DESCRIPTOR.message_types_by_name['RetryTransferRequest']
 _RETRYTRANSFERRESPONSE = DESCRIPTOR.message_types_by_name['RetryTransferResponse']
 _LISTTRANSFERSREQUEST_FILTER_TYPE = _LISTTRANSFERSREQUEST_FILTER.enum_types_by_name['Type']
-PullTransferRequest = _reflection.GeneratedProtocolMessageType('PullTransferRequest', (_message.Message,), {
-  'DESCRIPTOR' : _PULLTRANSFERREQUEST,
+CreateTransferRequest = _reflection.GeneratedProtocolMessageType('CreateTransferRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATETRANSFERREQUEST,
   '__module__' : 'cs3.tx.v1beta1.tx_api_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.PullTransferRequest)
+  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.CreateTransferRequest)
   })
-_sym_db.RegisterMessage(PullTransferRequest)
+_sym_db.RegisterMessage(CreateTransferRequest)
 
-PullTransferResponse = _reflection.GeneratedProtocolMessageType('PullTransferResponse', (_message.Message,), {
-  'DESCRIPTOR' : _PULLTRANSFERRESPONSE,
+CreateTransferResponse = _reflection.GeneratedProtocolMessageType('CreateTransferResponse', (_message.Message,), {
+  'DESCRIPTOR' : _CREATETRANSFERRESPONSE,
   '__module__' : 'cs3.tx.v1beta1.tx_api_pb2'
-  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.PullTransferResponse)
+  # @@protoc_insertion_point(class_scope:cs3.tx.v1beta1.CreateTransferResponse)
   })
-_sym_db.RegisterMessage(PullTransferResponse)
+_sym_db.RegisterMessage(CreateTransferResponse)
 
 GetTransferStatusRequest = _reflection.GeneratedProtocolMessageType('GetTransferStatusRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETTRANSFERSTATUSREQUEST,
@@ -117,30 +117,30 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\022com.cs3.tx.v1beta1B\nTxApiProtoP\001Z\ttxv1beta1\242\002\003CTX\252\002\016Cs3.Tx.V1Beta1\312\002\016Cs3\\Tx\\V1Beta1'
-  _PULLTRANSFERREQUEST._serialized_start=181
-  _PULLTRANSFERREQUEST._serialized_end=294
-  _PULLTRANSFERRESPONSE._serialized_start=297
-  _PULLTRANSFERRESPONSE._serialized_end=444
-  _GETTRANSFERSTATUSREQUEST._serialized_start=446
-  _GETTRANSFERSTATUSREQUEST._serialized_end=552
-  _GETTRANSFERSTATUSRESPONSE._serialized_start=555
-  _GETTRANSFERSTATUSRESPONSE._serialized_end=707
-  _CANCELTRANSFERREQUEST._serialized_start=709
-  _CANCELTRANSFERREQUEST._serialized_end=812
-  _CANCELTRANSFERRESPONSE._serialized_start=815
-  _CANCELTRANSFERRESPONSE._serialized_end=964
-  _LISTTRANSFERSREQUEST._serialized_start=967
-  _LISTTRANSFERSREQUEST._serialized_end=1390
-  _LISTTRANSFERSREQUEST_FILTER._serialized_start=1097
-  _LISTTRANSFERSREQUEST_FILTER._serialized_end=1390
-  _LISTTRANSFERSREQUEST_FILTER_TYPE._serialized_start=1306
-  _LISTTRANSFERSREQUEST_FILTER_TYPE._serialized_end=1382
-  _LISTTRANSFERSRESPONSE._serialized_start=1393
-  _LISTTRANSFERSRESPONSE._serialized_end=1543
-  _RETRYTRANSFERREQUEST._serialized_start=1545
-  _RETRYTRANSFERREQUEST._serialized_end=1647
-  _RETRYTRANSFERRESPONSE._serialized_start=1650
-  _RETRYTRANSFERRESPONSE._serialized_end=1798
-  _TXAPI._serialized_start=1801
-  _TXAPI._serialized_end=2290
+  _CREATETRANSFERREQUEST._serialized_start=182
+  _CREATETRANSFERREQUEST._serialized_end=349
+  _CREATETRANSFERRESPONSE._serialized_start=352
+  _CREATETRANSFERRESPONSE._serialized_end=501
+  _GETTRANSFERSTATUSREQUEST._serialized_start=503
+  _GETTRANSFERSTATUSREQUEST._serialized_end=609
+  _GETTRANSFERSTATUSRESPONSE._serialized_start=612
+  _GETTRANSFERSTATUSRESPONSE._serialized_end=764
+  _CANCELTRANSFERREQUEST._serialized_start=766
+  _CANCELTRANSFERREQUEST._serialized_end=869
+  _CANCELTRANSFERRESPONSE._serialized_start=872
+  _CANCELTRANSFERRESPONSE._serialized_end=1021
+  _LISTTRANSFERSREQUEST._serialized_start=1024
+  _LISTTRANSFERSREQUEST._serialized_end=1447
+  _LISTTRANSFERSREQUEST_FILTER._serialized_start=1154
+  _LISTTRANSFERSREQUEST_FILTER._serialized_end=1447
+  _LISTTRANSFERSREQUEST_FILTER_TYPE._serialized_start=1363
+  _LISTTRANSFERSREQUEST_FILTER_TYPE._serialized_end=1439
+  _LISTTRANSFERSRESPONSE._serialized_start=1450
+  _LISTTRANSFERSRESPONSE._serialized_end=1600
+  _RETRYTRANSFERREQUEST._serialized_start=1602
+  _RETRYTRANSFERREQUEST._serialized_end=1704
+  _RETRYTRANSFERRESPONSE._serialized_start=1707
+  _RETRYTRANSFERRESPONSE._serialized_end=1855
+  _TXAPI._serialized_start=1858
+  _TXAPI._serialized_end=2353
 # @@protoc_insertion_point(module_scope)

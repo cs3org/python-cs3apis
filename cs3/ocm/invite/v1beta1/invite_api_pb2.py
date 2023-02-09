@@ -19,7 +19,7 @@ from cs3.rpc.v1beta1 import status_pb2 as cs3_dot_rpc_dot_v1beta1_dot_status__pb
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'cs3/ocm/invite/v1beta1/invite_api.proto\x12\x16\x63s3.ocm.invite.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a&cs3/ocm/invite/v1beta1/resources.proto\x1a(cs3/ocm/provider/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"G\n\x1aGenerateInviteTokenRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xac\x01\n\x1bGenerateInviteTokenResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x03 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\"\xc4\x01\n\x14\x46orwardInviteRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x02 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\x12\x46\n\x16origin_system_provider\x18\x03 \x01(\x0b\x32&.cs3.ocm.provider.v1beta1.ProviderInfo\"k\n\x15\x46orwardInviteResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"\xb1\x01\n\x13\x41\x63\x63\x65ptInviteRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x02 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\x12\x34\n\x0bremote_user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"j\n\x14\x41\x63\x63\x65ptInviteResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"~\n\x16GetAcceptedUserRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0eremote_user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\"\xa3\x01\n\x17GetAcceptedUserResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x0bremote_user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"U\n\x18\x46indAcceptedUsersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\"\xa8\x01\n\x19\x46indAcceptedUsersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x0e\x61\x63\x63\x65pted_users\x18\x03 \x03(\x0b\x32\x1f.cs3.identity.user.v1beta1.User2\xd2\x04\n\tInviteAPI\x12~\n\x13GenerateInviteToken\x12\x32.cs3.ocm.invite.v1beta1.GenerateInviteTokenRequest\x1a\x33.cs3.ocm.invite.v1beta1.GenerateInviteTokenResponse\x12l\n\rForwardInvite\x12,.cs3.ocm.invite.v1beta1.ForwardInviteRequest\x1a-.cs3.ocm.invite.v1beta1.ForwardInviteResponse\x12i\n\x0c\x41\x63\x63\x65ptInvite\x12+.cs3.ocm.invite.v1beta1.AcceptInviteRequest\x1a,.cs3.ocm.invite.v1beta1.AcceptInviteResponse\x12r\n\x0fGetAcceptedUser\x12..cs3.ocm.invite.v1beta1.GetAcceptedUserRequest\x1a/.cs3.ocm.invite.v1beta1.GetAcceptedUserResponse\x12x\n\x11\x46indAcceptedUsers\x12\x30.cs3.ocm.invite.v1beta1.FindAcceptedUsersRequest\x1a\x31.cs3.ocm.invite.v1beta1.FindAcceptedUsersResponseBu\n\x1a\x63om.cs3.ocm.invite.v1beta1B\x0eInviteApiProtoP\x01Z\rinvitev1beta1\xa2\x02\x03\x43OI\xaa\x02\x16\x43s3.Ocm.Invite.V1Beta1\xca\x02\x16\x43s3\\Ocm\\Invite\\V1Beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'cs3/ocm/invite/v1beta1/invite_api.proto\x12\x16\x63s3.ocm.invite.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a&cs3/ocm/invite/v1beta1/resources.proto\x1a(cs3/ocm/provider/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\\\n\x1aGenerateInviteTokenRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"\xac\x01\n\x1bGenerateInviteTokenResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x03 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\"\xc4\x01\n\x14\x46orwardInviteRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x02 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\x12\x46\n\x16origin_system_provider\x18\x03 \x01(\x0b\x32&.cs3.ocm.provider.v1beta1.ProviderInfo\"\xc4\x01\n\x15\x46orwardInviteResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x32\n\x07user_id\x18\x03 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x05 \x01(\t\"\xb1\x01\n\x13\x41\x63\x63\x65ptInviteRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0cinvite_token\x18\x02 \x01(\x0b\x32#.cs3.ocm.invite.v1beta1.InviteToken\x12\x34\n\x0bremote_user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"\xc3\x01\n\x14\x41\x63\x63\x65ptInviteResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x32\n\x07user_id\x18\x03 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x05 \x01(\t\"~\n\x16GetAcceptedUserRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x39\n\x0eremote_user_id\x18\x02 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\"\xa3\x01\n\x17GetAcceptedUserResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x34\n\x0bremote_user\x18\x03 \x01(\x0b\x32\x1f.cs3.identity.user.v1beta1.User\"U\n\x18\x46indAcceptedUsersRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\"\xa8\x01\n\x19\x46indAcceptedUsersResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x0e\x61\x63\x63\x65pted_users\x18\x03 \x03(\x0b\x32\x1f.cs3.identity.user.v1beta1.User2\xd2\x04\n\tInviteAPI\x12~\n\x13GenerateInviteToken\x12\x32.cs3.ocm.invite.v1beta1.GenerateInviteTokenRequest\x1a\x33.cs3.ocm.invite.v1beta1.GenerateInviteTokenResponse\x12l\n\rForwardInvite\x12,.cs3.ocm.invite.v1beta1.ForwardInviteRequest\x1a-.cs3.ocm.invite.v1beta1.ForwardInviteResponse\x12i\n\x0c\x41\x63\x63\x65ptInvite\x12+.cs3.ocm.invite.v1beta1.AcceptInviteRequest\x1a,.cs3.ocm.invite.v1beta1.AcceptInviteResponse\x12r\n\x0fGetAcceptedUser\x12..cs3.ocm.invite.v1beta1.GetAcceptedUserRequest\x1a/.cs3.ocm.invite.v1beta1.GetAcceptedUserResponse\x12x\n\x11\x46indAcceptedUsers\x12\x30.cs3.ocm.invite.v1beta1.FindAcceptedUsersRequest\x1a\x31.cs3.ocm.invite.v1beta1.FindAcceptedUsersResponseBu\n\x1a\x63om.cs3.ocm.invite.v1beta1B\x0eInviteApiProtoP\x01Z\rinvitev1beta1\xa2\x02\x03\x43OI\xaa\x02\x16\x43s3.Ocm.Invite.V1Beta1\xca\x02\x16\x43s3\\Ocm\\Invite\\V1Beta1b\x06proto3')
 
 
 
@@ -109,25 +109,25 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\032com.cs3.ocm.invite.v1beta1B\016InviteApiProtoP\001Z\rinvitev1beta1\242\002\003COI\252\002\026Cs3.Ocm.Invite.V1Beta1\312\002\026Cs3\\Ocm\\Invite\\V1Beta1'
   _GENERATEINVITETOKENREQUEST._serialized_start=253
-  _GENERATEINVITETOKENREQUEST._serialized_end=324
-  _GENERATEINVITETOKENRESPONSE._serialized_start=327
-  _GENERATEINVITETOKENRESPONSE._serialized_end=499
-  _FORWARDINVITEREQUEST._serialized_start=502
-  _FORWARDINVITEREQUEST._serialized_end=698
-  _FORWARDINVITERESPONSE._serialized_start=700
-  _FORWARDINVITERESPONSE._serialized_end=807
-  _ACCEPTINVITEREQUEST._serialized_start=810
-  _ACCEPTINVITEREQUEST._serialized_end=987
-  _ACCEPTINVITERESPONSE._serialized_start=989
-  _ACCEPTINVITERESPONSE._serialized_end=1095
-  _GETACCEPTEDUSERREQUEST._serialized_start=1097
-  _GETACCEPTEDUSERREQUEST._serialized_end=1223
-  _GETACCEPTEDUSERRESPONSE._serialized_start=1226
-  _GETACCEPTEDUSERRESPONSE._serialized_end=1389
-  _FINDACCEPTEDUSERSREQUEST._serialized_start=1391
-  _FINDACCEPTEDUSERSREQUEST._serialized_end=1476
-  _FINDACCEPTEDUSERSRESPONSE._serialized_start=1479
-  _FINDACCEPTEDUSERSRESPONSE._serialized_end=1647
-  _INVITEAPI._serialized_start=1650
-  _INVITEAPI._serialized_end=2244
+  _GENERATEINVITETOKENREQUEST._serialized_end=345
+  _GENERATEINVITETOKENRESPONSE._serialized_start=348
+  _GENERATEINVITETOKENRESPONSE._serialized_end=520
+  _FORWARDINVITEREQUEST._serialized_start=523
+  _FORWARDINVITEREQUEST._serialized_end=719
+  _FORWARDINVITERESPONSE._serialized_start=722
+  _FORWARDINVITERESPONSE._serialized_end=918
+  _ACCEPTINVITEREQUEST._serialized_start=921
+  _ACCEPTINVITEREQUEST._serialized_end=1098
+  _ACCEPTINVITERESPONSE._serialized_start=1101
+  _ACCEPTINVITERESPONSE._serialized_end=1296
+  _GETACCEPTEDUSERREQUEST._serialized_start=1298
+  _GETACCEPTEDUSERREQUEST._serialized_end=1424
+  _GETACCEPTEDUSERRESPONSE._serialized_start=1427
+  _GETACCEPTEDUSERRESPONSE._serialized_end=1590
+  _FINDACCEPTEDUSERSREQUEST._serialized_start=1592
+  _FINDACCEPTEDUSERSREQUEST._serialized_end=1677
+  _FINDACCEPTEDUSERSRESPONSE._serialized_start=1680
+  _FINDACCEPTEDUSERSRESPONSE._serialized_end=1848
+  _INVITEAPI._serialized_start=1851
+  _INVITEAPI._serialized_end=2445
 # @@protoc_insertion_point(module_scope)

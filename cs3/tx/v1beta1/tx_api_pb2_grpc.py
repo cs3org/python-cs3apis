@@ -29,10 +29,10 @@ class TxAPIStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.PullTransfer = channel.unary_unary(
-                '/cs3.tx.v1beta1.TxAPI/PullTransfer',
-                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.SerializeToString,
-                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.FromString,
+        self.CreateTransfer = channel.unary_unary(
+                '/cs3.tx.v1beta1.TxAPI/CreateTransfer',
+                request_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.SerializeToString,
+                response_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.FromString,
                 )
         self.GetTransferStatus = channel.unary_unary(
                 '/cs3.tx.v1beta1.TxAPI/GetTransferStatus',
@@ -74,9 +74,9 @@ class TxAPIServicer(object):
     Any method MAY return UNAUTHENTICATED.
     """
 
-    def PullTransfer(self, request, context):
-        """Requests the destination to pull a resource from source.
-        Returns a PullTransferResponse
+    def CreateTransfer(self, request, context):
+        """Requests creation of a transfer.
+        Returns a CreateTransferResponse.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -114,10 +114,10 @@ class TxAPIServicer(object):
 
 def add_TxAPIServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'PullTransfer': grpc.unary_unary_rpc_method_handler(
-                    servicer.PullTransfer,
-                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.FromString,
-                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.SerializeToString,
+            'CreateTransfer': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateTransfer,
+                    request_deserializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.FromString,
+                    response_serializer=cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.SerializeToString,
             ),
             'GetTransferStatus': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTransferStatus,
@@ -165,7 +165,7 @@ class TxAPI(object):
     """
 
     @staticmethod
-    def PullTransfer(request,
+    def CreateTransfer(request,
             target,
             options=(),
             channel_credentials=None,
@@ -175,9 +175,9 @@ class TxAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.tx.v1beta1.TxAPI/PullTransfer',
-            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferRequest.SerializeToString,
-            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.PullTransferResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cs3.tx.v1beta1.TxAPI/CreateTransfer',
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferRequest.SerializeToString,
+            cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2.CreateTransferResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
