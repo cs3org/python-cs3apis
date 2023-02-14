@@ -18,13 +18,12 @@ from cs3.storage.provider.v1beta1 import resources_pb2 as cs3_dot_storage_dot_pr
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+cs3/app/provider/v1beta1/provider_api.proto\x12\x18\x63s3.app.provider.v1beta1\x1a(cs3/app/provider/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xe5\x02\n\x10OpenInAppRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x41\n\rresource_info\x18\x02 \x01(\x0b\x32*.cs3.storage.provider.v1beta1.ResourceInfo\x12\x46\n\tview_mode\x18\x03 \x01(\x0e\x32\x33.cs3.app.provider.v1beta1.OpenInAppRequest.ViewMode\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x04 \x01(\t\"\x84\x01\n\x08ViewMode\x12\x15\n\x11VIEW_MODE_INVALID\x10\x00\x12\x17\n\x13VIEW_MODE_VIEW_ONLY\x10\x01\x12\x17\n\x13VIEW_MODE_READ_ONLY\x10\x02\x12\x18\n\x14VIEW_MODE_READ_WRITE\x10\x03\x12\x15\n\x11VIEW_MODE_PREVIEW\x10\x04\"\xa0\x01\n\x11OpenInAppResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x07\x61pp_url\x18\x03 \x01(\x0b\x32&.cs3.app.provider.v1beta1.OpenInAppURL2s\n\x0bProviderAPI\x12\x64\n\tOpenInApp\x12*.cs3.app.provider.v1beta1.OpenInAppRequest\x1a+.cs3.app.provider.v1beta1.OpenInAppResponseB\x7f\n\x1c\x63om.cs3.app.provider.v1beta1B\x10ProviderApiProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43\x41P\xaa\x02\x18\x43s3.App.Provider.V1Beta1\xca\x02\x18\x43s3\\App\\Provider\\V1Beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+cs3/app/provider/v1beta1/provider_api.proto\x12\x18\x63s3.app.provider.v1beta1\x1a(cs3/app/provider/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xcd\x01\n\x10OpenInAppRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x41\n\rresource_info\x18\x02 \x01(\x0b\x32*.cs3.storage.provider.v1beta1.ResourceInfo\x12\x35\n\tview_mode\x18\x03 \x01(\x0e\x32\".cs3.app.provider.v1beta1.ViewMode\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x04 \x01(\t\"\xa0\x01\n\x11OpenInAppResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x37\n\x07\x61pp_url\x18\x03 \x01(\x0b\x32&.cs3.app.provider.v1beta1.OpenInAppURL2s\n\x0bProviderAPI\x12\x64\n\tOpenInApp\x12*.cs3.app.provider.v1beta1.OpenInAppRequest\x1a+.cs3.app.provider.v1beta1.OpenInAppResponseB\x7f\n\x1c\x63om.cs3.app.provider.v1beta1B\x10ProviderApiProtoP\x01Z\x0fproviderv1beta1\xa2\x02\x03\x43\x41P\xaa\x02\x18\x43s3.App.Provider.V1Beta1\xca\x02\x18\x43s3\\App\\Provider\\V1Beta1b\x06proto3')
 
 
 
 _OPENINAPPREQUEST = DESCRIPTOR.message_types_by_name['OpenInAppRequest']
 _OPENINAPPRESPONSE = DESCRIPTOR.message_types_by_name['OpenInAppResponse']
-_OPENINAPPREQUEST_VIEWMODE = _OPENINAPPREQUEST.enum_types_by_name['ViewMode']
 OpenInAppRequest = _reflection.GeneratedProtocolMessageType('OpenInAppRequest', (_message.Message,), {
   'DESCRIPTOR' : _OPENINAPPREQUEST,
   '__module__' : 'cs3.app.provider.v1beta1.provider_api_pb2'
@@ -45,11 +44,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\034com.cs3.app.provider.v1beta1B\020ProviderApiProtoP\001Z\017providerv1beta1\242\002\003CAP\252\002\030Cs3.App.Provider.V1Beta1\312\002\030Cs3\\App\\Provider\\V1Beta1'
   _OPENINAPPREQUEST._serialized_start=223
-  _OPENINAPPREQUEST._serialized_end=580
-  _OPENINAPPREQUEST_VIEWMODE._serialized_start=448
-  _OPENINAPPREQUEST_VIEWMODE._serialized_end=580
-  _OPENINAPPRESPONSE._serialized_start=583
-  _OPENINAPPRESPONSE._serialized_end=743
-  _PROVIDERAPI._serialized_start=745
-  _PROVIDERAPI._serialized_end=860
+  _OPENINAPPREQUEST._serialized_end=428
+  _OPENINAPPRESPONSE._serialized_start=431
+  _OPENINAPPRESPONSE._serialized_end=591
+  _PROVIDERAPI._serialized_start=593
+  _PROVIDERAPI._serialized_end=708
 # @@protoc_insertion_point(module_scope)
