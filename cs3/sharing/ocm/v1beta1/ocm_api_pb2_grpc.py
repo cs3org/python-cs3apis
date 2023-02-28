@@ -46,6 +46,11 @@ class OcmAPIStub(object):
                 request_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareRequest.SerializeToString,
                 response_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareResponse.FromString,
                 )
+        self.GetOCMShareByToken = channel.unary_unary(
+                '/cs3.sharing.ocm.v1beta1.OcmAPI/GetOCMShareByToken',
+                request_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareByTokenRequest.SerializeToString,
+                response_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareByTokenResponse.FromString,
+                )
         self.ListOCMShares = channel.unary_unary(
                 '/cs3.sharing.ocm.v1beta1.OcmAPI/ListOCMShares',
                 request_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.ListOCMSharesRequest.SerializeToString,
@@ -120,6 +125,14 @@ class OcmAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetOCMShareByToken(self, request, context):
+        """Gets share information for a single share by its unlisted token.
+        MUST return CODE_NOT_FOUND if the share does not exist.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListOCMShares(self, request, context):
         """List the shares the authenticated principal has created,
         both as owner and creator. If a filter is specified, only
@@ -177,6 +190,11 @@ def add_OcmAPIServicer_to_server(servicer, server):
                     servicer.GetOCMShare,
                     request_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareRequest.FromString,
                     response_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareResponse.SerializeToString,
+            ),
+            'GetOCMShareByToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetOCMShareByToken,
+                    request_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareByTokenRequest.FromString,
+                    response_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareByTokenResponse.SerializeToString,
             ),
             'ListOCMShares': grpc.unary_unary_rpc_method_handler(
                     servicer.ListOCMShares,
@@ -278,6 +296,23 @@ class OcmAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.sharing.ocm.v1beta1.OcmAPI/GetOCMShare',
             cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareRequest.SerializeToString,
             cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetOCMShareByToken(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.sharing.ocm.v1beta1.OcmAPI/GetOCMShareByToken',
+            cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareByTokenRequest.SerializeToString,
+            cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.GetOCMShareByTokenResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
