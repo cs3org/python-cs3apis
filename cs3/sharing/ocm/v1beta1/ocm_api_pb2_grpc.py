@@ -12,6 +12,9 @@ class OcmAPIStub(object):
     resources from the perspective of the creator or the share and
     from the perspective of the receiver of the share.
 
+    The following APIs match the OCM v1.1 spec, including the invitation
+    workflow and multi-protocol shares.
+
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
     "OPTIONAL" in this document are to be interpreted as described in
@@ -84,6 +87,9 @@ class OcmAPIServicer(object):
     The OCM Share Provider API is meant to manipulate share
     resources from the perspective of the creator or the share and
     from the perspective of the receiver of the share.
+
+    The following APIs match the OCM v1.1 spec, including the invitation
+    workflow and multi-protocol shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -234,6 +240,9 @@ class OcmAPI(object):
     The OCM Share Provider API is meant to manipulate share
     resources from the perspective of the creator or the share and
     from the perspective of the receiver of the share.
+
+    The following APIs match the OCM v1.1 spec, including the invitation
+    workflow and multi-protocol shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
