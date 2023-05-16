@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x63s3/rpc/v1beta1/code.proto\x12\x0f\x63s3.rpc.v1beta1*\xd3\x03\n\x04\x43ode\x12\x10\n\x0c\x43ODE_INVALID\x10\x00\x12\x0b\n\x07\x43ODE_OK\x10\x01\x12\x12\n\x0e\x43ODE_CANCELLED\x10\x02\x12\x10\n\x0c\x43ODE_UNKNOWN\x10\x03\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x04\x12\x1a\n\x16\x43ODE_DEADLINE_EXCEEDED\x10\x05\x12\x12\n\x0e\x43ODE_NOT_FOUND\x10\x06\x12\x17\n\x13\x43ODE_ALREADY_EXISTS\x10\x07\x12\x1a\n\x16\x43ODE_PERMISSION_DENIED\x10\x08\x12\x18\n\x14\x43ODE_UNAUTHENTICATED\x10\t\x12\x1b\n\x17\x43ODE_RESOURCE_EXHAUSTED\x10\n\x12\x1c\n\x18\x43ODE_FAILED_PRECONDITION\x10\x0b\x12\x10\n\x0c\x43ODE_ABORTED\x10\x0c\x12\x15\n\x11\x43ODE_OUT_OF_RANGE\x10\r\x12\x16\n\x12\x43ODE_UNIMPLEMENTED\x10\x0e\x12\x11\n\rCODE_INTERNAL\x10\x0f\x12\x14\n\x10\x43ODE_UNAVAILABLE\x10\x10\x12\x12\n\x0e\x43ODE_DATA_LOSS\x10\x11\x12\x14\n\x10\x43ODE_REDIRECTION\x10\x12\x12\x1d\n\x19\x43ODE_INSUFFICIENT_STORAGE\x10\x13\x42X\n\x13\x63om.cs3.rpc.v1beta1B\tCodeProtoP\x01Z\nrpcv1beta1\xa2\x02\x03\x43RX\xaa\x02\x0f\x43s3.Rpc.V1Beta1\xca\x02\x0f\x43s3\\Rpc\\V1Beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1a\x63s3/rpc/v1beta1/code.proto\x12\x0f\x63s3.rpc.v1beta1*\xe4\x03\n\x04\x43ode\x12\x10\n\x0c\x43ODE_INVALID\x10\x00\x12\x0b\n\x07\x43ODE_OK\x10\x01\x12\x12\n\x0e\x43ODE_CANCELLED\x10\x02\x12\x10\n\x0c\x43ODE_UNKNOWN\x10\x03\x12\x19\n\x15\x43ODE_INVALID_ARGUMENT\x10\x04\x12\x1a\n\x16\x43ODE_DEADLINE_EXCEEDED\x10\x05\x12\x12\n\x0e\x43ODE_NOT_FOUND\x10\x06\x12\x17\n\x13\x43ODE_ALREADY_EXISTS\x10\x07\x12\x1a\n\x16\x43ODE_PERMISSION_DENIED\x10\x08\x12\x18\n\x14\x43ODE_UNAUTHENTICATED\x10\t\x12\x1b\n\x17\x43ODE_RESOURCE_EXHAUSTED\x10\n\x12\x1c\n\x18\x43ODE_FAILED_PRECONDITION\x10\x0b\x12\x10\n\x0c\x43ODE_ABORTED\x10\x0c\x12\x15\n\x11\x43ODE_OUT_OF_RANGE\x10\r\x12\x16\n\x12\x43ODE_UNIMPLEMENTED\x10\x0e\x12\x11\n\rCODE_INTERNAL\x10\x0f\x12\x14\n\x10\x43ODE_UNAVAILABLE\x10\x10\x12\x12\n\x0e\x43ODE_DATA_LOSS\x10\x11\x12\x14\n\x10\x43ODE_REDIRECTION\x10\x12\x12\x1d\n\x19\x43ODE_INSUFFICIENT_STORAGE\x10\x13\x12\x0f\n\x0b\x43ODE_LOCKED\x10\x14\x42X\n\x13\x63om.cs3.rpc.v1beta1B\tCodeProtoP\x01Z\nrpcv1beta1\xa2\x02\x03\x43RX\xaa\x02\x0f\x43s3.Rpc.V1Beta1\xca\x02\x0f\x43s3\\Rpc\\V1Beta1b\x06proto3')
 
 _CODE = DESCRIPTOR.enum_types_by_name['Code']
 Code = enum_type_wrapper.EnumTypeWrapper(_CODE)
@@ -39,6 +39,7 @@ CODE_UNAVAILABLE = 16
 CODE_DATA_LOSS = 17
 CODE_REDIRECTION = 18
 CODE_INSUFFICIENT_STORAGE = 19
+CODE_LOCKED = 20
 
 
 if _descriptor._USE_C_DESCRIPTORS == False:
@@ -46,5 +47,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\023com.cs3.rpc.v1beta1B\tCodeProtoP\001Z\nrpcv1beta1\242\002\003CRX\252\002\017Cs3.Rpc.V1Beta1\312\002\017Cs3\\Rpc\\V1Beta1'
   _CODE._serialized_start=48
-  _CODE._serialized_end=515
+  _CODE._serialized_end=532
 # @@protoc_insertion_point(module_scope)
