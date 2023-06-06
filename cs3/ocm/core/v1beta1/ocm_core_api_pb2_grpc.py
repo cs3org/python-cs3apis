@@ -8,7 +8,10 @@ from cs3.ocm.core.v1beta1 import ocm_core_api_pb2 as cs3_dot_ocm_dot_core_dot_v1
 class OcmCoreAPIStub(object):
     """OCM Core API
 
-    The OCM Core API is the mapping in GRPC of the OCM core protocol.
+    the OCM Core API is the mapping for the local system of the OCM protocol,
+    including multi-protocol shares. Implementations are expected to expose
+    the `/ocm` endpoints according to the OCM API, and in response to those
+    endpoints implement the following API.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -34,12 +37,25 @@ class OcmCoreAPIStub(object):
                 request_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.SerializeToString,
                 response_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.FromString,
                 )
+        self.UpdateOCMCoreShare = channel.unary_unary(
+                '/cs3.ocm.core.v1beta1.OcmCoreAPI/UpdateOCMCoreShare',
+                request_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareResponse.FromString,
+                )
+        self.DeleteOCMCoreShare = channel.unary_unary(
+                '/cs3.ocm.core.v1beta1.OcmCoreAPI/DeleteOCMCoreShare',
+                request_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareResponse.FromString,
+                )
 
 
 class OcmCoreAPIServicer(object):
     """OCM Core API
 
-    The OCM Core API is the mapping in GRPC of the OCM core protocol.
+    the OCM Core API is the mapping for the local system of the OCM protocol,
+    including multi-protocol shares. Implementations are expected to expose
+    the `/ocm` endpoints according to the OCM API, and in response to those
+    endpoints implement the following API.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -55,7 +71,24 @@ class OcmCoreAPIServicer(object):
     """
 
     def CreateOCMCoreShare(self, request, context):
-        """Creates a new ocm share.
+        """Creates a new OCM share, in response to a call from remote to:
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateOCMCoreShare(self, request, context):
+        """Updates an OCM share, in response to a notification from the remote system to:
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteOCMCoreShare(self, request, context):
+        """Deletes an OCM share, in response to a notification from the remote system to:
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -69,6 +102,16 @@ def add_OcmCoreAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.FromString,
                     response_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.SerializeToString,
             ),
+            'UpdateOCMCoreShare': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateOCMCoreShare,
+                    request_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareResponse.SerializeToString,
+            ),
+            'DeleteOCMCoreShare': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteOCMCoreShare,
+                    request_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'cs3.ocm.core.v1beta1.OcmCoreAPI', rpc_method_handlers)
@@ -79,7 +122,10 @@ def add_OcmCoreAPIServicer_to_server(servicer, server):
 class OcmCoreAPI(object):
     """OCM Core API
 
-    The OCM Core API is the mapping in GRPC of the OCM core protocol.
+    the OCM Core API is the mapping for the local system of the OCM protocol,
+    including multi-protocol shares. Implementations are expected to expose
+    the `/ocm` endpoints according to the OCM API, and in response to those
+    endpoints implement the following API.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -108,5 +154,39 @@ class OcmCoreAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.ocm.core.v1beta1.OcmCoreAPI/CreateOCMCoreShare',
             cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.SerializeToString,
             cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateOCMCoreShare(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.ocm.core.v1beta1.OcmCoreAPI/UpdateOCMCoreShare',
+            cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareRequest.SerializeToString,
+            cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteOCMCoreShare(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.ocm.core.v1beta1.OcmCoreAPI/DeleteOCMCoreShare',
+            cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareRequest.SerializeToString,
+            cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

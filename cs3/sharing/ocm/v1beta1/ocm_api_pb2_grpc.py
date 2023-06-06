@@ -12,8 +12,7 @@ class OcmAPIStub(object):
     resources from the perspective of the creator or the share and
     from the perspective of the receiver of the share.
 
-    The following APIs match the OCM v1.1 spec, including the invitation
-    workflow and multi-protocol shares.
+    The following APIs match the OCM v1.1 spec including multi-protocol shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -88,8 +87,7 @@ class OcmAPIServicer(object):
     resources from the perspective of the creator or the share and
     from the perspective of the receiver of the share.
 
-    The following APIs match the OCM v1.1 spec, including the invitation
-    workflow and multi-protocol shares.
+    The following APIs match the OCM v1.1 spec including multi-protocol shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -109,7 +107,9 @@ class OcmAPIServicer(object):
         MUST return CODE_NOT_FOUND if the resource reference does not exist.
         MUST return CODE_ALREADY_EXISTS if the share already exists for the 4-tuple consisting of
         (owner, shared_resource, grantee).
-        New shares MUST be created in the state SHARE_STATE_PENDING.
+        New shares MUST be created in the state SHARE_STATE_PENDING, and MUST be sent
+        to the remote system using the OCM API at:
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -118,6 +118,9 @@ class OcmAPIServicer(object):
     def RemoveOCMShare(self, request, context):
         """Removes a share.
         MUST return CODE_NOT_FOUND if the share reference does not exist.
+        This action SHALL be notified to the remote system
+        using the OCM API at:
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -151,6 +154,9 @@ class OcmAPIServicer(object):
     def UpdateOCMShare(self, request, context):
         """Updates a share.
         MUST return CODE_NOT_FOUND if the share reference does not exist.
+        This action SHALL be notified to the remote system
+        using the OCM API at:
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -241,8 +247,7 @@ class OcmAPI(object):
     resources from the perspective of the creator or the share and
     from the perspective of the receiver of the share.
 
-    The following APIs match the OCM v1.1 spec, including the invitation
-    workflow and multi-protocol shares.
+    The following APIs match the OCM v1.1 spec including multi-protocol shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and

@@ -11,6 +11,8 @@ class InviteAPIStub(object):
     The Invite API is meant to invite users and groups belonging to other
     sync'n'share systems, so that collaboration of resources can be enabled.
 
+    The following APIs match the OCM v1.1 spec for the /invite-accepted endpoint.
+
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
     "OPTIONAL" in this document are to be interpreted as described in
@@ -60,6 +62,11 @@ class InviteAPIStub(object):
                 request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersRequest.SerializeToString,
                 response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersResponse.FromString,
                 )
+        self.DeleteAcceptedUser = channel.unary_unary(
+                '/cs3.ocm.invite.v1beta1.InviteAPI/DeleteAcceptedUser',
+                request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserResponse.FromString,
+                )
 
 
 class InviteAPIServicer(object):
@@ -67,6 +74,8 @@ class InviteAPIServicer(object):
 
     The Invite API is meant to invite users and groups belonging to other
     sync'n'share systems, so that collaboration of resources can be enabled.
+
+    The following APIs match the OCM v1.1 spec for the /invite-accepted endpoint.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -96,7 +105,9 @@ class InviteAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ForwardInvite(self, request, context):
-        """Forwards a received invite to the sync'n'share system provider.
+        """Forwards a received invite to the remote sync'n'share system provider. The remote
+        system SHALL get an `invite-accepted` call as follows:
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1invite-accepted/post
         MUST return CODE_NOT_FOUND if the token does not exist.
         MUST return CODE_INVALID_ARGUMENT if the token expired.
         MUST return CODE_ALREADY_EXISTS if the user already accepted an invite.
@@ -126,6 +137,14 @@ class InviteAPIServicer(object):
 
     def FindAcceptedUsers(self, request, context):
         """Finds users who accepted invite tokens by their attributes.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAcceptedUser(self, request, context):
+        """Delete a previously accepted remote user, that is unfriend that user.
+        MUST return CODE_NOT_FOUND if the user does not exist.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -164,6 +183,11 @@ def add_InviteAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersRequest.FromString,
                     response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersResponse.SerializeToString,
             ),
+            'DeleteAcceptedUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAcceptedUser,
+                    request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'cs3.ocm.invite.v1beta1.InviteAPI', rpc_method_handlers)
@@ -176,6 +200,8 @@ class InviteAPI(object):
 
     The Invite API is meant to invite users and groups belonging to other
     sync'n'share systems, so that collaboration of resources can be enabled.
+
+    The following APIs match the OCM v1.1 spec for the /invite-accepted endpoint.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -289,5 +315,22 @@ class InviteAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.ocm.invite.v1beta1.InviteAPI/FindAcceptedUsers',
             cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersRequest.SerializeToString,
             cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAcceptedUser(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.ocm.invite.v1beta1.InviteAPI/DeleteAcceptedUser',
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserRequest.SerializeToString,
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

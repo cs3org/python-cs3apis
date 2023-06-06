@@ -19,12 +19,16 @@ from cs3.storage.provider.v1beta1 import resources_pb2 as cs3_dot_storage_dot_pr
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'cs3/ocm/core/v1beta1/ocm_core_api.proto\x12\x14\x63s3.ocm.core.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\'cs3/sharing/ocm/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xfd\x03\n\x19\x43reateOCMCoreShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0bresource_id\x18\x04 \x01(\t\x12\x30\n\x05owner\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x31\n\x06sender\x18\x06 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x35\n\nshare_with\x18\x07 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x41\n\rresource_type\x18\x08 \x01(\x0e\x32*.cs3.storage.provider.v1beta1.ResourceType\x12\x36\n\nshare_type\x18\t \x01(\x0e\x32\".cs3.sharing.ocm.v1beta1.ShareType\x12\x30\n\nexpiration\x18\n \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x34\n\tprotocols\x18\x0b \x03(\x0b\x32!.cs3.sharing.ocm.v1beta1.Protocol\"\xab\x01\n\x1a\x43reateOCMCoreShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\n\n\x02id\x18\x03 \x01(\t\x12-\n\x07\x63reated\x18\x04 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp2\x85\x01\n\nOcmCoreAPI\x12w\n\x12\x43reateOCMCoreShare\x12/.cs3.ocm.core.v1beta1.CreateOCMCoreShareRequest\x1a\x30.cs3.ocm.core.v1beta1.CreateOCMCoreShareResponseBn\n\x18\x63om.cs3.ocm.core.v1beta1B\x0fOcmCoreApiProtoP\x01Z\x0b\x63orev1beta1\xa2\x02\x03\x43OC\xaa\x02\x14\x43s3.Ocm.Core.V1Beta1\xca\x02\x14\x43s3\\Ocm\\Core\\V1Beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'cs3/ocm/core/v1beta1/ocm_core_api.proto\x12\x14\x63s3.ocm.core.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1c\x63s3/rpc/v1beta1/status.proto\x1a\'cs3/sharing/ocm/v1beta1/resources.proto\x1a,cs3/storage/provider/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xfd\x03\n\x19\x43reateOCMCoreShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0bresource_id\x18\x04 \x01(\t\x12\x30\n\x05owner\x18\x05 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x31\n\x06sender\x18\x06 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x35\n\nshare_with\x18\x07 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserId\x12\x41\n\rresource_type\x18\x08 \x01(\x0e\x32*.cs3.storage.provider.v1beta1.ResourceType\x12\x36\n\nshare_type\x18\t \x01(\x0e\x32\".cs3.sharing.ocm.v1beta1.ShareType\x12\x30\n\nexpiration\x18\n \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x34\n\tprotocols\x18\x0b \x03(\x0b\x32!.cs3.sharing.ocm.v1beta1.Protocol\"\xab\x01\n\x1a\x43reateOCMCoreShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\n\n\x02id\x18\x03 \x01(\t\x12-\n\x07\x63reated\x18\x04 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\"\x91\x02\n\x19UpdateOCMCoreShareRequest\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x14\n\x0cocm_share_id\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x36\n\nshare_type\x18\x05 \x01(\x0e\x32\".cs3.sharing.ocm.v1beta1.ShareType\x12\x30\n\nexpiration\x18\x06 \x01(\x0b\x32\x1c.cs3.types.v1beta1.Timestamp\x12\x34\n\tprotocols\x18\x07 \x03(\x0b\x32!.cs3.sharing.ocm.v1beta1.Protocol\"p\n\x1aUpdateOCMCoreShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"R\n\x19\x44\x65leteOCMCoreShareRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\"p\n\x1a\x44\x65leteOCMCoreShareResponse\x12\'\n\x06status\x18\x01 \x01(\x0b\x32\x17.cs3.rpc.v1beta1.Status\x12)\n\x06opaque\x18\x02 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque2\xf7\x02\n\nOcmCoreAPI\x12w\n\x12\x43reateOCMCoreShare\x12/.cs3.ocm.core.v1beta1.CreateOCMCoreShareRequest\x1a\x30.cs3.ocm.core.v1beta1.CreateOCMCoreShareResponse\x12w\n\x12UpdateOCMCoreShare\x12/.cs3.ocm.core.v1beta1.UpdateOCMCoreShareRequest\x1a\x30.cs3.ocm.core.v1beta1.UpdateOCMCoreShareResponse\x12w\n\x12\x44\x65leteOCMCoreShare\x12/.cs3.ocm.core.v1beta1.DeleteOCMCoreShareRequest\x1a\x30.cs3.ocm.core.v1beta1.DeleteOCMCoreShareResponseBn\n\x18\x63om.cs3.ocm.core.v1beta1B\x0fOcmCoreApiProtoP\x01Z\x0b\x63orev1beta1\xa2\x02\x03\x43OC\xaa\x02\x14\x43s3.Ocm.Core.V1Beta1\xca\x02\x14\x43s3\\Ocm\\Core\\V1Beta1b\x06proto3')
 
 
 
 _CREATEOCMCORESHAREREQUEST = DESCRIPTOR.message_types_by_name['CreateOCMCoreShareRequest']
 _CREATEOCMCORESHARERESPONSE = DESCRIPTOR.message_types_by_name['CreateOCMCoreShareResponse']
+_UPDATEOCMCORESHAREREQUEST = DESCRIPTOR.message_types_by_name['UpdateOCMCoreShareRequest']
+_UPDATEOCMCORESHARERESPONSE = DESCRIPTOR.message_types_by_name['UpdateOCMCoreShareResponse']
+_DELETEOCMCORESHAREREQUEST = DESCRIPTOR.message_types_by_name['DeleteOCMCoreShareRequest']
+_DELETEOCMCORESHARERESPONSE = DESCRIPTOR.message_types_by_name['DeleteOCMCoreShareResponse']
 CreateOCMCoreShareRequest = _reflection.GeneratedProtocolMessageType('CreateOCMCoreShareRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATEOCMCORESHAREREQUEST,
   '__module__' : 'cs3.ocm.core.v1beta1.ocm_core_api_pb2'
@@ -39,6 +43,34 @@ CreateOCMCoreShareResponse = _reflection.GeneratedProtocolMessageType('CreateOCM
   })
 _sym_db.RegisterMessage(CreateOCMCoreShareResponse)
 
+UpdateOCMCoreShareRequest = _reflection.GeneratedProtocolMessageType('UpdateOCMCoreShareRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEOCMCORESHAREREQUEST,
+  '__module__' : 'cs3.ocm.core.v1beta1.ocm_core_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.ocm.core.v1beta1.UpdateOCMCoreShareRequest)
+  })
+_sym_db.RegisterMessage(UpdateOCMCoreShareRequest)
+
+UpdateOCMCoreShareResponse = _reflection.GeneratedProtocolMessageType('UpdateOCMCoreShareResponse', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEOCMCORESHARERESPONSE,
+  '__module__' : 'cs3.ocm.core.v1beta1.ocm_core_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.ocm.core.v1beta1.UpdateOCMCoreShareResponse)
+  })
+_sym_db.RegisterMessage(UpdateOCMCoreShareResponse)
+
+DeleteOCMCoreShareRequest = _reflection.GeneratedProtocolMessageType('DeleteOCMCoreShareRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEOCMCORESHAREREQUEST,
+  '__module__' : 'cs3.ocm.core.v1beta1.ocm_core_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.ocm.core.v1beta1.DeleteOCMCoreShareRequest)
+  })
+_sym_db.RegisterMessage(DeleteOCMCoreShareRequest)
+
+DeleteOCMCoreShareResponse = _reflection.GeneratedProtocolMessageType('DeleteOCMCoreShareResponse', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEOCMCORESHARERESPONSE,
+  '__module__' : 'cs3.ocm.core.v1beta1.ocm_core_api_pb2'
+  # @@protoc_insertion_point(class_scope:cs3.ocm.core.v1beta1.DeleteOCMCoreShareResponse)
+  })
+_sym_db.RegisterMessage(DeleteOCMCoreShareResponse)
+
 _OCMCOREAPI = DESCRIPTOR.services_by_name['OcmCoreAPI']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
@@ -48,6 +80,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATEOCMCORESHAREREQUEST._serialized_end=766
   _CREATEOCMCORESHARERESPONSE._serialized_start=769
   _CREATEOCMCORESHARERESPONSE._serialized_end=940
-  _OCMCOREAPI._serialized_start=943
-  _OCMCOREAPI._serialized_end=1076
+  _UPDATEOCMCORESHAREREQUEST._serialized_start=943
+  _UPDATEOCMCORESHAREREQUEST._serialized_end=1216
+  _UPDATEOCMCORESHARERESPONSE._serialized_start=1218
+  _UPDATEOCMCORESHARERESPONSE._serialized_end=1330
+  _DELETEOCMCORESHAREREQUEST._serialized_start=1332
+  _DELETEOCMCORESHAREREQUEST._serialized_end=1414
+  _DELETEOCMCORESHARERESPONSE._serialized_start=1416
+  _DELETEOCMCORESHARERESPONSE._serialized_end=1528
+  _OCMCOREAPI._serialized_start=1531
+  _OCMCOREAPI._serialized_end=1906
 # @@protoc_insertion_point(module_scope)

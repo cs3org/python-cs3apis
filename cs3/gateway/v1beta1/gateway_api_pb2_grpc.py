@@ -470,6 +470,11 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersRequest.SerializeToString,
                 response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersResponse.FromString,
                 )
+        self.DeleteAcceptedUser = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/DeleteAcceptedUser',
+                request_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserResponse.FromString,
+                )
         self.IsProviderAllowed = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/IsProviderAllowed',
                 request_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.IsProviderAllowedRequest.SerializeToString,
@@ -489,6 +494,16 @@ class GatewayAPIStub(object):
                 '/cs3.gateway.v1beta1.GatewayAPI/CreateOCMCoreShare',
                 request_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.SerializeToString,
                 response_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.FromString,
+                )
+        self.UpdateOCMCoreShare = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/UpdateOCMCoreShare',
+                request_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareResponse.FromString,
+                )
+        self.DeleteOCMCoreShare = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/DeleteOCMCoreShare',
+                request_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareResponse.FromString,
                 )
         self.CreateTransfer = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/CreateTransfer',
@@ -1259,6 +1274,13 @@ class GatewayAPIServicer(object):
 
     def FindAcceptedUsers(self, request, context):
         """Finds users who accepted invite tokens by their attributes.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAcceptedUser(self, request, context):
+        """Delete a previously accepted remote user, that is unfriend that user.
         *****************************************************************/
         ******************** OCM PROVIDER AUTHORIZER ********************/
         *****************************************************************/
@@ -1294,7 +1316,21 @@ class GatewayAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateOCMCoreShare(self, request, context):
-        """Creates a new ocm share.
+        """Creates a new OCM share.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateOCMCoreShare(self, request, context):
+        """Updates an OCM share.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteOCMCoreShare(self, request, context):
+        """Deletes an OCM share.
         *****************************************************************/
         ************************** FILE TRANSFER ************************/
         *****************************************************************/
@@ -1771,6 +1807,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersRequest.FromString,
                     response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.FindAcceptedUsersResponse.SerializeToString,
             ),
+            'DeleteAcceptedUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAcceptedUser,
+                    request_deserializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserResponse.SerializeToString,
+            ),
             'IsProviderAllowed': grpc.unary_unary_rpc_method_handler(
                     servicer.IsProviderAllowed,
                     request_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.IsProviderAllowedRequest.FromString,
@@ -1790,6 +1831,16 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.CreateOCMCoreShare,
                     request_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.FromString,
                     response_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.SerializeToString,
+            ),
+            'UpdateOCMCoreShare': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateOCMCoreShare,
+                    request_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareResponse.SerializeToString,
+            ),
+            'DeleteOCMCoreShare': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteOCMCoreShare,
+                    request_deserializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareResponse.SerializeToString,
             ),
             'CreateTransfer': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateTransfer,
@@ -3280,6 +3331,23 @@ class GatewayAPI(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def DeleteAcceptedUser(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/DeleteAcceptedUser',
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserRequest.SerializeToString,
+            cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2.DeleteAcceptedUserResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def IsProviderAllowed(request,
             target,
             options=(),
@@ -3344,6 +3412,40 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/CreateOCMCoreShare',
             cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareRequest.SerializeToString,
             cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.CreateOCMCoreShareResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateOCMCoreShare(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/UpdateOCMCoreShare',
+            cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareRequest.SerializeToString,
+            cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.UpdateOCMCoreShareResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteOCMCoreShare(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/DeleteOCMCoreShare',
+            cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareRequest.SerializeToString,
+            cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2.DeleteOCMCoreShareResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
