@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(cs3/app/registry/v1beta1/resources.proto\x12\x18\x63s3.app.registry.v1beta1\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xc0\x02\n\x0cProviderInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x12\n\nmime_types\x18\x02 \x03(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\x12\x45\n\ncapability\x18\x04 \x01(\x0e\x32\x31.cs3.app.registry.v1beta1.ProviderInfo.Capability\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0c\n\x04icon\x18\x07 \x01(\t\x12\x14\n\x0c\x64\x65sktop_only\x18\x08 \x01(\x08\"R\n\nCapability\x12\x16\n\x12\x43\x41PABILITY_INVALID\x10\x00\x12\x15\n\x11\x43\x41PABILITY_VIEWER\x10\x01\x12\x15\n\x11\x43\x41PABILITY_EDITOR\x10\x02\"\xfe\x01\n\x0cMimeTypeInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x11\n\tmime_type\x18\x02 \x01(\t\x12\x0b\n\x03\x65xt\x18\x03 \x01(\t\x12=\n\rapp_providers\x18\x04 \x03(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0c\n\x04icon\x18\x07 \x01(\t\x12\x16\n\x0e\x61llow_creation\x18\x08 \x01(\x08\x12\x1b\n\x13\x64\x65\x66\x61ult_application\x18\t \x01(\tB}\n\x1c\x63om.cs3.app.registry.v1beta1B\x0eResourcesProtoP\x01Z\x0fregistryv1beta1\xa2\x02\x03\x43\x41R\xaa\x02\x18\x43s3.App.Registry.V1Beta1\xca\x02\x18\x43s3\\App\\Registry\\V1Beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(cs3/app/registry/v1beta1/resources.proto\x12\x18\x63s3.app.registry.v1beta1\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xd0\x02\n\x0cProviderInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x12\n\nmime_types\x18\x02 \x03(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\x12\x45\n\ncapability\x18\x04 \x01(\x0e\x32\x31.cs3.app.registry.v1beta1.ProviderInfo.Capability\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0c\n\x04icon\x18\x07 \x01(\t\x12\x14\n\x0c\x64\x65sktop_only\x18\x08 \x01(\x08\x12\x0e\n\x06\x61\x63tion\x18\t \x01(\t\"R\n\nCapability\x12\x16\n\x12\x43\x41PABILITY_INVALID\x10\x00\x12\x15\n\x11\x43\x41PABILITY_VIEWER\x10\x01\x12\x15\n\x11\x43\x41PABILITY_EDITOR\x10\x02\"\xfe\x01\n\x0cMimeTypeInfo\x12)\n\x06opaque\x18\x01 \x01(\x0b\x32\x19.cs3.types.v1beta1.Opaque\x12\x11\n\tmime_type\x18\x02 \x01(\t\x12\x0b\n\x03\x65xt\x18\x03 \x01(\t\x12=\n\rapp_providers\x18\x04 \x03(\x0b\x32&.cs3.app.registry.v1beta1.ProviderInfo\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x0c\n\x04icon\x18\x07 \x01(\t\x12\x16\n\x0e\x61llow_creation\x18\x08 \x01(\x08\x12\x1b\n\x13\x64\x65\x66\x61ult_application\x18\t \x01(\tB}\n\x1c\x63om.cs3.app.registry.v1beta1B\x0eResourcesProtoP\x01Z\x0fregistryv1beta1\xa2\x02\x03\x43\x41R\xaa\x02\x18\x43s3.App.Registry.V1Beta1\xca\x02\x18\x43s3\\App\\Registry\\V1Beta1b\x06proto3')
 
 
 
@@ -41,9 +41,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\034com.cs3.app.registry.v1beta1B\016ResourcesProtoP\001Z\017registryv1beta1\242\002\003CAR\252\002\030Cs3.App.Registry.V1Beta1\312\002\030Cs3\\App\\Registry\\V1Beta1'
   _PROVIDERINFO._serialized_start=102
-  _PROVIDERINFO._serialized_end=422
-  _PROVIDERINFO_CAPABILITY._serialized_start=340
-  _PROVIDERINFO_CAPABILITY._serialized_end=422
-  _MIMETYPEINFO._serialized_start=425
-  _MIMETYPEINFO._serialized_end=679
+  _PROVIDERINFO._serialized_end=438
+  _PROVIDERINFO_CAPABILITY._serialized_start=356
+  _PROVIDERINFO_CAPABILITY._serialized_end=438
+  _MIMETYPEINFO._serialized_start=441
+  _MIMETYPEINFO._serialized_end=695
 # @@protoc_insertion_point(module_scope)
