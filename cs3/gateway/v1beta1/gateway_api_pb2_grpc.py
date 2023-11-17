@@ -25,7 +25,7 @@ from cs3.tx.v1beta1 import tx_api_pb2 as cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2
 class GatewayAPIStub(object):
     """Gateway API
 
-    The Gateway API is the only API exposed direclty to end-clients.
+    The Gateway API is the only API exposed directly to end-clients.
     It is a facade API that all clients should connect to.
     Other APIS like the StorageProviderAPI are internal APIS.
 
@@ -541,7 +541,7 @@ class GatewayAPIStub(object):
 class GatewayAPIServicer(object):
     """Gateway API
 
-    The Gateway API is the only API exposed direclty to end-clients.
+    The Gateway API is the only API exposed directly to end-clients.
     It is a facade API that all clients should connect to.
     Other APIS like the StorageProviderAPI are internal APIS.
 
@@ -1883,7 +1883,7 @@ def add_GatewayAPIServicer_to_server(servicer, server):
 class GatewayAPI(object):
     """Gateway API
 
-    The Gateway API is the only API exposed direclty to end-clients.
+    The Gateway API is the only API exposed directly to end-clients.
     It is a facade API that all clients should connect to.
     Other APIS like the StorageProviderAPI are internal APIS.
 
