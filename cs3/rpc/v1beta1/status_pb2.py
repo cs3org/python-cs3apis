@@ -13,9 +13,10 @@ _sym_db = _symbol_database.Default()
 
 
 from cs3.rpc.v1beta1 import code_pb2 as cs3_dot_rpc_dot_v1beta1_dot_code__pb2
+from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x63s3/rpc/v1beta1/status.proto\x12\x0f\x63s3.rpc.v1beta1\x1a\x1a\x63s3/rpc/v1beta1/code.proto\"\x82\x01\n\x06Status\x12)\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.cs3.rpc.v1beta1.CodeR\x04\x63ode\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\x12\x14\n\x05trace\x18\x03 \x01(\tR\x05trace\x12\x1d\n\ntarget_uri\x18\x04 \x01(\tR\ttargetUriB\xb9\x01\n\x13\x63om.cs3.rpc.v1beta1B\x0bStatusProtoP\x01Z7github.com/cs3org/go-cs3apis/cs3/rpc/v1beta1;rpcv1beta1\xa2\x02\x03\x43RX\xaa\x02\x0f\x43s3.Rpc.V1beta1\xca\x02\x0f\x43s3\\Rpc\\V1beta1\xe2\x02\x1b\x43s3\\Rpc\\V1beta1\\GPBMetadata\xea\x02\x11\x43s3::Rpc::V1beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x63s3/rpc/v1beta1/status.proto\x12\x0f\x63s3.rpc.v1beta1\x1a\x1a\x63s3/rpc/v1beta1/code.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"\xc2\x01\n\x06Status\x12)\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.cs3.rpc.v1beta1.CodeR\x04\x63ode\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\x12\x14\n\x05trace\x18\x03 \x01(\tR\x05trace\x12\x1d\n\ntarget_uri\x18\x04 \x01(\tR\ttargetUri\x12>\n\nInnerError\x18\x05 \x01(\x0b\x32\x1e.cs3.types.v1beta1.OpaqueEntryR\nInnerErrorB\xb9\x01\n\x13\x63om.cs3.rpc.v1beta1B\x0bStatusProtoP\x01Z7github.com/cs3org/go-cs3apis/cs3/rpc/v1beta1;rpcv1beta1\xa2\x02\x03\x43RX\xaa\x02\x0f\x43s3.Rpc.V1beta1\xca\x02\x0f\x43s3\\Rpc\\V1beta1\xe2\x02\x1b\x43s3\\Rpc\\V1beta1\\GPBMetadata\xea\x02\x11\x43s3::Rpc::V1beta1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,6 +24,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'cs3.rpc.v1beta1.status_pb2'
 if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\023com.cs3.rpc.v1beta1B\013StatusProtoP\001Z7github.com/cs3org/go-cs3apis/cs3/rpc/v1beta1;rpcv1beta1\242\002\003CRX\252\002\017Cs3.Rpc.V1beta1\312\002\017Cs3\\Rpc\\V1beta1\342\002\033Cs3\\Rpc\\V1beta1\\GPBMetadata\352\002\021Cs3::Rpc::V1beta1'
-  _globals['_STATUS']._serialized_start=78
-  _globals['_STATUS']._serialized_end=208
+  _globals['_STATUS']._serialized_start=109
+  _globals['_STATUS']._serialized_end=303
 # @@protoc_insertion_point(module_scope)
