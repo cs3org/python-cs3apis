@@ -18,7 +18,6 @@ from cs3.sharing.collaboration.v1beta1 import collaboration_api_pb2 as cs3_dot_s
 from cs3.sharing.link.v1beta1 import link_api_pb2 as cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2
 from cs3.sharing.ocm.v1beta1 import ocm_api_pb2 as cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2
 from cs3.storage.provider.v1beta1 import provider_api_pb2 as cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2
-from cs3.storage.provider.v1beta1 import spaces_api_pb2 as cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2
 from cs3.tx.v1beta1 import tx_api_pb2 as cs3_dot_tx_dot_v1beta1_dot_tx__api__pb2
 
 
@@ -208,23 +207,23 @@ class GatewayAPIStub(object):
                 )
         self.CreateStorageSpace = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/CreateStorageSpace',
-                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.CreateStorageSpaceRequest.SerializeToString,
-                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.CreateStorageSpaceResponse.FromString,
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateStorageSpaceRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateStorageSpaceResponse.FromString,
                 )
         self.ListStorageSpaces = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/ListStorageSpaces',
-                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.ListStorageSpacesRequest.SerializeToString,
-                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.ListStorageSpacesResponse.FromString,
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListStorageSpacesRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListStorageSpacesResponse.FromString,
                 )
         self.UpdateStorageSpace = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/UpdateStorageSpace',
-                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.UpdateStorageSpaceRequest.SerializeToString,
-                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.UpdateStorageSpaceResponse.FromString,
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UpdateStorageSpaceRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UpdateStorageSpaceResponse.FromString,
                 )
         self.DeleteStorageSpace = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/DeleteStorageSpace',
-                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceRequest.SerializeToString,
-                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceResponse.FromString,
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteStorageSpaceRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteStorageSpaceResponse.FromString,
                 )
         self.OpenInApp = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/OpenInApp',
@@ -1545,23 +1544,23 @@ def add_GatewayAPIServicer_to_server(servicer, server):
             ),
             'CreateStorageSpace': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateStorageSpace,
-                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.CreateStorageSpaceRequest.FromString,
-                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.CreateStorageSpaceResponse.SerializeToString,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateStorageSpaceRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateStorageSpaceResponse.SerializeToString,
             ),
             'ListStorageSpaces': grpc.unary_unary_rpc_method_handler(
                     servicer.ListStorageSpaces,
-                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.ListStorageSpacesRequest.FromString,
-                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.ListStorageSpacesResponse.SerializeToString,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListStorageSpacesRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListStorageSpacesResponse.SerializeToString,
             ),
             'UpdateStorageSpace': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateStorageSpace,
-                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.UpdateStorageSpaceRequest.FromString,
-                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.UpdateStorageSpaceResponse.SerializeToString,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UpdateStorageSpaceRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UpdateStorageSpaceResponse.SerializeToString,
             ),
             'DeleteStorageSpace': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteStorageSpace,
-                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceRequest.FromString,
-                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceResponse.SerializeToString,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteStorageSpaceRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteStorageSpaceResponse.SerializeToString,
             ),
             'OpenInApp': grpc.unary_unary_rpc_method_handler(
                     servicer.OpenInApp,
@@ -2442,8 +2441,8 @@ class GatewayAPI(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/CreateStorageSpace',
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.CreateStorageSpaceRequest.SerializeToString,
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.CreateStorageSpaceResponse.FromString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateStorageSpaceRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateStorageSpaceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2459,8 +2458,8 @@ class GatewayAPI(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListStorageSpaces',
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.ListStorageSpacesRequest.SerializeToString,
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.ListStorageSpacesResponse.FromString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListStorageSpacesRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListStorageSpacesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2476,8 +2475,8 @@ class GatewayAPI(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/UpdateStorageSpace',
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.UpdateStorageSpaceRequest.SerializeToString,
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.UpdateStorageSpaceResponse.FromString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UpdateStorageSpaceRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UpdateStorageSpaceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2493,8 +2492,8 @@ class GatewayAPI(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/DeleteStorageSpace',
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceRequest.SerializeToString,
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceResponse.FromString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteStorageSpaceRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.DeleteStorageSpaceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
