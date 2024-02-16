@@ -284,8 +284,11 @@ class ProviderAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def InitiateFileUpload(self, request, context):
-        """Initiates the upload of a file using an
-        out-of-band data transfer mechanism.
+        """Initiates the upload of a file using an out-of-band data
+        transfer mechanism. SHOULD return CODE_FAILED_PRECONDITION
+        if the reference is already locked with a mismatched lock.
+        Additionally, the lock check MUST be enforced by the data
+        transfer protocol returned in response.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
