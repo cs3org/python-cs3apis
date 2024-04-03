@@ -261,6 +261,11 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListReceivedSharesRequest.SerializeToString,
                 response_deserializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListReceivedSharesResponse.FromString,
                 )
+        self.ListExistingReceivedShares = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/ListExistingReceivedShares',
+                request_serializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListReceivedSharesRequest.SerializeToString,
+                response_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingReceivedSharesResponse.FromString,
+                )
         self.UpdateReceivedShare = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/UpdateReceivedShare',
                 request_serializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.UpdateReceivedShareRequest.SerializeToString,
@@ -908,7 +913,7 @@ class GatewayAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListShares(self, request, context):
-        """List the shares the authproviderenticated principal has created,
+        """List the shares the authenticated principal has created,
         both as owner and creator. If a filter is specified, only
         shares satisfying the filter MUST be returned.
         """
@@ -925,7 +930,15 @@ class GatewayAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListReceivedShares(self, request, context):
-        """List all shares the authproviderenticated principal has received.
+        """List all shares the authenticated principal has received.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListExistingReceivedShares(self, request, context):
+        """List all existing shares the authenticated principal has received,
+        including their storage resource information.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1004,7 +1017,7 @@ class GatewayAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListPublicShares(self, request, context):
-        """List the shares the authproviderenticated principal has created,
+        """List the shares the authenticated principal has created,
         both as owner and creator. If a filter is specified, only
         shares satisfying the filter MUST be returned.
         """
@@ -1059,7 +1072,7 @@ class GatewayAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListOCMShares(self, request, context):
-        """List the shares the authproviderenticated principal has created,
+        """List the shares the authenticated principal has created,
         both as owner and creator. If a filter is specified, only
         shares satisfying the filter MUST be returned.
         """
@@ -1076,7 +1089,7 @@ class GatewayAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListReceivedOCMShares(self, request, context):
-        """List all shares the authproviderenticated principal has received.
+        """List all shares the authenticated principal has received.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1597,6 +1610,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.ListReceivedShares,
                     request_deserializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListReceivedSharesRequest.FromString,
                     response_serializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListReceivedSharesResponse.SerializeToString,
+            ),
+            'ListExistingReceivedShares': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListExistingReceivedShares,
+                    request_deserializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListReceivedSharesRequest.FromString,
+                    response_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingReceivedSharesResponse.SerializeToString,
             ),
             'UpdateReceivedShare': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateReceivedShare,
@@ -2614,6 +2632,23 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListReceivedShares',
             cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListReceivedSharesRequest.SerializeToString,
             cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListReceivedSharesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListExistingReceivedShares(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListExistingReceivedShares',
+            cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListReceivedSharesRequest.SerializeToString,
+            cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingReceivedSharesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
