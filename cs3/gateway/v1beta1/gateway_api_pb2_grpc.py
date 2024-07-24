@@ -639,6 +639,7 @@ class GatewayAPIServicer(object):
         then the entire directory is deleted recursively.
         If a resource specifies a reference or symlink type, only the reference is removed (not the target).
         MUST return CODE_NOT_FOUND if the reference does not exist.
+        MUST return CODE_TOO_EARLY if some are not finished job over resource is still in process.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -726,7 +727,8 @@ class GatewayAPIServicer(object):
     def Move(self, request, context):
         """Moves a resource from one reference to another.
         MUST return CODE_NOT_FOUND if any of the references do not exist.
-        MUST return CODE_FAILED_PRECONDITION if the source reference
+        MUST return CODE_FAILED_PRECONDITION if the source reference.
+        MUST return CODE_TOO_EARLY if some are not finished job over resource is still in process.
         cannot be moved to the destination reference.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
