@@ -251,6 +251,11 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListSharesRequest.SerializeToString,
                 response_deserializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListSharesResponse.FromString,
                 )
+        self.ListExistingShares = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/ListExistingShares',
+                request_serializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListSharesRequest.SerializeToString,
+                response_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingSharesResponse.FromString,
+                )
         self.UpdateShare = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/UpdateShare',
                 request_serializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.UpdateShareRequest.SerializeToString,
@@ -310,6 +315,11 @@ class GatewayAPIStub(object):
                 '/cs3.gateway.v1beta1.GatewayAPI/ListPublicShares',
                 request_serializer=cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2.ListPublicSharesRequest.SerializeToString,
                 response_deserializer=cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2.ListPublicSharesResponse.FromString,
+                )
+        self.ListExistingPublicShares = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/ListExistingPublicShares',
+                request_serializer=cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2.ListPublicSharesRequest.SerializeToString,
+                response_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingPublicSharesResponse.FromString,
                 )
         self.UpdatePublicShare = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/UpdatePublicShare',
@@ -923,6 +933,14 @@ class GatewayAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListExistingShares(self, request, context):
+        """List all existing shares the authenticated principal has created,
+        including their storage resource information.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UpdateShare(self, request, context):
         """Updates a share.
         MUST return CODE_NOT_FOUND if the share reference does not exist.
@@ -1022,6 +1040,15 @@ class GatewayAPIServicer(object):
         """List the shares the authenticated principal has created,
         both as owner and creator. If a filter is specified, only
         shares satisfying the filter MUST be returned.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListExistingPublicShares(self, request, context):
+        """List all existing shares the authenticated principal has created,
+        both as owner and creator, including their storage resource information.
+        If a filter is specified, only shares satisfying the filter MUST be returned.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1603,6 +1630,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListSharesRequest.FromString,
                     response_serializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListSharesResponse.SerializeToString,
             ),
+            'ListExistingShares': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListExistingShares,
+                    request_deserializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListSharesRequest.FromString,
+                    response_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingSharesResponse.SerializeToString,
+            ),
             'UpdateShare': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateShare,
                     request_deserializer=cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.UpdateShareRequest.FromString,
@@ -1662,6 +1694,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.ListPublicShares,
                     request_deserializer=cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2.ListPublicSharesRequest.FromString,
                     response_serializer=cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2.ListPublicSharesResponse.SerializeToString,
+            ),
+            'ListExistingPublicShares': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListExistingPublicShares,
+                    request_deserializer=cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2.ListPublicSharesRequest.FromString,
+                    response_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingPublicSharesResponse.SerializeToString,
             ),
             'UpdatePublicShare': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdatePublicShare,
@@ -2604,6 +2641,23 @@ class GatewayAPI(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def ListExistingShares(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListExistingShares',
+            cs3_dot_sharing_dot_collaboration_dot_v1beta1_dot_collaboration__api__pb2.ListSharesRequest.SerializeToString,
+            cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingSharesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def UpdateShare(request,
             target,
             options=(),
@@ -2804,6 +2858,23 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListPublicShares',
             cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2.ListPublicSharesRequest.SerializeToString,
             cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2.ListPublicSharesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListExistingPublicShares(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListExistingPublicShares',
+            cs3_dot_sharing_dot_link_dot_v1beta1_dot_link__api__pb2.ListPublicSharesRequest.SerializeToString,
+            cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingPublicSharesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
