@@ -13,8 +13,8 @@ jobs:
 
     - name: Set environnment package version from commit
       run: |
-        SHORT_SHA=$(echo ${{ github.sha }} | cut -c-12)
-        echo "PACKAGE_VERSION=0.2.$(date +%Y%m%d)-${SHORT_SHA}" >> $GITHUB_ENV # use same convention as Go bindings
+        SHORT_SHA=$(echo ${{ github.sha }} | cut -c-6)
+        echo "PACKAGE_VERSION=0.2.$(date +%Y%m%d).$((16#${SHORT_SHA}))" >> $GITHUB_ENV # use similar convention as Go bindings, but with decimal digits only
 
     - name: Set up Python 3.12
       uses: actions/setup-python@v3
