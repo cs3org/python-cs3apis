@@ -1,10 +1,14 @@
 import setuptools
+import os
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+version = os.getenv("PACKAGE_VERSION", "0.0.0")
+
 setuptools.setup(
     name="cs3apis",
+    version=version,
     setup_requires=['setuptools_scm'],
     author="CS3 Organization",
     author_email="contact@cs3community.org",
