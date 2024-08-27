@@ -1,4 +1,4 @@
-# CS3APIS for Python
+# CS3APIs Bindings for Python
 
 [![Join the conversation](https://badges.gitter.im/cs3org/CS3APIS.svg)](https://gitter.im/cs3org/CS3APIS) [![Latest Version](https://img.shields.io/pypi/v/cs3apis)](https://pypi.org/project/cs3apis/) [![Drone CI Build Status](https://img.shields.io/drone/build/cs3org/python-cs3apis)](https://cloud.drone.io/cs3org/python-cs3apis) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
 

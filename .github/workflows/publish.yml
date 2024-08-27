@@ -1,0 +1,33 @@
+name: Publish To PyPI
+
+on:
+  push:
+    branches: ['main']
+  
+jobs:
+  build-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set environnment package version from commit
+      run: echo "PACKAGE_VERSION=v0.0.0-$(date +%Y%m%d)-${{ github.sha }}" >> $GITHUB_ENV # use same convention as Go bindings
+      
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.12"
+      
+    - name: Install dependencies 
+      run: pip install build twine
+
+    - name: Build wheel
+      run: python -m build
+
+    - name: Publish distribution to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+      run: twine upload --repository pypi dist/*
+
