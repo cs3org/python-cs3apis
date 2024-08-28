@@ -26,6 +26,8 @@ jobs:
 
     - name: Build wheel
       run: |
+        echo "Creating __init__.py files"
+        find cs3 -type d -exec touch {}/__init__.py \;
         echo "Building version ${PACKAGE_VERSION}"
         python -m build
 
