@@ -72,7 +72,7 @@ class OcmCoreAPIServicer(object):
 
     def CreateOCMCoreShare(self, request, context):
         """Creates a new OCM share, in response to a call from remote to:
-        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -80,7 +80,7 @@ class OcmCoreAPIServicer(object):
 
     def UpdateOCMCoreShare(self, request, context):
         """Updates an OCM share, in response to a notification from the remote system to:
-        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -88,7 +88,7 @@ class OcmCoreAPIServicer(object):
 
     def DeleteOCMCoreShare(self, request, context):
         """Deletes an OCM share, in response to a notification from the remote system to:
-        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
