@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)cs3/identity/user/v1beta1/resources.proto\x12\x19\x63s3.identity.user.v1beta1\x1a\x1d\x63s3/types/v1beta1/types.proto\"p\n\x06UserId\x12\x10\n\x03idp\x18\x01 \x01(\tR\x03idp\x12\x1b\n\topaque_id\x18\x02 \x01(\tR\x08opaqueId\x12\x37\n\x04type\x18\x03 \x01(\x0e\x32#.cs3.identity.user.v1beta1.UserTypeR\x04type\"\xba\x02\n\x04User\x12\x31\n\x02id\x18\x01 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdR\x02id\x12\x1a\n\x08username\x18\x02 \x01(\tR\x08username\x12\x12\n\x04mail\x18\x03 \x01(\tR\x04mail\x12#\n\rmail_verified\x18\x04 \x01(\x08R\x0cmailVerified\x12!\n\x0c\x64isplay_name\x18\x05 \x01(\tR\x0b\x64isplayName\x12\x16\n\x06groups\x18\x06 \x03(\tR\x06groups\x12\x31\n\x06opaque\x18\x07 \x01(\x0b\x32\x19.cs3.types.v1beta1.OpaqueR\x06opaque\x12\x1d\n\nuid_number\x18\x08 \x01(\x03R\tuidNumber\x12\x1d\n\ngid_number\x18\t \x01(\x03R\tgidNumber*\xe7\x01\n\x08UserType\x12\x15\n\x11USER_TYPE_INVALID\x10\x00\x12\x15\n\x11USER_TYPE_PRIMARY\x10\x01\x12\x17\n\x13USER_TYPE_SECONDARY\x10\x02\x12\x15\n\x11USER_TYPE_SERVICE\x10\x03\x12\x19\n\x15USER_TYPE_APPLICATION\x10\x04\x12\x13\n\x0fUSER_TYPE_GUEST\x10\x05\x12\x17\n\x13USER_TYPE_FEDERATED\x10\x06\x12\x19\n\x15USER_TYPE_LIGHTWEIGHT\x10\x07\x12\x19\n\x15USER_TYPE_SPACE_OWNER\x10\x08\x42\xfa\x01\n\x1d\x63om.cs3.identity.user.v1beta1B\x0eResourcesProtoP\x01ZBgithub.com/cs3org/go-cs3apis/cs3/identity/user/v1beta1;userv1beta1\xa2\x02\x03\x43IU\xaa\x02\x19\x43s3.Identity.User.V1beta1\xca\x02\x19\x43s3\\Identity\\User\\V1beta1\xe2\x02%Cs3\\Identity\\User\\V1beta1\\GPBMetadata\xea\x02\x1c\x43s3::Identity::User::V1beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)cs3/identity/user/v1beta1/resources.proto\x12\x19\x63s3.identity.user.v1beta1\x1a\x1d\x63s3/types/v1beta1/types.proto\"\x8d\x01\n\x06UserId\x12\x10\n\x03idp\x18\x01 \x01(\tR\x03idp\x12\x1b\n\topaque_id\x18\x02 \x01(\tR\x08opaqueId\x12\x37\n\x04type\x18\x03 \x01(\x0e\x32#.cs3.identity.user.v1beta1.UserTypeR\x04type\x12\x1b\n\ttenant_id\x18\x04 \x01(\tR\x08tenantId\"\xba\x02\n\x04User\x12\x31\n\x02id\x18\x01 \x01(\x0b\x32!.cs3.identity.user.v1beta1.UserIdR\x02id\x12\x1a\n\x08username\x18\x02 \x01(\tR\x08username\x12\x12\n\x04mail\x18\x03 \x01(\tR\x04mail\x12#\n\rmail_verified\x18\x04 \x01(\x08R\x0cmailVerified\x12!\n\x0c\x64isplay_name\x18\x05 \x01(\tR\x0b\x64isplayName\x12\x16\n\x06groups\x18\x06 \x03(\tR\x06groups\x12\x31\n\x06opaque\x18\x07 \x01(\x0b\x32\x19.cs3.types.v1beta1.OpaqueR\x06opaque\x12\x1d\n\nuid_number\x18\x08 \x01(\x03R\tuidNumber\x12\x1d\n\ngid_number\x18\t \x01(\x03R\tgidNumber*\xe7\x01\n\x08UserType\x12\x15\n\x11USER_TYPE_INVALID\x10\x00\x12\x15\n\x11USER_TYPE_PRIMARY\x10\x01\x12\x17\n\x13USER_TYPE_SECONDARY\x10\x02\x12\x15\n\x11USER_TYPE_SERVICE\x10\x03\x12\x19\n\x15USER_TYPE_APPLICATION\x10\x04\x12\x13\n\x0fUSER_TYPE_GUEST\x10\x05\x12\x17\n\x13USER_TYPE_FEDERATED\x10\x06\x12\x19\n\x15USER_TYPE_LIGHTWEIGHT\x10\x07\x12\x19\n\x15USER_TYPE_SPACE_OWNER\x10\x08\x42\xfa\x01\n\x1d\x63om.cs3.identity.user.v1beta1B\x0eResourcesProtoP\x01ZBgithub.com/cs3org/go-cs3apis/cs3/identity/user/v1beta1;userv1beta1\xa2\x02\x03\x43IU\xaa\x02\x19\x43s3.Identity.User.V1beta1\xca\x02\x19\x43s3\\Identity\\User\\V1beta1\xe2\x02%Cs3\\Identity\\User\\V1beta1\\GPBMetadata\xea\x02\x1c\x43s3::Identity::User::V1beta1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,10 +23,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'cs3.identity.user.v1beta1.r
 if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\035com.cs3.identity.user.v1beta1B\016ResourcesProtoP\001ZBgithub.com/cs3org/go-cs3apis/cs3/identity/user/v1beta1;userv1beta1\242\002\003CIU\252\002\031Cs3.Identity.User.V1beta1\312\002\031Cs3\\Identity\\User\\V1beta1\342\002%Cs3\\Identity\\User\\V1beta1\\GPBMetadata\352\002\034Cs3::Identity::User::V1beta1'
-  _globals['_USERTYPE']._serialized_start=535
-  _globals['_USERTYPE']._serialized_end=766
-  _globals['_USERID']._serialized_start=103
-  _globals['_USERID']._serialized_end=215
-  _globals['_USER']._serialized_start=218
-  _globals['_USER']._serialized_end=532
+  _globals['_USERTYPE']._serialized_start=565
+  _globals['_USERTYPE']._serialized_end=796
+  _globals['_USERID']._serialized_start=104
+  _globals['_USERID']._serialized_end=245
+  _globals['_USER']._serialized_start=248
+  _globals['_USER']._serialized_end=562
 # @@protoc_insertion_point(module_scope)
