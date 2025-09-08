@@ -16,7 +16,7 @@ from cs3.identity.user.v1beta1 import resources_pb2 as cs3_dot_identity_dot_user
 from cs3.types.v1beta1 import types_pb2 as cs3_dot_types_dot_v1beta1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*cs3/identity/group/v1beta1/resources.proto\x12\x1a\x63s3.identity.group.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"8\n\x07GroupId\x12\x10\n\x03idp\x18\x01 \x01(\tR\x03idp\x12\x1b\n\topaque_id\x18\x02 \x01(\tR\x08opaqueId\"\xc6\x02\n\x05Group\x12\x33\n\x02id\x18\x01 \x01(\x0b\x32#.cs3.identity.group.v1beta1.GroupIdR\x02id\x12\x1d\n\ngroup_name\x18\x02 \x01(\tR\tgroupName\x12\x1d\n\ngid_number\x18\x03 \x01(\x03R\tgidNumber\x12\x12\n\x04mail\x18\x04 \x01(\tR\x04mail\x12#\n\rmail_verified\x18\x05 \x01(\x08R\x0cmailVerified\x12!\n\x0c\x64isplay_name\x18\x06 \x01(\tR\x0b\x64isplayName\x12;\n\x07members\x18\x07 \x03(\x0b\x32!.cs3.identity.user.v1beta1.UserIdR\x07members\x12\x31\n\x06opaque\x18\x08 \x01(\x0b\x32\x19.cs3.types.v1beta1.OpaqueR\x06opaqueB\x81\x02\n\x1e\x63om.cs3.identity.group.v1beta1B\x0eResourcesProtoP\x01ZDgithub.com/cs3org/go-cs3apis/cs3/identity/group/v1beta1;groupv1beta1\xa2\x02\x03\x43IG\xaa\x02\x1a\x43s3.Identity.Group.V1beta1\xca\x02\x1a\x43s3\\Identity\\Group\\V1beta1\xe2\x02&Cs3\\Identity\\Group\\V1beta1\\GPBMetadata\xea\x02\x1d\x43s3::Identity::Group::V1beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*cs3/identity/group/v1beta1/resources.proto\x12\x1a\x63s3.identity.group.v1beta1\x1a)cs3/identity/user/v1beta1/resources.proto\x1a\x1d\x63s3/types/v1beta1/types.proto\"s\n\x07GroupId\x12\x10\n\x03idp\x18\x01 \x01(\tR\x03idp\x12\x1b\n\topaque_id\x18\x02 \x01(\tR\x08opaqueId\x12\x39\n\x04type\x18\x03 \x01(\x0e\x32%.cs3.identity.group.v1beta1.GroupTypeR\x04type\"\xc6\x02\n\x05Group\x12\x33\n\x02id\x18\x01 \x01(\x0b\x32#.cs3.identity.group.v1beta1.GroupIdR\x02id\x12\x1d\n\ngroup_name\x18\x02 \x01(\tR\tgroupName\x12\x1d\n\ngid_number\x18\x03 \x01(\x03R\tgidNumber\x12\x12\n\x04mail\x18\x04 \x01(\tR\x04mail\x12#\n\rmail_verified\x18\x05 \x01(\x08R\x0cmailVerified\x12!\n\x0c\x64isplay_name\x18\x06 \x01(\tR\x0b\x64isplayName\x12;\n\x07members\x18\x07 \x03(\x0b\x32!.cs3.identity.user.v1beta1.UserIdR\x07members\x12\x31\n\x06opaque\x18\x08 \x01(\x0b\x32\x19.cs3.types.v1beta1.OpaqueR\x06opaque*U\n\tGroupType\x12\x16\n\x12GROUP_TYPE_INVALID\x10\x00\x12\x16\n\x12GROUP_TYPE_REGULAR\x10\x01\x12\x18\n\x14GROUP_TYPE_FEDERATED\x10\x02\x42\x81\x02\n\x1e\x63om.cs3.identity.group.v1beta1B\x0eResourcesProtoP\x01ZDgithub.com/cs3org/go-cs3apis/cs3/identity/group/v1beta1;groupv1beta1\xa2\x02\x03\x43IG\xaa\x02\x1a\x43s3.Identity.Group.V1beta1\xca\x02\x1a\x43s3\\Identity\\Group\\V1beta1\xe2\x02&Cs3\\Identity\\Group\\V1beta1\\GPBMetadata\xea\x02\x1d\x43s3::Identity::Group::V1beta1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,8 +24,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'cs3.identity.group.v1beta1.
 if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\036com.cs3.identity.group.v1beta1B\016ResourcesProtoP\001ZDgithub.com/cs3org/go-cs3apis/cs3/identity/group/v1beta1;groupv1beta1\242\002\003CIG\252\002\032Cs3.Identity.Group.V1beta1\312\002\032Cs3\\Identity\\Group\\V1beta1\342\002&Cs3\\Identity\\Group\\V1beta1\\GPBMetadata\352\002\035Cs3::Identity::Group::V1beta1'
+  _globals['_GROUPTYPE']._serialized_start=594
+  _globals['_GROUPTYPE']._serialized_end=679
   _globals['_GROUPID']._serialized_start=148
-  _globals['_GROUPID']._serialized_end=204
-  _globals['_GROUP']._serialized_start=207
-  _globals['_GROUP']._serialized_end=533
+  _globals['_GROUPID']._serialized_end=263
+  _globals['_GROUP']._serialized_start=266
+  _globals['_GROUP']._serialized_end=592
 # @@protoc_insertion_point(module_scope)
