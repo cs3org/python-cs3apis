@@ -97,8 +97,8 @@ class UserAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def FindUsers(self, request, context):
-        """Finds users by any attribute of the user.
-        TODO(labkode): to define the filters that make more sense.
+        """Finds users that match the specified filters.
+        MAY return CODE_RESOURCE_EXHAUSTED if the filters return too many responses.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

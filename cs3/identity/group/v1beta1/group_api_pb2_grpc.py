@@ -109,7 +109,8 @@ class GroupAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def FindGroups(self, request, context):
-        """Finds groups whose names match the specified filter.
+        """Finds groups whose names match the specified filters.
+        MAY return CODE_RESOURCE_EXHAUSTED if the filters return too many responses.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
