@@ -351,6 +351,11 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.ListOCMSharesRequest.SerializeToString,
                 response_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.ListOCMSharesResponse.FromString,
                 )
+        self.ListExistingOCMShares = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/ListExistingOCMShares',
+                request_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.ListOCMSharesRequest.SerializeToString,
+                response_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingOCMSharesResponse.FromString,
+                )
         self.UpdateOCMShare = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/UpdateOCMShare',
                 request_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.UpdateOCMShareRequest.SerializeToString,
@@ -1109,6 +1114,14 @@ class GatewayAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListExistingOCMShares(self, request, context):
+        """List all existing shares the authenticated principal has created,
+        including their storage resource information.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UpdateOCMShare(self, request, context):
         """Updates a share.
         MUST return CODE_NOT_FOUND if the share reference does not exist.
@@ -1729,6 +1742,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.ListOCMShares,
                     request_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.ListOCMSharesRequest.FromString,
                     response_serializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.ListOCMSharesResponse.SerializeToString,
+            ),
+            'ListExistingOCMShares': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListExistingOCMShares,
+                    request_deserializer=cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.ListOCMSharesRequest.FromString,
+                    response_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingOCMSharesResponse.SerializeToString,
             ),
             'UpdateOCMShare': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateOCMShare,
@@ -2977,6 +2995,23 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListOCMShares',
             cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.ListOCMSharesRequest.SerializeToString,
             cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.ListOCMSharesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListExistingOCMShares(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListExistingOCMShares',
+            cs3_dot_sharing_dot_ocm_dot_v1beta1_dot_ocm__api__pb2.ListOCMSharesRequest.SerializeToString,
+            cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.ListExistingOCMSharesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
