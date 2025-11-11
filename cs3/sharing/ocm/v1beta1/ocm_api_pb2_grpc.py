@@ -6,13 +6,15 @@ from cs3.sharing.ocm.v1beta1 import ocm_api_pb2 as cs3_dot_sharing_dot_ocm_dot_v
 
 
 class OcmAPIStub(object):
-    """OCM Share Provider API
+    """OCM API
 
-    The OCM Share Provider API is meant to manipulate share
-    resources from the perspective of the creator or the share and
-    from the perspective of the receiver of the share.
+    The OCM API is a share API meant for local users to offer local
+    resources to remote recipients via the Open Cloud Mesh (OCM) protocol,
+    and to manipulate shares received from remote users.
+    Implementations are expected to call remote `/ocm` endpoints
+    in response to the payloads received via this API.
 
-    The following APIs match the OCM v1.1 spec including multi-protocol shares.
+    The APIs match the OCM v1.2 spec including multi-protocol shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -81,13 +83,15 @@ class OcmAPIStub(object):
 
 
 class OcmAPIServicer(object):
-    """OCM Share Provider API
+    """OCM API
 
-    The OCM Share Provider API is meant to manipulate share
-    resources from the perspective of the creator or the share and
-    from the perspective of the receiver of the share.
+    The OCM API is a share API meant for local users to offer local
+    resources to remote recipients via the Open Cloud Mesh (OCM) protocol,
+    and to manipulate shares received from remote users.
+    Implementations are expected to call remote `/ocm` endpoints
+    in response to the payloads received via this API.
 
-    The following APIs match the OCM v1.1 spec including multi-protocol shares.
+    The APIs match the OCM v1.2 spec including multi-protocol shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -103,24 +107,23 @@ class OcmAPIServicer(object):
     """
 
     def CreateOCMShare(self, request, context):
-        """Creates a new ocm share.
+        """Creates a new OCM share.
         MUST return CODE_NOT_FOUND if the resource reference does not exist.
-        MUST return CODE_ALREADY_EXISTS if the share already exists for the 4-tuple consisting of
+        MUST return CODE_ALREADY_EXISTS if the share already exists for the 3-tuple consisting of
         (owner, shared_resource, grantee).
         New shares MUST be created in the state SHARE_STATE_PENDING, and MUST be sent
-        to the remote system using the OCM API at:
-        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
+        to the remote system using the `/ocm/shares` OCM API, see:
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RemoveOCMShare(self, request, context):
-        """Removes a share.
+        """Removes an OCM share.
         MUST return CODE_NOT_FOUND if the share reference does not exist.
-        This action SHALL be notified to the remote system
-        using the OCM API at:
-        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+        This action MUST be notified to the remote system using the `/ocm/notifications` OCM API at:
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -143,7 +146,7 @@ class OcmAPIServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListOCMShares(self, request, context):
-        """List the shares the authenticated principal has created,
+        """List the shares the currently authenticated user has created,
         both as owner and creator. If a filter is specified, only
         shares satisfying the filter MUST be returned.
         """
@@ -154,16 +157,15 @@ class OcmAPIServicer(object):
     def UpdateOCMShare(self, request, context):
         """Updates a share.
         MUST return CODE_NOT_FOUND if the share reference does not exist.
-        This action SHALL be notified to the remote system
-        using the OCM API at:
-        https://cs3org.github.io/OCM-API/docs.html?branch=v1.1.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+        This action MUST be notified to the remote system using the `/ocm/notifications` OCM API at:
+        https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListReceivedOCMShares(self, request, context):
-        """List all shares the authenticated principal has received.
+        """List all shares the currently authenticated user has received.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -241,13 +243,15 @@ def add_OcmAPIServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class OcmAPI(object):
-    """OCM Share Provider API
+    """OCM API
 
-    The OCM Share Provider API is meant to manipulate share
-    resources from the perspective of the creator or the share and
-    from the perspective of the receiver of the share.
+    The OCM API is a share API meant for local users to offer local
+    resources to remote recipients via the Open Cloud Mesh (OCM) protocol,
+    and to manipulate shares received from remote users.
+    Implementations are expected to call remote `/ocm` endpoints
+    in response to the payloads received via this API.
 
-    The following APIs match the OCM v1.1 spec including multi-protocol shares.
+    The APIs match the OCM v1.2 spec including multi-protocol shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and

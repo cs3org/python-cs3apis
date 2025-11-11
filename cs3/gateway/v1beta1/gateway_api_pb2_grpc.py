@@ -10,6 +10,7 @@ from cs3.gateway.v1beta1 import gateway_api_pb2 as cs3_dot_gateway_dot_v1beta1_d
 from cs3.identity.group.v1beta1 import group_api_pb2 as cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2
 from cs3.identity.user.v1beta1 import user_api_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2
 from cs3.ocm.core.v1beta1 import ocm_core_api_pb2 as cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2
+from cs3.ocm.incoming.v1beta1 import ocm_incoming_api_pb2 as cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2
 from cs3.ocm.invite.v1beta1 import invite_api_pb2 as cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2
 from cs3.ocm.provider.v1beta1 import provider_api_pb2 as cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2
 from cs3.permissions.v1beta1 import permissions_api_pb2 as cs3_dot_permissions_dot_v1beta1_dot_permissions__api__pb2
@@ -510,6 +511,21 @@ class GatewayAPIStub(object):
                 '/cs3.gateway.v1beta1.GatewayAPI/ListAllProviders',
                 request_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersRequest.SerializeToString,
                 response_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersResponse.FromString,
+                )
+        self.CreateOCMIncomingShare = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/CreateOCMIncomingShare',
+                request_serializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.CreateOCMIncomingShareRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.CreateOCMIncomingShareResponse.FromString,
+                )
+        self.UpdateOCMIncomingShare = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/UpdateOCMIncomingShare',
+                request_serializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.UpdateOCMIncomingShareRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.UpdateOCMIncomingShareResponse.FromString,
+                )
+        self.DeleteOCMIncomingShare = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/DeleteOCMIncomingShare',
+                request_serializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.DeleteOCMIncomingShareRequest.SerializeToString,
+                response_deserializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.DeleteOCMIncomingShareResponse.FromString,
                 )
         self.CreateOCMCoreShare = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/CreateOCMCoreShare',
@@ -1364,29 +1380,50 @@ class GatewayAPIServicer(object):
     def ListAllProviders(self, request, context):
         """Get the information of all the providers registered in the mesh.
         *****************************************************************/
-        **************************** OCM CORE ***************************/
+        **************************** OCM INCOMING ***********************/
         *****************************************************************/
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateOCMIncomingShare(self, request, context):
+        """Creates a new incoming OCM share.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateOCMIncomingShare(self, request, context):
+        """Updates an incoming OCM share.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteOCMIncomingShare(self, request, context):
+        """Deletes an incoming OCM share.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateOCMCoreShare(self, request, context):
-        """Creates a new OCM share.
+        """Deprecated. Creates a new OCM share.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateOCMCoreShare(self, request, context):
-        """Updates an OCM share.
+        """Deprecated. Updates an OCM share.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteOCMCoreShare(self, request, context):
-        """Deletes an OCM share.
+        """Deprecated. Deletes an OCM share.
         *****************************************************************/
         ************************** FILE TRANSFER ************************/
         *****************************************************************/
@@ -1902,6 +1939,21 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.ListAllProviders,
                     request_deserializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersRequest.FromString,
                     response_serializer=cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersResponse.SerializeToString,
+            ),
+            'CreateOCMIncomingShare': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateOCMIncomingShare,
+                    request_deserializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.CreateOCMIncomingShareRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.CreateOCMIncomingShareResponse.SerializeToString,
+            ),
+            'UpdateOCMIncomingShare': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateOCMIncomingShare,
+                    request_deserializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.UpdateOCMIncomingShareRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.UpdateOCMIncomingShareResponse.SerializeToString,
+            ),
+            'DeleteOCMIncomingShare': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteOCMIncomingShare,
+                    request_deserializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.DeleteOCMIncomingShareRequest.FromString,
+                    response_serializer=cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.DeleteOCMIncomingShareResponse.SerializeToString,
             ),
             'CreateOCMCoreShare': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateOCMCoreShare,
@@ -3539,6 +3591,57 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListAllProviders',
             cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersRequest.SerializeToString,
             cs3_dot_ocm_dot_provider_dot_v1beta1_dot_provider__api__pb2.ListAllProvidersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateOCMIncomingShare(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/CreateOCMIncomingShare',
+            cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.CreateOCMIncomingShareRequest.SerializeToString,
+            cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.CreateOCMIncomingShareResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateOCMIncomingShare(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/UpdateOCMIncomingShare',
+            cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.UpdateOCMIncomingShareRequest.SerializeToString,
+            cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.UpdateOCMIncomingShareResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteOCMIncomingShare(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/DeleteOCMIncomingShare',
+            cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.DeleteOCMIncomingShareRequest.SerializeToString,
+            cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2.DeleteOCMIncomingShareResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

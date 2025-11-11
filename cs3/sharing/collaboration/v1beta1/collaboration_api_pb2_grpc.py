@@ -9,9 +9,10 @@ class CollaborationAPIStub(object):
     """User Share Provider API
 
     The User Share Provider API is meant to manipulate share
-    resources for a specific share type (user, group, ocm, ...)
-    from the perspective of the creator or the share and
-    from the perspective of the receiver of the share.
+    resources for a specific share type (user or group)
+    from the perspective of the creator of the share and
+    from the perspective of the recipient, both known to
+    the local system. See OCM for remote shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -78,9 +79,10 @@ class CollaborationAPIServicer(object):
     """User Share Provider API
 
     The User Share Provider API is meant to manipulate share
-    resources for a specific share type (user, group, ocm, ...)
-    from the perspective of the creator or the share and
-    from the perspective of the receiver of the share.
+    resources for a specific share type (user or group)
+    from the perspective of the creator of the share and
+    from the perspective of the recipient, both known to
+    the local system. See OCM for remote shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -217,9 +219,10 @@ class CollaborationAPI(object):
     """User Share Provider API
 
     The User Share Provider API is meant to manipulate share
-    resources for a specific share type (user, group, ocm, ...)
-    from the perspective of the creator or the share and
-    from the perspective of the receiver of the share.
+    resources for a specific share type (user or group)
+    from the perspective of the creator of the share and
+    from the perspective of the recipient, both known to
+    the local system. See OCM for remote shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and

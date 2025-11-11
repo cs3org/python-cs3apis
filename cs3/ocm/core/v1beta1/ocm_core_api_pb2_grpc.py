@@ -6,12 +6,13 @@ from cs3.ocm.core.v1beta1 import ocm_core_api_pb2 as cs3_dot_ocm_dot_core_dot_v1
 
 
 class OcmCoreAPIStub(object):
-    """OCM Core API
+    """OCM Core API (deprecated and to be removed, use cs3/ocm/incoming/v1beta1/incoming_api.proto instead)
 
-    the OCM Core API is the mapping for the local system of the OCM protocol,
-    including multi-protocol shares. Implementations are expected to expose
-    the `/ocm` endpoints according to the OCM API, and in response to those
-    endpoints implement the following API.
+    This API is the mapping for the local system of the Open Cloud Mesh
+    (OCM) sharing protocol. Implementations are expected to expose the `/ocm`
+    endpoints according to the OCM API, and in response to those endpoints call the
+    following API. Support for multi-protocol shares is included, if the remote
+    sender supplies a multi-protocol share.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -50,12 +51,13 @@ class OcmCoreAPIStub(object):
 
 
 class OcmCoreAPIServicer(object):
-    """OCM Core API
+    """OCM Core API (deprecated and to be removed, use cs3/ocm/incoming/v1beta1/incoming_api.proto instead)
 
-    the OCM Core API is the mapping for the local system of the OCM protocol,
-    including multi-protocol shares. Implementations are expected to expose
-    the `/ocm` endpoints according to the OCM API, and in response to those
-    endpoints implement the following API.
+    This API is the mapping for the local system of the Open Cloud Mesh
+    (OCM) sharing protocol. Implementations are expected to expose the `/ocm`
+    endpoints according to the OCM API, and in response to those endpoints call the
+    following API. Support for multi-protocol shares is included, if the remote
+    sender supplies a multi-protocol share.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -71,24 +73,21 @@ class OcmCoreAPIServicer(object):
     """
 
     def CreateOCMCoreShare(self, request, context):
-        """Creates a new OCM share, in response to a call from remote to:
-        https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1shares/post
+        """Deprecated. Creates a new OCM share, in response to a call from the remote system
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateOCMCoreShare(self, request, context):
-        """Updates an OCM share, in response to a notification from the remote system to:
-        https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+        """Deprecated. Updates an OCM share, in response to a notification from the remote system
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteOCMCoreShare(self, request, context):
-        """Deletes an OCM share, in response to a notification from the remote system to:
-        https://cs3org.github.io/OCM-API/docs.html?branch=v1.2.0&repo=OCM-API&user=cs3org#/paths/~1notifications/post
+        """Deprecated. Deletes an OCM share, in response to a notification from the remote system
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -120,12 +119,13 @@ def add_OcmCoreAPIServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class OcmCoreAPI(object):
-    """OCM Core API
+    """OCM Core API (deprecated and to be removed, use cs3/ocm/incoming/v1beta1/incoming_api.proto instead)
 
-    the OCM Core API is the mapping for the local system of the OCM protocol,
-    including multi-protocol shares. Implementations are expected to expose
-    the `/ocm` endpoints according to the OCM API, and in response to those
-    endpoints implement the following API.
+    This API is the mapping for the local system of the Open Cloud Mesh
+    (OCM) sharing protocol. Implementations are expected to expose the `/ocm`
+    endpoints according to the OCM API, and in response to those endpoints call the
+    following API. Support for multi-protocol shares is included, if the remote
+    sender supplies a multi-protocol share.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
