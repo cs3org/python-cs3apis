@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(cs3/app/provider/v1beta1/resources.proto\x12\x18\x63s3.app.provider.v1beta1\"\xac\x03\n\x0cOpenInAppURL\x12\x17\n\x07\x61pp_url\x18\x01 \x01(\tR\x06\x61ppUrl\x12\x16\n\x06method\x18\x02 \x01(\tR\x06method\x12\x63\n\x0f\x66orm_parameters\x18\x03 \x03(\x0b\x32:.cs3.app.provider.v1beta1.OpenInAppURL.FormParametersEntryR\x0e\x66ormParameters\x12M\n\x07headers\x18\x04 \x03(\x0b\x32\x33.cs3.app.provider.v1beta1.OpenInAppURL.HeadersEntryR\x07headers\x12\x38\n\x06target\x18\x05 \x01(\x0e\x32 .cs3.app.provider.v1beta1.TargetR\x06target\x1a\x41\n\x13\x46ormParametersEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cHeadersEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01*\x84\x01\n\x08ViewMode\x12\x15\n\x11VIEW_MODE_INVALID\x10\x00\x12\x17\n\x13VIEW_MODE_VIEW_ONLY\x10\x01\x12\x17\n\x13VIEW_MODE_READ_ONLY\x10\x02\x12\x18\n\x14VIEW_MODE_READ_WRITE\x10\x03\x12\x15\n\x11VIEW_MODE_PREVIEW\x10\x04*A\n\x06Target\x12\x12\n\x0eTARGET_INVALID\x10\x00\x12\x11\n\rTARGET_IFRAME\x10\x01\x12\x10\n\x0cTARGET_BLANK\x10\x02\x42\xf8\x01\n\x1c\x63om.cs3.app.provider.v1beta1B\x0eResourcesProtoP\x01ZEgithub.com/cs3org/go-cs3apis/cs3/app/provider/v1beta1;providerv1beta1\xa2\x02\x03\x43\x41P\xaa\x02\x18\x43s3.App.Provider.V1beta1\xca\x02\x18\x43s3\\App\\Provider\\V1beta1\xe2\x02$Cs3\\App\\Provider\\V1beta1\\GPBMetadata\xea\x02\x1b\x43s3::App::Provider::V1beta1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(cs3/app/provider/v1beta1/resources.proto\x12\x18\x63s3.app.provider.v1beta1\"\xac\x03\n\x0cOpenInAppURL\x12\x17\n\x07\x61pp_url\x18\x01 \x01(\tR\x06\x61ppUrl\x12\x16\n\x06method\x18\x02 \x01(\tR\x06method\x12\x63\n\x0f\x66orm_parameters\x18\x03 \x03(\x0b\x32:.cs3.app.provider.v1beta1.OpenInAppURL.FormParametersEntryR\x0e\x66ormParameters\x12M\n\x07headers\x18\x04 \x03(\x0b\x32\x33.cs3.app.provider.v1beta1.OpenInAppURL.HeadersEntryR\x07headers\x12\x38\n\x06target\x18\x05 \x01(\x0e\x32 .cs3.app.provider.v1beta1.TargetR\x06target\x1a\x41\n\x13\x46ormParametersEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01\x1a:\n\x0cHeadersEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n\x05value\x18\x02 \x01(\tR\x05value:\x02\x38\x01*\x9c\x01\n\x08ViewMode\x12\x15\n\x11VIEW_MODE_INVALID\x10\x00\x12\x17\n\x13VIEW_MODE_VIEW_ONLY\x10\x01\x12\x17\n\x13VIEW_MODE_READ_ONLY\x10\x02\x12\x18\n\x14VIEW_MODE_READ_WRITE\x10\x03\x12\x15\n\x11VIEW_MODE_PREVIEW\x10\x04\x12\x16\n\x12VIEW_MODE_EMBEDDED\x10\x05*A\n\x06Target\x12\x12\n\x0eTARGET_INVALID\x10\x00\x12\x11\n\rTARGET_IFRAME\x10\x01\x12\x10\n\x0cTARGET_BLANK\x10\x02\x42\xf8\x01\n\x1c\x63om.cs3.app.provider.v1beta1B\x0eResourcesProtoP\x01ZEgithub.com/cs3org/go-cs3apis/cs3/app/provider/v1beta1;providerv1beta1\xa2\x02\x03\x43\x41P\xaa\x02\x18\x43s3.App.Provider.V1beta1\xca\x02\x18\x43s3\\App\\Provider\\V1beta1\xe2\x02$Cs3\\App\\Provider\\V1beta1\\GPBMetadata\xea\x02\x1b\x43s3::App::Provider::V1beta1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -27,9 +27,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_OPENINAPPURL_HEADERSENTRY']._options = None
   _globals['_OPENINAPPURL_HEADERSENTRY']._serialized_options = b'8\001'
   _globals['_VIEWMODE']._serialized_start=502
-  _globals['_VIEWMODE']._serialized_end=634
-  _globals['_TARGET']._serialized_start=636
-  _globals['_TARGET']._serialized_end=701
+  _globals['_VIEWMODE']._serialized_end=658
+  _globals['_TARGET']._serialized_start=660
+  _globals['_TARGET']._serialized_end=725
   _globals['_OPENINAPPURL']._serialized_start=71
   _globals['_OPENINAPPURL']._serialized_end=499
   _globals['_OPENINAPPURL_FORMPARAMETERSENTRY']._serialized_start=374
