@@ -14,7 +14,7 @@ class OcmAPIStub(object):
     Implementations are expected to call remote `/ocm` endpoints
     in response to the payloads received via this API.
 
-    The APIs match the OCM v1.2 spec including multi-protocol shares.
+    The APIs match the OCM v1.2+ spec including multi-protocol shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -91,7 +91,7 @@ class OcmAPIServicer(object):
     Implementations are expected to call remote `/ocm` endpoints
     in response to the payloads received via this API.
 
-    The APIs match the OCM v1.2 spec including multi-protocol shares.
+    The APIs match the OCM v1.2+ spec including multi-protocol shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
@@ -251,7 +251,7 @@ class OcmAPI(object):
     Implementations are expected to call remote `/ocm` endpoints
     in response to the payloads received via this API.
 
-    The APIs match the OCM v1.2 spec including multi-protocol shares.
+    The APIs match the OCM v1.2+ spec including multi-protocol shares.
 
     The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
     NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
