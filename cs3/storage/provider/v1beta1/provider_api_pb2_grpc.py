@@ -190,6 +190,16 @@ class ProviderAPIStub(object):
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.FromString,
                 )
+        self.AddFavorite = channel.unary_unary(
+                '/cs3.storage.provider.v1beta1.ProviderAPI/AddFavorite',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteResponse.FromString,
+                )
+        self.RemoveFavorite = channel.unary_unary(
+                '/cs3.storage.provider.v1beta1.ProviderAPI/RemoveFavorite',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteResponse.FromString,
+                )
 
 
 class ProviderAPIServicer(object):
@@ -500,6 +510,20 @@ class ProviderAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AddFavorite(self, request, context):
+        """Marks a resource as favorite for a user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveFavorite(self, request, context):
+        """Unmarks a resource as favorite for a user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ProviderAPIServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -662,6 +686,16 @@ def add_ProviderAPIServicer_to_server(servicer, server):
                     servicer.GetHome,
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.SerializeToString,
+            ),
+            'AddFavorite': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddFavorite,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteResponse.SerializeToString,
+            ),
+            'RemoveFavorite': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveFavorite,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1230,5 +1264,39 @@ class ProviderAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/GetHome',
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.SerializeToString,
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddFavorite(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/AddFavorite',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveFavorite(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/RemoveFavorite',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
