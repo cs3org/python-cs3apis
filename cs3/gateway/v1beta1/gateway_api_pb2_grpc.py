@@ -8,6 +8,7 @@ from cs3.auth.applications.v1beta1 import applications_api_pb2 as cs3_dot_auth_d
 from cs3.auth.registry.v1beta1 import registry_api_pb2 as cs3_dot_auth_dot_registry_dot_v1beta1_dot_registry__api__pb2
 from cs3.gateway.v1beta1 import gateway_api_pb2 as cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2
 from cs3.identity.group.v1beta1 import group_api_pb2 as cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2
+from cs3.identity.tenant.v1beta1 import tenant_api_pb2 as cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2
 from cs3.identity.user.v1beta1 import user_api_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2
 from cs3.ocm.core.v1beta1 import ocm_core_api_pb2 as cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2
 from cs3.ocm.incoming.v1beta1 import ocm_incoming_api_pb2 as cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2
@@ -436,6 +437,16 @@ class GatewayAPIStub(object):
                 '/cs3.gateway.v1beta1.GatewayAPI/FindUsers',
                 request_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersRequest.SerializeToString,
                 response_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersResponse.FromString,
+                )
+        self.GetTenant = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/GetTenant',
+                request_serializer=cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantRequest.SerializeToString,
+                response_deserializer=cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantResponse.FromString,
+                )
+        self.GetTenantByClaim = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/GetTenantByClaim',
+                request_serializer=cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantByClaimRequest.SerializeToString,
+                response_deserializer=cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantByClaimResponse.FromString,
                 )
         self.GetGroup = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/GetGroup',
@@ -1266,6 +1277,25 @@ class GatewayAPIServicer(object):
     def FindUsers(self, request, context):
         """Finds users by any attribute of the user.
         TODO(labkode): to define the filters that make more sense.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetTenant(self, request, context):
+        """*****************************************************************/
+        ************************ TENANT PROVIDER **************************/
+        *****************************************************************/
+
+        Gets the information about a tenant by the tenant id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetTenantByClaim(self, request, context):
+        """Gets the information about a tenant based on a specified claim.
+        Gets the groups of a user.
         *****************************************************************/
         ************************ GROUP PROVIDER **************************/
         *****************************************************************/
@@ -1888,6 +1918,16 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.FindUsers,
                     request_deserializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersRequest.FromString,
                     response_serializer=cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersResponse.SerializeToString,
+            ),
+            'GetTenant': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTenant,
+                    request_deserializer=cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantRequest.FromString,
+                    response_serializer=cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantResponse.SerializeToString,
+            ),
+            'GetTenantByClaim': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTenantByClaim,
+                    request_deserializer=cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantByClaimRequest.FromString,
+                    response_serializer=cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantByClaimResponse.SerializeToString,
             ),
             'GetGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.GetGroup,
@@ -3370,6 +3410,40 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/FindUsers',
             cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersRequest.SerializeToString,
             cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2.FindUsersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetTenant(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GetTenant',
+            cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantRequest.SerializeToString,
+            cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetTenantByClaim(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GetTenantByClaim',
+            cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantByClaimRequest.SerializeToString,
+            cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2.GetTenantByClaimResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
