@@ -190,15 +190,15 @@ class ProviderAPIStub(object):
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.FromString,
                 )
-        self.AddFavorite = channel.unary_unary(
-                '/cs3.storage.provider.v1beta1.ProviderAPI/AddFavorite',
-                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteRequest.SerializeToString,
-                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteResponse.FromString,
+        self.AddLabel = channel.unary_unary(
+                '/cs3.storage.provider.v1beta1.ProviderAPI/AddLabel',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelResponse.FromString,
                 )
-        self.RemoveFavorite = channel.unary_unary(
-                '/cs3.storage.provider.v1beta1.ProviderAPI/RemoveFavorite',
-                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteRequest.SerializeToString,
-                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteResponse.FromString,
+        self.RemoveLabel = channel.unary_unary(
+                '/cs3.storage.provider.v1beta1.ProviderAPI/RemoveLabel',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelResponse.FromString,
                 )
 
 
@@ -510,15 +510,15 @@ class ProviderAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def AddFavorite(self, request, context):
-        """Marks a resource as favorite for a user.
+    def AddLabel(self, request, context):
+        """Attach a label to a resource for a user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def RemoveFavorite(self, request, context):
-        """Unmarks a resource as favorite for a user.
+    def RemoveLabel(self, request, context):
+        """Removes a label from a resource for a user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -687,15 +687,15 @@ def add_ProviderAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.SerializeToString,
             ),
-            'AddFavorite': grpc.unary_unary_rpc_method_handler(
-                    servicer.AddFavorite,
-                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteRequest.FromString,
-                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteResponse.SerializeToString,
+            'AddLabel': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddLabel,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelResponse.SerializeToString,
             ),
-            'RemoveFavorite': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemoveFavorite,
-                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteRequest.FromString,
-                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteResponse.SerializeToString,
+            'RemoveLabel': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveLabel,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1268,7 +1268,7 @@ class ProviderAPI(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def AddFavorite(request,
+    def AddLabel(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1278,14 +1278,14 @@ class ProviderAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/AddFavorite',
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteRequest.SerializeToString,
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddFavoriteResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/AddLabel',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def RemoveFavorite(request,
+    def RemoveLabel(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1295,8 +1295,8 @@ class ProviderAPI(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/RemoveFavorite',
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteRequest.SerializeToString,
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveFavoriteResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/RemoveLabel',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
