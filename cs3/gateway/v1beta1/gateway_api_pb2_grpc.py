@@ -10,6 +10,7 @@ from cs3.gateway.v1beta1 import gateway_api_pb2 as cs3_dot_gateway_dot_v1beta1_d
 from cs3.identity.group.v1beta1 import group_api_pb2 as cs3_dot_identity_dot_group_dot_v1beta1_dot_group__api__pb2
 from cs3.identity.tenant.v1beta1 import tenant_api_pb2 as cs3_dot_identity_dot_tenant_dot_v1beta1_dot_tenant__api__pb2
 from cs3.identity.user.v1beta1 import user_api_pb2 as cs3_dot_identity_dot_user_dot_v1beta1_dot_user__api__pb2
+from cs3.labels.v1beta1 import label_api_pb2 as cs3_dot_labels_dot_v1beta1_dot_label__api__pb2
 from cs3.ocm.core.v1beta1 import ocm_core_api_pb2 as cs3_dot_ocm_dot_core_dot_v1beta1_dot_ocm__core__api__pb2
 from cs3.ocm.incoming.v1beta1 import ocm_incoming_api_pb2 as cs3_dot_ocm_dot_incoming_dot_v1beta1_dot_ocm__incoming__api__pb2
 from cs3.ocm.invite.v1beta1 import invite_api_pb2 as cs3_dot_ocm_dot_invite_dot_v1beta1_dot_invite__api__pb2
@@ -228,16 +229,6 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceResponse.FromString,
                 )
-        self.AddLabel = channel.unary_unary(
-                '/cs3.gateway.v1beta1.GatewayAPI/AddLabel',
-                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelRequest.SerializeToString,
-                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelResponse.FromString,
-                )
-        self.RemoveLabel = channel.unary_unary(
-                '/cs3.gateway.v1beta1.GatewayAPI/RemoveLabel',
-                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelRequest.SerializeToString,
-                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelResponse.FromString,
-                )
         self.OpenInApp = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/OpenInApp',
                 request_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.OpenInAppRequest.SerializeToString,
@@ -302,6 +293,26 @@ class GatewayAPIStub(object):
                 '/cs3.gateway.v1beta1.GatewayAPI/GetKey',
                 request_serializer=cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2.GetKeyRequest.SerializeToString,
                 response_deserializer=cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2.GetKeyResponse.FromString,
+                )
+        self.AddLabel = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/AddLabel',
+                request_serializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.AddLabelRequest.SerializeToString,
+                response_deserializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.AddLabelResponse.FromString,
+                )
+        self.RemoveLabel = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/RemoveLabel',
+                request_serializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.RemoveLabelRequest.SerializeToString,
+                response_deserializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.RemoveLabelResponse.FromString,
+                )
+        self.ListLabels = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/ListLabels',
+                request_serializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListLabelsRequest.SerializeToString,
+                response_deserializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListLabelsResponse.FromString,
+                )
+        self.ListResourcesForLabel = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/ListResourcesForLabel',
+                request_serializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListResourcesForLabelRequest.SerializeToString,
+                response_deserializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListResourcesForLabelResponse.FromString,
                 )
         self.CreatePublicShare = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/CreatePublicShare',
@@ -919,20 +930,6 @@ class GatewayAPIServicer(object):
 
     def DeleteStorageSpace(self, request, context):
         """Deletes a storage space.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def AddLabel(self, request, context):
-        """Attach a label to a resource for a user.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RemoveLabel(self, request, context):
-        """Removes a label from a resource for a user.
         *****************************************************************/
         ************************ APP PROVIDER ********************/
         *****************************************************************/
@@ -1049,16 +1046,49 @@ class GatewayAPIServicer(object):
     def GetKey(self, request, context):
         """Returns the value associated with the
         requested key.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AddLabel(self, request, context):
+        """*****************************************************************/
+        *************************** LABELS ******************************/
         *****************************************************************/
-        ************************ PUBLIC SHARE ***************************/
-        *****************************************************************/
+
+        Attach a label to a resource for a user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveLabel(self, request, context):
+        """Removes a label from a resource for a user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListLabels(self, request, context):
+        """List the unique labels that a user has attached to resources
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListResourcesForLabel(self, request, context):
+        """List the resources which have a given label attached for a given user
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreatePublicShare(self, request, context):
-        """Creates a new share.
+        """*****************************************************************/
+        ************************ PUBLIC SHARE ***************************/
+        *****************************************************************/
+
+        Creates a new share.
         MUST return CODE_NOT_FOUND if the resource reference does not exist.
         MUST return CODE_ALREADY_EXISTS if the share already exists for the 4-tuple consisting of
         (owner, shared_resource, grantee).
@@ -1709,16 +1739,6 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceResponse.SerializeToString,
             ),
-            'AddLabel': grpc.unary_unary_rpc_method_handler(
-                    servicer.AddLabel,
-                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelRequest.FromString,
-                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelResponse.SerializeToString,
-            ),
-            'RemoveLabel': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemoveLabel,
-                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelRequest.FromString,
-                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelResponse.SerializeToString,
-            ),
             'OpenInApp': grpc.unary_unary_rpc_method_handler(
                     servicer.OpenInApp,
                     request_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.OpenInAppRequest.FromString,
@@ -1783,6 +1803,26 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.GetKey,
                     request_deserializer=cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2.GetKeyRequest.FromString,
                     response_serializer=cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2.GetKeyResponse.SerializeToString,
+            ),
+            'AddLabel': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddLabel,
+                    request_deserializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.AddLabelRequest.FromString,
+                    response_serializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.AddLabelResponse.SerializeToString,
+            ),
+            'RemoveLabel': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveLabel,
+                    request_deserializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.RemoveLabelRequest.FromString,
+                    response_serializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.RemoveLabelResponse.SerializeToString,
+            ),
+            'ListLabels': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListLabels,
+                    request_deserializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListLabelsRequest.FromString,
+                    response_serializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListLabelsResponse.SerializeToString,
+            ),
+            'ListResourcesForLabel': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListResourcesForLabel,
+                    request_deserializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListResourcesForLabelRequest.FromString,
+                    response_serializer=cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListResourcesForLabelResponse.SerializeToString,
             ),
             'CreatePublicShare': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePublicShare,
@@ -2700,40 +2740,6 @@ class GatewayAPI(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def AddLabel(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/AddLabel',
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelRequest.SerializeToString,
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RemoveLabel(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/RemoveLabel',
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelRequest.SerializeToString,
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def OpenInApp(request,
             target,
             options=(),
@@ -2951,6 +2957,74 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/GetKey',
             cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2.GetKeyRequest.SerializeToString,
             cs3_dot_preferences_dot_v1beta1_dot_preferences__api__pb2.GetKeyResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddLabel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/AddLabel',
+            cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.AddLabelRequest.SerializeToString,
+            cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.AddLabelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveLabel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/RemoveLabel',
+            cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.RemoveLabelRequest.SerializeToString,
+            cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.RemoveLabelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListLabels(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListLabels',
+            cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListLabelsRequest.SerializeToString,
+            cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListLabelsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListResourcesForLabel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/ListResourcesForLabel',
+            cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListResourcesForLabelRequest.SerializeToString,
+            cs3_dot_labels_dot_v1beta1_dot_label__api__pb2.ListResourcesForLabelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

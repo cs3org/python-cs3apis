@@ -190,16 +190,6 @@ class ProviderAPIStub(object):
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.FromString,
                 )
-        self.AddLabel = channel.unary_unary(
-                '/cs3.storage.provider.v1beta1.ProviderAPI/AddLabel',
-                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelRequest.SerializeToString,
-                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelResponse.FromString,
-                )
-        self.RemoveLabel = channel.unary_unary(
-                '/cs3.storage.provider.v1beta1.ProviderAPI/RemoveLabel',
-                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelRequest.SerializeToString,
-                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelResponse.FromString,
-                )
 
 
 class ProviderAPIServicer(object):
@@ -510,20 +500,6 @@ class ProviderAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def AddLabel(self, request, context):
-        """Attach a label to a resource for a user.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RemoveLabel(self, request, context):
-        """Removes a label from a resource for a user.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_ProviderAPIServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -686,16 +662,6 @@ def add_ProviderAPIServicer_to_server(servicer, server):
                     servicer.GetHome,
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.SerializeToString,
-            ),
-            'AddLabel': grpc.unary_unary_rpc_method_handler(
-                    servicer.AddLabel,
-                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelRequest.FromString,
-                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelResponse.SerializeToString,
-            ),
-            'RemoveLabel': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemoveLabel,
-                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelRequest.FromString,
-                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1264,39 +1230,5 @@ class ProviderAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/GetHome',
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeRequest.SerializeToString,
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.GetHomeResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def AddLabel(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/AddLabel',
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelRequest.SerializeToString,
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.AddLabelResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RemoveLabel(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/RemoveLabel',
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelRequest.SerializeToString,
-            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.RemoveLabelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
