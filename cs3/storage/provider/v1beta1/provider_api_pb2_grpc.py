@@ -180,6 +180,16 @@ class ProviderAPIStub(object):
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockResponse.FromString,
                 )
+        self.SetImmutable = channel.unary_unary(
+                '/cs3.storage.provider.v1beta1.ProviderAPI/SetImmutable',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableResponse.FromString,
+                )
+        self.UnsetImmutable = channel.unary_unary(
+                '/cs3.storage.provider.v1beta1.ProviderAPI/UnsetImmutable',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableResponse.FromString,
+                )
         self.CreateHome = channel.unary_unary(
                 '/cs3.storage.provider.v1beta1.ProviderAPI/CreateHome',
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.CreateHomeRequest.SerializeToString,
@@ -486,6 +496,26 @@ class ProviderAPIServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetImmutable(self, request, context):
+        """Sets the immutable (frozen) attribute on a resource.
+        MUST return CODE_NOT_FOUND if the reference does not exist.
+        The caller MUST have management permissions on the resource
+        (space owner, space manager, or administrator).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UnsetImmutable(self, request, context):
+        """Removes the immutable (frozen) attribute from a resource.
+        MUST return CODE_NOT_FOUND if the reference does not exist.
+        MUST return CODE_FAILED_PRECONDITION if the resource is not immutable.
+        The caller MUST have management permissions on the resource.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateHome(self, request, context):
         """Creates the home directory for a user.
         """
@@ -652,6 +682,16 @@ def add_ProviderAPIServicer_to_server(servicer, server):
                     servicer.Unlock,
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockResponse.SerializeToString,
+            ),
+            'SetImmutable': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetImmutable,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableResponse.SerializeToString,
+            ),
+            'UnsetImmutable': grpc.unary_unary_rpc_method_handler(
+                    servicer.UnsetImmutable,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableResponse.SerializeToString,
             ),
             'CreateHome': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateHome,
@@ -1196,6 +1236,40 @@ class ProviderAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/Unlock',
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockRequest.SerializeToString,
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnlockResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetImmutable(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/SetImmutable',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UnsetImmutable(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.storage.provider.v1beta1.ProviderAPI/UnsetImmutable',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
