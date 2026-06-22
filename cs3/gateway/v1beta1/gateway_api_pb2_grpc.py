@@ -229,6 +229,16 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceRequest.SerializeToString,
                 response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceResponse.FromString,
                 )
+        self.SetImmutable = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/SetImmutable',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableResponse.FromString,
+                )
+        self.UnsetImmutable = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/UnsetImmutable',
+                request_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableRequest.SerializeToString,
+                response_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableResponse.FromString,
+                )
         self.OpenInApp = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/OpenInApp',
                 request_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.OpenInAppRequest.SerializeToString,
@@ -930,6 +940,23 @@ class GatewayAPIServicer(object):
 
     def DeleteStorageSpace(self, request, context):
         """Deletes a storage space.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetImmutable(self, request, context):
+        """Set the immutable attribute on a resource.
+        Files become frozen (irreversible), containers become protected (reversible).
+        See cs3org/cs3apis#272 for the specification.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UnsetImmutable(self, request, context):
+        """Remove the immutable attribute from a resource.
+        Only applicable to containers (protected). Frozen files cannot be unfrozen.
         *****************************************************************/
         ************************ APP PROVIDER ********************/
         *****************************************************************/
@@ -1738,6 +1765,16 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     servicer.DeleteStorageSpace,
                     request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceRequest.FromString,
                     response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceResponse.SerializeToString,
+            ),
+            'SetImmutable': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetImmutable,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableResponse.SerializeToString,
+            ),
+            'UnsetImmutable': grpc.unary_unary_rpc_method_handler(
+                    servicer.UnsetImmutable,
+                    request_deserializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableRequest.FromString,
+                    response_serializer=cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableResponse.SerializeToString,
             ),
             'OpenInApp': grpc.unary_unary_rpc_method_handler(
                     servicer.OpenInApp,
@@ -2736,6 +2773,40 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/DeleteStorageSpace',
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceRequest.SerializeToString,
             cs3_dot_storage_dot_provider_dot_v1beta1_dot_spaces__api__pb2.DeleteStorageSpaceResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetImmutable(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/SetImmutable',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.SetImmutableResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UnsetImmutable(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/UnsetImmutable',
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableRequest.SerializeToString,
+            cs3_dot_storage_dot_provider_dot_v1beta1_dot_provider__api__pb2.UnsetImmutableResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
