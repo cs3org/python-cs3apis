@@ -64,6 +64,11 @@ class GatewayAPIStub(object):
                 request_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIRequest.SerializeToString,
                 response_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIResponse.FromString,
                 )
+        self.PublishEvent = channel.unary_unary(
+                '/cs3.gateway.v1beta1.GatewayAPI/PublishEvent',
+                request_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.PublishEventRequest.SerializeToString,
+                response_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.PublishEventResponse.FromString,
+                )
         self.GenerateAppPassword = channel.unary_unary(
                 '/cs3.gateway.v1beta1.GatewayAPI/GenerateAppPassword',
                 request_serializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GenerateAppPasswordRequest.SerializeToString,
@@ -648,6 +653,19 @@ class GatewayAPIServicer(object):
 
     def WhoAmI(self, request, context):
         """WhoAmI returns the information for a user.
+        *****************************************************************/
+        **************************** EVENTS *****************************/
+        *****************************************************************/
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PublishEvent(self, request, context):
+        """Sends an event for asynchronous processing.
+        The gateway MUST derive the sender and submitting user from the
+        authenticated request context and SHOULD rate-limit this call per submitting
+        user.
         *****************************************************************/
         ********************** APPLICATIONS AUTH ************************/
         *****************************************************************/
@@ -1601,6 +1619,11 @@ def add_GatewayAPIServicer_to_server(servicer, server):
                     request_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIRequest.FromString,
                     response_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIResponse.SerializeToString,
             ),
+            'PublishEvent': grpc.unary_unary_rpc_method_handler(
+                    servicer.PublishEvent,
+                    request_deserializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.PublishEventRequest.FromString,
+                    response_serializer=cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.PublishEventResponse.SerializeToString,
+            ),
             'GenerateAppPassword': grpc.unary_unary_rpc_method_handler(
                     servicer.GenerateAppPassword,
                     request_deserializer=cs3_dot_auth_dot_applications_dot_v1beta1_dot_applications__api__pb2.GenerateAppPasswordRequest.FromString,
@@ -2212,6 +2235,23 @@ class GatewayAPI(object):
         return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/WhoAmI',
             cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIRequest.SerializeToString,
             cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.WhoAmIResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PublishEvent(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/cs3.gateway.v1beta1.GatewayAPI/PublishEvent',
+            cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.PublishEventRequest.SerializeToString,
+            cs3_dot_gateway_dot_v1beta1_dot_gateway__api__pb2.PublishEventResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
